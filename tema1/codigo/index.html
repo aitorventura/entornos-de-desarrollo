@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../concepto/">
+        <link rel="prev" href="../actividad_1_1/">
       
       
-        <link rel="next" href="../lenguajes/">
+        <link rel="next" href="../actividad_1_2/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -337,6 +337,29 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../actividad_1_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 1.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -390,45 +413,45 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#21-del-codigo-fuente-al-binario-fases-del-toolchain" class="md-nav__link">
+  <a href="#21-del-codigo-fuente-al-binario-como-llega-un-programa-a-la-cpu" class="md-nav__link">
     <span class="md-ellipsis">
-      2.1 Del código fuente al binario: fases del toolchain
+      2.1 Del código fuente al binario: ¿cómo llega un programa a la CPU?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#22-compilacion-ensamblado-y-enlazado" class="md-nav__link">
+  <a href="#22-compilacion-ensamblado-y-enlazado-en-compilados" class="md-nav__link">
     <span class="md-ellipsis">
-      2.2 Compilación, ensamblado y enlazado
+      2.2 Compilación, ensamblado y enlazado (en compilados)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#23-codigo-objeto-y-formatos-comunes" class="md-nav__link">
+  <a href="#23-diferencia-entre-codigo-objeto-y-ejecutable" class="md-nav__link">
     <span class="md-ellipsis">
-      2.3 Código objeto y formatos comunes
+      2.3 Diferencia entre código objeto y ejecutable
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#24-ejecutable-y-dependencias-en-tiempo-de-ejecucion" class="md-nav__link">
+  <a href="#24-ejecutable-y-dependencias" class="md-nav__link">
     <span class="md-ellipsis">
-      2.4 Ejecutable y dependencias en tiempo de ejecución
+      2.4 Ejecutable y dependencias
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#25-interpretado-vs-compilado-vs-jit" class="md-nav__link">
+  <a href="#25-interpretado-vs-compilado-vs-jit-resumen-general" class="md-nav__link">
     <span class="md-ellipsis">
-      2.5 Interpretado vs compilado vs JIT
+      2.5 Interpretado vs compilado vs JIT (resumen general)
     </span>
   </a>
   
@@ -456,6 +479,29 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../actividad_1_2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 1.2
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -587,45 +633,45 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#21-del-codigo-fuente-al-binario-fases-del-toolchain" class="md-nav__link">
+  <a href="#21-del-codigo-fuente-al-binario-como-llega-un-programa-a-la-cpu" class="md-nav__link">
     <span class="md-ellipsis">
-      2.1 Del código fuente al binario: fases del toolchain
+      2.1 Del código fuente al binario: ¿cómo llega un programa a la CPU?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#22-compilacion-ensamblado-y-enlazado" class="md-nav__link">
+  <a href="#22-compilacion-ensamblado-y-enlazado-en-compilados" class="md-nav__link">
     <span class="md-ellipsis">
-      2.2 Compilación, ensamblado y enlazado
+      2.2 Compilación, ensamblado y enlazado (en compilados)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#23-codigo-objeto-y-formatos-comunes" class="md-nav__link">
+  <a href="#23-diferencia-entre-codigo-objeto-y-ejecutable" class="md-nav__link">
     <span class="md-ellipsis">
-      2.3 Código objeto y formatos comunes
+      2.3 Diferencia entre código objeto y ejecutable
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#24-ejecutable-y-dependencias-en-tiempo-de-ejecucion" class="md-nav__link">
+  <a href="#24-ejecutable-y-dependencias" class="md-nav__link">
     <span class="md-ellipsis">
-      2.4 Ejecutable y dependencias en tiempo de ejecución
+      2.4 Ejecutable y dependencias
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#25-interpretado-vs-compilado-vs-jit" class="md-nav__link">
+  <a href="#25-interpretado-vs-compilado-vs-jit-resumen-general" class="md-nav__link">
     <span class="md-ellipsis">
-      2.5 Interpretado vs compilado vs JIT
+      2.5 Interpretado vs compilado vs JIT (resumen general)
     </span>
   </a>
   
@@ -668,98 +714,190 @@
 <p><a id="codigo"></a></p>
 <h1 id="2-codigo-fuente-objeto-y-ejecutable">💻 2. Código fuente, objeto y ejecutable<a class="headerlink" href="#2-codigo-fuente-objeto-y-ejecutable" title="Permanent link">&para;</a></h1>
 <hr />
-<h2 id="21-del-codigo-fuente-al-binario-fases-del-toolchain">2.1 Del código fuente al binario: fases del <em>toolchain</em><a class="headerlink" href="#21-del-codigo-fuente-al-binario-fases-del-toolchain" title="Permanent link">&para;</a></h2>
+<h2 id="21-del-codigo-fuente-al-binario-como-llega-un-programa-a-la-cpu">2.1 Del código fuente al binario: ¿cómo llega un programa a la CPU?<a class="headerlink" href="#21-del-codigo-fuente-al-binario-como-llega-un-programa-a-la-cpu" title="Permanent link">&para;</a></h2>
 <div class="admonition info">
 <p class="admonition-title">Idea básica</p>
-<p>Los ordenadores solo entienden <strong>código binario (0 y 1)</strong>.<br />
-Por eso, un programa escrito en <strong>lenguaje de alto nivel</strong> (C, Java, Python…) necesita pasar por un <strong>proceso de traducción</strong> llamado <em>toolchain</em>.</p>
-</div>
-<pre class="mermaid"><code>flowchart LR
-  A["Código fuente (.c, .java, .py)"]
-    --&gt; B["Compilador"]
-    --&gt; C["Código objeto (.o, .obj)"]
-    --&gt; D["Enlazador (linker)"]
-    --&gt; E["Ejecutable final (.exe, ELF, Mach-O)"]</code></pre>
-<hr />
-<h2 id="22-compilacion-ensamblado-y-enlazado">2.2 Compilación, ensamblado y enlazado<a class="headerlink" href="#22-compilacion-ensamblado-y-enlazado" title="Permanent link">&para;</a></h2>
+<p>Un ordenador <strong>solo entiende ceros y unos (binario)</strong>.<br />
+Los lenguajes que usamos para programar (C, Java, Python…) deben traducirse hasta llegar a ese formato.<br />
+Según el lenguaje, este “viaje” puede ser:  </p>
 <ul>
-<li><strong>Compilación</strong>: traduce el código fuente a <strong>código objeto</strong> (más cercano al binario).  </li>
-<li><strong>Ensamblado</strong>: convierte instrucciones en <strong>código máquina</strong> definitivo.  </li>
-<li><strong>Enlazado (link)</strong>: une varios módulos y librerías en un único ejecutable.</li>
+<li><strong>Compilado</strong> (todo antes de ejecutar).  </li>
+<li><strong>Interpretado</strong> (línea a línea en el momento).  </li>
+<li><strong>Híbrido con máquina virtual y JIT</strong> (un punto intermedio).  </li>
+</ul>
+</div>
+<div class="tabs-colored">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">⚡ Lenguaje compilado (C, C++)</label><label for="__tabbed_1_2">📝 Lenguaje interpretado (Python, JS)</label><label for="__tabbed_1_3">⏱️ Híbrido con VM (Java, C#)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><pre class="mermaid"><code>flowchart LR
+SRC["✍️ Código fuente (.c, .cpp)"] --&gt; COMP["⚙️ Compilador"]
+COMP --&gt; OBJ["📄 Código objeto (.o, .obj)"]
+OBJ --&gt; LINK["🔗 Enlazador"]
+LINK --&gt; EXE["▶️ Ejecutable (.exe, ELF)"]</code></pre>
+- El código se traduce <strong>antes de ejecutarse</strong>.<br />
+- Resultado: un <strong>ejecutable independiente</strong> que la CPU entiende directamente.<br />
+- Ejemplo: programas de escritorio o videojuegos en C++.</p>
+</div>
+<div class="tabbed-block">
+<p><pre class="mermaid"><code>flowchart LR
+SRC["✍️ Código fuente (.py, .js)"] --&gt; INT["👩‍💻 Intérprete"]
+INT --&gt; RUN["▶️ Ejecución directa"]</code></pre>
+- El código se lee <strong>línea a línea</strong> en tiempo real.<br />
+- No se genera un ejecutable clásico.<br />
+- Ejemplo: scripts de Python, páginas web con JavaScript.</p>
+</div>
+<div class="tabbed-block">
+<p><pre class="mermaid"><code>flowchart LR
+SRC["✍️ Código fuente"] --&gt; COMP["⚙️ Compilador"]
+COMP --&gt; BYTE["📄 Bytecode (Java .class, C# CIL)"]
+BYTE --&gt; VM["⚙️ Máquina Virtual (JVM / CLR)"]
+VM --&gt; JIT["⏱️ Compilación JIT"]
+JIT --&gt; RUN["▶️ Ejecución en CPU"]</code></pre>
+- El compilador genera un <strong>bytecode intermedio</strong>.<br />
+- Ese bytecode se ejecuta dentro de una <strong>máquina virtual</strong>.<br />
+- La VM usa <strong>JIT</strong> para traducir lo más usado a binario real en tiempo de ejecución.<br />
+- Ejemplo: aplicaciones Android (Java/Kotlin).</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="22-compilacion-ensamblado-y-enlazado-en-compilados">2.2 Compilación, ensamblado y enlazado (en compilados)<a class="headerlink" href="#22-compilacion-ensamblado-y-enlazado-en-compilados" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Compilación</strong> → traduce el código fuente a <strong>código objeto</strong> (binario incompleto).  </li>
+<li><strong>Ensamblado</strong> → organiza esas instrucciones en código máquina real.  </li>
+<li><strong>Enlazado (link)</strong> → une todo (archivos objeto + librerías) para obtener el <strong>ejecutable final</strong>.</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Enlazado estático vs dinámico</p>
 <ul>
-<li><strong>Estático</strong>: el ejecutable incluye <strong>todo dentro</strong> (más pesado, independiente).  </li>
-<li><strong>Dinámico</strong>: el ejecutable llama a librerías externas (<code>.dll</code>, <code>.so</code>) en tiempo de ejecución (más ligero, depende de ellas).  </li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.12 5h13.75l-.94-1h-12zm15.42.23c.29.34.46.77.46 1.27V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6.5c0-.5.17-.93.46-1.27l1.38-1.68C5.12 3.21 5.53 3 6 3h12c.47 0 .88.21 1.15.55zM6 18h6v-3H6z"/></svg></span> <strong>Estático</strong> → el ejecutable incluye todo. Más grande, pero no necesita librerías externas.  </li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5"/></svg></span> <strong>Dinámico</strong> → el ejecutable depende de librerías externas (<code>.dll</code>, <code>.so</code>). Más ligero, pero puede fallar si faltan.  </li>
 </ul>
 </div>
 <hr />
-<h2 id="23-codigo-objeto-y-formatos-comunes">2.3 Código objeto y formatos comunes<a class="headerlink" href="#23-codigo-objeto-y-formatos-comunes" title="Permanent link">&para;</a></h2>
+<h2 id="23-diferencia-entre-codigo-objeto-y-ejecutable">2.3 Diferencia entre <strong>código objeto</strong> y <strong>ejecutable</strong><a class="headerlink" href="#23-diferencia-entre-codigo-objeto-y-ejecutable" title="Permanent link">&para;</a></h2>
+<div class="tabs-colored">
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">📄 Código objeto</label><label for="__tabbed_2_2">▶️ Código binario ejecutable</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <ul>
-<li><strong>Qué es:</strong> el resultado de la compilación, aún <strong>no ejecutable</strong> por sí mismo.  </li>
-<li><strong>Extensiones habituales:</strong> <code>.o</code> (Linux/Unix), <code>.obj</code> (Windows).  </li>
-<li><strong>Contiene:</strong> instrucciones en binario + metadatos (símbolos, direcciones).  </li>
+<li>Archivo <strong>intermedio</strong> tras compilar.  </li>
+<li>Tiene instrucciones en binario, pero con <strong>marcas y símbolos sin resolver</strong>.  </li>
+<li>Ejemplo: <code>programa.o</code> (Linux), <code>programa.obj</code> (Windows).  </li>
+<li>⚠️ <strong>No puede ejecutarse directamente</strong>.</li>
 </ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>Archivo <strong>final</strong> que puedes abrir (<code>.exe</code>, ELF, Mach-O).  </li>
+<li>Ya tiene todas las direcciones resueltas y librerías enlazadas.  </li>
+<li>Ejemplo: <code>notepad.exe</code> en Windows, <code>/bin/ls</code> en Linux.  </li>
+<li>✅ <strong>La CPU lo entiende directamente</strong>.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 <hr />
-<h2 id="24-ejecutable-y-dependencias-en-tiempo-de-ejecucion">2.4 Ejecutable y dependencias en tiempo de ejecución<a class="headerlink" href="#24-ejecutable-y-dependencias-en-tiempo-de-ejecucion" title="Permanent link">&para;</a></h2>
+<h2 id="24-ejecutable-y-dependencias">2.4 Ejecutable y dependencias<a class="headerlink" href="#24-ejecutable-y-dependencias" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Ejecutable</p>
+<p>Un ejecutable puede necesitar: </p>
 <ul>
-<li>El <strong>ejecutable</strong> es el archivo que ya puedes <strong>abrir y ejecutar</strong> en tu sistema.  </li>
-<li>Puede depender de:</li>
-<li>Librerías del sistema (ej.: <code>msvcrt.dll</code>, <code>libc.so</code>).  </li>
+<li>Librerías (<code>libc.so</code>, <code>msvcrt.dll</code>).  </li>
 <li>Archivos de configuración.  </li>
-<li>Recursos adicionales (imágenes, sonidos, bases de datos).</li>
+<li>Recursos extra (imágenes, sonidos, bases de datos…).  </li>
 </ul>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">Error común</p>
-<p>Pensar que el <code>.exe</code> contiene <strong>todo lo necesario</strong>.<br />
-En realidad, muchos programas <strong>fallan</strong> si falta alguna librería externa.  </p>
+<p>Creer que un <code>.exe</code> lo tiene <strong>todo dentro</strong>.<br />
+En realidad, muchos programas fallan si falta una librería externa.</p>
 </div>
 <hr />
-<h2 id="25-interpretado-vs-compilado-vs-jit">2.5 Interpretado vs compilado vs JIT<a class="headerlink" href="#25-interpretado-vs-compilado-vs-jit" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>Interpretado</strong>: el código se <strong>traduce y ejecuta al vuelo</strong> (ej.: Python, JavaScript).<br />
-  → Más lento, pero flexible.  </li>
-<li><strong>Compilado</strong>: se traduce <strong>antes de ejecutar</strong> (ej.: C, C++).<br />
-  → Más rápido, pero menos flexible.  </li>
-<li><strong>JIT (<em>Just-in-time</em>)</strong>: mezcla ambos: compila “sobre la marcha” lo que más se usa (ej.: Java con la JVM, C# con .NET).<br />
-  → Buen equilibrio entre rendimiento y portabilidad.  </li>
-</ul>
+<h2 id="25-interpretado-vs-compilado-vs-jit-resumen-general">2.5 Interpretado vs compilado vs JIT (resumen general)<a class="headerlink" href="#25-interpretado-vs-compilado-vs-jit-resumen-general" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Cómo funciona</th>
+<th>Ejemplo</th>
+<th>Pros</th>
+<th>Contras</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Interpretado</strong></td>
+<td>El intérprete lee y ejecuta el código <strong>línea a línea</strong>, en tiempo real.</td>
+<td>Python, JavaScript</td>
+<td>+ <strong>Flexible</strong>: se puede probar y modificar fácilmente sin recompilar. <br> + <strong>Multiplataforma</strong>: el mismo script puede correr en Windows, Linux o macOS siempre que haya intérprete.</td>
+<td>– <strong>Más lento</strong>: porque cada instrucción se traduce al vuelo, no está preprocesada. <br> – <strong>Depende del intérprete</strong>: sin él, el programa no puede ejecutarse.</td>
+</tr>
+<tr>
+<td><strong>Compilado</strong></td>
+<td>Se traduce <strong>todo el programa</strong> de una vez a código máquina antes de ejecutarlo.</td>
+<td>C, C++</td>
+<td>+ <strong>Muy rápido</strong>: la CPU ejecuta directamente el binario, sin pasos intermedios. <br> + <strong>Optimizable</strong>: el compilador puede aplicar mejoras (optimizaciones) en el binario.</td>
+<td>– <strong>Menos flexible</strong>: cualquier cambio en el código obliga a recompilar. <br> – <strong>Menos portable</strong>: el binario generado suele funcionar solo en un sistema o arquitectura concreta.</td>
+</tr>
+<tr>
+<td><strong>JIT (Just-in-time)</strong></td>
+<td>El programa se compila primero a un <strong>código intermedio (bytecode)</strong> y, en tiempo de ejecución, la máquina virtual traduce “al vuelo” las partes más usadas a binario.</td>
+<td>Java (JVM), C# (.NET)</td>
+<td>+ <strong>Equilibrio</strong>: combina la portabilidad del bytecode con la velocidad del binario. <br> + <strong>Adaptable</strong>: el JIT optimiza según cómo se ejecuta el programa en cada máquina.</td>
+<td>– <strong>Más complejo</strong>: necesita tanto un compilador como una máquina virtual. <br> – <strong>Inicio más lento</strong>: al principio puede tardar más porque compila sobre la marcha.</td>
+</tr>
+</tbody>
+</table>
 <hr />
 <h2 id="26-codigo-intermedio-y-maquinas-virtuales">2.6 Código intermedio y máquinas virtuales<a class="headerlink" href="#26-codigo-intermedio-y-maquinas-virtuales" title="Permanent link">&para;</a></h2>
 <div class="admonition info">
 <p class="admonition-title">Idea clave</p>
-<p>Algunos lenguajes no se traducen directamente a binario, sino a un <strong>código intermedio</strong> (bytecode).<br />
+<p>Algunos lenguajes (Java, C#) no generan binario directo, sino un <strong>código intermedio</strong>.<br />
 Ese código se ejecuta dentro de una <strong>máquina virtual (VM)</strong>.</p>
 </div>
+<div class="tabs-colored">
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">☕ Java</label><label for="__tabbed_3_2">🔷 C#</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <ul>
-<li><strong>Java</strong> → se compila a <strong>bytecode</strong> → la <strong>JVM</strong> lo interpreta/compila JIT.  </li>
-<li><strong>C# (.NET)</strong> → se compila a <strong>CIL</strong> → la <strong>CLR</strong> lo ejecuta.  </li>
+<li>El compilador genera <strong>bytecode</strong> (<code>.class</code>).  </li>
+<li>La <strong>JVM</strong> lo ejecuta.  </li>
+<li>Para acelerar, usa <strong>JIT</strong> que convierte a binario solo lo más repetido.</li>
 </ul>
-<pre class="mermaid"><code>flowchart LR
-  Fuente["Código fuente (Java, C#)"]
-    --&gt; Bytecode["Código intermedio (Bytecode, CIL)"]
-    --&gt; VM["Máquina Virtual (JVM, CLR)"]
-    --&gt; Binario["Ejecución real en CPU"]</code></pre>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>El compilador genera <strong>CIL</strong> (Common Intermediate Language).  </li>
+<li>La <strong>CLR</strong> lo ejecuta.  </li>
+<li>También usa <strong>JIT</strong> para mejorar rendimiento.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 <div class="admonition tip">
 <p class="admonition-title">AOT (Ahead-of-Time)</p>
-<p>Significa compilar <strong>antes de ejecutar</strong>, evitando la traducción en tiempo real.<br />
+<p>Significa compilar <strong>antes de ejecutar</strong>, evitando JIT.<br />
 Ejemplo: GraalVM para Java.  </p>
 </div>
 <hr />
 <h2 id="27-empaquetado-y-distribucion">2.7 Empaquetado y distribución<a class="headerlink" href="#27-empaquetado-y-distribucion" title="Permanent link">&para;</a></h2>
-<p>Un programa no siempre se entrega como un simple archivo <code>.exe</code>. Puede distribuirse de varias formas:</p>
+<p>Un programa no siempre llega como un único archivo:</p>
 <ul>
-<li><strong>Instaladores tradicionales</strong>: <code>.msi</code>, <code>.exe</code> en Windows, <code>.deb</code>/<code>.rpm</code> en Linux.  </li>
-<li><strong>Bundling</strong>: incluir todas las dependencias dentro del paquete. Ejemplo: apps portables.  </li>
-<li><strong>Contenedores</strong>: usar Docker para que el programa siempre tenga el mismo entorno.  </li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 3h18v4H3zm1 5h16v13H4zm5.5 3a.5.5 0 0 0-.5.5V13h6v-1.5a.5.5 0 0 0-.5-.5z"/></svg></span> <strong>Instaladores</strong> → <code>.exe</code>, <code>.msi</code> (Windows), <code>.deb</code>, <code>.rpm</code> (Linux).  </li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 10.96a.985.985 0 0 1-.37-1.37L3.13 7c.11-.2.28-.34.47-.42l7.83-4.4c.16-.12.36-.18.57-.18s.41.06.57.18l7.9 4.44c.19.1.35.26.44.46l1.45 2.52c.28.48.11 1.09-.36 1.36l-1 .58v4.96c0 .38-.21.71-.53.88l-7.9 4.44c-.16.12-.36.18-.57.18s-.41-.06-.57-.18l-7.9-4.44A.99.99 0 0 1 3 16.5v-5.54c-.3.17-.68.18-1 0m10-6.81v6.7l5.96-3.35zM5 15.91l6 3.38v-6.71L5 9.21zm14 0v-3.22l-5 2.9c-.33.18-.7.17-1 .01v3.69zm-5.15-2.55 6.28-3.63-.58-1.01-6.28 3.63z"/></svg></span> <strong>Bundling</strong> → programa + dependencias (ej.: apps portables, Electron).  </li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.81 10.25c-.06-.04-.56-.43-1.64-.43-.28 0-.56.03-.84.08-.21-1.4-1.38-2.11-1.43-2.14l-.29-.17-.18.27c-.24.36-.43.77-.51 1.19-.2.8-.08 1.56.33 2.21-.49.28-1.29.35-1.46.35H2.62c-.34 0-.62.28-.62.63 0 1.15.18 2.3.58 3.38.45 1.19 1.13 2.07 2 2.61.98.6 2.59.94 4.42.94.79 0 1.61-.07 2.42-.22 1.12-.2 2.2-.59 3.19-1.16A8.3 8.3 0 0 0 16.78 16c1.05-1.17 1.67-2.5 2.12-3.65h.19c1.14 0 1.85-.46 2.24-.85.26-.24.45-.53.59-.87l.08-.24zm-17.96.99h1.76c.08 0 .16-.07.16-.16V9.5c0-.08-.07-.16-.16-.16H3.85c-.09 0-.16.07-.16.16v1.58c.01.09.07.16.16.16m2.43 0h1.76c.08 0 .16-.07.16-.16V9.5c0-.08-.07-.16-.16-.16H6.28c-.09 0-.16.07-.16.16v1.58c.01.09.07.16.16.16m2.47 0h1.75c.1 0 .17-.07.17-.16V9.5c0-.08-.06-.16-.17-.16H8.75c-.08 0-.15.07-.15.16v1.58c0 .09.06.16.15.16m2.44 0h1.77c.08 0 .15-.07.15-.16V9.5c0-.08-.06-.16-.15-.16h-1.77c-.08 0-.15.07-.15.16v1.58c0 .09.07.16.15.16M6.28 9h1.76c.08 0 .16-.09.16-.18V7.25c0-.09-.07-.16-.16-.16H6.28c-.09 0-.16.06-.16.16v1.57c.01.09.07.18.16.18m2.47 0h1.75c.1 0 .17-.09.17-.18V7.25c0-.09-.06-.16-.17-.16H8.75c-.08 0-.15.06-.15.16v1.57c0 .09.06.18.15.18m2.44 0h1.77c.08 0 .15-.09.15-.18V7.25c0-.09-.07-.16-.15-.16h-1.77c-.08 0-.15.06-.15.16v1.57c0 .09.07.18.15.18m0-2.28h1.77c.08 0 .15-.07.15-.16V5c0-.1-.07-.17-.15-.17h-1.77c-.08 0-.15.06-.15.17v1.56c0 .08.07.16.15.16m2.46 4.52h1.76c.09 0 .16-.07.16-.16V9.5c0-.08-.07-.16-.16-.16h-1.76c-.08 0-.15.07-.15.16v1.58c0 .09.07.16.15.16"/></svg></span> <strong>Contenedores</strong> → incluyen programa + librerías + mini SO (ej.: Docker).  </li>
 </ul>
 <div class="admonition example">
 <p class="admonition-title">Ejemplo cotidiano</p>
 <ul>
-<li>Un videojuego en PC → instalador clásico con recursos y librerías.  </li>
-<li>Una app en Android → archivo <code>.apk</code>.  </li>
-<li>Un servicio web moderno → dentro de un contenedor Docker.  </li>
+<li>🎮 Videojuego en PC → instalador clásico.  </li>
+<li>📱 App Android → archivo <code>.apk</code>.  </li>
+<li>🌐 Servicio web → contenedor Docker.</li>
 </ul>
 </div>
 <hr />
@@ -798,7 +936,7 @@ Ejemplo: GraalVM para Java.  </p>
       <nav class="md-footer__inner md-grid" aria-label="Pie" >
         
           
-          <a href="../concepto/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Concepto de programa informático">
+          <a href="../actividad_1_1/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Actividad 1.1">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -808,20 +946,20 @@ Ejemplo: GraalVM para Java.  </p>
                 Anterior
               </span>
               <div class="md-ellipsis">
-                Concepto de programa informático
+                Actividad 1.1
               </div>
             </div>
           </a>
         
         
           
-          <a href="../lenguajes/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Lenguajes">
+          <a href="../actividad_1_2/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Actividad 1.2">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Siguiente
               </span>
               <div class="md-ellipsis">
-                Lenguajes
+                Actividad 1.2
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -855,7 +993,7 @@ Ejemplo: GraalVM para Java.  </p>
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.tracking", "navigation.footer"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.tracking", "navigation.footer", "content.code.copy", "content.code.select"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
