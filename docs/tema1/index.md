@@ -28,4 +28,4 @@
 --- 
 
 !!! info "¿Cómo avanzar por el contenido?"
-Utiliza el índice o las flechas de navegación al final de cada página para desplazarte por los distintos apartados de este tema.
+    Utiliza el índice o las flechas de navegación al final de cada página para desplazarte por los distintos apartados de este tema.

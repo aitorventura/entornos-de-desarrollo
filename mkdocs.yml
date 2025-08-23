@@ -20,12 +20,17 @@ theme:
     - navigation.top
     - navigation.tracking
     - navigation.footer 
+    - content.code.copy
+    - content.code.select
+    
 nav:
   - Inicio: index.md
   - Tema 1:
       - Introducción: tema1/index.md
       - Concepto de programa informático: tema1/concepto.md
+      - Actividad 1.1: tema1/actividad_1_1.md
       - Código fuente, objeto y ejecutable: tema1/codigo.md
+      - Actividad 1.2: tema1/actividad_1_2.md
       - Lenguajes: tema1/lenguajes.md
       - Fases del desarrollo: tema1/fases.md
       - Herramientas: tema1/herramientas.md
@@ -43,7 +48,11 @@ markdown_extensions:
       alternate_style: true
   - pymdownx.details
   - pymdownx.inlinehilite
-  - pymdownx.highlight
+  - pymdownx.highlight:
+      anchor_linenums: true
+      linenums: true
+      auto_title: true
+      pygments_lang_class: true
   - pymdownx.mark
   - pymdownx.tasklist:
       custom_checkbox: true

@@ -49,13 +49,8 @@
 }
 .md-typeset .tabs-colored .tabbed-set .tabbed-labels > label:nth-of-type(2),
 .md-typeset .tabs-colored .tabbed-set > label:nth-of-type(2){
-  background:#d9ffef!important;  /* ámbar claro */
-  color:#388c68!important;
-}
-.md-typeset .tabs-colored .tabbed-set .tabbed-labels > label:nth-of-type(3),
-.md-typeset .tabs-colored .tabbed-set > label:nth-of-type(3){
-  background:#f9ceff!important;  /* ámbar claro */
-  color:#55165e!important;
+  background:#baffdf!important;  /* ámbar claro */
+  color:rgb(0, 101, 63)!important;
 }
 
 /* Activo (alternate_style) */
@@ -63,11 +58,7 @@
   background:#3b82f6!important; color:#fff!important;
 }
 .md-typeset .tabs-colored .tabbed-set.tabbed-alternate > input:nth-of-type(2):checked ~ .tabbed-labels > label:nth-of-type(2){
-  background:#50C878!important; color:#fff!important;
-}
-
-.md-typeset .tabs-colored .tabbed-set.tabbed-alternate > input:nth-of-type(3):checked ~ .tabbed-labels > label:nth-of-type(3){
-  background:#791f87!important; color:#fff!important;
+  background:#10b981!important; color:#fff!important;
 }
 
 /* Activo (sin alternate_style) */
@@ -76,9 +67,6 @@
 }
 .md-typeset .tabs-colored .tabbed-set > input:nth-of-type(2):checked + label{
   background:#10b981!important; color:#fff!important;
-}
-.md-typeset .tabs-colored .tabbed-set > input:nth-of-type(3):checked + label{
-  background:#791f87!important; color:#fff!important;
 }
 
 /* Borde superior del contenido activo */
