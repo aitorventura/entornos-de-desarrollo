@@ -1,0 +1,63 @@
+site_name: Entornos de desarrollo
+theme:
+  name: material
+  language: es
+  custom_dir: overrides
+  palette:
+    - scheme: default
+      primary: teal
+      accent: cyan
+      toggle:
+        icon: material/weather-night
+        name: Modo oscuro
+    - scheme: slate
+      primary: teal
+      accent: cyan
+      toggle:
+        icon: material/weather-sunny
+        name: Modo claro
+  features:
+    - navigation.top
+    - navigation.tracking
+    - navigation.footer 
+nav:
+  - Inicio: index.md
+  - Tema 1:
+      - Introducción: tema1/index.md
+      - Concepto de programa informático: tema1/concepto.md
+      - Código fuente, objeto y ejecutable: tema1/codigo.md
+      - Lenguajes: tema1/lenguajes.md
+      - Fases del desarrollo: tema1/fases.md
+      - Herramientas: tema1/herramientas.md
+      - Metodologías: tema1/metodologias.md
+
+
+markdown_extensions:
+  - md_in_html 
+  - attr_list
+  - admonition
+  - codehilite
+  - toc:
+      permalink: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.highlight
+  - pymdownx.mark
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - admonition
+  - pymdownx.superfences:
+     custom_fences:
+       - name: mermaid
+         class: mermaid
+         format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+
+extra_css:
+  - css/extra.css
+
