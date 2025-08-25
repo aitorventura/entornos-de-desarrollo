@@ -1,0 +1,1587 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../lenguajes/">
+      
+      
+        <link rel="next" href="../fases/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Actividad 1.3 - Entornos de desarrollo</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#actividad-13-estructura-basica-de-un-programa-java-desde-consola-reto" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Entornos de desarrollo" class="md-header__button md-logo" aria-label="Entornos de desarrollo" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Entornos de desarrollo
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Actividad 1.3
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="cyan"  aria-label="Modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="cyan"  aria-label="Modo Claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modo Claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Entornos de desarrollo" class="md-nav__button md-logo" aria-label="Entornos de desarrollo" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Entornos de desarrollo
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tema 1
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Tema 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Concepto de programa informático
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../actividad_1_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 1.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../codigo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Código fuente, objeto y ejecutable
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../actividad_1_2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 1.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lenguajes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lenguajes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Actividad 1.3
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 1.3
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos-de-la-actividad" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Objetivos de la actividad
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Objetivos de la actividad">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#referencia-minima-de-comandos-que-se-van-a-utilizar" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 Referencia mínima de comandos que se van a utilizar
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requisitos-previos" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 Requisitos previos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entregables-leelos-antes-de-empezar" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 Entregables (léelos ANTES de empezar)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-como-es-un-programa-java-por-dentro" class="md-nav__link">
+    <span class="md-ellipsis">
+      1) 📘 ¿Cómo es un programa Java por dentro?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-ejercicio-1-mundo" class="md-nav__link">
+    <span class="md-ellipsis">
+      2) ✍️ Ejercicio 1 — Mundo
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2) ✍️ Ejercicio 1 — Mundo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-crear-la-carpeta-y-el-archivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1. Crear la carpeta y el archivo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-compilar-y-ejecutar" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2. Compilar y ejecutar
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ejercicio-2-doce-tabla-del-12-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      3) ✍️ Ejercicio 2 — Doce (tabla del 12 × 12)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-variaciones-guiadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      4) 🔧 Variaciones guiadas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4) 🔧 Variaciones guiadas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-doce-hasta-1210" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1. Doce hasta 12×10
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-catorce-hasta-1410" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2. Catorce hasta 14×10
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-teoria-esencial-sobre-packages-e-imports" class="md-nav__link">
+    <span class="md-ellipsis">
+      5) 🧭 Teoría esencial sobre packages e imports
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-ejercicio-3-package-basico-orgentornosdemo" class="md-nav__link">
+    <span class="md-ellipsis">
+      6) ✅ Ejercicio 3 — Package básico (org.entornos.demo)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6) ✅ Ejercicio 3 — Package básico (org.entornos.demo)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-crear-la-estructura-de-carpetas" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1. Crear la estructura de carpetas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-codigo-de-appjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2. Código de App.java
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-volver-al-directorio-base-y-compilarejecutar" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3. Volver al directorio base y compilar/ejecutar
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-ejercicio-4-import-de-la-libreria-estandar" class="md-nav__link">
+    <span class="md-ellipsis">
+      7) ✅ Ejercicio 4 — Import de la librería estándar
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7) ✅ Ejercicio 4 — Import de la librería estándar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-crear-el-archivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1. Crear el archivo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-codigo-de-listanombresjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2. Código de ListaNombres.java
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-compilar-y-ejecutar" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.3. Compilar y ejecutar
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fases del desarrollo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../actividad_1_4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 1.4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../herramientas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Herramientas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../actividad_1_5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 1.5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../metodologias/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Metodologías
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos-de-la-actividad" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Objetivos de la actividad
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Objetivos de la actividad">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#referencia-minima-de-comandos-que-se-van-a-utilizar" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 Referencia mínima de comandos que se van a utilizar
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requisitos-previos" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 Requisitos previos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entregables-leelos-antes-de-empezar" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 Entregables (léelos ANTES de empezar)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-como-es-un-programa-java-por-dentro" class="md-nav__link">
+    <span class="md-ellipsis">
+      1) 📘 ¿Cómo es un programa Java por dentro?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-ejercicio-1-mundo" class="md-nav__link">
+    <span class="md-ellipsis">
+      2) ✍️ Ejercicio 1 — Mundo
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2) ✍️ Ejercicio 1 — Mundo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-crear-la-carpeta-y-el-archivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1. Crear la carpeta y el archivo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-compilar-y-ejecutar" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2. Compilar y ejecutar
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ejercicio-2-doce-tabla-del-12-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      3) ✍️ Ejercicio 2 — Doce (tabla del 12 × 12)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-variaciones-guiadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      4) 🔧 Variaciones guiadas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4) 🔧 Variaciones guiadas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-doce-hasta-1210" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1. Doce hasta 12×10
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-catorce-hasta-1410" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2. Catorce hasta 14×10
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-teoria-esencial-sobre-packages-e-imports" class="md-nav__link">
+    <span class="md-ellipsis">
+      5) 🧭 Teoría esencial sobre packages e imports
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-ejercicio-3-package-basico-orgentornosdemo" class="md-nav__link">
+    <span class="md-ellipsis">
+      6) ✅ Ejercicio 3 — Package básico (org.entornos.demo)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6) ✅ Ejercicio 3 — Package básico (org.entornos.demo)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-crear-la-estructura-de-carpetas" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1. Crear la estructura de carpetas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-codigo-de-appjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2. Código de App.java
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-volver-al-directorio-base-y-compilarejecutar" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3. Volver al directorio base y compilar/ejecutar
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-ejercicio-4-import-de-la-libreria-estandar" class="md-nav__link">
+    <span class="md-ellipsis">
+      7) ✅ Ejercicio 4 — Import de la librería estándar
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7) ✅ Ejercicio 4 — Import de la librería estándar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-crear-el-archivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1. Crear el archivo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-codigo-de-listanombresjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2. Código de ListaNombres.java
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-compilar-y-ejecutar" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.3. Compilar y ejecutar
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="actividad-13-estructura-basica-de-un-programa-java-desde-consola-reto">🧪 Actividad 1.3: Estructura básica de un programa Java (desde consola) + <strong>Reto</strong><a class="headerlink" href="#actividad-13-estructura-basica-de-un-programa-java-desde-consola-reto" title="Permanent link">&para;</a></h1>
+<hr />
+<h2 id="objetivos-de-la-actividad">🎯 Objetivos de la actividad<a class="headerlink" href="#objetivos-de-la-actividad" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Al finalizar serás capaz de…</p>
+<ul>
+<li>Reconocer la <strong>estructura mínima</strong> de un programa Java de consola.</li>
+<li>Explicar el papel del método <strong><code>main(String[] args)</code></strong>.</li>
+<li><strong>Compilar</strong> y <strong>ejecutar</strong> programas desde <strong>terminal</strong> (Ubuntu).</li>
+<li>Comprender lo esencial de <strong>paquetes</strong> (<code>package</code>) e <strong>imports</strong> de la <strong>librería estándar</strong>.</li>
+<li>Aplicar lo aprendido en un <strong>reto final</strong> con dos clases en paquetes distintos.</li>
+<li>Preparar un <strong>documento con capturas</strong> que evidencien el proceso.</li>
+</ul>
+</div>
+<hr />
+<div class="admonition tip">
+<p class="admonition-title">🖱️ ¿Puedo usar interfaz gráfica?</p>
+<p>Sí. Si tu VM tiene escritorio, <strong>puedes crear/editar archivos con el explorador y un editor gráfico</strong> (por ejemplo, <em>Gedit</em>).
+La compilación/ejecución seguirá haciéndose en <strong>terminal</strong>.</p>
+</div>
+<hr />
+<h3 id="referencia-minima-de-comandos-que-se-van-a-utilizar">📚 Referencia mínima de comandos que se van a utilizar<a class="headerlink" href="#referencia-minima-de-comandos-que-se-van-a-utilizar" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span>
+<span class="normal"><a href="#__codelineno-0-7">7</a></span>
+<span class="normal"><a href="#__codelineno-0-8">8</a></span>
+<span class="normal"><a href="#__codelineno-0-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>mkdir NOMBRE_CARPETA     → crea carpetas
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>cd NOMBRE_CARPETA        → entra en una carpeta
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>cd ..                    → sube a la carpeta anterior
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>ls                       → lista archivos de la carpeta actual
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>nano ARCHIVO.java        → edita/crea un archivo en consola
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>javac ARCHIVO.java       → compila un archivo
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a>javac -d clases RUTA.java→ compila y deja .class en la carpeta &quot;clases&quot;
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a>java NombreClase         → ejecuta si NO tiene package
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a>java -cp clases paquete.Clase  → ejecuta si SÍ tiene package
+</code></pre></div></td></tr></table></div>
+<hr />
+<h2 id="requisitos-previos">🔧 Requisitos previos<a class="headerlink" href="#requisitos-previos" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Ubuntu con <strong>JDK</strong> instalado (incluye <code>javac</code> y <code>java</code>).</li>
+<li>Editor de consola opcional: <code>nano</code> o <code>vim</code>.</li>
+</ul>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>java<span class="w"> </span>-version
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>javac<span class="w"> </span>-version
+</code></pre></div></td></tr></table></div>
+<hr />
+<h2 id="entregables-leelos-antes-de-empezar">📦 Entregables (léelos <strong>ANTES</strong> de empezar)<a class="headerlink" href="#entregables-leelos-antes-de-empezar" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Captura 1</strong> – Comprobación de <code>java</code> y <code>javac</code> en la terminal.  </li>
+<li><strong>Captura 2</strong> – Creación, <strong>compilación</strong> y <strong>ejecución</strong> de <code>Mundo.java</code>.  </li>
+<li><strong>Captura 3</strong> – Ejecución de <strong>Doce.java</strong> (tabla 12×12).  </li>
+<li><strong>Captura 4</strong> – Ejecución de <strong>Doce.java</strong> modificada (12×10).  </li>
+<li><strong>Captura 5</strong> – Ejecución de <strong>Catorce.java</strong> (14×10).  </li>
+<li><strong>Captura 6</strong> – Compilación y ejecución de <strong>App.java</strong> con <strong>package</strong> <code>org.entornos.demo</code>.  </li>
+<li><strong>Captura 7</strong> – Compilación y ejecución de <strong>ListaNombres.java</strong> con <strong>import</strong> de la librería estándar.  </li>
+<li><strong>Reto – Capturas</strong>:  </li>
+<li><strong>R1</strong>: contenido de <em>MatOps.java</em> y <em>CalculadoraApp.java</em> con tus líneas <strong><code>package</code></strong> e <strong><code>import</code></strong>.  </li>
+<li><strong>R2</strong>: compilación de <em>MatOps.java</em> y <em>CalculadoraApp.java</em>.  </li>
+<li><strong>R3</strong>: ejecución correcta de <code>org.entornos.app.CalculadoraApp</code>.  </li>
+<li><strong>R4</strong>: estructura de carpetas del reto (puedes usar <code>ls</code> en cada carpeta o <code>tree</code> si lo tienes).  </li>
+<li><strong>Conclusión breve</strong> – 6–10 líneas: qué has aprendido, dificultades y dudas.</li>
+</ol>
+<blockquote>
+<p><strong>Entrega</strong>: un único <strong>PDF</strong> con todas las capturas y comentarios.</p>
+</blockquote>
+<hr />
+<h2 id="1-como-es-un-programa-java-por-dentro">1) 📘 ¿Cómo es un programa Java por dentro?<a class="headerlink" href="#1-como-es-un-programa-java-por-dentro" title="Permanent link">&para;</a></h2>
+<p>Toda aplicación de consola en Java <strong>empieza</strong> en el método:</p>
+<div class="language-java highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li><code>public class NombreClase</code> → Define la <strong>clase</strong>. El archivo debe llamarse <strong>NombreClase.java</strong>.  </li>
+<li><code>{ … }</code> → Delimitan el <strong>bloque</strong> de la clase y del método.  </li>
+<li><code>public static void main(String[] args)</code> → Punto de <strong>entrada</strong> del programa.  </li>
+<li><code>public</code>: visible desde fuera.  </li>
+<li><code>static</code>: pertenece a la clase, no a un objeto.  </li>
+<li><code>void</code>: no devuelve valor.  </li>
+<li><code>String[] args</code>: parámetros de <strong>línea de comandos</strong> (no los usamos aquí).  </li>
+<li><code>System.out.println("…")</code> → Imprime texto en la <strong>consola</strong>.</li>
+</ul>
+<hr />
+<h2 id="2-ejercicio-1-mundo">2) ✍️ Ejercicio 1 — <strong>Mundo</strong><a class="headerlink" href="#2-ejercicio-1-mundo" title="Permanent link">&para;</a></h2>
+<p>Crea, compila y ejecuta tu primer programa.</p>
+<h3 id="21-crear-la-carpeta-y-el-archivo">2.1. Crear la carpeta y el archivo<a class="headerlink" href="#21-crear-la-carpeta-y-el-archivo" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>mkdir<span class="w"> </span>actividad_java_1
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="nb">cd</span><span class="w"> </span>actividad_java_1
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a>nano<span class="w"> </span>Mundo.java
+</code></pre></div></td></tr></table></div>
+<p>Pega este contenido y <strong>guarda</strong> (en <em>nano</em>: <code>Ctrl+O</code>, <code>Enter</code>, <code>Ctrl+X</code>):</p>
+<div class="language-java copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span>
+<span class="normal"><a href="#__codelineno-4-4">4</a></span>
+<span class="normal"><a href="#__codelineno-4-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Mundo</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;¡Hola mundo!&quot;</span><span class="p">);</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="22-compilar-y-ejecutar">2.2. Compilar y ejecutar<a class="headerlink" href="#22-compilar-y-ejecutar" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>javac<span class="w"> </span>Mundo.java
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>java<span class="w"> </span>Mundo
+</code></pre></div></td></tr></table></div>
+<p>✅ <strong>Deberías ver:</strong></p>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>¡Hola mundo!
+</code></pre></div></td></tr></table></div>
+<blockquote>
+<p>📸 <strong>Captura 2</strong> – pantalla con compilación y ejecución.</p>
+</blockquote>
+<hr />
+<h2 id="3-ejercicio-2-doce-tabla-del-12-12">3) ✍️ Ejercicio 2 — <strong>Doce</strong> (tabla del 12 × 12)<a class="headerlink" href="#3-ejercicio-2-doce-tabla-del-12-12" title="Permanent link">&para;</a></h2>
+<p>Crea un programa que imprima la <strong>tabla del 12</strong> hasta 12×12.</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>nano<span class="w"> </span>Doce.java
+</code></pre></div></td></tr></table></div>
+<div class="language-java copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span>
+<span class="normal"><a href="#__codelineno-8-3">3</a></span>
+<span class="normal"><a href="#__codelineno-8-4">4</a></span>
+<span class="normal"><a href="#__codelineno-8-5">5</a></span>
+<span class="normal"><a href="#__codelineno-8-6">6</a></span>
+<span class="normal"><a href="#__codelineno-8-7">7</a></span>
+<span class="normal"><a href="#__codelineno-8-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Doce</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Tabla del 12 (hasta 12 x 12):&quot;</span><span class="p">);</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">12</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;12 x &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="mi">12</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">i</span><span class="p">));</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Compila y ejecuta:</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<span class="normal"><a href="#__codelineno-9-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>javac<span class="w"> </span>Doce.java
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a>java<span class="w"> </span>Doce
+</code></pre></div></td></tr></table></div>
+<blockquote>
+<p>📸 <strong>Captura 3</strong> – salida con la tabla 12×12.</p>
+</blockquote>
+<hr />
+<h2 id="4-variaciones-guiadas">4) 🔧 Variaciones guiadas<a class="headerlink" href="#4-variaciones-guiadas" title="Permanent link">&para;</a></h2>
+<h3 id="41-doce-hasta-1210">4.1. <em>Doce</em> hasta 12×10<a class="headerlink" href="#41-doce-hasta-1210" title="Permanent link">&para;</a></h3>
+<p>Edita <strong>Doce.java</strong> para que llegue solo a <strong>10</strong> y vuelve a compilar/ejecutar:</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a>javac<span class="w"> </span>Doce.java
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a>java<span class="w"> </span>Doce
+</code></pre></div></td></tr></table></div>
+<blockquote>
+<p>📸 <strong>Captura 4</strong> – tabla del 12 <strong>hasta 10</strong>.</p>
+</blockquote>
+<h3 id="42-catorce-hasta-1410">4.2. <em>Catorce</em> hasta 14×10<a class="headerlink" href="#42-catorce-hasta-1410" title="Permanent link">&para;</a></h3>
+<p>Crea un nuevo archivo <strong>Catorce.java</strong> (igual que Doce, pero con <strong>14</strong>):</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>nano<span class="w"> </span>Catorce.java
+</code></pre></div></td></tr></table></div>
+<div class="language-java copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
+<span class="normal"><a href="#__codelineno-12-2">2</a></span>
+<span class="normal"><a href="#__codelineno-12-3">3</a></span>
+<span class="normal"><a href="#__codelineno-12-4">4</a></span>
+<span class="normal"><a href="#__codelineno-12-5">5</a></span>
+<span class="normal"><a href="#__codelineno-12-6">6</a></span>
+<span class="normal"><a href="#__codelineno-12-7">7</a></span>
+<span class="normal"><a href="#__codelineno-12-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Catorce</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Tabla del 14 (hasta 14 x 10):&quot;</span><span class="p">);</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;14 x &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="mi">14</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">i</span><span class="p">));</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Compila y ejecuta:</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
+<span class="normal"><a href="#__codelineno-13-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a>javac<span class="w"> </span>Catorce.java
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a>java<span class="w"> </span>Catorce
+</code></pre></div></td></tr></table></div>
+<blockquote>
+<p>📸 <strong>Captura 5</strong> – salida con la tabla 14×10.</p>
+</blockquote>
+<hr />
+<h2 id="5-teoria-esencial-sobre-packages-e-imports">5) 🧭 Teoría esencial sobre <strong>packages</strong> e <strong>imports</strong><a class="headerlink" href="#5-teoria-esencial-sobre-packages-e-imports" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Idea clave</p>
+<ul>
+<li>Un <strong>package</strong> es un <strong>nombre de carpeta</strong> que agrupa clases relacionadas.<br />
+<code>package a.b.c;</code> ⇒ la clase está dentro de <code>a/b/c/</code>  </li>
+<li>Un <strong>import</strong> permite usar <strong>clases</strong> de otros packages (por ejemplo, de la <strong>librería estándar</strong> de Java).</li>
+</ul>
+</div>
+<ul>
+<li><strong>Regla 1:</strong> La <strong>primera línea</strong> del archivo puede ser <code>package …;</code> y <strong>debe coincidir</strong> con las carpetas donde guardas el <code>.java</code>.  </li>
+<li><strong>Regla 2:</strong> Para ejecutar una clase con package, debes indicar el <strong>nombre completo</strong> (por ejemplo, <code>org.entornos.demo.App</code>) y usar <code>-cp</code> (classpath) para decir dónde están las clases compiladas.</li>
+</ul>
+<hr />
+<h2 id="6-ejercicio-3-package-basico-orgentornosdemo">6) ✅ Ejercicio 3 — <strong>Package básico</strong> (<code>org.entornos.demo</code>)<a class="headerlink" href="#6-ejercicio-3-package-basico-orgentornosdemo" title="Permanent link">&para;</a></h2>
+<p>Vamos a crear una clase con <strong>package</strong> paso a paso, usando <strong>comandos simples</strong>.</p>
+<h3 id="61-crear-la-estructura-de-carpetas">6.1. Crear la estructura de carpetas<a class="headerlink" href="#61-crear-la-estructura-de-carpetas" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-14-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-14-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-14-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-14-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-14-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-14-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-14-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-14-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-14-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a>mkdir<span class="w"> </span>actividad_java_1_paquetes
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="nb">cd</span><span class="w"> </span>actividad_java_1_paquetes
+<a id="__codelineno-14-3" name="__codelineno-14-3"></a>
+<a id="__codelineno-14-4" name="__codelineno-14-4"></a>mkdir<span class="w"> </span>org
+<a id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="nb">cd</span><span class="w"> </span>org
+<a id="__codelineno-14-6" name="__codelineno-14-6"></a>mkdir<span class="w"> </span>entornos
+<a id="__codelineno-14-7" name="__codelineno-14-7"></a><span class="nb">cd</span><span class="w"> </span>entornos
+<a id="__codelineno-14-8" name="__codelineno-14-8"></a>mkdir<span class="w"> </span>demo
+<a id="__codelineno-14-9" name="__codelineno-14-9"></a><span class="nb">cd</span><span class="w"> </span>demo
+<a id="__codelineno-14-10" name="__codelineno-14-10"></a>nano<span class="w"> </span>App.java
+</code></pre></div></td></tr></table></div>
+<h3 id="62-codigo-de-appjava">6.2. Código de <code>App.java</code><a class="headerlink" href="#62-codigo-de-appjava" title="Permanent link">&para;</a></h3>
+<div class="language-java copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
+<span class="normal"><a href="#__codelineno-15-2">2</a></span>
+<span class="normal"><a href="#__codelineno-15-3">3</a></span>
+<span class="normal"><a href="#__codelineno-15-4">4</a></span>
+<span class="normal"><a href="#__codelineno-15-5">5</a></span>
+<span class="normal"><a href="#__codelineno-15-6">6</a></span>
+<span class="normal"><a href="#__codelineno-15-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">org.entornos.demo</span><span class="p">;</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2"></a>
+<a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">App</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;App con package org.entornos.demo&quot;</span><span class="p">);</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="63-volver-al-directorio-base-y-compilarejecutar">6.3. Volver al directorio base y compilar/ejecutar<a class="headerlink" href="#63-volver-al-directorio-base-y-compilarejecutar" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span>
+<span class="normal"><a href="#__codelineno-16-2">2</a></span>
+<span class="normal"><a href="#__codelineno-16-3">3</a></span>
+<span class="normal"><a href="#__codelineno-16-4">4</a></span>
+<span class="normal"><a href="#__codelineno-16-5">5</a></span>
+<span class="normal"><a href="#__codelineno-16-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="nb">cd</span><span class="w"> </span>..
+<a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="nb">cd</span><span class="w"> </span>..
+<a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="nb">cd</span><span class="w"> </span>..
+<a id="__codelineno-16-4" name="__codelineno-16-4"></a>mkdir<span class="w"> </span>clases
+<a id="__codelineno-16-5" name="__codelineno-16-5"></a>javac<span class="w"> </span>-d<span class="w"> </span>clases<span class="w"> </span>org/entornos/demo/App.java
+<a id="__codelineno-16-6" name="__codelineno-16-6"></a>java<span class="w"> </span>-cp<span class="w"> </span>clases<span class="w"> </span>org.entornos.demo.App
+</code></pre></div></td></tr></table></div>
+<blockquote>
+<p>📸 <strong>Captura 6</strong> – muestra la compilación y la ejecución de <code>App</code>.</p>
+<p>💡 <strong>Opcional:</strong> si tienes <code>tree</code>, puedes mostrar la estructura de carpetas.</p>
+</blockquote>
+<hr />
+<h2 id="7-ejercicio-4-import-de-la-libreria-estandar">7) ✅ Ejercicio 4 — <strong>Import</strong> de la librería estándar<a class="headerlink" href="#7-ejercicio-4-import-de-la-libreria-estandar" title="Permanent link">&para;</a></h2>
+<p>Ahora, en el <strong>mismo package</strong>, creamos otra clase que <strong>importe</strong> una clase de la librería estándar (<code>java.util.ArrayList</code>).</p>
+<h3 id="71-crear-el-archivo">7.1. Crear el archivo<a class="headerlink" href="#71-crear-el-archivo" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span>
+<span class="normal"><a href="#__codelineno-17-2">2</a></span>
+<span class="normal"><a href="#__codelineno-17-3">3</a></span>
+<span class="normal"><a href="#__codelineno-17-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="nb">cd</span><span class="w"> </span>org
+<a id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="nb">cd</span><span class="w"> </span>entornos
+<a id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="nb">cd</span><span class="w"> </span>demo
+<a id="__codelineno-17-4" name="__codelineno-17-4"></a>nano<span class="w"> </span>ListaNombres.java
+</code></pre></div></td></tr></table></div>
+<h3 id="72-codigo-de-listanombresjava">7.2. Código de <code>ListaNombres.java</code><a class="headerlink" href="#72-codigo-de-listanombresjava" title="Permanent link">&para;</a></h3>
+<div class="language-java copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-18-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-18-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-18-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-18-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-18-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-18-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-18-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-18-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-18-10">10</a></span>
+<span class="normal"><a href="#__codelineno-18-11">11</a></span>
+<span class="normal"><a href="#__codelineno-18-12">12</a></span>
+<span class="normal"><a href="#__codelineno-18-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">org.entornos.demo</span><span class="p">;</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2"></a>
+<a id="__codelineno-18-3" name="__codelineno-18-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.ArrayList</span><span class="p">;</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4"></a>
+<a id="__codelineno-18-5" name="__codelineno-18-5"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ListaNombres</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7"></a><span class="w">        </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">nombres</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8"></a><span class="w">        </span><span class="n">nombres</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Ana&quot;</span><span class="p">);</span>
+<a id="__codelineno-18-9" name="__codelineno-18-9"></a><span class="w">        </span><span class="n">nombres</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Luis&quot;</span><span class="p">);</span>
+<a id="__codelineno-18-10" name="__codelineno-18-10"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Nombres: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nombres</span><span class="p">);</span>
+<a id="__codelineno-18-11" name="__codelineno-18-11"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Total: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nombres</span><span class="p">.</span><span class="na">size</span><span class="p">());</span>
+<a id="__codelineno-18-12" name="__codelineno-18-12"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-18-13" name="__codelineno-18-13"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="73-compilar-y-ejecutar">7.3. Compilar y ejecutar<a class="headerlink" href="#73-compilar-y-ejecutar" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span>
+<span class="normal"><a href="#__codelineno-19-2">2</a></span>
+<span class="normal"><a href="#__codelineno-19-3">3</a></span>
+<span class="normal"><a href="#__codelineno-19-4">4</a></span>
+<span class="normal"><a href="#__codelineno-19-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="nb">cd</span><span class="w"> </span>..
+<a id="__codelineno-19-2" name="__codelineno-19-2"></a><span class="nb">cd</span><span class="w"> </span>..
+<a id="__codelineno-19-3" name="__codelineno-19-3"></a><span class="nb">cd</span><span class="w"> </span>..
+<a id="__codelineno-19-4" name="__codelineno-19-4"></a>javac<span class="w"> </span>-d<span class="w"> </span>clases<span class="w"> </span>org/entornos/demo/ListaNombres.java
+<a id="__codelineno-19-5" name="__codelineno-19-5"></a>java<span class="w"> </span>-cp<span class="w"> </span>clases<span class="w"> </span>org.entornos.demo.ListaNombres
+</code></pre></div></td></tr></table></div>
+<blockquote>
+<p>📸 <strong>Captura 7</strong> – compilación y ejecución de <code>ListaNombres</code>.</p>
+</blockquote>
+<hr />
+<h1 id="reto-final-dentro-de-la-actividad-13">🧪 Reto final (dentro de la Actividad 1.3)<a class="headerlink" href="#reto-final-dentro-de-la-actividad-13" title="Permanent link">&para;</a></h1>
+<h2 id="dos-clases-packages-e-imports-tu-te-encargas-de-la-estructura-y-los-comandos">Dos clases, <strong>packages</strong> e <strong>imports</strong> — <em>tú te encargas de la estructura y los comandos</em><a class="headerlink" href="#dos-clases-packages-e-imports-tu-te-encargas-de-la-estructura-y-los-comandos" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Importante:</strong> En este reto <strong>no</strong> se proporcionan comandos (<code>mkdir</code>, <code>javac</code>, <code>java</code>, etc.).<br />
+Debes crear carpetas, escribir los <code>package</code> e <code>import</code>, <strong>compilar</strong> y <strong>ejecutar</strong> como ya aprendiste arriba.</p>
+</blockquote>
+<h3 id="objetivo-del-reto">🎯 Objetivo del reto<a class="headerlink" href="#objetivo-del-reto" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Colocar clases en <strong>paquetes</strong> correctos creando su <strong>estructura de carpetas</strong>.</li>
+<li>Escribir las sentencias <strong><code>package</code></strong> e <strong><code>import</code></strong> necesarias.</li>
+<li>Compilar y ejecutar desde terminal usando <strong>classpath</strong> correctamente.</li>
+</ul>
+<h3 id="estructura-objetivo-tu-la-creas">🗂️ Estructura objetivo (tú la creas)<a class="headerlink" href="#estructura-objetivo-tu-la-creas" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1">1</a></span>
+<span class="normal"><a href="#__codelineno-20-2">2</a></span>
+<span class="normal"><a href="#__codelineno-20-3">3</a></span>
+<span class="normal"><a href="#__codelineno-20-4">4</a></span>
+<span class="normal"><a href="#__codelineno-20-5">5</a></span>
+<span class="normal"><a href="#__codelineno-20-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a>actividad_java_1_reto/
+<a id="__codelineno-20-2" name="__codelineno-20-2"></a>├── org/
+<a id="__codelineno-20-3" name="__codelineno-20-3"></a>│   └── entornos/
+<a id="__codelineno-20-4" name="__codelineno-20-4"></a>│       ├── app/      (CalculadoraApp.java)
+<a id="__codelineno-20-5" name="__codelineno-20-5"></a>│       └── util/     (MatOps.java)
+<a id="__codelineno-20-6" name="__codelineno-20-6"></a>└── clases/           (salida de compilación .class)
+</code></pre></div></td></tr></table></div>
+<h3 id="clase-1-libreria-matopsjava">🧩 Clase 1 (librería): <code>MatOps.java</code><a class="headerlink" href="#clase-1-libreria-matopsjava" title="Permanent link">&para;</a></h3>
+<p><strong>Ruta sugerida</strong>: <code>org/entornos/util/MatOps.java</code><br />
+👉 Añade <strong>arriba</strong> la sentencia <code>package …</code> correcta.</p>
+<div class="language-java copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1">1</a></span>
+<span class="normal"><a href="#__codelineno-21-2">2</a></span>
+<span class="normal"><a href="#__codelineno-21-3">3</a></span>
+<span class="normal"><a href="#__codelineno-21-4">4</a></span>
+<span class="normal"><a href="#__codelineno-21-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MatOps</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">suma</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">mult</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">resta</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-21-5" name="__codelineno-21-5"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="clase-2-app-calculadoraappjava">🚀 Clase 2 (app): <code>CalculadoraApp.java</code><a class="headerlink" href="#clase-2-app-calculadoraappjava" title="Permanent link">&para;</a></h3>
+<p><strong>Ruta sugerida</strong>: <code>org/entornos/app/CalculadoraApp.java</code><br />
+👉 Añade <strong>arriba</strong> el <code>package …</code> correcto e <strong>importa</strong> <code>MatOps</code>.</p>
+<div class="language-java copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-22-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-22-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-22-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-22-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-22-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-22-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-22-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-22-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-22-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CalculadoraApp</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Operando con &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; y &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">);</span>
+<a id="__codelineno-22-6" name="__codelineno-22-6"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Suma = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">MatOps</span><span class="p">.</span><span class="na">suma</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">));</span>
+<a id="__codelineno-22-7" name="__codelineno-22-7"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Resta = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">MatOps</span><span class="p">.</span><span class="na">resta</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">));</span>
+<a id="__codelineno-22-8" name="__codelineno-22-8"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Multiplicación = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">MatOps</span><span class="p">.</span><span class="na">mult</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">));</span>
+<a id="__codelineno-22-9" name="__codelineno-22-9"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-22-10" name="__codelineno-22-10"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="lo-que-debes-hacer-tu">✅ Lo que debes hacer tú<a class="headerlink" href="#lo-que-debes-hacer-tu" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Crear la <strong>estructura de carpetas</strong> indicada.  </li>
+<li>Escribir los <strong><code>package</code></strong> correctos en los dos archivos.  </li>
+<li>Escribir el <strong><code>import</code></strong> necesario en <code>CalculadoraApp.java</code>.  </li>
+<li>Compilar ambas clases dejando los <code>.class</code> en <code>clases/</code>.  </li>
+<li>Ejecutar la aplicación (<code>org.entornos.app.CalculadoraApp</code>).  </li>
+<li>Capturar <strong>R1–R4</strong> (ver Entregables arriba).</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Errores comunes</p>
+<ul>
+<li><em><code>class not found</code></em> al ejecutar → revisa <strong>classpath</strong> y el <strong>nombre cualificado</strong>.  </li>
+<li>Falla la compilación → comprueba que el <strong>package coincide con la ruta</strong> de carpetas.  </li>
+<li>No encuentra <code>MatOps</code> → falta el <strong>import</strong> o no has compilado en el orden correcto.</li>
+</ul>
+</div>
+<hr />
+<h2 id="entrega-final">📝 Entrega final<a class="headerlink" href="#entrega-final" title="Permanent link">&para;</a></h2>
+<p>Sube a Aules un <strong>PDF único</strong> con:<br />
+- Las <strong>capturas 1–7</strong> de los ejercicios guiados.<br />
+- Las <strong>capturas R1–R4</strong> del reto final.<br />
+- Una <strong>conclusión</strong> (6–10 líneas) explicando qué aprendiste, dificultades y dudas.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pie" >
+        
+          
+          <a href="../lenguajes/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Lenguajes">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Lenguajes
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../fases/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Fases del desarrollo">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              <div class="md-ellipsis">
+                Fases del desarrollo
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      
+<p style="margin: 0 auto; text-align: center; font-size: 0.7rem;">
+  © 2025 Aitor Ventura — 
+  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">
+    Licencia CC BY-NC-SA 4.0
+  </a>
+</p>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.tracking", "navigation.footer", "content.code.copy", "content.code.select"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  </body>
+</html>
