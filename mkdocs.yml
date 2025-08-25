@@ -1,4 +1,5 @@
 site_name: Entornos de desarrollo
+
 theme:
   name: material
   language: es
@@ -15,14 +16,14 @@ theme:
       accent: cyan
       toggle:
         icon: material/weather-sunny
-        name: Modo claro
+        name: Modo Claro
   features:
     - navigation.top
     - navigation.tracking
-    - navigation.footer 
+    - navigation.footer
     - content.code.copy
     - content.code.select
-    
+
 nav:
   - Inicio: index.md
   - Tema 1:
@@ -32,23 +33,24 @@ nav:
       - Código fuente, objeto y ejecutable: tema1/codigo.md
       - Actividad 1.2: tema1/actividad_1_2.md
       - Lenguajes: tema1/lenguajes.md
+      - Actividad 1.3: tema1/actividad_1_3.md
       - Fases del desarrollo: tema1/fases.md
+      - Actividad 1.4: tema1/actividad_1_4.md
       - Herramientas: tema1/herramientas.md
+      - Actividad 1.5: tema1/actividad_1_5.md
       - Metodologías: tema1/metodologias.md
 
-
 markdown_extensions:
-  - md_in_html 
+  - md_in_html
   - attr_list
-  - admonition
-  - codehilite
+  - admonition             # (solo una vez)
   - toc:
       permalink: true
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.details
   - pymdownx.inlinehilite
-  - pymdownx.highlight:
+  - pymdownx.highlight:    # usa este, NO 'codehilite'
       anchor_linenums: true
       linenums: true
       auto_title: true
@@ -56,17 +58,14 @@ markdown_extensions:
   - pymdownx.mark
   - pymdownx.tasklist:
       custom_checkbox: true
-  - admonition
-  - pymdownx.superfences:
-     custom_fences:
-       - name: mermaid
-         class: mermaid
-         format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.superfences:  # habilita Mermaid como fence
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
-
 extra_css:
   - css/extra.css
-
