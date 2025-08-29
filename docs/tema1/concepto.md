@@ -3,6 +3,13 @@
 
 # 👨‍💻 1. Concepto de programa informático
 
+![Concepto de programa informático](diapositivas/concepto.pdf){ type=application/pdf style="width:100%;min-height:80vh" }
+
+!!!info "Descarga de diapositivas"
+    [Descarga las diapositivas](diapositivas/concepto.pdf){target="_blank" rel="noopener"}
+
+
+
 ---
 
 ## 1.1 Definición y propósito

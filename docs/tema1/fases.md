@@ -3,6 +3,12 @@
 
 # 🧭 4. Fases del desarrollo del software
 
+![Fases del desarrollo del software](diapositivas/fases.pdf){ type=application/pdf style="width:100%;min-height:80vh" }
+
+!!!info "Descarga de diapositivas"
+    [Descarga las diapositivas](diapositivas/fases.pdf){target="_blank" rel="noopener"}
+
+
 ---
 
 ## 🗺️ Visión general del ciclo
@@ -12,12 +18,12 @@ Antes de escribir código, un producto pasa por varias **fases conectadas**. Cad
 ```mermaid
 flowchart TB
   A[Idea / Necesidad] --> B["4.1 Análisis de requisitos"]
-  B --> C["4.2 Diseño (arquitectura + UML)"]
-  C --> D["4.3 Implementación (código + revisiones)"]
-  D --> E["4.4 Pruebas (unitarias, integración, sistema, aceptación)"]
-  E --> G["4.5 Despliegue (on‑prem, nube, móvil)"]
-  G --> H["4.6 Operación y mantenimiento (observabilidad)"]
-  H --> I["4.7 Documentación y gestión del conocimiento"]
+  B --> C["4.2 Diseño "]
+  C --> D["4.3 Implementación"]
+  D --> E["4.4 Pruebas "]
+  E --> G["4.5 Despliegue "]
+  G --> H["4.6 Operación y mantenimiento "]
+  H --> I["4.7 Documentación"]
   I -->|feedback| B
 ```
 
@@ -179,7 +185,7 @@ flowchart TD
 
 ---
 
-## 4.3 Implementación: estilos de código, revisiones, *branching*
+## 4.3 Implementación: estilos de código, revisiones
 
 **Objetivo:** convertir el diseño en **código que funciona** y que cualquier compañero pueda **leer y mantener**.
 
@@ -745,4 +751,123 @@ Impactos positivos/negativos, riesgos, seguimiento.
 | **4.5 Despliegue** | Build aprobado; configuración/secretos; instrucciones | Versión publicada; *changelog*/notas; rollback verificado; métricas iniciales |
 | **4.6 Operación** | Versión desplegada; configuración; *dashboards* | Alertas configuradas; paneles; *runbooks*; mejoras y parches |
 | **4.7 Documentación** | Código/procesos; decisiones; SLO/SLI; estándares | Documentación MVD publicada y versionada (README, ADR, API, operación) |
+
+
+## 📚 4.8 Metodologías de ciclo de vida 
+
+---
+
+Este apartado resume los **principales enfoques** para organizar las fases del desarrollo. No sustituyen a las fases vistas (análisis → diseño → implementación → pruebas → despliegue → operación → documentación), sino que **ordenan cómo iteramos, entregamos y controlamos el riesgo**.
+
+!!! tip "Idea clave"
+    Elige el modelo según **incertidumbre**, **riesgo**, **regulación** y **necesidad de feedback**. Puedes combinar enfoques (modelos **híbridos**).
+
+---
+
+### 💧 Cascada (Waterfall)
+
+**Secuencial**: cada fase se completa antes de pasar a la siguiente.
+
+```mermaid
+flowchart LR
+  A[Análisis] --> B[Diseño]
+  B --> C[Implementación]
+  C --> D[Pruebas]
+  D --> E[Despliegue]
+  E --> F[Operación]
+```
+
+**Ventajas**
+
+- Claridad de **entregables** y **fechas**.
+- Útil con **requisitos muy estables** y en **entornos regulados**.
+
+**Riesgos**
+
+- **Feedback tardío**; cambios costosos.
+- Puede ocultar supuestos hasta muy tarde.
+
+**Cuándo**: software con **alto grado de certeza**, contratos cerrados, normativa estricta.
+
+---
+
+### ✅ Modelo en V
+
+Extiende cascada con **trazabilidad entre fases y pruebas**: cada etapa de definición tiene su **pareja de verificación**.
+
+```mermaid
+flowchart LR
+  subgraph Definición
+  A1[Requisitos] --> A2[Diseño de sistema] --> A3[Diseño detallado]
+  end
+  subgraph Verificación
+  B3[Pruebas unitarias] --> B2[Pruebas de integración] --> B1[Pruebas de sistema/aceptación]
+  end
+  A3 -.-> B3
+  A2 -.-> B2
+  A1 -.-> B1
+```
+
+**Ventajas**: planificación de pruebas desde el principio, **trazabilidad** clara.
+
+**Cuándo**: sectores **críticos** (automoción, aeroespacial, sanitario) o exigencia formal de **verificación/validación**.
+
+---
+
+### 🧱 Incremental
+
+Se entrega el producto en **bloques funcionales** (incrementos) que **suman valor**.
+
+**Ventajas**
+
+- Valor **temprano** y priorizable.
+- Reduce el riesgo de “gran entrega final”.
+
+**Riesgos**
+
+- Puede acumular **deuda de arquitectura** si no se piensa a medio plazo.
+
+**Cuándo**: alcance grande que puede **partirse en funcionalidades**.
+
+---
+
+### 🔁 Iterativo
+
+Se repiten ciclos completos (**analizar→diseñar→construir→probar**) para **refinar** el mismo producto.
+
+**Diferencia con incremental**: 
+
+- **Incremental** = añado **nuevas piezas**.
+- **Iterativo** = **mejora** la **misma pieza** en vueltas sucesivas.
+
+**Cuándo**: requisitos **difusos** o descubrimiento de UX.
+
+---
+
+### 🌀 Espiral (Boehm)
+
+Ciclos que **ponen el riesgo en el centro**. En cada vuelta: 1) **objetivos** y alternativas, 2) **análisis de riesgos** y mitigación (prototipos), 3) **desarrollo y validación**, 4) **planificación** de la siguiente vuelta.
+
+```mermaid
+flowchart TD
+  P[Planificar objetivos] --> R[Identificar/mitigar riesgos]
+  R --> D[Desarrollar y validar]
+  D --> N[Plan siguiente iteración]
+  N --> P
+```
+
+**Ventajas**: gestión **explícita** de riesgos; combina prototipado y entregas.
+
+**Riesgos**: complejidad de gestión; requiere experiencia.
+
+**Cuándo**: proyectos **innovadores** o de **alto riesgo** técnico/negocio.
+
+---
+
+### ⚡ Enfoques ágiles (Scrum, Kanban, XP)
+
+Los veremos en la última parte del tema.
+
+---
+
 

@@ -1,6 +1,11 @@
 # 📝 3. Lenguajes de programación y paradigmas
 <a id="lenguajes"></a>
 
+![Lenguajes de programación y paradigmas](diapositivas/lenguajes.pdf){ type=application/pdf style="width:100%;min-height:80vh" }
+
+!!!info "Descarga de diapositivas"
+    [Descarga las diapositivas](diapositivas/lenguajes.pdf){target="_blank" rel="noopener"}
+
 ---
 
 ## 3.1 Criterios de clasificación de lenguajes

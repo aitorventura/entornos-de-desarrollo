@@ -6,6 +6,6 @@
 ---
 
 ## ▶️ ¿Qué tienes que hacer?
-- **Cuestionario online** disponible en el **Aula Virtual de la asignatura**: Actividad 1.4.
+- **Cuestionario online** disponible en el **Aula Virtual de la asignatura**: Actividad 1.5.
 
 > Consulta en el Aula Virtual las **fechas de apertura y cierre** del cuestionario.

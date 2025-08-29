@@ -27,7 +27,7 @@ theme:
 nav:
   - Inicio: index.md
   - Tema 1:
-      - Introducción: tema1/index.md
+      - Tema 1 - Introducción: tema1/index.md
       - Concepto de programa informático: tema1/concepto.md
       - Actividad 1.1: tema1/actividad_1_1.md
       - Código fuente, objeto y ejecutable: tema1/codigo.md
@@ -39,6 +39,9 @@ nav:
       - Herramientas: tema1/herramientas.md
       - Actividad 1.5: tema1/actividad_1_5.md
       - Metodologías: tema1/metodologias.md
+      - Uso de Jira: tema1/uso-jira.md
+      - Actividad 1.6: tema1/actividad_1_6.md
+
 
 markdown_extensions:
   - md_in_html
@@ -69,3 +72,7 @@ markdown_extensions:
 
 extra_css:
   - css/extra.css
+  
+plugins:
+  - search
+  - mkdocs-pdf

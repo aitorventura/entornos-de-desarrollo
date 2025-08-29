@@ -101,3 +101,28 @@
 [data-md-color-scheme="slate"] .only-dark {
   display: block;
 }
+
+
+:root{
+  --shot-accent: #1abc9c;   /* turquesa */
+  --shot-ring: 1px;         /* grosor del anillo (puedes 0.75px si quieres aún más fino) */
+  --shot-radius: 12px;      /* redondeo sutil */
+}
+
+/* Aplica en el contenido (Material for MkDocs) */
+.md-typeset img:not(.no-ring){
+  display:block;
+  margin:12px auto;
+  max-width:100%;
+  border-radius: var(--shot-radius);
+  box-shadow:
+    0 0 0 var(--shot-ring) var(--shot-accent),   /* anillo turquesa */
+    0 8px 20px rgba(0,0,0,.06);                  /* sombra suave */
+}
+
+/* Opcional: ajusta sombra en modo oscuro */
+[data-md-color-scheme="slate"] .md-typeset img:not(.no-ring){
+  box-shadow:
+    0 0 0 var(--shot-ring) var(--shot-accent),
+    0 8px 20px rgba(0,0,0,.24);
+}

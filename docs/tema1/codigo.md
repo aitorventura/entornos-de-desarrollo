@@ -2,6 +2,11 @@
 
 # 💻 2. Código fuente, objeto y ejecutable
 
+![Código fuente, objeto y ejecutable](diapositivas/codigo.pdf){ type=application/pdf style="width:100%;min-height:80vh" }
+
+!!!info "Descarga de diapositivas"
+    [Descarga las diapositivas](diapositivas/codigo.pdf){target="_blank" rel="noopener"}
+
 ---
 
 ## 2.1 Del código fuente al binario: ¿cómo llega un programa a la CPU?
