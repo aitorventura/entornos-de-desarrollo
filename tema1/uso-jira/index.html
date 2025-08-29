@@ -1,0 +1,1797 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../metodologias/">
+      
+      
+        <link rel="next" href="../actividad_1_6/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Uso de Jira - Entornos de desarrollo</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#0-conceptos-clave-antes-de-tocar-jira" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Entornos de desarrollo" class="md-header__button md-logo" aria-label="Entornos de desarrollo" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Entornos de desarrollo
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Uso de Jira
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="cyan"  aria-label="Modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="cyan"  aria-label="Modo Claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modo Claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Entornos de desarrollo" class="md-nav__button md-logo" aria-label="Entornos de desarrollo" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Entornos de desarrollo
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tema 1
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Tema 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tema 1 - Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Concepto de programa informático
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../actividad_1_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 1.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../codigo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Código fuente, objeto y ejecutable
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../actividad_1_2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 1.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lenguajes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lenguajes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../actividad_1_3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 1.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fases del desarrollo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../actividad_1_4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 1.4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../herramientas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Herramientas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../actividad_1_5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 1.5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../metodologias/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Metodologías
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Uso de Jira
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Uso de Jira
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0-conceptos-clave-antes-de-tocar-jira" class="md-nav__link">
+    <span class="md-ellipsis">
+      0) Conceptos clave (antes de tocar Jira)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="0) Conceptos clave (antes de tocar Jira)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#roles-scrum-muy-breve" class="md-nav__link">
+    <span class="md-ellipsis">
+      Roles Scrum (muy breve)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#epica-historia-tarea-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      Épica, Historia, Tarea, Error
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-crear-cuenta-y-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      1) Crear cuenta y proyecto
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-orientacion-de-la-interfaz" class="md-nav__link">
+    <span class="md-ellipsis">
+      2) Orientación de la interfaz
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-preparar-el-producto-antes-del-sprint-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      3) Preparar el producto (antes del Sprint 1)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3) Preparar el producto (antes del Sprint 1)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#30-miniejemplo-contexto" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.0 Mini‑ejemplo (contexto)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#31-crear-epicas-por-que-y-como" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Crear Épicas (por qué y cómo)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-crear-historias-de-usuario-por-que-y-como" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Crear Historias de usuario (por qué y cómo)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-priorizar-y-estimar-el-product-backlog" class="md-nav__link">
+    <span class="md-ellipsis">
+      4) Priorizar y estimar el Product Backlog
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4) Priorizar y estimar el Product Backlog">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-priorizar-por-que-y-como" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Priorizar (por qué y cómo)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-estimar-con-puntos-de-historia" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 Estimar con Puntos de historia
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-planificar-el-sprint-1-en-backlog" class="md-nav__link">
+    <span class="md-ellipsis">
+      5) Planificar el Sprint 1 (en Backlog)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-iniciar-y-trabajar-el-sprint-tablero" class="md-nav__link">
+    <span class="md-ellipsis">
+      6) Iniciar y trabajar el sprint (Tablero)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6) Iniciar y trabajar el sprint (Tablero)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-arrancar" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1 Arrancar
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-flujo-y-wip" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2 Flujo y WIP
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-seguimiento-del-sprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      7) Seguimiento del sprint
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-cerrar-el-sprint-y-aprender" class="md-nav__link">
+    <span class="md-ellipsis">
+      8) Cerrar el sprint y aprender
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-plantillas-rapidas-para-copiarpegar" class="md-nav__link">
+    <span class="md-ellipsis">
+      9) Plantillas rápidas (para copiar/pegar)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen-del-proceso-scrum-en-jira" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resumen del proceso Scrum en Jira
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Resumen del proceso Scrum en Jira">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#product-backlog-backlog" class="md-nav__link">
+    <span class="md-ellipsis">
+      Product Backlog → (Backlog)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sprint-planning-meeting-backlog" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sprint Planning Meeting → (Backlog)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sprint-backlog-backlog-tablero" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sprint Backlog → (Backlog + Tablero)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sprint-14-weeks-ejecucion-tablero" class="md-nav__link">
+    <span class="md-ellipsis">
+      SPRINT 1–4 WEEKS (Ejecución) → (Tablero)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#daily-scrum-cada-24-h-tablero" class="md-nav__link">
+    <span class="md-ellipsis">
+      Daily Scrum (cada 24 h) → (Tablero)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finished-work-tablero-releases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finished Work → (Tablero + Releases)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sprint-review-sprint-retrospective-informes-backlog" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sprint Review + Sprint Retrospective → (Informes + Backlog)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tras-finalizar-el-sprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tras finalizar el Sprint
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../actividad_1_6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 1.6
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0-conceptos-clave-antes-de-tocar-jira" class="md-nav__link">
+    <span class="md-ellipsis">
+      0) Conceptos clave (antes de tocar Jira)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="0) Conceptos clave (antes de tocar Jira)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#roles-scrum-muy-breve" class="md-nav__link">
+    <span class="md-ellipsis">
+      Roles Scrum (muy breve)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#epica-historia-tarea-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      Épica, Historia, Tarea, Error
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-crear-cuenta-y-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      1) Crear cuenta y proyecto
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-orientacion-de-la-interfaz" class="md-nav__link">
+    <span class="md-ellipsis">
+      2) Orientación de la interfaz
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-preparar-el-producto-antes-del-sprint-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      3) Preparar el producto (antes del Sprint 1)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3) Preparar el producto (antes del Sprint 1)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#30-miniejemplo-contexto" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.0 Mini‑ejemplo (contexto)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#31-crear-epicas-por-que-y-como" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Crear Épicas (por qué y cómo)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-crear-historias-de-usuario-por-que-y-como" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Crear Historias de usuario (por qué y cómo)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-priorizar-y-estimar-el-product-backlog" class="md-nav__link">
+    <span class="md-ellipsis">
+      4) Priorizar y estimar el Product Backlog
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4) Priorizar y estimar el Product Backlog">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-priorizar-por-que-y-como" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Priorizar (por qué y cómo)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-estimar-con-puntos-de-historia" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 Estimar con Puntos de historia
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-planificar-el-sprint-1-en-backlog" class="md-nav__link">
+    <span class="md-ellipsis">
+      5) Planificar el Sprint 1 (en Backlog)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-iniciar-y-trabajar-el-sprint-tablero" class="md-nav__link">
+    <span class="md-ellipsis">
+      6) Iniciar y trabajar el sprint (Tablero)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6) Iniciar y trabajar el sprint (Tablero)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-arrancar" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1 Arrancar
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-flujo-y-wip" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2 Flujo y WIP
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-seguimiento-del-sprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      7) Seguimiento del sprint
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-cerrar-el-sprint-y-aprender" class="md-nav__link">
+    <span class="md-ellipsis">
+      8) Cerrar el sprint y aprender
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-plantillas-rapidas-para-copiarpegar" class="md-nav__link">
+    <span class="md-ellipsis">
+      9) Plantillas rápidas (para copiar/pegar)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen-del-proceso-scrum-en-jira" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resumen del proceso Scrum en Jira
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Resumen del proceso Scrum en Jira">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#product-backlog-backlog" class="md-nav__link">
+    <span class="md-ellipsis">
+      Product Backlog → (Backlog)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sprint-planning-meeting-backlog" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sprint Planning Meeting → (Backlog)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sprint-backlog-backlog-tablero" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sprint Backlog → (Backlog + Tablero)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sprint-14-weeks-ejecucion-tablero" class="md-nav__link">
+    <span class="md-ellipsis">
+      SPRINT 1–4 WEEKS (Ejecución) → (Tablero)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#daily-scrum-cada-24-h-tablero" class="md-nav__link">
+    <span class="md-ellipsis">
+      Daily Scrum (cada 24 h) → (Tablero)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finished-work-tablero-releases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finished Work → (Tablero + Releases)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sprint-review-sprint-retrospective-informes-backlog" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sprint Review + Sprint Retrospective → (Informes + Backlog)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tras-finalizar-el-sprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tras finalizar el Sprint
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Uso de Jira</h1>
+
+<div><p>📘 Guía de uso de <strong>Jira</strong> con <strong>Scrum</strong></p>
+<blockquote>
+<p>Objetivo: que puedas <strong>organizar, planificar y ejecutar</strong> Scrum en <strong>Jira Cloud</strong> con seguridad.  </p>
+</blockquote>
+<hr>
+<h2 id="0-conceptos-clave-antes-de-tocar-jira">0) Conceptos clave (antes de tocar Jira)<a class="headerlink" href="#0-conceptos-clave-antes-de-tocar-jira" title="Permanent link">¶</a></h2>
+<h3 id="roles-scrum-muy-breve">Roles Scrum (muy breve)<a class="headerlink" href="#roles-scrum-muy-breve" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Product Owner (PO):</strong> prioriza valor y cuida el <strong>Product Backlog</strong>.  </li>
+<li><strong>Scrum Master (SM):</strong> ayuda a que el marco funcione; elimina impedimentos.  </li>
+<li><strong>Equipo (Desarrollo/Producto):</strong> multidisciplinar; construye el <strong>Incremento</strong>.</li>
+</ul>
+<h3 id="epica-historia-tarea-error">Épica, Historia, Tarea, Error<a class="headerlink" href="#epica-historia-tarea-error" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Épica:</strong> bloque <strong>grande</strong> de valor que agrupa varias historias (p. ej., <em>“Pago”</em>). Dura <strong>varios sprints</strong>.  </li>
+<li><strong>Historia de usuario:</strong> necesidad <strong>desde la perspectiva de la persona usuaria</strong>. Debe caber <strong>en un sprint</strong>.  </li>
+<li><strong>Tarea (Task):</strong> trabajo técnico o de soporte que <strong>no es</strong> visto por la persona usuaria (p. ej., “configurar CI”).  </li>
+<li><strong>Error (Bug):</strong> defecto que hay que corregir.</li>
+</ul>
+<p><strong>Plantilla de Historia (fácil de recordar)</strong>  </p>
+<blockquote>
+<p><em>Como</em> <code>&lt;tipo de persona&gt;</code>, <em>quiero</em> <code>&lt;acción&gt;</code>, <em>para</em> <code>&lt;beneficio&gt;</code>.</p>
+</blockquote>
+<p><strong>Criterios de aceptación (Given/When/Then, en castellano)</strong> </p>
+<ul>
+<li><strong>Dado</strong> un contexto inicial (<strong>Given</strong>)  </li>
+<li><strong>Cuando</strong> hago una acción (<strong>When</strong>)  </li>
+<li><strong>Entonces</strong> ocurre un resultado observable (<strong>Then</strong>)</li>
+</ul>
+<p><strong>Ejemplo</strong><br>
+</p><div class="language-gherkin highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Gherkin</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nf">Historia: Recuperar contraseña</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nf">  Como cliente</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="nf">  Quiero restablecer mi contraseña</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="nf">  Para recuperar el acceso si la olvido</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="nf">Criterios de aceptación:</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="nf">  </span><span class="k">Dado </span><span class="nf">que estoy en "</span><span class="s">Olvidé mi contraseña</span><span class="nf">"</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="nf">  </span><span class="k">Cuando </span><span class="nf">introduzco mi email y confirmo</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="nf">  </span><span class="k">Entonces </span><span class="nf">recibo un enlace válido </span><span class="s">30</span><span class="nf"> minutos</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="nf">  </span><span class="k">Y </span><span class="nf">al usarlo puedo establecer una contraseña nueva</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>Story points (puntos de historia)</strong>  </p>
+<ul>
+<li>Medida <strong>relativa</strong> de esfuerzo/complejidad (no horas) que se estima que cuesta una tarea. Se suele utilizar la escala de Fibonacci: 1–2–3–5–8.  </li>
+<li>Se estiman con <strong>Planning Poker</strong> y sirven para calcular <strong>capacidad</strong> del sprint.</li>
+</ul>
+<hr>
+<h2 id="1-crear-cuenta-y-proyecto">1) Crear cuenta y proyecto<a class="headerlink" href="#1-crear-cuenta-y-proyecto" title="Permanent link">¶</a></h2>
+<p>1) Entra en <strong>atlassian.com</strong> y crea tu cuenta.<br>
+2) Barra lateral → <strong>Proyectos</strong> → <strong>Crear proyecto</strong>.<br>
+3) Elige la plantilla <strong>Scrum</strong> → <strong>Usar plantilla</strong>.<br>
+4) Tipo: <strong>Administrado por el equipo</strong> (más simple).<br>
+5) Nombra el proyecto y pulsa <strong>Crear</strong>.</p>
+<p><strong>📷 Capturas de selección de plantilla y confirmación del proyecto</strong>
+<img src="../img/scrum/1.png" alt="Selector de plantilla" style="width: 90%;"></p>
+<p><img src="../img/scrum/2.png" alt="Confirmar" style="width: 90%;"></p>
+<hr>
+<h2 id="2-orientacion-de-la-interfaz">2) Orientación de la interfaz<a class="headerlink" href="#2-orientacion-de-la-interfaz" title="Permanent link">¶</a></h2>
+<ul>
+<li>
+<p><strong>Barra superior: (zona roja)</strong> <code>Buscar</code> 🔎 · <code>Crear</code> ➕ · <code>Notificaciones</code> 🔔 · <code>Ayuda</code> ❔ · <code>Configuración</code> ⚙️ · <code>Perfil</code> 👤</p>
+</li>
+<li>
+<p><strong>Barra lateral (zona azul):</strong> <code>Para ti</code>, <code>Recientes</code>, <code>Marcados como favoritos</code>, <code>Aplicaciones</code>, <code>Planes</code>, <code>Proyectos</code>, <code>Filtros</code>, <code>Paneles</code>, <code>Metas</code>, <code>Equipos</code>, <code>Personalizar barra lateral</code>.</p>
+</li>
+<li>
+<p><strong>Pestañas del proyecto (zona verde):</strong> <code>Resumen</code>, <code>Cronograma</code>, <code>Backlog</code>, <code>Tablero</code>, <code>Calendario</code>, <code>Lista</code>, <code>Formularios</code>, <code>Metas</code>, <code>Todas las actividades</code>, <code>Código</code>, <code>Más</code>.</p>
+</li>
+</ul>
+<p><strong>📷 Captura de la interfaz</strong>
+<img src="../img/scrum/3.png" alt="Interfaz" style="width: 100%;"></p>
+<hr>
+<h2 id="3-preparar-el-producto-antes-del-sprint-1">3) Preparar el producto (antes del Sprint 1)<a class="headerlink" href="#3-preparar-el-producto-antes-del-sprint-1" title="Permanent link">¶</a></h2>
+<h3 id="30-miniejemplo-contexto">3.0 Mini‑ejemplo (contexto)<a class="headerlink" href="#30-miniejemplo-contexto" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Producto:</strong> app para <strong>gestionar adopciones</strong>.  </li>
+<li>
+<p><strong>Roles:</strong>  </p>
+<ul>
+<li><strong>Adoptante</strong>: busca animales, envía solicitud, firma adopción.  </li>
+<li><strong>Voluntariado</strong>: publica fichas, gestiona solicitudes, coordina visitas.  </li>
+<li><strong>Coordinación</strong>: aprueba adopciones y seguimiento post‑adopción.</li>
+</ul>
+</li>
+<li>
+<p><strong>Objetivo del primer ciclo:</strong> que una persona <strong>vea la ficha de un animal</strong> y <strong>envíe una solicitud</strong>.</p>
+</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">¿Por qué definir el ejemplo?</p>
+<p>Porque aclara quién usa el sistema y qué <strong>resultado</strong> buscamos en el primer Sprint. Evita historias genéricas o técnicas sin valor directo.</p>
+</div>
+<hr>
+<h3 id="31-crear-epicas-por-que-y-como">3.1 Crear <strong>Épicas</strong> (por qué y cómo)<a class="headerlink" href="#31-crear-epicas-por-que-y-como" title="Permanent link">¶</a></h3>
+<p><strong>Qué es una épica:</strong> un <strong>bloque grande de valor</strong> que agrupa varias historias relacionadas.<br>
+<strong>¿Por qué crear épicas?</strong>  </p>
+<ul>
+<li>Organizan el <strong>Product Backlog</strong> en <strong>áreas claras</strong> (evita el caos).  </li>
+<li>En <strong><code>Cronograma</code></strong> dan una <strong>línea de tiempo</strong> legible para semanas/meses.  </li>
+<li>Ayudan a <strong>comunicar</strong> objetivos a perfiles no técnicos.</li>
+</ul>
+<p><strong>Cómo</strong><br>
+1. Ir a <strong><code>Cronograma</code></strong> → <strong><code>Crear épica</code></strong>.<br>
+2. Poner <strong>nombre + descripción breve de valor</strong>.<br>
+3. (Opcional) Añadir <strong>fecha objetivo</strong> y <strong>dependencias</strong>.</p>
+<p><strong>Épicas sugeridas (adopciones)</strong>  </p>
+<ul>
+<li><code>Registro y perfil de adoptante</code>  </li>
+<li><code>Gestión de animales</code> (fichas, fotos, estados)  </li>
+<li><code>Búsqueda y solicitudes</code>  </li>
+<li><code>Evaluación y visitas</code>  </li>
+<li><code>Adopción y contrato</code>  </li>
+<li><code>Seguimiento post‑adopción</code></li>
+<li><code>Donaciones</code> <em>(opcional)</em></li>
+</ul>
+<p><strong>📷 Cronograma con épicas creadas</strong></p>
+<p><img src="../img/scrum/4.png" alt="Cronograma con épicas creadas" style="display:block; margin:0 auto; width: 100%;"></p>
+<div class="admonition warning">
+<p class="admonition-title">No te olvides</p>
+<p>Hay que crear <strong>todas las épicas necesarias</strong> para abarcar toda la funcionalidad del software a desarrollar.</p>
+</div>
+<hr>
+<h3 id="32-crear-historias-de-usuario-por-que-y-como">3.2 Crear <strong>Historias de usuario</strong> (por qué y cómo)<a class="headerlink" href="#32-crear-historias-de-usuario-por-que-y-como" title="Permanent link">¶</a></h3>
+<p><strong>Qué es una historia:</strong> una necesidad <strong>desde la perspectiva de la persona usuaria</strong> que debe caber <strong>en un sprint</strong>.  </p>
+<p><strong>¿Por qué historias y no tareas técnicas?</strong> Porque describen <strong>valor</strong> observable; las tareas técnicas van como <strong>Subtareas</strong> para mantener <strong>trazabilidad</strong>.</p>
+<p><strong>Plantilla (simple):</strong></p>
+<blockquote>
+<p><em>Como</em> <code>&lt;tipo de persona&gt;</code>, <em>quiero</em> <code>&lt;acción&gt;</code>, <em>para</em> <code>&lt;beneficio&gt;</code>.</p>
+</blockquote>
+<p><strong>Cómo añadir</strong>  </p>
+<ol>
+<li>Ir a <strong><code>Backlog</code></strong> → <strong><code>Crear</code></strong> → <strong>Historia</strong>.  </li>
+<li>Rellenar <strong>Título</strong> y <strong>Descripción</strong> con la <strong>plantilla</strong> y <strong>criterios</strong>.  </li>
+<li>Completar <strong>Épica</strong>, <strong>Etiquetas</strong> (<code>ux</code>, <code>api</code>, <code>mobile</code>…), <strong>Puntos de historia</strong> (si ya se estimó).</li>
+</ol>
+<p><strong>Ejemplos (épica “Búsqueda y solicitudes”)</strong></p>
+<p><strong>Historia A — Enviar solicitud desde la ficha</strong>
+</p><div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>Como adoptante
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>Quiero enviar una solicitud desde la ficha de un animal
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>Para que el equipo valore mi candidatura
+</code></pre></div></td></tr></table></div>
+Criterios:
+<div class="language-gherkin highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Gherkin</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">Dado </span><span class="nf">que estoy en la ficha de "</span><span class="s">Luna</span><span class="nf">"</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="k">Cuando </span><span class="nf">pulso "</span><span class="s">Solicitar adopción</span><span class="nf">" y envío mis datos obligatorios</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="k">Entonces </span><span class="nf">veo un mensaje de confirmación</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="k">Y </span><span class="nf">el voluntariado recibe la solicitud en el panel de "</span><span class="s">Solicitudes</span><span class="nf">"</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>Historia B — Ver ficha con fotos y estado</strong>
+</p><div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>Como adoptante
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>Quiero ver la ficha completa (edad, tamaño, carácter, fotos)
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a>Para decidir si encaja con mi hogar
+</code></pre></div></td></tr></table></div>
+Criterios:
+<div class="language-gherkin highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Gherkin</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">Dado </span><span class="nf">que abro la ficha de un animal adoptable</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="k">Entonces </span><span class="nf">veo nombre, edad, raza/tamaño, estado, descripción y al menos </span><span class="s">3</span><span class="nf"> fotos</span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition warning">
+<p class="admonition-title">Si una historia no cabe en un sprint</p>
+<p><strong>Divídela</strong> (p. ej., primero <em>enviar solicitud</em>, después <em>adjuntar documentación</em>).</p>
+</div>
+<p><strong>📷 Creación y configuración de historias en el Backlog</strong></p>
+<p><img src="../img/scrum/5.png" alt="Historias" style="display:block; margin:0 auto; width: 80%;"></p>
+<p><img src="../img/scrum/6.png" alt="Historia modificada" style="display:block; margin:0 auto; width: 80%;"></p>
+<p><img src="../img/scrum/7.png" alt="Historia modificada 2" style="display:block; margin:0 auto; width: 80%;"></p>
+<div class="admonition warning">
+<p class="admonition-title">No te olvides</p>
+<p>Hay que crear <strong>todas las historias de usuario</strong> para abarcar toda la funcionalidad del software a desarrollar.</p>
+</div>
+<hr>
+<h2 id="4-priorizar-y-estimar-el-product-backlog">4) Priorizar y <strong>estimar</strong> el Product Backlog<a class="headerlink" href="#4-priorizar-y-estimar-el-product-backlog" title="Permanent link">¶</a></h2>
+<h3 id="41-priorizar-por-que-y-como">4.1 Priorizar (por qué y cómo)<a class="headerlink" href="#41-priorizar-por-que-y-como" title="Permanent link">¶</a></h3>
+<p>Priorizar = <strong>entregar antes lo valioso</strong> y reducir riesgo. Ordena por:</p>
+<ul>
+<li><strong>Valor</strong> para adoptantes/voluntariado</li>
+<li><strong>Riesgo/Incógnita</strong> (lo incierto se aborda pronto)</li>
+<li><strong>Dependencias</strong> (orden lógico)</li>
+<li><strong>Esfuerzo</strong> (si hay empates, empieza por la más pequeña)</li>
+</ul>
+<p><strong>En Jira:</strong> en <code>Backlog</code>, arrastra historias; lo más importante <strong>arriba</strong>.</p>
+<p><strong>Matriz (ejemplo app adopciones)</strong></p>
+<table>
+<thead>
+<tr>
+<th>Historia (Épica)</th>
+<th>Valor</th>
+<th style="text-align: right;">Riesgo</th>
+<th style="text-align: right;">Esfuerzo (pts)</th>
+<th>¿Prioridad?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ver ficha con fotos</strong> (Gestión de animales)</td>
+<td>Alto</td>
+<td style="text-align: right;">Bajo</td>
+<td style="text-align: right;">3</td>
+<td>✅ Alta</td>
+</tr>
+<tr>
+<td><strong>Enviar solicitud</strong> (Búsqueda y solicitudes)</td>
+<td>Alto</td>
+<td style="text-align: right;">Medio</td>
+<td style="text-align: right;">5</td>
+<td>✅ Alta</td>
+</tr>
+<tr>
+<td><strong>Listado/Búsqueda</strong> (Búsqueda y solicitudes)</td>
+<td>Medio</td>
+<td style="text-align: right;">Medio</td>
+<td style="text-align: right;">5</td>
+<td>Media</td>
+</tr>
+<tr>
+<td><strong>Panel de solicitudes</strong> (Evaluación y visitas)</td>
+<td>Medio</td>
+<td style="text-align: right;">Medio</td>
+<td style="text-align: right;">8</td>
+<td>Media</td>
+</tr>
+<tr>
+<td><strong>Adjuntar documentos</strong> (Búsqueda y solicitudes)</td>
+<td>Medio</td>
+<td style="text-align: right;">Medio</td>
+<td style="text-align: right;">5</td>
+<td>Media</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Selección de tareas</p>
+<blockquote>
+<p>Resultado: para el <strong>Sprint 1</strong> nos quedamos con <strong>Ver ficha con fotos (3 pts)</strong> y <strong>Enviar solicitud (5 pts)</strong>. Total aproximado: <strong>8 pts</strong> (ajusta según vuestra capacidad real).</p>
+</blockquote>
+</div>
+<hr>
+<h3 id="42-estimar-con-puntos-de-historia">4.2 Estimar con <strong>Puntos de historia</strong><a class="headerlink" href="#42-estimar-con-puntos-de-historia" title="Permanent link">¶</a></h3>
+<ul>
+<li>Medida <strong>relativa</strong> (no horas). Escala típica: <strong>1, 2, 3, 5, 8</strong>.  </li>
+<li>Técnica: <strong>Planning Poker</strong> (proponer → debatir → acordar).  </li>
+<li>Los puntos se asignan a la <strong>historia</strong>, no a las sub‑tareas.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Regla práctica</p>
+<p>Si vuestra velocidad media ronda <strong>~18 puntos</strong>, no planifiquéis <strong>35</strong> para el sprint: saldrá caro en trabajo arrastrado.</p>
+<p>En el ejemplo anterior se han seleccionado 8.</p>
+<blockquote>
+<p>Como equipo de trabajo, con el tiempo y la experiencia sabréis cuántos puntos de historias de usuario podréis abarcar en un sprint. </p>
+</blockquote>
+</div>
+<hr>
+<h2 id="5-planificar-el-sprint-1-en-backlog">5) Planificar el <strong>Sprint 1</strong> (en Backlog)<a class="headerlink" href="#5-planificar-el-sprint-1-en-backlog" title="Permanent link">¶</a></h2>
+<ol>
+<li>En <code>Backlog</code> → <strong>Crear sprint</strong>.  </li>
+<li>Arrastra <strong>historias</strong> hasta vuestra <strong>capacidad</strong>.  </li>
+<li>Define el <strong>Objetivo de sprint (resultado, no tareas)</strong>:</li>
+<li><strong>Ejemplo:</strong> “Permitir <strong>ver la ficha</strong> de un animal con fotos y <strong>enviar una solicitud</strong> desde la web.”</li>
+<li>Define la <strong>duración</strong> del Sprint.</li>
+<li>Añade <strong>Subtareas técnicas</strong> <em>dentro de cada historia</em> (UI, API, pruebas, contenido).</li>
+</ol>
+<p><strong>Modelo de Objetivo (copia/pega)</strong>
+</p><div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span>
+<span class="normal"><a href="#__codelineno-5-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>Resultado: &lt;qué cambia para la persona usuaria&gt;
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>Señal de éxito: &lt;métrica/umbral&gt;
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a>Historias: &lt;Jira-123&gt;, &lt;Jira-124&gt;
+</code></pre></div></td></tr></table></div>
+<p><strong>Subtareas sugeridas (Historia “Enviar solicitud”)</strong></p>
+<ul>
+<li>UI: formulario y validación básica</li>
+<li>API: endpoint POST /solicitudes</li>
+<li>Base de datos: esquema y tabla “solicitudes”</li>
+<li>QA: casos de prueba (criterios Given/When/Then)</li>
+</ul>
+<p><strong>📷 Creación y configuración del Sprint</strong></p>
+<p><img src="../img/scrum/8.png" alt="Tablero" style="display:block; margin:0 auto; width: 80%;"></p>
+<p><img src="../img/scrum/9.png" alt="Modificación Sprint" style="display:block; margin:0 auto; width: 80%;"></p>
+<p><img src="../img/scrum/10.png" alt="Creación subtareas" style="display:block; margin:0 auto; width: 80%;"></p>
+<p><img src="../img/scrum/11.png" alt="Subtareas creadas" style="display:block; margin:0 auto; width: 80%;"></p>
+<hr>
+<h2 id="6-iniciar-y-trabajar-el-sprint-tablero">6) Iniciar y trabajar el sprint (Tablero)<a class="headerlink" href="#6-iniciar-y-trabajar-el-sprint-tablero" title="Permanent link">¶</a></h2>
+<h3 id="61-arrancar">6.1 Arrancar<a class="headerlink" href="#61-arrancar" title="Permanent link">¶</a></h3>
+<p>Pulsa <strong>Iniciar sprint</strong> → ve a <strong>Tablero</strong>.</p>
+<h3 id="62-flujo-y-wip">6.2 Flujo y WIP<a class="headerlink" href="#62-flujo-y-wip" title="Permanent link">¶</a></h3>
+<p>Columnas simples: <strong><code>Por hacer</code> → <code>En curso</code> → <code>Revisar/QA</code> → <code>Hecho</code></strong>(Si no aparece alguna columna añadela)  </p>
+<p>WIP acordado: <strong>En curso ≤ 3</strong>, <strong>Revisar/QA ≤ 2</strong> (Recuerda que es importante establecer un máximo por columna).</p>
+<div class="admonition tip">
+<p class="admonition-title">Para ver las subtareas</p>
+<p>Para ver en el tablero las subtareas tendrás que cambiar el modo de vista de Grupo a Subtarea.</p>
+<p><img src="../img/scrum/12.png" alt="Tablero" style="display:block; margin:0 auto; width: 90%;"></p>
+</div>
+<p><strong>Políticas mínimas</strong></p>
+<ul>
+<li>A <strong>En curso</strong> ⇒ cumple <strong>DoR</strong> + hay <strong>capacidad</strong>.  </li>
+<li>A <strong>Revisar/QA</strong> ⇒ <strong>PR</strong> abierto + <strong>tests</strong> en verde + <strong>lint</strong> ok.  </li>
+<li>A <strong>Hecho</strong> ⇒ cumple <strong>DoD</strong> (terminado <strong>de verdad</strong>).</li>
+</ul>
+<h2 id="7-seguimiento-del-sprint">7) Seguimiento del sprint<a class="headerlink" href="#7-seguimiento-del-sprint" title="Permanent link">¶</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Durante el Sprint</p>
+<p>Podrás modificar el <strong>estado</strong> de una tarea y qué persona del grupo de trabajo la tiene <strong>asignada</strong>.</p>
+<ul>
+<li>Para cambiar el estado de una tarea arrastra la tarea en el tablero.</li>
+<li>Para asignar a un miembro del equipo, entra en la tarea y modifica <strong>Persona asignada</strong> o selecciona el icono de la persona y elige.</li>
+</ul>
+<p><img src="../img/scrum/13.png" alt="Tablero modificado" style="display:block; margin:0 auto; width: 90%;"></p>
+<p><strong>Daily</strong>: Recuerda que cada día se ha de hacer una reunión de unos 15' para hablar sobre el estado de las tareas, dificultades, etc.</p>
+</div>
+<hr>
+<h2 id="8-cerrar-el-sprint-y-aprender">8) Cerrar el sprint y aprender<a class="headerlink" href="#8-cerrar-el-sprint-y-aprender" title="Permanent link">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">¿Cuándo cerrar el Sprint?</p>
+<p>Recuerda que un sprint tiene una duración, se tiene que cerrar al finalizar el plazo de tiempo, NO cuando las tareas se hayan finalizado.</p>
+<p>Si se ha realizado una buena planificación y estimación de las tareas debería haber dado tiempo a finalizarlas todas.</p>
+</div>
+<ol>
+<li>En <strong>Tablero</strong> → <strong>Completar sprint</strong>.  </li>
+<li>
+<p>Lo <strong>pendiente</strong>: mover a <strong>siguiente sprint</strong> o al <strong>Backlog</strong>. Dependerá de si las tareas que no te ha dado tiempo a hacer quieres hacerlas en el siguiente Sprint o quieres dejarlas en el Backlog por si hay otras tareas más prioritarias. Lo habitual es finalizarlas en el siguiente Sprint.</p>
+</li>
+<li>
+<p><strong>Review</strong>: demo funcional de las historias “Ver ficha” y “Enviar solicitud”.  </p>
+<ul>
+<li>Si el voluntariado necesita más campos, crea <strong>nuevas historias</strong> o ajusta las actuales.  </li>
+</ul>
+</li>
+<li>
+<p><strong>Retrospectiva</strong>: acordad <strong>1 mejora concreta</strong> para el siguiente sprint.  </p>
+<ul>
+<li>Ej.: “Definir datos de prueba comunes” o “Limitar <code>En curso</code> a 3 de verdad”.</li>
+</ul>
+</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Si durante la Demo...</p>
+<p>Si durante la demo u otro momento aparece un Bug (error) podéis crear una nueva tara de tipo Bug para solucionarlo en el siguiente Sprint, o en el Sprint actual si sigue en curso.</p>
+<p><img src="../img/scrum/15.png" alt="Crear bug" style="display:block; margin:0 auto; width: 90%;"></p>
+<p><img src="../img/scrum/16.png" alt="Bug en tablero" style="display:block; margin:0 auto; width: 90%;"></p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Los siguientes puntos</p>
+<p>Como ya estudiamos en Scrum, los dos puntos anteriores hacen referencia a dos de las reuniones que se realizan durante el proceso.</p>
+</div>
+<hr>
+<h2 id="9-plantillas-rapidas-para-copiarpegar">9) Plantillas rápidas (para copiar/pegar)<a class="headerlink" href="#9-plantillas-rapidas-para-copiarpegar" title="Permanent link">¶</a></h2>
+<p><strong>Historia de usuario</strong>
+</p><div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span>
+<span class="normal"><a href="#__codelineno-6-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>Como &lt;tipo de persona&gt;
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a>Quiero &lt;acción&gt;
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a>Para &lt;beneficio&gt;
+</code></pre></div></td></tr></table></div>
+<p><strong>Criterios (Given/When/Then)</strong>
+</p><div class="language-gherkin highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Gherkin</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span>
+<span class="normal"><a href="#__codelineno-7-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="k">Dado </span><span class="nv">&lt;contexto&gt;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="k">Cuando </span><span class="nv">&lt;acción&gt;</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="k">Entonces </span><span class="nv">&lt;resultado medible&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>Objetivo de sprint</strong>
+</p><div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span>
+<span class="normal"><a href="#__codelineno-8-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a>Resultado: &lt;impacto para la persona usuaria&gt;
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a>Señal de éxito: &lt;métrica/umbral&gt;
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a>Historias: &lt;Jira-123&gt;, &lt;Jira-124&gt;
+</code></pre></div></td></tr></table></div>
+<h2 id="resumen-del-proceso-scrum-en-jira">Resumen del proceso Scrum en <strong>Jira</strong><a class="headerlink" href="#resumen-del-proceso-scrum-en-jira" title="Permanent link">¶</a></h2>
+<p><img src="../img/scrum/14.png" alt="Proceso Scrum" style="display:block; margin:0 auto; width: 90%;"></p>
+<blockquote>
+<p>De izquierda a derecha como en la imagen: qué ocurre y <strong>dónde</strong> hacerlo en <strong>Jira Cloud</strong>.</p>
+</blockquote>
+<h3 id="product-backlog-backlog">Product Backlog → <em>(Backlog)</em><a class="headerlink" href="#product-backlog-backlog" title="Permanent link">¶</a></h3>
+<ul>
+<li>Crear <strong>Épicas</strong> y <strong>Historias</strong>; vincular historia ↔ épica.</li>
+<li>Añadir criterios en Given/When/Then en la <strong>Descripción</strong>; adjuntar diseños/evidencias.</li>
+<li><strong>Ordenar</strong> arrastrando por valor/risgo/dependencias; etiquetar (<code>ux</code>, <code>api</code>, etc.).</li>
+<li>Estimar con <strong>Story points</strong> y mostrarlos en la tarjeta.</li>
+<li>Refinamiento continuo aquí; dividir historias grandes antes de planificar.</li>
+</ul>
+<h3 id="sprint-planning-meeting-backlog">Sprint Planning Meeting → <em>(Backlog)</em><a class="headerlink" href="#sprint-planning-meeting-backlog" title="Permanent link">¶</a></h3>
+<ul>
+<li><code>Crear sprint</code> y <strong>arrastrar</strong> sólo lo que cabe según <strong>velocidad</strong> (apóyate en <strong>Velocity</strong> de sprints previos).</li>
+<li>Escribir el <strong>Objetivo de Sprint</strong> en la cabecera del sprint.</li>
+<li>Fijar <strong>duración</strong> (1–4 semanas).</li>
+<li>Dentro de cada historia, crear <strong>Subtareas</strong> (UI/API/DB/QA).</li>
+</ul>
+<h3 id="sprint-backlog-backlog-tablero">Sprint Backlog → <em>(Backlog + Tablero)</em><a class="headerlink" href="#sprint-backlog-backlog-tablero" title="Permanent link">¶</a></h3>
+<ul>
+<li>El <strong>Sprint Backlog</strong> es el conjunto de historias ya dentro del sprint.</li>
+<li>Comprobar que cada historia tiene épica, puntos, criterios y subtareas.</li>
+<li>Asignaciones iniciales si procede; crear <strong>Quick filters</strong> (p. ej., <em>Mis issues</em>, <em>Bloqueadas</em>).</li>
+</ul>
+<h3 id="sprint-14-weeks-ejecucion-tablero">SPRINT 1–4 WEEKS (Ejecución) → <em>(Tablero)</em><a class="headerlink" href="#sprint-14-weeks-ejecucion-tablero" title="Permanent link">¶</a></h3>
+<ul>
+<li>Trabajar en el <strong>Tablero</strong> moviendo tarjetas: <code>Por hacer → En curso → Revisar/QA → Hecho</code>.</li>
+<li>Respetar <strong>WIP</strong> acordado.</li>
+<li>Enlazar <strong>branch/PR</strong> desde el panel <em>Development</em> del issue.</li>
+</ul>
+<h3 id="daily-scrum-cada-24-h-tablero">Daily Scrum (cada 24 h) → <em>(Tablero)</em><a class="headerlink" href="#daily-scrum-cada-24-h-tablero" title="Permanent link">¶</a></h3>
+<ul>
+<li>Abrir el <strong>Tablero</strong> y actualizar estados/asignaciones <strong>en vivo</strong>.</li>
+<li>Marcar impedimentos con <strong>Flag</strong> (⚑) y, si procede, crear issue <em>Bloqueo</em>.</li>
+<li>Reequilibrar trabajo con <strong>Quick filters</strong> y límites de WIP.</li>
+</ul>
+<h3 id="finished-work-tablero-releases">Finished Work → <em>(Tablero + Releases)</em><a class="headerlink" href="#finished-work-tablero-releases" title="Permanent link">¶</a></h3>
+<ul>
+<li>Mover a <strong>Hecho</strong> sólo con DoD cumplido.</li>
+<li>Asignar <strong>Fix version</strong> si usáis <code>Releases</code> para agrupar entregas.</li>
+<li>Adjuntar evidencias (capturas, resultados de pruebas) antes de cerrar.</li>
+</ul>
+<h3 id="sprint-review-sprint-retrospective-informes-backlog">Sprint Review + Sprint Retrospective → <em>(Informes + Backlog)</em><a class="headerlink" href="#sprint-review-sprint-retrospective-informes-backlog" title="Permanent link">¶</a></h3>
+<ul>
+<li>Convertir feedback en <strong>nuevas historias</strong> en <code>Backlog</code> y vincularlas a su épica.</li>
+<li>Retro: crear 1–2 <strong>tareas de mejora de proceso</strong> (etiqueta <code>mejora-proceso</code>) y planificarlas en el próximo sprint.</li>
+</ul>
+<h3 id="tras-finalizar-el-sprint">Tras finalizar el Sprint<a class="headerlink" href="#tras-finalizar-el-sprint" title="Permanent link">¶</a></h3>
+<ul>
+<li>Vuelta a empezar desde el principio para enfrentarse al segundo sprint</li>
+</ul></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pie" >
+        
+          
+          <a href="../metodologias/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Metodologías">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Metodologías
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../actividad_1_6/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Actividad 1.6">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              <div class="md-ellipsis">
+                Actividad 1.6
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      
+<p style="margin: 0 auto; text-align: center; font-size: 0.7rem;">
+  © 2025 Aitor Ventura — 
+  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">
+    Licencia CC BY-NC-SA 4.0
+  </a>
+</p>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.tracking", "navigation.footer", "content.code.copy", "content.code.select"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  </body>
+</html>

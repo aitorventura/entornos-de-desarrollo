@@ -299,7 +299,7 @@
   
   
   <span class="md-ellipsis">
-    Introducción
+    Tema 1 - Introducción
     
   </span>
   
@@ -824,6 +824,52 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uso-jira/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Uso de Jira
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../actividad_1_6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 1.6
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1092,9 +1138,9 @@
 
 
 
-<h1 id="actividad-13-estructura-basica-de-un-programa-java-desde-consola-reto">🧪 Actividad 1.3: Estructura básica de un programa Java (desde consola) + <strong>Reto</strong><a class="headerlink" href="#actividad-13-estructura-basica-de-un-programa-java-desde-consola-reto" title="Permanent link">&para;</a></h1>
-<hr />
-<h2 id="objetivos-de-la-actividad">🎯 Objetivos de la actividad<a class="headerlink" href="#objetivos-de-la-actividad" title="Permanent link">&para;</a></h2>
+<div><h1 id="actividad-13-estructura-basica-de-un-programa-java-desde-consola-reto">🧪 Actividad 1.3: Estructura básica de un programa Java (desde consola) + <strong>Reto</strong><a class="headerlink" href="#actividad-13-estructura-basica-de-un-programa-java-desde-consola-reto" title="Permanent link">¶</a></h1>
+<hr>
+<h2 id="objetivos-de-la-actividad">🎯 Objetivos de la actividad<a class="headerlink" href="#objetivos-de-la-actividad" title="Permanent link">¶</a></h2>
 <div class="admonition info">
 <p class="admonition-title">Al finalizar serás capaz de…</p>
 <ul>
@@ -1106,14 +1152,14 @@
 <li>Preparar un <strong>documento con capturas</strong> que evidencien el proceso.</li>
 </ul>
 </div>
-<hr />
+<hr>
 <div class="admonition tip">
 <p class="admonition-title">🖱️ ¿Puedo usar interfaz gráfica?</p>
 <p>Sí. Si tu VM tiene escritorio, <strong>puedes crear/editar archivos con el explorador y un editor gráfico</strong> (por ejemplo, <em>Gedit</em>).
 La compilación/ejecución seguirá haciéndose en <strong>terminal</strong>.</p>
 </div>
-<hr />
-<h3 id="referencia-minima-de-comandos-que-se-van-a-utilizar">📚 Referencia mínima de comandos que se van a utilizar<a class="headerlink" href="#referencia-minima-de-comandos-que-se-van-a-utilizar" title="Permanent link">&para;</a></h3>
+<hr>
+<h3 id="referencia-minima-de-comandos-que-se-van-a-utilizar">📚 Referencia mínima de comandos que se van a utilizar<a class="headerlink" href="#referencia-minima-de-comandos-que-se-van-a-utilizar" title="Permanent link">¶</a></h3>
 <div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
@@ -1128,12 +1174,12 @@ La compilación/ejecución seguirá haciéndose en <strong>terminal</strong>.</p
 <a id="__codelineno-0-4" name="__codelineno-0-4"></a>ls                       → lista archivos de la carpeta actual
 <a id="__codelineno-0-5" name="__codelineno-0-5"></a>nano ARCHIVO.java        → edita/crea un archivo en consola
 <a id="__codelineno-0-6" name="__codelineno-0-6"></a>javac ARCHIVO.java       → compila un archivo
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a>javac -d clases RUTA.java→ compila y deja .class en la carpeta &quot;clases&quot;
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a>javac -d clases RUTA.java→ compila y deja .class en la carpeta "clases"
 <a id="__codelineno-0-8" name="__codelineno-0-8"></a>java NombreClase         → ejecuta si NO tiene package
 <a id="__codelineno-0-9" name="__codelineno-0-9"></a>java -cp clases paquete.Clase  → ejecuta si SÍ tiene package
 </code></pre></div></td></tr></table></div>
-<hr />
-<h2 id="requisitos-previos">🔧 Requisitos previos<a class="headerlink" href="#requisitos-previos" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="requisitos-previos">🔧 Requisitos previos<a class="headerlink" href="#requisitos-previos" title="Permanent link">¶</a></h2>
 <ul>
 <li>Ubuntu con <strong>JDK</strong> instalado (incluye <code>javac</code> y <code>java</code>).</li>
 <li>Editor de consola opcional: <code>nano</code> o <code>vim</code>.</li>
@@ -1142,8 +1188,8 @@ La compilación/ejecución seguirá haciéndose en <strong>terminal</strong>.</p
 <span class="normal"><a href="#__codelineno-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>java<span class="w"> </span>-version
 <a id="__codelineno-1-2" name="__codelineno-1-2"></a>javac<span class="w"> </span>-version
 </code></pre></div></td></tr></table></div>
-<hr />
-<h2 id="entregables-leelos-antes-de-empezar">📦 Entregables (léelos <strong>ANTES</strong> de empezar)<a class="headerlink" href="#entregables-leelos-antes-de-empezar" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="entregables-leelos-antes-de-empezar">📦 Entregables (léelos <strong>ANTES</strong> de empezar)<a class="headerlink" href="#entregables-leelos-antes-de-empezar" title="Permanent link">¶</a></h2>
 <ol>
 <li><strong>Captura 1</strong> – Comprobación de <code>java</code> y <code>javac</code> en la terminal.  </li>
 <li><strong>Captura 2</strong> – Creación, <strong>compilación</strong> y <strong>ejecución</strong> de <code>Mundo.java</code>.  </li>
@@ -1162,8 +1208,8 @@ La compilación/ejecución seguirá haciéndose en <strong>terminal</strong>.</p
 <blockquote>
 <p><strong>Entrega</strong>: un único <strong>PDF</strong> con todas las capturas y comentarios.</p>
 </blockquote>
-<hr />
-<h2 id="1-como-es-un-programa-java-por-dentro">1) 📘 ¿Cómo es un programa Java por dentro?<a class="headerlink" href="#1-como-es-un-programa-java-por-dentro" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="1-como-es-un-programa-java-por-dentro">1) 📘 ¿Cómo es un programa Java por dentro?<a class="headerlink" href="#1-como-es-un-programa-java-por-dentro" title="Permanent link">¶</a></h2>
 <p>Toda aplicación de consola en Java <strong>empieza</strong> en el método:</p>
 <div class="language-java highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
@@ -1177,10 +1223,10 @@ La compilación/ejecución seguirá haciéndose en <strong>terminal</strong>.</p
 <li><code>String[] args</code>: parámetros de <strong>línea de comandos</strong> (no los usamos aquí).  </li>
 <li><code>System.out.println("…")</code> → Imprime texto en la <strong>consola</strong>.</li>
 </ul>
-<hr />
-<h2 id="2-ejercicio-1-mundo">2) ✍️ Ejercicio 1 — <strong>Mundo</strong><a class="headerlink" href="#2-ejercicio-1-mundo" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="2-ejercicio-1-mundo">2) ✍️ Ejercicio 1 — <strong>Mundo</strong><a class="headerlink" href="#2-ejercicio-1-mundo" title="Permanent link">¶</a></h2>
 <p>Crea, compila y ejecuta tu primer programa.</p>
-<h3 id="21-crear-la-carpeta-y-el-archivo">2.1. Crear la carpeta y el archivo<a class="headerlink" href="#21-crear-la-carpeta-y-el-archivo" title="Permanent link">&para;</a></h3>
+<h3 id="21-crear-la-carpeta-y-el-archivo">2.1. Crear la carpeta y el archivo<a class="headerlink" href="#21-crear-la-carpeta-y-el-archivo" title="Permanent link">¶</a></h3>
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
 <span class="normal"><a href="#__codelineno-3-2">2</a></span>
 <span class="normal"><a href="#__codelineno-3-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>mkdir<span class="w"> </span>actividad_java_1
@@ -1194,11 +1240,11 @@ La compilación/ejecución seguirá haciéndose en <strong>terminal</strong>.</p
 <span class="normal"><a href="#__codelineno-4-4">4</a></span>
 <span class="normal"><a href="#__codelineno-4-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Mundo</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;¡Hola mundo!&quot;</span><span class="p">);</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"¡Hola mundo!"</span><span class="p">);</span>
 <a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<h3 id="22-compilar-y-ejecutar">2.2. Compilar y ejecutar<a class="headerlink" href="#22-compilar-y-ejecutar" title="Permanent link">&para;</a></h3>
+<h3 id="22-compilar-y-ejecutar">2.2. Compilar y ejecutar<a class="headerlink" href="#22-compilar-y-ejecutar" title="Permanent link">¶</a></h3>
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
 <span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>javac<span class="w"> </span>Mundo.java
 <a id="__codelineno-5-2" name="__codelineno-5-2"></a>java<span class="w"> </span>Mundo
@@ -1209,8 +1255,8 @@ La compilación/ejecución seguirá haciéndose en <strong>terminal</strong>.</p
 <blockquote>
 <p>📸 <strong>Captura 2</strong> – pantalla con compilación y ejecución.</p>
 </blockquote>
-<hr />
-<h2 id="3-ejercicio-2-doce-tabla-del-12-12">3) ✍️ Ejercicio 2 — <strong>Doce</strong> (tabla del 12 × 12)<a class="headerlink" href="#3-ejercicio-2-doce-tabla-del-12-12" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="3-ejercicio-2-doce-tabla-del-12-12">3) ✍️ Ejercicio 2 — <strong>Doce</strong> (tabla del 12 × 12)<a class="headerlink" href="#3-ejercicio-2-doce-tabla-del-12-12" title="Permanent link">¶</a></h2>
 <p>Crea un programa que imprima la <strong>tabla del 12</strong> hasta 12×12.</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>nano<span class="w"> </span>Doce.java
 </code></pre></div></td></tr></table></div>
@@ -1223,9 +1269,9 @@ La compilación/ejecución seguirá haciéndose en <strong>terminal</strong>.</p
 <span class="normal"><a href="#__codelineno-8-7">7</a></span>
 <span class="normal"><a href="#__codelineno-8-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Doce</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Tabla del 12 (hasta 12 x 12):&quot;</span><span class="p">);</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Tabla del 12 (hasta 12 x 12):"</span><span class="p">);</span>
 <a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">12</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;12 x &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="mi">12</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">i</span><span class="p">));</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"12 x "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" = "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="mi">12</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">i</span><span class="p">));</span>
 <a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="w">        </span><span class="p">}</span>
 <a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="p">}</span>
@@ -1238,9 +1284,9 @@ La compilación/ejecución seguirá haciéndose en <strong>terminal</strong>.</p
 <blockquote>
 <p>📸 <strong>Captura 3</strong> – salida con la tabla 12×12.</p>
 </blockquote>
-<hr />
-<h2 id="4-variaciones-guiadas">4) 🔧 Variaciones guiadas<a class="headerlink" href="#4-variaciones-guiadas" title="Permanent link">&para;</a></h2>
-<h3 id="41-doce-hasta-1210">4.1. <em>Doce</em> hasta 12×10<a class="headerlink" href="#41-doce-hasta-1210" title="Permanent link">&para;</a></h3>
+<hr>
+<h2 id="4-variaciones-guiadas">4) 🔧 Variaciones guiadas<a class="headerlink" href="#4-variaciones-guiadas" title="Permanent link">¶</a></h2>
+<h3 id="41-doce-hasta-1210">4.1. <em>Doce</em> hasta 12×10<a class="headerlink" href="#41-doce-hasta-1210" title="Permanent link">¶</a></h3>
 <p>Edita <strong>Doce.java</strong> para que llegue solo a <strong>10</strong> y vuelve a compilar/ejecutar:</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
 <span class="normal"><a href="#__codelineno-10-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a>javac<span class="w"> </span>Doce.java
@@ -1249,7 +1295,7 @@ La compilación/ejecución seguirá haciéndose en <strong>terminal</strong>.</p
 <blockquote>
 <p>📸 <strong>Captura 4</strong> – tabla del 12 <strong>hasta 10</strong>.</p>
 </blockquote>
-<h3 id="42-catorce-hasta-1410">4.2. <em>Catorce</em> hasta 14×10<a class="headerlink" href="#42-catorce-hasta-1410" title="Permanent link">&para;</a></h3>
+<h3 id="42-catorce-hasta-1410">4.2. <em>Catorce</em> hasta 14×10<a class="headerlink" href="#42-catorce-hasta-1410" title="Permanent link">¶</a></h3>
 <p>Crea un nuevo archivo <strong>Catorce.java</strong> (igual que Doce, pero con <strong>14</strong>):</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>nano<span class="w"> </span>Catorce.java
 </code></pre></div></td></tr></table></div>
@@ -1262,9 +1308,9 @@ La compilación/ejecución seguirá haciéndose en <strong>terminal</strong>.</p
 <span class="normal"><a href="#__codelineno-12-7">7</a></span>
 <span class="normal"><a href="#__codelineno-12-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Catorce</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Tabla del 14 (hasta 14 x 10):&quot;</span><span class="p">);</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Tabla del 14 (hasta 14 x 10):"</span><span class="p">);</span>
 <a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;14 x &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="mi">14</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">i</span><span class="p">));</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"14 x "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" = "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="mi">14</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">i</span><span class="p">));</span>
 <a id="__codelineno-12-6" name="__codelineno-12-6"></a><span class="w">        </span><span class="p">}</span>
 <a id="__codelineno-12-7" name="__codelineno-12-7"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-12-8" name="__codelineno-12-8"></a><span class="p">}</span>
@@ -1277,12 +1323,12 @@ La compilación/ejecución seguirá haciéndose en <strong>terminal</strong>.</p
 <blockquote>
 <p>📸 <strong>Captura 5</strong> – salida con la tabla 14×10.</p>
 </blockquote>
-<hr />
-<h2 id="5-teoria-esencial-sobre-packages-e-imports">5) 🧭 Teoría esencial sobre <strong>packages</strong> e <strong>imports</strong><a class="headerlink" href="#5-teoria-esencial-sobre-packages-e-imports" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="5-teoria-esencial-sobre-packages-e-imports">5) 🧭 Teoría esencial sobre <strong>packages</strong> e <strong>imports</strong><a class="headerlink" href="#5-teoria-esencial-sobre-packages-e-imports" title="Permanent link">¶</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">Idea clave</p>
 <ul>
-<li>Un <strong>package</strong> es un <strong>nombre de carpeta</strong> que agrupa clases relacionadas.<br />
+<li>Un <strong>package</strong> es un <strong>nombre de carpeta</strong> que agrupa clases relacionadas.<br>
 <code>package a.b.c;</code> ⇒ la clase está dentro de <code>a/b/c/</code>  </li>
 <li>Un <strong>import</strong> permite usar <strong>clases</strong> de otros packages (por ejemplo, de la <strong>librería estándar</strong> de Java).</li>
 </ul>
@@ -1291,10 +1337,10 @@ La compilación/ejecución seguirá haciéndose en <strong>terminal</strong>.</p
 <li><strong>Regla 1:</strong> La <strong>primera línea</strong> del archivo puede ser <code>package …;</code> y <strong>debe coincidir</strong> con las carpetas donde guardas el <code>.java</code>.  </li>
 <li><strong>Regla 2:</strong> Para ejecutar una clase con package, debes indicar el <strong>nombre completo</strong> (por ejemplo, <code>org.entornos.demo.App</code>) y usar <code>-cp</code> (classpath) para decir dónde están las clases compiladas.</li>
 </ul>
-<hr />
-<h2 id="6-ejercicio-3-package-basico-orgentornosdemo">6) ✅ Ejercicio 3 — <strong>Package básico</strong> (<code>org.entornos.demo</code>)<a class="headerlink" href="#6-ejercicio-3-package-basico-orgentornosdemo" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="6-ejercicio-3-package-basico-orgentornosdemo">6) ✅ Ejercicio 3 — <strong>Package básico</strong> (<code>org.entornos.demo</code>)<a class="headerlink" href="#6-ejercicio-3-package-basico-orgentornosdemo" title="Permanent link">¶</a></h2>
 <p>Vamos a crear una clase con <strong>package</strong> paso a paso, usando <strong>comandos simples</strong>.</p>
-<h3 id="61-crear-la-estructura-de-carpetas">6.1. Crear la estructura de carpetas<a class="headerlink" href="#61-crear-la-estructura-de-carpetas" title="Permanent link">&para;</a></h3>
+<h3 id="61-crear-la-estructura-de-carpetas">6.1. Crear la estructura de carpetas<a class="headerlink" href="#61-crear-la-estructura-de-carpetas" title="Permanent link">¶</a></h3>
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-14-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-14-3"> 3</a></span>
@@ -1315,7 +1361,7 @@ La compilación/ejecución seguirá haciéndose en <strong>terminal</strong>.</p
 <a id="__codelineno-14-9" name="__codelineno-14-9"></a><span class="nb">cd</span><span class="w"> </span>demo
 <a id="__codelineno-14-10" name="__codelineno-14-10"></a>nano<span class="w"> </span>App.java
 </code></pre></div></td></tr></table></div>
-<h3 id="62-codigo-de-appjava">6.2. Código de <code>App.java</code><a class="headerlink" href="#62-codigo-de-appjava" title="Permanent link">&para;</a></h3>
+<h3 id="62-codigo-de-appjava">6.2. Código de <code>App.java</code><a class="headerlink" href="#62-codigo-de-appjava" title="Permanent link">¶</a></h3>
 <div class="language-java copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
 <span class="normal"><a href="#__codelineno-15-2">2</a></span>
 <span class="normal"><a href="#__codelineno-15-3">3</a></span>
@@ -1326,11 +1372,11 @@ La compilación/ejecución seguirá haciéndose en <strong>terminal</strong>.</p
 <a id="__codelineno-15-2" name="__codelineno-15-2"></a>
 <a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">App</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;App con package org.entornos.demo&quot;</span><span class="p">);</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"App con package org.entornos.demo"</span><span class="p">);</span>
 <a id="__codelineno-15-6" name="__codelineno-15-6"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-15-7" name="__codelineno-15-7"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<h3 id="63-volver-al-directorio-base-y-compilarejecutar">6.3. Volver al directorio base y compilar/ejecutar<a class="headerlink" href="#63-volver-al-directorio-base-y-compilarejecutar" title="Permanent link">&para;</a></h3>
+<h3 id="63-volver-al-directorio-base-y-compilarejecutar">6.3. Volver al directorio base y compilar/ejecutar<a class="headerlink" href="#63-volver-al-directorio-base-y-compilarejecutar" title="Permanent link">¶</a></h3>
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span>
 <span class="normal"><a href="#__codelineno-16-2">2</a></span>
 <span class="normal"><a href="#__codelineno-16-3">3</a></span>
@@ -1347,10 +1393,10 @@ La compilación/ejecución seguirá haciéndose en <strong>terminal</strong>.</p
 <p>📸 <strong>Captura 6</strong> – muestra la compilación y la ejecución de <code>App</code>.</p>
 <p>💡 <strong>Opcional:</strong> si tienes <code>tree</code>, puedes mostrar la estructura de carpetas.</p>
 </blockquote>
-<hr />
-<h2 id="7-ejercicio-4-import-de-la-libreria-estandar">7) ✅ Ejercicio 4 — <strong>Import</strong> de la librería estándar<a class="headerlink" href="#7-ejercicio-4-import-de-la-libreria-estandar" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="7-ejercicio-4-import-de-la-libreria-estandar">7) ✅ Ejercicio 4 — <strong>Import</strong> de la librería estándar<a class="headerlink" href="#7-ejercicio-4-import-de-la-libreria-estandar" title="Permanent link">¶</a></h2>
 <p>Ahora, en el <strong>mismo package</strong>, creamos otra clase que <strong>importe</strong> una clase de la librería estándar (<code>java.util.ArrayList</code>).</p>
-<h3 id="71-crear-el-archivo">7.1. Crear el archivo<a class="headerlink" href="#71-crear-el-archivo" title="Permanent link">&para;</a></h3>
+<h3 id="71-crear-el-archivo">7.1. Crear el archivo<a class="headerlink" href="#71-crear-el-archivo" title="Permanent link">¶</a></h3>
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span>
 <span class="normal"><a href="#__codelineno-17-2">2</a></span>
 <span class="normal"><a href="#__codelineno-17-3">3</a></span>
@@ -1359,7 +1405,7 @@ La compilación/ejecución seguirá haciéndose en <strong>terminal</strong>.</p
 <a id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="nb">cd</span><span class="w"> </span>demo
 <a id="__codelineno-17-4" name="__codelineno-17-4"></a>nano<span class="w"> </span>ListaNombres.java
 </code></pre></div></td></tr></table></div>
-<h3 id="72-codigo-de-listanombresjava">7.2. Código de <code>ListaNombres.java</code><a class="headerlink" href="#72-codigo-de-listanombresjava" title="Permanent link">&para;</a></h3>
+<h3 id="72-codigo-de-listanombresjava">7.2. Código de <code>ListaNombres.java</code><a class="headerlink" href="#72-codigo-de-listanombresjava" title="Permanent link">¶</a></h3>
 <div class="language-java copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-18-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-18-3"> 3</a></span>
@@ -1379,14 +1425,14 @@ La compilación/ejecución seguirá haciéndose en <strong>terminal</strong>.</p
 <a id="__codelineno-18-5" name="__codelineno-18-5"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ListaNombres</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-18-6" name="__codelineno-18-6"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-18-7" name="__codelineno-18-7"></a><span class="w">        </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">nombres</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span>
-<a id="__codelineno-18-8" name="__codelineno-18-8"></a><span class="w">        </span><span class="n">nombres</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Ana&quot;</span><span class="p">);</span>
-<a id="__codelineno-18-9" name="__codelineno-18-9"></a><span class="w">        </span><span class="n">nombres</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Luis&quot;</span><span class="p">);</span>
-<a id="__codelineno-18-10" name="__codelineno-18-10"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Nombres: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nombres</span><span class="p">);</span>
-<a id="__codelineno-18-11" name="__codelineno-18-11"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Total: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nombres</span><span class="p">.</span><span class="na">size</span><span class="p">());</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8"></a><span class="w">        </span><span class="n">nombres</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"Ana"</span><span class="p">);</span>
+<a id="__codelineno-18-9" name="__codelineno-18-9"></a><span class="w">        </span><span class="n">nombres</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"Luis"</span><span class="p">);</span>
+<a id="__codelineno-18-10" name="__codelineno-18-10"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Nombres: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nombres</span><span class="p">);</span>
+<a id="__codelineno-18-11" name="__codelineno-18-11"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Total: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nombres</span><span class="p">.</span><span class="na">size</span><span class="p">());</span>
 <a id="__codelineno-18-12" name="__codelineno-18-12"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-18-13" name="__codelineno-18-13"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<h3 id="73-compilar-y-ejecutar">7.3. Compilar y ejecutar<a class="headerlink" href="#73-compilar-y-ejecutar" title="Permanent link">&para;</a></h3>
+<h3 id="73-compilar-y-ejecutar">7.3. Compilar y ejecutar<a class="headerlink" href="#73-compilar-y-ejecutar" title="Permanent link">¶</a></h3>
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span>
 <span class="normal"><a href="#__codelineno-19-2">2</a></span>
 <span class="normal"><a href="#__codelineno-19-3">3</a></span>
@@ -1400,20 +1446,20 @@ La compilación/ejecución seguirá haciéndose en <strong>terminal</strong>.</p
 <blockquote>
 <p>📸 <strong>Captura 7</strong> – compilación y ejecución de <code>ListaNombres</code>.</p>
 </blockquote>
-<hr />
-<h1 id="reto-final-dentro-de-la-actividad-13">🧪 Reto final (dentro de la Actividad 1.3)<a class="headerlink" href="#reto-final-dentro-de-la-actividad-13" title="Permanent link">&para;</a></h1>
-<h2 id="dos-clases-packages-e-imports-tu-te-encargas-de-la-estructura-y-los-comandos">Dos clases, <strong>packages</strong> e <strong>imports</strong> — <em>tú te encargas de la estructura y los comandos</em><a class="headerlink" href="#dos-clases-packages-e-imports-tu-te-encargas-de-la-estructura-y-los-comandos" title="Permanent link">&para;</a></h2>
+<hr>
+<h1 id="reto-final-dentro-de-la-actividad-13">🧪 Reto final (dentro de la Actividad 1.3)<a class="headerlink" href="#reto-final-dentro-de-la-actividad-13" title="Permanent link">¶</a></h1>
+<h2 id="dos-clases-packages-e-imports-tu-te-encargas-de-la-estructura-y-los-comandos">Dos clases, <strong>packages</strong> e <strong>imports</strong> — <em>tú te encargas de la estructura y los comandos</em><a class="headerlink" href="#dos-clases-packages-e-imports-tu-te-encargas-de-la-estructura-y-los-comandos" title="Permanent link">¶</a></h2>
 <blockquote>
-<p><strong>Importante:</strong> En este reto <strong>no</strong> se proporcionan comandos (<code>mkdir</code>, <code>javac</code>, <code>java</code>, etc.).<br />
+<p><strong>Importante:</strong> En este reto <strong>no</strong> se proporcionan comandos (<code>mkdir</code>, <code>javac</code>, <code>java</code>, etc.).<br>
 Debes crear carpetas, escribir los <code>package</code> e <code>import</code>, <strong>compilar</strong> y <strong>ejecutar</strong> como ya aprendiste arriba.</p>
 </blockquote>
-<h3 id="objetivo-del-reto">🎯 Objetivo del reto<a class="headerlink" href="#objetivo-del-reto" title="Permanent link">&para;</a></h3>
+<h3 id="objetivo-del-reto">🎯 Objetivo del reto<a class="headerlink" href="#objetivo-del-reto" title="Permanent link">¶</a></h3>
 <ul>
 <li>Colocar clases en <strong>paquetes</strong> correctos creando su <strong>estructura de carpetas</strong>.</li>
 <li>Escribir las sentencias <strong><code>package</code></strong> e <strong><code>import</code></strong> necesarias.</li>
 <li>Compilar y ejecutar desde terminal usando <strong>classpath</strong> correctamente.</li>
 </ul>
-<h3 id="estructura-objetivo-tu-la-creas">🗂️ Estructura objetivo (tú la creas)<a class="headerlink" href="#estructura-objetivo-tu-la-creas" title="Permanent link">&para;</a></h3>
+<h3 id="estructura-objetivo-tu-la-creas">🗂️ Estructura objetivo (tú la creas)<a class="headerlink" href="#estructura-objetivo-tu-la-creas" title="Permanent link">¶</a></h3>
 <div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1">1</a></span>
 <span class="normal"><a href="#__codelineno-20-2">2</a></span>
 <span class="normal"><a href="#__codelineno-20-3">3</a></span>
@@ -1426,8 +1472,8 @@ Debes crear carpetas, escribir los <code>package</code> e <code>import</code>, <
 <a id="__codelineno-20-5" name="__codelineno-20-5"></a>│       └── util/     (MatOps.java)
 <a id="__codelineno-20-6" name="__codelineno-20-6"></a>└── clases/           (salida de compilación .class)
 </code></pre></div></td></tr></table></div>
-<h3 id="clase-1-libreria-matopsjava">🧩 Clase 1 (librería): <code>MatOps.java</code><a class="headerlink" href="#clase-1-libreria-matopsjava" title="Permanent link">&para;</a></h3>
-<p><strong>Ruta sugerida</strong>: <code>org/entornos/util/MatOps.java</code><br />
+<h3 id="clase-1-libreria-matopsjava">🧩 Clase 1 (librería): <code>MatOps.java</code><a class="headerlink" href="#clase-1-libreria-matopsjava" title="Permanent link">¶</a></h3>
+<p><strong>Ruta sugerida</strong>: <code>org/entornos/util/MatOps.java</code><br>
 👉 Añade <strong>arriba</strong> la sentencia <code>package …</code> correcta.</p>
 <div class="language-java copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1">1</a></span>
 <span class="normal"><a href="#__codelineno-21-2">2</a></span>
@@ -1439,8 +1485,8 @@ Debes crear carpetas, escribir los <code>package</code> e <code>import</code>, <
 <a id="__codelineno-21-4" name="__codelineno-21-4"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">resta</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
 <a id="__codelineno-21-5" name="__codelineno-21-5"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<h3 id="clase-2-app-calculadoraappjava">🚀 Clase 2 (app): <code>CalculadoraApp.java</code><a class="headerlink" href="#clase-2-app-calculadoraappjava" title="Permanent link">&para;</a></h3>
-<p><strong>Ruta sugerida</strong>: <code>org/entornos/app/CalculadoraApp.java</code><br />
+<h3 id="clase-2-app-calculadoraappjava">🚀 Clase 2 (app): <code>CalculadoraApp.java</code><a class="headerlink" href="#clase-2-app-calculadoraappjava" title="Permanent link">¶</a></h3>
+<p><strong>Ruta sugerida</strong>: <code>org/entornos/app/CalculadoraApp.java</code><br>
 👉 Añade <strong>arriba</strong> el <code>package …</code> correcto e <strong>importa</strong> <code>MatOps</code>.</p>
 <div class="language-java copy highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-22-2"> 2</a></span>
@@ -1455,14 +1501,14 @@ Debes crear carpetas, escribir los <code>package</code> e <code>import</code>, <
 <a id="__codelineno-22-2" name="__codelineno-22-2"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-22-3" name="__codelineno-22-3"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
 <a id="__codelineno-22-4" name="__codelineno-22-4"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
-<a id="__codelineno-22-5" name="__codelineno-22-5"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Operando con &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; y &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">);</span>
-<a id="__codelineno-22-6" name="__codelineno-22-6"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Suma = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">MatOps</span><span class="p">.</span><span class="na">suma</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">));</span>
-<a id="__codelineno-22-7" name="__codelineno-22-7"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Resta = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">MatOps</span><span class="p">.</span><span class="na">resta</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">));</span>
-<a id="__codelineno-22-8" name="__codelineno-22-8"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Multiplicación = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">MatOps</span><span class="p">.</span><span class="na">mult</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">));</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Operando con "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" y "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">);</span>
+<a id="__codelineno-22-6" name="__codelineno-22-6"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Suma = "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">MatOps</span><span class="p">.</span><span class="na">suma</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">));</span>
+<a id="__codelineno-22-7" name="__codelineno-22-7"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Resta = "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">MatOps</span><span class="p">.</span><span class="na">resta</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">));</span>
+<a id="__codelineno-22-8" name="__codelineno-22-8"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Multiplicación = "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">MatOps</span><span class="p">.</span><span class="na">mult</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">));</span>
 <a id="__codelineno-22-9" name="__codelineno-22-9"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-22-10" name="__codelineno-22-10"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<h3 id="lo-que-debes-hacer-tu">✅ Lo que debes hacer tú<a class="headerlink" href="#lo-que-debes-hacer-tu" title="Permanent link">&para;</a></h3>
+<h3 id="lo-que-debes-hacer-tu">✅ Lo que debes hacer tú<a class="headerlink" href="#lo-que-debes-hacer-tu" title="Permanent link">¶</a></h3>
 <ol>
 <li>Crear la <strong>estructura de carpetas</strong> indicada.  </li>
 <li>Escribir los <strong><code>package</code></strong> correctos en los dos archivos.  </li>
@@ -1479,12 +1525,12 @@ Debes crear carpetas, escribir los <code>package</code> e <code>import</code>, <
 <li>No encuentra <code>MatOps</code> → falta el <strong>import</strong> o no has compilado en el orden correcto.</li>
 </ul>
 </div>
-<hr />
-<h2 id="entrega-final">📝 Entrega final<a class="headerlink" href="#entrega-final" title="Permanent link">&para;</a></h2>
-<p>Sube a Aules un <strong>PDF único</strong> con:<br />
-- Las <strong>capturas 1–7</strong> de los ejercicios guiados.<br />
-- Las <strong>capturas R1–R4</strong> del reto final.<br />
-- Una <strong>conclusión</strong> (6–10 líneas) explicando qué aprendiste, dificultades y dudas.</p>
+<hr>
+<h2 id="entrega-final">📝 Entrega final<a class="headerlink" href="#entrega-final" title="Permanent link">¶</a></h2>
+<p>Sube a Aules un <strong>PDF único</strong> con:<br>
+- Las <strong>capturas 1–7</strong> de los ejercicios guiados.<br>
+- Las <strong>capturas R1–R4</strong> del reto final.<br>
+- Una <strong>conclusión</strong> (6–10 líneas) explicando qué aprendiste, dificultades y dudas.</p></div>
 
 
 

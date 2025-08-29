@@ -299,7 +299,7 @@
   
   
   <span class="md-ellipsis">
-    Introducción
+    Tema 1 - Introducción
     
   </span>
   
@@ -668,6 +668,52 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uso-jira/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Uso de Jira
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../actividad_1_6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 1.6
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -780,14 +826,19 @@
 
 
 
-<p><a id="codigo"></a></p>
-<h1 id="2-codigo-fuente-objeto-y-ejecutable">💻 2. Código fuente, objeto y ejecutable<a class="headerlink" href="#2-codigo-fuente-objeto-y-ejecutable" title="Permanent link">&para;</a></h1>
-<hr />
-<h2 id="21-del-codigo-fuente-al-binario-como-llega-un-programa-a-la-cpu">2.1 Del código fuente al binario: ¿cómo llega un programa a la CPU?<a class="headerlink" href="#21-del-codigo-fuente-al-binario-como-llega-un-programa-a-la-cpu" title="Permanent link">&para;</a></h2>
+<div><p><a id="codigo"></a></p>
+<h1 id="2-codigo-fuente-objeto-y-ejecutable">💻 2. Código fuente, objeto y ejecutable<a class="headerlink" href="#2-codigo-fuente-objeto-y-ejecutable" title="Permanent link">¶</a></h1>
+<p><embed alt="Código fuente, objeto y ejecutable" src="../diapositivas/codigo.pdf" style="width:100%;min-height:80vh" type="application/pdf"></embed></p>
+<div class="admonition info">
+<p class="admonition-title">Descarga de diapositivas</p>
+<p><a href="../diapositivas/codigo.pdf" rel="noopener" target="_blank">Descarga las diapositivas</a></p>
+</div>
+<hr>
+<h2 id="21-del-codigo-fuente-al-binario-como-llega-un-programa-a-la-cpu">2.1 Del código fuente al binario: ¿cómo llega un programa a la CPU?<a class="headerlink" href="#21-del-codigo-fuente-al-binario-como-llega-un-programa-a-la-cpu" title="Permanent link">¶</a></h2>
 <div class="admonition info">
 <p class="admonition-title">Idea básica</p>
-<p>Un ordenador <strong>solo entiende ceros y unos (binario)</strong>.<br />
-Los lenguajes que usamos para programar (C, Java, Python…) deben traducirse hasta llegar a ese formato.<br />
+<p>Un ordenador <strong>solo entiende ceros y unos (binario)</strong>.<br>
+Los lenguajes que usamos para programar (C, Java, Python…) deben traducirse hasta llegar a ese formato.<br>
 Según el lenguaje, este “viaje” puede ser:  </p>
 <ul>
 <li><strong>Compilado</strong> (todo antes de ejecutar).  </li>
@@ -796,43 +847,43 @@ Según el lenguaje, este “viaje” puede ser:  </p>
 </ul>
 </div>
 <div class="tabs-colored">
-<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">⚡ Lenguaje compilado (C, C++)</label><label for="__tabbed_1_2">📝 Lenguaje interpretado (Python, JS)</label><label for="__tabbed_1_3">⏱️ Híbrido con VM (Java, C#)</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">⚡ Lenguaje compilado (C, C++)</label><label for="__tabbed_1_2">📝 Lenguaje interpretado (Python, JS)</label><label for="__tabbed_1_3">⏱️ Híbrido con VM (Java, C#)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p><pre class="mermaid"><code>flowchart LR
+<p></p><pre class="mermaid"><code>flowchart LR
 SRC["✍️ Código fuente (.c, .cpp)"] --&gt; COMP["⚙️ Compilador"]
 COMP --&gt; OBJ["📄 Código objeto (.o, .obj)"]
 OBJ --&gt; LINK["🔗 Enlazador"]
 LINK --&gt; EXE["▶️ Ejecutable (.exe, ELF)"]</code></pre>
-- El código se traduce <strong>antes de ejecutarse</strong>.<br />
-- Resultado: un <strong>ejecutable independiente</strong> que la CPU entiende directamente.<br />
-- Ejemplo: programas de escritorio o videojuegos en C++.</p>
+- El código se traduce <strong>antes de ejecutarse</strong>.<br>
+- Resultado: un <strong>ejecutable independiente</strong> que la CPU entiende directamente.<br>
+- Ejemplo: programas de escritorio o videojuegos en C++.
 </div>
 <div class="tabbed-block">
-<p><pre class="mermaid"><code>flowchart LR
+<p></p><pre class="mermaid"><code>flowchart LR
 SRC["✍️ Código fuente (.py, .js)"] --&gt; INT["👩‍💻 Intérprete"]
 INT --&gt; RUN["▶️ Ejecución directa"]</code></pre>
-- El código se lee <strong>línea a línea</strong> en tiempo real.<br />
-- No se genera un ejecutable clásico.<br />
-- Ejemplo: scripts de Python, páginas web con JavaScript.</p>
+- El código se lee <strong>línea a línea</strong> en tiempo real.<br>
+- No se genera un ejecutable clásico.<br>
+- Ejemplo: scripts de Python, páginas web con JavaScript.
 </div>
 <div class="tabbed-block">
-<p><pre class="mermaid"><code>flowchart LR
+<p></p><pre class="mermaid"><code>flowchart LR
 SRC["✍️ Código fuente"] --&gt; COMP["⚙️ Compilador"]
 COMP --&gt; BYTE["📄 Bytecode (Java .class, C# CIL)"]
 BYTE --&gt; VM["⚙️ Máquina Virtual (JVM / CLR)"]
 VM --&gt; JIT["⏱️ Compilación JIT"]
 JIT --&gt; RUN["▶️ Ejecución en CPU"]</code></pre>
-- El compilador genera un <strong>bytecode intermedio</strong>.<br />
-- Ese bytecode se ejecuta dentro de una <strong>máquina virtual</strong>.<br />
-- La VM usa <strong>JIT</strong> para traducir lo más usado a binario real en tiempo de ejecución.<br />
-- Ejemplo: aplicaciones Android (Java/Kotlin).</p>
+- El compilador genera un <strong>bytecode intermedio</strong>.<br>
+- Ese bytecode se ejecuta dentro de una <strong>máquina virtual</strong>.<br>
+- La VM usa <strong>JIT</strong> para traducir lo más usado a binario real en tiempo de ejecución.<br>
+- Ejemplo: aplicaciones Android (Java/Kotlin).
 </div>
 </div>
 </div>
 </div>
-<hr />
-<h2 id="22-compilacion-ensamblado-y-enlazado-en-compilados">2.2 Compilación, ensamblado y enlazado (en compilados)<a class="headerlink" href="#22-compilacion-ensamblado-y-enlazado-en-compilados" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="22-compilacion-ensamblado-y-enlazado-en-compilados">2.2 Compilación, ensamblado y enlazado (en compilados)<a class="headerlink" href="#22-compilacion-ensamblado-y-enlazado-en-compilados" title="Permanent link">¶</a></h2>
 <ul>
 <li><strong>Compilación</strong> → traduce el código fuente a <strong>código objeto</strong> (binario incompleto).  </li>
 <li><strong>Ensamblado</strong> → organiza esas instrucciones en código máquina real.  </li>
@@ -841,14 +892,14 @@ JIT --&gt; RUN["▶️ Ejecución en CPU"]</code></pre>
 <div class="admonition note">
 <p class="admonition-title">Enlazado estático vs dinámico</p>
 <ul>
-<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.12 5h13.75l-.94-1h-12zm15.42.23c.29.34.46.77.46 1.27V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6.5c0-.5.17-.93.46-1.27l1.38-1.68C5.12 3.21 5.53 3 6 3h12c.47 0 .88.21 1.15.55zM6 18h6v-3H6z"/></svg></span> <strong>Estático</strong> → el ejecutable incluye todo. Más grande, pero no necesita librerías externas.  </li>
-<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5"/></svg></span> <strong>Dinámico</strong> → el ejecutable depende de librerías externas (<code>.dll</code>, <code>.so</code>). Más ligero, pero puede fallar si faltan.  </li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M5.12 5h13.75l-.94-1h-12zm15.42.23c.29.34.46.77.46 1.27V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6.5c0-.5.17-.93.46-1.27l1.38-1.68C5.12 3.21 5.53 3 6 3h12c.47 0 .88.21 1.15.55zM6 18h6v-3H6z"></path></svg></span> <strong>Estático</strong> → el ejecutable incluye todo. Más grande, pero no necesita librerías externas.  </li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5"></path></svg></span> <strong>Dinámico</strong> → el ejecutable depende de librerías externas (<code>.dll</code>, <code>.so</code>). Más ligero, pero puede fallar si faltan.  </li>
 </ul>
 </div>
-<hr />
-<h2 id="23-diferencia-entre-codigo-objeto-y-ejecutable">2.3 Diferencia entre <strong>código objeto</strong> y <strong>ejecutable</strong><a class="headerlink" href="#23-diferencia-entre-codigo-objeto-y-ejecutable" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="23-diferencia-entre-codigo-objeto-y-ejecutable">2.3 Diferencia entre <strong>código objeto</strong> y <strong>ejecutable</strong><a class="headerlink" href="#23-diferencia-entre-codigo-objeto-y-ejecutable" title="Permanent link">¶</a></h2>
 <div class="tabs-colored">
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">📄 Código objeto</label><label for="__tabbed_2_2">▶️ Código binario ejecutable</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">📄 Código objeto</label><label for="__tabbed_2_2">▶️ Código binario ejecutable</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <ul>
@@ -869,8 +920,8 @@ JIT --&gt; RUN["▶️ Ejecución en CPU"]</code></pre>
 </div>
 </div>
 </div>
-<hr />
-<h2 id="24-ejecutable-y-dependencias">2.4 Ejecutable y dependencias<a class="headerlink" href="#24-ejecutable-y-dependencias" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="24-ejecutable-y-dependencias">2.4 Ejecutable y dependencias<a class="headerlink" href="#24-ejecutable-y-dependencias" title="Permanent link">¶</a></h2>
 <div class="admonition info">
 <p class="admonition-title">Ejecutable</p>
 <p>Un ejecutable puede necesitar: </p>
@@ -882,11 +933,11 @@ JIT --&gt; RUN["▶️ Ejecución en CPU"]</code></pre>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Error común</p>
-<p>Creer que un <code>.exe</code> lo tiene <strong>todo dentro</strong>.<br />
+<p>Creer que un <code>.exe</code> lo tiene <strong>todo dentro</strong>.<br>
 En realidad, muchos programas fallan si falta una librería externa.</p>
 </div>
-<hr />
-<h2 id="25-interpretado-vs-compilado-vs-jit-resumen-general">2.5 Interpretado vs compilado vs JIT (resumen general)<a class="headerlink" href="#25-interpretado-vs-compilado-vs-jit-resumen-general" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="25-interpretado-vs-compilado-vs-jit-resumen-general">2.5 Interpretado vs compilado vs JIT (resumen general)<a class="headerlink" href="#25-interpretado-vs-compilado-vs-jit-resumen-general" title="Permanent link">¶</a></h2>
 <table>
 <thead>
 <tr>
@@ -921,15 +972,15 @@ En realidad, muchos programas fallan si falta una librería externa.</p>
 </tr>
 </tbody>
 </table>
-<hr />
-<h2 id="26-codigo-intermedio-y-maquinas-virtuales">2.6 Código intermedio y máquinas virtuales<a class="headerlink" href="#26-codigo-intermedio-y-maquinas-virtuales" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="26-codigo-intermedio-y-maquinas-virtuales">2.6 Código intermedio y máquinas virtuales<a class="headerlink" href="#26-codigo-intermedio-y-maquinas-virtuales" title="Permanent link">¶</a></h2>
 <div class="admonition info">
 <p class="admonition-title">Idea clave</p>
-<p>Algunos lenguajes (Java, C#) no generan binario directo, sino un <strong>código intermedio</strong>.<br />
+<p>Algunos lenguajes (Java, C#) no generan binario directo, sino un <strong>código intermedio</strong>.<br>
 Ese código se ejecuta dentro de una <strong>máquina virtual (VM)</strong>.</p>
 </div>
 <div class="tabs-colored">
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">☕ Java</label><label for="__tabbed_3_2">🔷 C#</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">☕ Java</label><label for="__tabbed_3_2">🔷 C#</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <ul>
@@ -950,16 +1001,16 @@ Ese código se ejecuta dentro de una <strong>máquina virtual (VM)</strong>.</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">AOT (Ahead-of-Time)</p>
-<p>Significa compilar <strong>antes de ejecutar</strong>, evitando JIT.<br />
+<p>Significa compilar <strong>antes de ejecutar</strong>, evitando JIT.<br>
 Ejemplo: GraalVM para Java.  </p>
 </div>
-<hr />
-<h2 id="27-empaquetado-y-distribucion">2.7 Empaquetado y distribución<a class="headerlink" href="#27-empaquetado-y-distribucion" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="27-empaquetado-y-distribucion">2.7 Empaquetado y distribución<a class="headerlink" href="#27-empaquetado-y-distribucion" title="Permanent link">¶</a></h2>
 <p>Un programa no siempre llega como un único archivo:</p>
 <ul>
-<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 3h18v4H3zm1 5h16v13H4zm5.5 3a.5.5 0 0 0-.5.5V13h6v-1.5a.5.5 0 0 0-.5-.5z"/></svg></span> <strong>Instaladores</strong> → <code>.exe</code>, <code>.msi</code> (Windows), <code>.deb</code>, <code>.rpm</code> (Linux).  </li>
-<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 10.96a.985.985 0 0 1-.37-1.37L3.13 7c.11-.2.28-.34.47-.42l7.83-4.4c.16-.12.36-.18.57-.18s.41.06.57.18l7.9 4.44c.19.1.35.26.44.46l1.45 2.52c.28.48.11 1.09-.36 1.36l-1 .58v4.96c0 .38-.21.71-.53.88l-7.9 4.44c-.16.12-.36.18-.57.18s-.41-.06-.57-.18l-7.9-4.44A.99.99 0 0 1 3 16.5v-5.54c-.3.17-.68.18-1 0m10-6.81v6.7l5.96-3.35zM5 15.91l6 3.38v-6.71L5 9.21zm14 0v-3.22l-5 2.9c-.33.18-.7.17-1 .01v3.69zm-5.15-2.55 6.28-3.63-.58-1.01-6.28 3.63z"/></svg></span> <strong>Bundling</strong> → programa + dependencias (ej.: apps portables, Electron).  </li>
-<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.81 10.25c-.06-.04-.56-.43-1.64-.43-.28 0-.56.03-.84.08-.21-1.4-1.38-2.11-1.43-2.14l-.29-.17-.18.27c-.24.36-.43.77-.51 1.19-.2.8-.08 1.56.33 2.21-.49.28-1.29.35-1.46.35H2.62c-.34 0-.62.28-.62.63 0 1.15.18 2.3.58 3.38.45 1.19 1.13 2.07 2 2.61.98.6 2.59.94 4.42.94.79 0 1.61-.07 2.42-.22 1.12-.2 2.2-.59 3.19-1.16A8.3 8.3 0 0 0 16.78 16c1.05-1.17 1.67-2.5 2.12-3.65h.19c1.14 0 1.85-.46 2.24-.85.26-.24.45-.53.59-.87l.08-.24zm-17.96.99h1.76c.08 0 .16-.07.16-.16V9.5c0-.08-.07-.16-.16-.16H3.85c-.09 0-.16.07-.16.16v1.58c.01.09.07.16.16.16m2.43 0h1.76c.08 0 .16-.07.16-.16V9.5c0-.08-.07-.16-.16-.16H6.28c-.09 0-.16.07-.16.16v1.58c.01.09.07.16.16.16m2.47 0h1.75c.1 0 .17-.07.17-.16V9.5c0-.08-.06-.16-.17-.16H8.75c-.08 0-.15.07-.15.16v1.58c0 .09.06.16.15.16m2.44 0h1.77c.08 0 .15-.07.15-.16V9.5c0-.08-.06-.16-.15-.16h-1.77c-.08 0-.15.07-.15.16v1.58c0 .09.07.16.15.16M6.28 9h1.76c.08 0 .16-.09.16-.18V7.25c0-.09-.07-.16-.16-.16H6.28c-.09 0-.16.06-.16.16v1.57c.01.09.07.18.16.18m2.47 0h1.75c.1 0 .17-.09.17-.18V7.25c0-.09-.06-.16-.17-.16H8.75c-.08 0-.15.06-.15.16v1.57c0 .09.06.18.15.18m2.44 0h1.77c.08 0 .15-.09.15-.18V7.25c0-.09-.07-.16-.15-.16h-1.77c-.08 0-.15.06-.15.16v1.57c0 .09.07.18.15.18m0-2.28h1.77c.08 0 .15-.07.15-.16V5c0-.1-.07-.17-.15-.17h-1.77c-.08 0-.15.06-.15.17v1.56c0 .08.07.16.15.16m2.46 4.52h1.76c.09 0 .16-.07.16-.16V9.5c0-.08-.07-.16-.16-.16h-1.76c-.08 0-.15.07-.15.16v1.58c0 .09.07.16.15.16"/></svg></span> <strong>Contenedores</strong> → incluyen programa + librerías + mini SO (ej.: Docker).  </li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M3 3h18v4H3zm1 5h16v13H4zm5.5 3a.5.5 0 0 0-.5.5V13h6v-1.5a.5.5 0 0 0-.5-.5z"></path></svg></span> <strong>Instaladores</strong> → <code>.exe</code>, <code>.msi</code> (Windows), <code>.deb</code>, <code>.rpm</code> (Linux).  </li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M2 10.96a.985.985 0 0 1-.37-1.37L3.13 7c.11-.2.28-.34.47-.42l7.83-4.4c.16-.12.36-.18.57-.18s.41.06.57.18l7.9 4.44c.19.1.35.26.44.46l1.45 2.52c.28.48.11 1.09-.36 1.36l-1 .58v4.96c0 .38-.21.71-.53.88l-7.9 4.44c-.16.12-.36.18-.57.18s-.41-.06-.57-.18l-7.9-4.44A.99.99 0 0 1 3 16.5v-5.54c-.3.17-.68.18-1 0m10-6.81v6.7l5.96-3.35zM5 15.91l6 3.38v-6.71L5 9.21zm14 0v-3.22l-5 2.9c-.33.18-.7.17-1 .01v3.69zm-5.15-2.55 6.28-3.63-.58-1.01-6.28 3.63z"></path></svg></span> <strong>Bundling</strong> → programa + dependencias (ej.: apps portables, Electron).  </li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M21.81 10.25c-.06-.04-.56-.43-1.64-.43-.28 0-.56.03-.84.08-.21-1.4-1.38-2.11-1.43-2.14l-.29-.17-.18.27c-.24.36-.43.77-.51 1.19-.2.8-.08 1.56.33 2.21-.49.28-1.29.35-1.46.35H2.62c-.34 0-.62.28-.62.63 0 1.15.18 2.3.58 3.38.45 1.19 1.13 2.07 2 2.61.98.6 2.59.94 4.42.94.79 0 1.61-.07 2.42-.22 1.12-.2 2.2-.59 3.19-1.16A8.3 8.3 0 0 0 16.78 16c1.05-1.17 1.67-2.5 2.12-3.65h.19c1.14 0 1.85-.46 2.24-.85.26-.24.45-.53.59-.87l.08-.24zm-17.96.99h1.76c.08 0 .16-.07.16-.16V9.5c0-.08-.07-.16-.16-.16H3.85c-.09 0-.16.07-.16.16v1.58c.01.09.07.16.16.16m2.43 0h1.76c.08 0 .16-.07.16-.16V9.5c0-.08-.07-.16-.16-.16H6.28c-.09 0-.16.07-.16.16v1.58c.01.09.07.16.16.16m2.47 0h1.75c.1 0 .17-.07.17-.16V9.5c0-.08-.06-.16-.17-.16H8.75c-.08 0-.15.07-.15.16v1.58c0 .09.06.16.15.16m2.44 0h1.77c.08 0 .15-.07.15-.16V9.5c0-.08-.06-.16-.15-.16h-1.77c-.08 0-.15.07-.15.16v1.58c0 .09.07.16.15.16M6.28 9h1.76c.08 0 .16-.09.16-.18V7.25c0-.09-.07-.16-.16-.16H6.28c-.09 0-.16.06-.16.16v1.57c.01.09.07.18.16.18m2.47 0h1.75c.1 0 .17-.09.17-.18V7.25c0-.09-.06-.16-.17-.16H8.75c-.08 0-.15.06-.15.16v1.57c0 .09.06.18.15.18m2.44 0h1.77c.08 0 .15-.09.15-.18V7.25c0-.09-.07-.16-.15-.16h-1.77c-.08 0-.15.06-.15.16v1.57c0 .09.07.18.15.18m0-2.28h1.77c.08 0 .15-.07.15-.16V5c0-.1-.07-.17-.15-.17h-1.77c-.08 0-.15.06-.15.17v1.56c0 .08.07.16.15.16m2.46 4.52h1.76c.09 0 .16-.07.16-.16V9.5c0-.08-.07-.16-.16-.16h-1.76c-.08 0-.15.07-.15.16v1.58c0 .09.07.16.15.16"></path></svg></span> <strong>Contenedores</strong> → incluyen programa + librerías + mini SO (ej.: Docker).  </li>
 </ul>
 <div class="admonition example">
 <p class="admonition-title">Ejemplo cotidiano</p>
@@ -969,7 +1020,7 @@ Ejemplo: GraalVM para Java.  </p>
 <li>🌐 Servicio web → contenedor Docker.</li>
 </ul>
 </div>
-<hr />
+<hr></div>
 
 
 
