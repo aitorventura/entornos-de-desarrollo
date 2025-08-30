@@ -2,6 +2,11 @@
 
 # 🚀 6. Metodologías ágiles
 
+![Metodologías ágiles](diapositivas/metodologias.pdf){ type=application/pdf style="width:100%;min-height:80vh" }
+
+!!!info "Descarga de diapositivas"
+    [Descarga las diapositivas](diapositivas/metodologias.pdf){target="_blank" rel="noopener"}
+
 ---
 
 ## 🧠 6.1 Manifiesto Ágil 
@@ -71,17 +76,6 @@ flowchart LR
     9) **Excelencia técnica** y buen diseño.  
     10) **Simplicidad**: maximizar el **trabajo no hecho**.
 
----
-
-### ✅ Aplicar los valores: Do vs Don’t
-
-| Situación | ✅ En ágil | ❌ Antipatrón |
-|---|---|---|
-| Definir alcance | Historias **pequeñas** con criterios | Documento grande “cerrado” |
-| Planificación | Roadmap **Now/Next/Later** + capacidad | Fechas fijas ignorando capacidad |
-| Progreso | **Demo** con software funcionando | % completado “a ojo” |
-| Cambios | Repriorizar por **datos/impacto** | Ignorar resultados “porque el contrato” |
-| Calidad | **TDD**, revisión, DoD | “Probamos al final” |
 
 ---
 
@@ -255,13 +249,6 @@ static double conIVA(double base, double iva) {
 
 ---
 
-### 🗺️ Mapa de flujo de valor (Value Stream)
-Identifica **pasos**, **esperas** y **cuellos de botella** desde la idea hasta *Hecho*.
-
-*Objetivo:* **reducir esperas** y **limitar WIP** donde se acumula trabajo.
-
----
-
 ### 🗑️ Los 7 desperdicios (y cómo cazarlos)
 | Desperdicio (Lean) | En software | Señal de alarma | Contra‑medida rápida |
 |---|---|---|---|
@@ -275,9 +262,9 @@ Identifica **pasos**, **esperas** y **cuellos de botella** desde la idea hasta *
 | **Talento infrautilizado** *(añadido común en software)* | Personas sin voz | Ideas se pierden | Retro efectiva, Kaizen con acciones |
 
 
-## 🧰 6.6 Herramientas ágiles: tableros y *roadmaps*
+## 🧰 6.6 Herramientas ágiles: tableros
 
-> **Objetivo:** que el **tablero** haga fluir el trabajo (reglas claras, límites de trabajo y métricas) y que el **roadmap** sea una **brújula de resultados** (qué impacto buscamos), no una lista de tareas.
+> **Objetivo:** que el **tablero** haga fluir el trabajo (reglas claras, límites de trabajo y métricas).
 
 ---
 
@@ -300,15 +287,13 @@ Identifica **pasos**, **esperas** y **cuellos de botella** desde la idea hasta *
 ---
 
 ### 🧱 Plantilla de columnas (sirve en cualquier herramienta)
-- `Por hacer → Refinar → En curso (WIP n) → Revisar/QA (WIP m) → Listo para publicar → Hecho`
+- `Por hacer → En curso (WIP n) → Revisar/QA (WIP m) → Hecho`
 
 ```mermaid
 flowchart LR
-  T["Por hacer"] --> R["Refinar"]
-  R --> E["En curso (WIP 3)"]
+  T["Por hacer"] --> E["En curso (WIP 3)"]
   E --> Q["Revisar / QA (WIP 2)"]
-  Q --> L["Listo para publicar"]
-  L --> H["Hecho"]
+  Q --> H["Hecho"]
 ```
 *Pista:* deja visibles los **límites WIP** (cuántas tarjetas caben) y revisa cuellos de botella cada semana.
 
@@ -316,7 +301,6 @@ flowchart LR
 
 - A **En curso** ⇒ hay **capacidad libre** y la tarjeta cumple **DoR** (está entendida y acotada).  
 - A **Revisar/QA** ⇒ hay **pull request**, **pruebas en verde** y *lint* pasado.  
-- A **Listo para publicar** ⇒ validación funcional hecha + notas de versión.  
 - A **Hecho** ⇒ cumple **DoD** (fusionado, probado, documentación mínima, *flag* si aplica).
 
 
@@ -331,99 +315,5 @@ flowchart LR
 
 !!! tip "Rutina semanal (15’): revisión de salud del flujo"
     - Mira el **CFD**, columnas con **WIP alto**, motivos de **bloqueo** y acordad **1 acción** de mejora.
-
----
-### 🗺️ Roadmaps (de resultados, no de tareas)
-
-> **Qué es:** un *roadmap* dice **qué resultado queremos lograr** y **cómo sabremos que lo logramos**.  
-> **Qué NO es:** una lista fija de tareas con fechas rígidas.
-
-#### Outcomes vs. tareas (por qué importa)
-| Enfoque | ¿Cómo suena? | Problema | Mejor opción |
-|---|---|---|---|
-| **Tareas** | “Implementar Bizum y Apple Pay” | Puedes hacerlas y **no mover** la aguja | |
-| **Outcomes (resultados)** | “Subir la **tasa de pago** un +10%” | Te obliga a medir si **mejoró** lo que importa | ✅
-
-#### Formato simple: Now / Next / Later
-- **Now (Ahora):** lo que **ya** estamos intentando. 1-3 resultados como máximo.  
-- **Next (Siguiente):** lo que haremos **después** si lo de Now va bien o termina.  
-- **Later (Más tarde):** ideas que **no son prioridad** hoy.
-
-> Así evitas sobrecargar y no prometes fechas que luego cambian.
-
-#### ¿Qué pongo exactamente en un outcome?
-
-- **Resultado (outcome):** qué queremos mejorar (claro y medible).  
-- **Señal de éxito:** el **número/umbral** que dice “lo logramos”.  
-- **Ideas a probar:** 2-3 posibles **caminos** (aún no son tareas detalladas).
-
-**Ejemplo de outcome**
-
-- **Resultado:** “Reducir el **tiempo de compra p95** a < **3 s**.”  
-  - **Qué es p95:** el 95% de las compras tarda **menos** de ese tiempo. Es una forma de medir **experiencia real** (no solo el promedio).  
-- **Señal de éxito:** “p95 < **3 s** durante 2 semanas seguidas.”  
-- **Ideas a probar:** “simplificar validaciones”, “precargar datos”, “checkout en 1 paso”.
-
----
-
-#### Plantilla de *roadmap* 
-
-| Horizonte | Resultado (outcome) | Señal de éxito | Ideas a probar |
-|---|---|---|---|
-| **Now (Ahora)** | Reducir **p95 checkout** | p95 < 3 s | Simplificar validaciones; precarga; “pago en un paso” |
-| **Next (Siguiente)** | Subir **tasa de pago** | +10% conversión | Bizum/Apple Pay; recordatorio carrito |
-| **Later (Más tarde)** | Aumentar **valor por sesión** | +15% ticket medio | Recomendaciones; packs de productos |
-
-> **Conversión:** de cada 100 personas que intentan pagar, cuántas lo consiguen.
-
----
-
-#### Ejemplo completo 
-
-**Roadmap**
-
-- **Now:** “Checkout en 1 paso” para bajar p95 < 3 s.
-- **Next:** “Añadir Bizum/Apple Pay” para subir conversión +10%.
-- **Later:** “Recomendaciones automáticas” para subir ticket medio +15%.
-
-**Cómo se traduce al tablero**
-
-- Tarjeta 1: “Reducir campos del formulario” (criterios claros, pruebas).  
-- Tarjeta 2: “Precarga de dirección desde perfil”.  
-- Tarjeta 3: “Medir p95 tras cambios” (añadir métrica).
-
-Si p95 baja de 4.2 s → 3.1 s pero **no** < 3 s, decides:
-
-- **Seguir** con otra idea (p. ej., “validaciones en cliente”), o  
-- **Parar** y pasar al outcome siguiente si el beneficio ya es suficiente.
-
----
-
-#### Ejemplo alternativo (app interna de soporte)
-
-**Outcome Now:** “Bajar el **tiempo de resolución** de tickets de 3 días a **2 días**.”  
-**Señal:** media ≤ 2 días durante 1 mes.  
-**Ideas:** plantilla de respuestas; mejor filtro de prioridad; formación de 1 h para agentes.
-
-**En el tablero:**  
-
-- Tarjeta 1: “Crear plantillas de respuesta”.  
-- Tarjeta 2: “Nueva cola ‘Alta prioridad’”.  
-- Tarjeta 3: “Informe semanal de tiempos por agente”.
-
----
-
-### 🔗 Conexión tablero ↔ roadmap
-
-- Cada **resultado** del *roadmap* se **rompe** en tarjetas pequeñas con **criterios de aceptación**.  
-- El **tablero** muestra el **flujo** (WIP, bloqueos, avance).  
-- El **roadmap** recoge **decisiones**: ¿seguimos con esta idea?, ¿paramos?, ¿cambiamos de enfoque?
-
-**Ritual simple (mensual)**
-
-1) Mira los **números** (p95, conversión, tiempo de resolución…).  
-2) Decide por outcome: **seguir / cambiar / parar**.  
-3) Actualiza **Now / Next / Later**.  
-4) Crea/archiva **tarjetas** según lo decidido.
 
 ---

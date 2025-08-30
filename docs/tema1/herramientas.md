@@ -2,6 +2,11 @@
 
 # 🧰 5. Herramientas y procesos de construcción
 
+![Herramientas y procesos de construcción](diapositivas/herramientas.pdf){ type=application/pdf style="width:100%;min-height:80vh" }
+
+!!!info "Descarga de diapositivas"
+    [Descarga las diapositivas](diapositivas/herramientas.pdf){target="_blank" rel="noopener"}
+
 Estas herramientas ayudan a pasar de **código** a **programa que funciona**, a mantener la **calidad** y a **colaborar** sin romper nada.
 
 ---
