@@ -11,7 +11,7 @@
 
 === "Gupo presencial"
     1. Ponte en pareja con un compañero.  
-    2. Pensad en **tres situaciones cotidianas** donde haya claramente entrada, proceso y salida.  
+    2. Pensad en **tres situaciones cotidianas** (que se puedan relacionar con la informática) donde haya claramente entrada, proceso y salida.  
     Ejemplos (esos no valen):  
         - Cajero automático.  
         - Reproductor de música.  
@@ -24,7 +24,7 @@
     📸 Añadid un esquema rápido (a mano o con un diagrama simple) para representar el flujo.
 
 === "Grupo semipresencial"
-    1. Piensa en **tres situaciones cotidianas** donde haya claramente entrada, proceso y salida.  
+    1. Piensa en **tres situaciones cotidianas** (que se puedan relacionar con la informática) donde haya claramente entrada, proceso y salida.  
     Ejemplos (esos no valen):  
         - Cajero automático.  
         - Reproductor de música.  
