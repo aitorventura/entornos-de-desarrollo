@@ -58,10 +58,12 @@ javac -version
 6. **Captura 6** – Compilación y ejecución de **App.java** con **package** `org.entornos.demo`.  
 7. **Captura 7** – Compilación y ejecución de **ListaNombres.java** con **import** de la librería estándar.  
 8. **Reto – Capturas**:  
-   - **R1**: contenido de *MatOps.java* y *CalculadoraApp.java* con tus líneas **`package`** e **`import`**.  
-   - **R2**: compilación de *MatOps.java* y *CalculadoraApp.java*.  
-   - **R3**: ejecución correcta de `org.entornos.app.CalculadoraApp`.  
-   - **R4**: estructura de carpetas del reto (puedes usar `ls` en cada carpeta o `tree` si lo tienes).  
+
+    - **R1**: contenido de *MatOps.java* y *CalculadoraApp.java* con tus líneas **`package`** e **`import`**.  
+    - **R2**: compilación de *MatOps.java* y *CalculadoraApp.java*.  
+    - **R3**: ejecución correcta de `org.entornos.app.CalculadoraApp`.  
+    - **R4**: estructura de carpetas del reto (puedes usar `ls` en cada carpeta o `tree` si lo tienes). 
+     
 9. **Conclusión breve** – 6–10 líneas: qué has aprendido, dificultades y dudas.
 
 > **Entrega**: un único **PDF** con todas las capturas y comentarios.
@@ -369,6 +371,7 @@ public class CalculadoraApp {
 
 ## 📝 Entrega final
 Sube a Aules un **PDF único** con:  
+
 - Las **capturas 1–7** de los ejercicios guiados.  
 - Las **capturas R1–R4** del reto final.  
 - Una **conclusión** (6–10 líneas) explicando qué aprendiste, dificultades y dudas.

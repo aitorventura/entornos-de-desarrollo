@@ -16,19 +16,19 @@
 
 Para que no se te olvide, durante toda la actividad debes guardar estas **capturas de pantalla**:
 
-1. 📥 Instalación de cada herramienta (`gcc`, `python3`, `java`).  
-2. 📄 Archivos creados (`ejemploC.c`, `ejemploPython.py`, `Ejemplo.java`).  
-3. 🖥️ Código fuente abierto en el editor (nano).  
-4. ⚙️ Compilación en C y Java (comando + resultado).  
-5. ▶️ Ejecución de los tres programas en terminal (C, Python, Java).  
-6. 📂 Vista de la carpeta `ejemploscodigo` mostrando los ejecutables generados.  
-7. 📝 Documento final con tu **explicación** y una **conclusión personal** sobre las diferencias entre **compilar** e **interpretar**.
+1. Instalación de cada herramienta (`gcc`, `python3`, `java`).  
+2. Archivos creados (`ejemploC.c`, `ejemploPython.py`, `Ejemplo.java`).  
+3. Código fuente abierto en el editor (nano).  
+4. Compilación en C y Java (comando + resultado).  
+5. Ejecución de los tres programas en terminal (C, Python, Java).  
+6. Vista de la carpeta `ejemploscodigo` mostrando los ejecutables generados.  
+7. Documento final con tu **explicación** y una **conclusión personal** sobre las diferencias entre **compilar** e **interpretar**.
 
 ---
 
 ## 🛠️ Herramientas necesarias
 
-- Máquina virtual con **Ubuntu Server** instalada.  
+- Máquina virtual con **Ubuntu** instalado, puede ser Ubuntu Server o Desktop, recuerda que si utilizas una instancia EC2 solo podrá ser Server.  
 - **Compilador C (gcc/MinGW)**.  
 - **Python 3**.  
 - **JDK (Java Development Kit)**.
@@ -41,7 +41,7 @@ Para que no se te olvide, durante toda la actividad debes guardar estas **captur
 
 ## 🔹 Paso 1. Crear los programas de ejemplo
 
-Primero, crea la carpeta de trabajo y los archivos vacíos:
+Primero, crea la carpeta de trabajo y los archivos vacíos (si tienes interfaz gráfica no hace falta que uses los comandos):
 
 ```{.bash .copy}
 mkdir ejemploscodigo
@@ -113,12 +113,15 @@ public class Ejemplo {
 </div>
 
 📸 **Capturas aquí:**  
+
 - Vista de la carpeta `ejemploscodigo` con los tres archivos.  
-- Cada archivo abierto en nano mostrando el código escrito.  
+- Cada archivo abierto en nano u otro editor mostrando el código escrito.  
 
 ---
 
 ## 🔹 Paso 2. Instalar compiladores e intérpretes
+
+Desde el terminal de la máquina virtual:
 
 ### a) Instalar compilador C (gcc)
 
@@ -143,9 +146,9 @@ sudo apt install openjdk-17-jdk
 java -version
 ```
 
-📸 **Capturas aquí:**  
+📸 **Captura aquí:**  
+
 - Pantalla de instalación de cada herramienta (gcc, python3, java).  
-- Comando `--version` mostrando que funcionan correctamente.  
 
 ---
 
@@ -159,6 +162,7 @@ gcc ejemploC.c -o ejemploC.exe
 ```
 
 📸 **Capturas aquí:**  
+
 - Comando de compilación (`gcc`) y ejecutable generado.  
 - Ejecución del programa mostrando la suma en terminal.  
 
@@ -171,6 +175,7 @@ python3 ejemploPython.py
 ```
 
 📸 **Capturas aquí:**  
+
 - Ejecución del script en terminal pidiendo datos y mostrando resultado.  
 
 ---
@@ -187,6 +192,7 @@ java Ejemplo
 ```
 
 📸 **Capturas aquí:**  
+
 - Comando `javac` y el archivo `Ejemplo.class` generado.  
 - Ejecución del programa con `java Ejemplo` mostrando la suma.  
 
