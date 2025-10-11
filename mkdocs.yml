@@ -41,7 +41,14 @@ nav:
       - Metodologías: tema1/metodologias.md
       - Uso de Jira: tema1/uso-jira.md
       - Actividad 1.6: tema1/actividad_1_6.md
-
+  - Tema 2:
+      - Tema 2 - Introducción: tema2/index.md
+      - Entornos de desarrollo: tema2/entornos-de-desarrollo.md
+      - Actividad 2.1: tema2/actividad_2_1.md
+      - Actividad 2.2: tema2/actividad_2_2.md
+      - Actividad 2.3: tema2/actividad_2_3.md
+      - Actividad 2.4: tema2/actividad_2_4.md
+      - Actividad 2.5: tema2/actividad_2_5.md
 
 markdown_extensions:
   - md_in_html

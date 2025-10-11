@@ -19,12 +19,9 @@
 
 ## 📘 Índice de contenidos
 
-1. [Funciones de un entorno de desarrollo](funciones.md)  
-2. [Instalación de un entorno de desarrollo](instalacion.md)  
-3. [Uso básico de un entorno de desarrollo](uso.md)  
-4. [Personalización del entorno de desarrollo](personalizacion.md)  
-5. [Edición de programas](edicion.md)  
-6. [Generación de ejecutables en distintos entornos](ejecutables.md)  
-7. [Herramientas y automatización](automatizacion.md)  
+1. [Entornos de desarrollo](entornos-de-desarrollo.md)  
+2. [Instalación y uso de IntelliJ y Netbeans](actividad_2_2.md)  
+3. [Trabajo con IntelliJ](actividad_2_3.md)  
+4. [Trabajo con NetBeans](actividad_2_4.md)  
 
 ---

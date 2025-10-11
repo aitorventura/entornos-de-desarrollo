@@ -35,12 +35,12 @@ En conjunto, el objetivo es que seas capaz de **trabajar como desarrollador** si
 ---
 
 
-??? warning "🔒 Tema 2: Entornos Integrados de Desarrollo (Próximamente)"
-    - Instalación, uso y personalización  
-    - Edición de programas y generación de ejecutables  
-    - Herramientas y automatización  
+??? success "👨‍💻 Tema 2: Entornos Integrados de Desarrollo"
+    - [Entornos de desarrollo](tema2/entornos-de-desarrollo.md)  
+    - [Instalación y uso de IntelliJ y Netbeans](tema2/actividad_2_2.md)  
+    - [Trabajo con IntelliJ](tema2/actividad_2_3.md)  
+    - [Trabajo con NetBeans](tema2/actividad_2_4.md)  
 
----
 
 ??? warning "🔒 Tema 3: Verificación y Pruebas de Programas (Próximamente)"
     - Planificación y tipos de pruebas  
