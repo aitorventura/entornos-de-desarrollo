@@ -20,13 +20,10 @@
 
 ## 📘 Índice de contenidos
 
-1. [Planificación de pruebas](planificacion.md)  
-2. [Tipos de pruebas: funcionales, estructurales y regresión](tipos.md)  
-3. [Procedimientos y casos de prueba](casos.md)  
-4. [Pruebas de código: cubrimiento, valores límite y clases de equivalencia](codigo.md)  
-5. [Pruebas unitarias y herramientas de automatización](unitarias.md)  
-6. [Documentación de incidencias](incidencias.md)  
-7. [Dobles de prueba: tipos y características](dobles.md)  
+1. [Depuración de programas](depuracion.md)  
+2. [Pruebas de software](pruebas.md)  
+3. [Casos de prueba](casos.md)  
+4. [Pruebas unitarias](unitarias.md)  
 
 ---
 

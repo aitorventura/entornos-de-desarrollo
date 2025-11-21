@@ -42,11 +42,11 @@ En conjunto, el objetivo es que seas capaz de **trabajar como desarrollador** si
     - [Trabajo con NetBeans](tema2/actividad_2_4.md)  
 
 
-??? warning "🔒 Tema 3: Verificación y Pruebas de Programas (Próximamente)"
-    - Planificación y tipos de pruebas  
-    - Procedimientos y casos de prueba  
-    - Pruebas unitarias y automáticas  
-    - Documentación de incidencias y dobles de prueba  
+??? success "👨‍💻 Tema 3: Verificación y Pruebas de Programas"
+    - [Depuración de programas](tema3/depuracion.md)  
+    - [Pruebas de software](tema3/pruebas.md)  
+    - [Casos de prueba](tema3/casos.md)  
+    - [Pruebas unitarias](tema3/unitarias.md)  
 
 ---
 
