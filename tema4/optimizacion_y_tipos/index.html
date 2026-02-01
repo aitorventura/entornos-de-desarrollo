@@ -1,0 +1,2028 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../actividad_4_1/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Optimización y tipos - Entornos de desarrollo</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#optimizacion-de-codigo-concepto-y-tipos" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Entornos de desarrollo" class="md-header__button md-logo" aria-label="Entornos de desarrollo" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Entornos de desarrollo
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Optimización y tipos
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="cyan"  aria-label="Modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="cyan"  aria-label="Modo Claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modo Claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Entornos de desarrollo" class="md-nav__button md-logo" aria-label="Entornos de desarrollo" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Entornos de desarrollo
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tema 1
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Tema 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tema 1 - Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema1/concepto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Concepto de programa informático
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema1/actividad_1_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 1.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema1/codigo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Código fuente, objeto y ejecutable
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema1/actividad_1_2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 1.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema1/lenguajes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lenguajes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema1/actividad_1_3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 1.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema1/fases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fases del desarrollo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema1/actividad_1_4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 1.4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema1/herramientas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Herramientas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema1/actividad_1_5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 1.5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema1/metodologias/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Metodologías
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema1/uso-jira/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Uso de Jira
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema1/actividad_1_6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 1.6
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tema 2
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Tema 2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tema 2 - Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema2/entornos-de-desarrollo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Entornos de desarrollo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema2/actividad_2_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 2.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema2/actividad_2_2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 2.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema2/actividad_2_3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 2.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema2/actividad_2_4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 2.4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema2/actividad_2_5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 2.5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tema 3
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Tema 3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tema 3 - Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema3/depuracion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Depuración
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema3/actividad_3_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 3.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema3/pruebas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pruebas de software
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema3/casos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Técnicas de casos de prueba
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema3/actividad_3_2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 3.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema3/actividad_3_3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 3.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema3/actividad_3_4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 3.4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema3/unitarias/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pruebas unitarias
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema3/actividad_3_5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 3.5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema3/actividad_3_6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 3.6
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tema 4
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Tema 4
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tema 4 - Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Optimización y tipos
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Optimización y tipos
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#idea-clave" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Idea clave
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-significa-sin-cambiar-el-comportamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ ¿Qué significa “sin cambiar el comportamiento”?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-se-suele-optimizar-en-aplicaciones-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 ¿Qué se suele optimizar en aplicaciones web?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cuando-conviene-optimizar" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧭 ¿Cuándo conviene optimizar?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proceso-recomendado" class="md-nav__link">
+    <span class="md-ellipsis">
+      🗺️ Proceso recomendado
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../actividad_4_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 4.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../refactorizacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Refactorización
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../actividad_4_2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 4.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../analizadores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Analizadores de código
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Documentación del código
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../actividad_4_3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 4.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduccion-git/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción a Git
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../actividad_4_4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 4.4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#idea-clave" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Idea clave
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-significa-sin-cambiar-el-comportamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ ¿Qué significa “sin cambiar el comportamiento”?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-se-suele-optimizar-en-aplicaciones-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 ¿Qué se suele optimizar en aplicaciones web?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cuando-conviene-optimizar" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧭 ¿Cuándo conviene optimizar?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proceso-recomendado" class="md-nav__link">
+    <span class="md-ellipsis">
+      🗺️ Proceso recomendado
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<div><p><a id="optimizacion"></a></p>
+<h1 id="optimizacion-de-codigo-concepto-y-tipos">⚡ Optimización de código: concepto y tipos<a class="headerlink" href="#optimizacion-de-codigo-concepto-y-tipos" title="Permanent link">¶</a></h1>
+<p><embed alt="Optimización de código" src="../diapositivas/optimizacion.pdf" style="width:100%;min-height:80vh" type="application/pdf"></embed></p>
+<div class="admonition info">
+<p class="admonition-title">Descarga de diapositivas</p>
+<p><a href="../diapositivas/optimizacion.pdf" rel="noopener" target="_blank">Descarga las diapositivas</a></p>
+</div>
+<hr>
+<h2 id="idea-clave">🎯 Idea clave<a class="headerlink" href="#idea-clave" title="Permanent link">¶</a></h2>
+<p>La <strong>optimización de código</strong> consiste en mejorar un programa para que:</p>
+<ul>
+<li>vaya <strong>más rápido</strong>, y/o</li>
+<li>consuma <strong>menos recursos</strong> (memoria, consultas, red),</li>
+</ul>
+<p><strong>sin cambiar su comportamiento</strong> (misma funcionalidad y mismos resultados).</p>
+<blockquote>
+<p>Optimizar no es “hacer el código más corto”: es <strong>hacerlo más eficiente</strong>.</p>
+</blockquote>
+<hr>
+<h2 id="que-significa-sin-cambiar-el-comportamiento">✅ ¿Qué significa “sin cambiar el comportamiento”?<a class="headerlink" href="#que-significa-sin-cambiar-el-comportamiento" title="Permanent link">¶</a></h2>
+<p>Si un programa:</p>
+<ul>
+<li>muestra una lista de productos,</li>
+<li>registra usuarios,</li>
+<li>calcula el total del carrito,</li>
+</ul>
+<p>al optimizar <strong>debe seguir haciendo lo mismo</strong>. La diferencia está en el <em>cómo</em>: tarda menos, realiza menos trabajo innecesario o reduce consultas.</p>
+<div class="admonition warning">
+<p class="admonition-title">Ojo</p>
+<p>Si al optimizar cambia el resultado (por ejemplo, cambia el total del carrito), no es una optimización: es un cambio de lógica.</p>
+</div>
+<hr>
+<h2 id="que-se-suele-optimizar-en-aplicaciones-web">🧠 ¿Qué se suele optimizar en aplicaciones web?<a class="headerlink" href="#que-se-suele-optimizar-en-aplicaciones-web" title="Permanent link">¶</a></h2>
+<div class="grid cards">
+<ul>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M12 20a7 7 0 0 1-7-7 7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7m7.03-12.61 1.42-1.42c-.45-.51-.9-.97-1.41-1.41L17.62 6c-1.55-1.26-3.5-2-5.62-2a9 9 0 0 0-9 9 9 9 0 0 0 9 9c5 0 9-4.03 9-9 0-2.12-.74-4.07-1.97-5.61M11 14h2V8h-2m4-7H9v2h6z"></path></svg></span> <strong>Tiempo de respuesta</strong></p>
+<ul>
+<li>Páginas que cargan lento</li>
+<li>APIs que tardan demasiado</li>
+</ul>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M12 3C7.58 3 4 4.79 4 7s3.58 4 8 4 8-1.79 8-4-3.58-4-8-4M4 9v3c0 2.21 3.58 4 8 4s8-1.79 8-4V9c0 2.21-3.58 4-8 4s-8-1.79-8-4m0 5v3c0 2.21 3.58 4 8 4s8-1.79 8-4v-3c0 2.21-3.58 4-8 4s-8-1.79-8-4"></path></svg></span> <strong>Base de datos</strong></p>
+<ul>
+<li>Demasiadas consultas</li>
+<li>Consultas pesadas</li>
+<li>Consultas repetidas</li>
+</ul>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M17 17H7V7h10m4 4V9h-2V7a2 2 0 0 0-2-2h-2V3h-2v2h-2V3H9v2H7c-1.11 0-2 .89-2 2v2H3v2h2v2H3v2h2v2a2 2 0 0 0 2 2h2v2h2v-2h2v2h2v-2h2a2 2 0 0 0 2-2v-2h2v-2h-2v-2m-6 2h-2v-2h2m2-2H9v6h6z"></path></svg></span> <strong>Memoria</strong></p>
+<ul>
+<li>Cargar datos enormes de golpe</li>
+<li>Guardar información que no se usa</li>
+</ul>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M6.5 20q-2.28 0-3.89-1.57Q1 16.85 1 14.58q0-1.95 1.17-3.48 1.18-1.53 3.08-1.95.43-1.8 2.13-3.42Q9.07 4.1 11 4.1q.83 0 1.41.59.59.59.59 1.41v6.05l1.6-1.55L16 12l-4 4-4-4 1.4-1.4 1.6 1.55V6.1q-1.9.35-2.95 1.84T7 11h-.5q-1.45 0-2.47 1.03Q3 13.05 3 14.5T4.03 17q1.02 1 2.47 1h12q1.05 0 1.77-.73.73-.72.73-1.77t-.73-1.77Q19.55 13 18.5 13H17v-2q0-1.2-.55-2.24Q15.9 7.73 15 7V4.68q1.85.87 2.93 2.58Q19 9 19 11q1.73.2 2.86 1.5 1.14 1.28 1.14 3 0 1.88-1.31 3.19T18.5 20M12 11.05"></path></svg></span> <strong>Red</strong></p>
+<ul>
+<li>Enviar/recibir datos innecesarios</li>
+<li>Archivos demasiado grandes</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Muy habitual</p>
+<p>La mejora más rentable suele ser reducir consultas a base de datos y evitar trabajo repetido.</p>
+</div>
+<hr>
+<h2 id="cuando-conviene-optimizar">🧭 ¿Cuándo conviene optimizar?<a class="headerlink" href="#cuando-conviene-optimizar" title="Permanent link">¶</a></h2>
+<p>Conviene optimizar cuando:</p>
+<ul>
+<li>hay <strong>lentitud real</strong> (usuarios esperando),</li>
+<li>se detectan <strong>muchas consultas</strong> a base de datos,</li>
+<li>el servidor empeora con varios usuarios,</li>
+<li>o una parte del código se ejecuta en cada petición.</li>
+</ul>
+<p>No conviene obsesionarse si:</p>
+<ul>
+<li>el proyecto es pequeño y funciona con fluidez,</li>
+<li>o “optimizar” va a complicar demasiado el código.</li>
+</ul>
+<hr>
+<h2 id="proceso-recomendado">🗺️ Proceso recomendado<a class="headerlink" href="#proceso-recomendado" title="Permanent link">¶</a></h2>
+<pre class="mermaid"><code>flowchart TB
+  A[Detectar el problema] --&gt; B[Comprobar dónde se pierde el tiempo]
+  B --&gt; C[Aplicar un cambio pequeño]
+  C --&gt; D[Comprobar que sigue funcionando]
+  D --&gt; E[Comparar antes vs después]</code></pre>
+<blockquote>
+<p>La optimización se hace con cambios <strong>pequeños</strong> y comprobando que no se rompe nada.</p>
+</blockquote>
+<hr>
+<p><a id="tipos-optimizacion"></a></p>
+<h1 id="tipos-de-optimizacion-local-global-y-dependiente-de-la-maquina">⚙️ Tipos de optimización: local, global y dependiente de la máquina<a class="headerlink" href="#tipos-de-optimizacion-local-global-y-dependiente-de-la-maquina" title="Permanent link">¶</a></h1>
+<h2 id="idea-clave_1">🎯 Idea clave<a class="headerlink" href="#idea-clave_1" title="Permanent link">¶</a></h2>
+<p>Podemos clasificar las optimizaciones según:</p>
+<ul>
+<li><strong>Alcance</strong>: si afectan a un trozo pequeño (local) o a la aplicación como conjunto (global).</li>
+<li><strong>Dependencia</strong>: si funcionan igual en cualquier entorno (independientes) o si dependen del servidor/entorno (dependientes).</li>
+</ul>
+<pre class="mermaid"><code>flowchart TB
+  A[Optimización] --&gt; B[Por alcance]
+  A --&gt; C[Por dependencia]
+
+  B --&gt; B1[Local]
+  B --&gt; B2[Global]
+
+  C --&gt; C1[Independiente]
+  C --&gt; C2[Dependiente]</code></pre>
+<hr>
+<h2 id="21-optimizacion-local">📌 2.1 Optimización local<a class="headerlink" href="#21-optimizacion-local" title="Permanent link">¶</a></h2>
+<p>Una optimización <strong>local</strong> afecta a una parte pequeña: una función, un bucle o una operación concreta.</p>
+<h3 id="caracteristicas">✅ Características<a class="headerlink" href="#caracteristicas" title="Permanent link">¶</a></h3>
+<ul>
+<li>Se aplica a un <strong>fragmento concreto</strong>.</li>
+<li>Suele ser <strong>rápida</strong> de implementar.</li>
+<li>Mantiene el mismo resultado, pero reduce trabajo.</li>
+</ul>
+<hr>
+<h3 id="ejemplo-local-1-cerrar-recursos-de-io-y-evitar-lecturas-duplicadas">🧪 Ejemplo local 1: cerrar recursos de I/O y evitar lecturas duplicadas<a class="headerlink" href="#ejemplo-local-1-cerrar-recursos-de-io-y-evitar-lecturas-duplicadas" title="Permanent link">¶</a></h3>
+<p>Leer un fichero de forma innecesaria o sin cerrar recursos puede ralentizar y dar problemas.</p>
+<div class="language-java highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.BufferedReader</span><span class="p">;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.FileReader</span><span class="p">;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.IOException</span><span class="p">;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">LocalIO</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">contarLineas</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">ruta</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">contador</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">        </span><span class="c1">// ✅ try-with-resources: asegura el cierre y es la forma recomendada</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">BufferedReader</span><span class="w"> </span><span class="n">br</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BufferedReader</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">FileReader</span><span class="p">(</span><span class="n">ruta</span><span class="p">)))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">            </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">br</span><span class="p">.</span><span class="na">readLine</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">                </span><span class="n">contador</span><span class="o">++</span><span class="p">;</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">contador</span><span class="p">;</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition info">
+<p class="admonition-title">Qué mejora</p>
+<p>No cambia la funcionalidad, pero evita fugas de recursos y reduce problemas de rendimiento/estabilidad.</p>
+</div>
+<hr>
+<h3 id="ejemplo-local-2-salir-antes-cuando-ya-no-hace-falta-seguir">🧪 Ejemplo local 2: salir antes cuando ya no hace falta seguir<a class="headerlink" href="#ejemplo-local-2-salir-antes-cuando-ya-no-hace-falta-seguir" title="Permanent link">¶</a></h3>
+<p>Si estás buscando algo y ya lo has encontrado, no necesitas seguir recorriendo.</p>
+<div class="language-java highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SalidaTemprana</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">hayAdmin</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">roles</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">rol</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">roles</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="s">"ADMIN"</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">rol</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"> </span><span class="c1">// ✅ en cuanto lo encuentra, sale</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition tip">
+<p class="admonition-title">Cuándo se nota</p>
+<p>Cuando la lista es grande y el valor suele aparecer pronto.</p>
+</div>
+<hr>
+<h2 id="22-optimizacion-global">🧩 2.2 Optimización global<a class="headerlink" href="#22-optimizacion-global" title="Permanent link">¶</a></h2>
+<p>Una optimización <strong>global</strong> mejora el sistema como conjunto. Normalmente afecta a:</p>
+<ul>
+<li>cómo se <strong>accede a datos</strong>,</li>
+<li>cómo se <strong>cargan</strong> listados,</li>
+<li>o cómo se <strong>organiza</strong> un flujo.</li>
+</ul>
+<h3 id="caracteristicas_1">✅ Características<a class="headerlink" href="#caracteristicas_1" title="Permanent link">¶</a></h3>
+<ul>
+<li>Puede aportar mejoras grandes.</li>
+<li>Suele tocar varias partes del programa.</li>
+<li>Necesita más verificación, porque afecta a más puntos.</li>
+</ul>
+<hr>
+<h3 id="ejemplo-global-1-reducir-datos-enviados-por-red-dto-campos-necesarios">🧪 Ejemplo global 1: reducir datos enviados por red (DTO / campos necesarios)<a class="headerlink" href="#ejemplo-global-1-reducir-datos-enviados-por-red-dto-campos-necesarios" title="Permanent link">¶</a></h3>
+<p><strong>Situación:</strong>
+En una API devuelves objetos enormes con muchos campos, pero el frontend solo necesita 3.</p>
+<p><strong>Mejora global:</strong></p>
+<ul>
+<li>devolver solo los campos necesarios (por ejemplo, un DTO <code>ProductoResumen</code> con <code>id</code>, <code>nombre</code>, <code>precio</code>),</li>
+<li>o seleccionar columnas concretas en la consulta.</li>
+</ul>
+<p><strong>Beneficios:</strong></p>
+<ul>
+<li>menos datos por red,</li>
+<li>respuestas más rápidas,</li>
+<li>menos trabajo de serialización.</li>
+</ul>
+<hr>
+<h3 id="ejemplo-global-2-cache-sencilla-de-resultados-cuando-los-datos-cambian-poco">🧪 Ejemplo global 2: caché sencilla de resultados (cuando los datos cambian poco)<a class="headerlink" href="#ejemplo-global-2-cache-sencilla-de-resultados-cuando-los-datos-cambian-poco" title="Permanent link">¶</a></h3>
+<p><strong>Situación:</strong>
+Una página pide cada vez “categorías” o “provincias” que casi nunca cambian.</p>
+<p><strong>Mejora global:</strong></p>
+<ul>
+<li>guardar ese resultado en caché durante un tiempo,</li>
+<li>y no recalcularlo/consultarlo en cada petición.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Cuidado</p>
+<p>La caché necesita una estrategia: cuándo se actualiza y cuándo caduca. No se usa si los datos cambian constantemente.</p>
+</div>
+<hr>
+<h2 id="23-optimizacion-independiente-de-la-maquina">🧱 2.3 Optimización independiente de la máquina<a class="headerlink" href="#23-optimizacion-independiente-de-la-maquina" title="Permanent link">¶</a></h2>
+<p>Son optimizaciones que funcionan igual en cualquier entorno porque dependen de:</p>
+<ul>
+<li>la lógica,</li>
+<li>el diseño de datos,</li>
+<li>o cómo organizas el acceso y la salida.</li>
+</ul>
+<p><strong>Ejemplos:</strong></p>
+<ul>
+<li>reducir campos y tamaño de respuesta (DTO),</li>
+<li>paginar listados,</li>
+<li>evitar consultas repetidas,</li>
+<li>salir antes en búsquedas,</li>
+<li>evitar leer/escribir más de lo necesario.</li>
+</ul>
+<hr>
+<h2 id="24-optimizacion-dependiente-de-la-maquina">🖥️ 2.4 Optimización dependiente de la máquina<a class="headerlink" href="#24-optimizacion-dependiente-de-la-maquina" title="Permanent link">¶</a></h2>
+<p>Son mejoras que dependen del entorno:</p>
+<ul>
+<li>memoria disponible,</li>
+<li>configuración del servidor,</li>
+<li>límites del contenedor,</li>
+<li>disco/red del hosting,</li>
+<li>configuración de la JVM.</li>
+</ul>
+<p><strong>Ejemplos:</strong></p>
+<ul>
+<li>aumentar memoria del proceso si está muy justa,</li>
+<li>mejorar configuración del servidor para servir recursos estáticos,</li>
+<li>ajustar límites de un contenedor.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Cuidado</p>
+<p>El efecto puede variar según el equipo y la configuración. En proyectos sencillos, suele priorizarse primero la optimización independiente.</p>
+</div>
+<hr>
+<h2 id="checklist-rapida-para-elegir-el-tipo-de-optimizacion">✅ Checklist rápida para elegir el tipo de optimización<a class="headerlink" href="#checklist-rapida-para-elegir-el-tipo-de-optimizacion" title="Permanent link">¶</a></h2>
+<details class="tip">
+<summary>Abrir checklist</summary>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> ¿El problema está en un trozo concreto (local) o en el flujo completo (global)?</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> ¿La mejora depende del código (independiente) o del servidor (dependiente)?</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> ¿Se puede reducir consultas/red antes de tocar detalles pequeños?</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> ¿El cambio es pequeño y comprobable?</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> ¿He verificado que el resultado es el mismo?</li>
+</ul>
+</details>
+<hr>
+<h2 id="mini-prueba-no-entregable0">🧪 Mini-prueba (no entregable0)<a class="headerlink" href="#mini-prueba-no-entregable0" title="Permanent link">¶</a></h2>
+<p><strong>Objetivo:</strong> mejorar un recorrido evitando iteraciones innecesarias.</p>
+<p>1) Ejecuta el siguiente código y anota el tiempo.<br>
+2) Modifica el método para que <strong>salga</strong> en cuanto encuentre el valor buscado.<br>
+3) Vuelve a medir y compara.</p>
+<div class="language-java highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span>
+<span class="normal"><a href="#__codelineno-2-15">15</a></span>
+<span class="normal"><a href="#__codelineno-2-16">16</a></span>
+<span class="normal"><a href="#__codelineno-2-17">17</a></span>
+<span class="normal"><a href="#__codelineno-2-18">18</a></span>
+<span class="normal"><a href="#__codelineno-2-19">19</a></span>
+<span class="normal"><a href="#__codelineno-2-20">20</a></span>
+<span class="normal"><a href="#__codelineno-2-21">21</a></span>
+<span class="normal"><a href="#__codelineno-2-22">22</a></span>
+<span class="normal"><a href="#__codelineno-2-23">23</a></span>
+<span class="normal"><a href="#__codelineno-2-24">24</a></span>
+<span class="normal"><a href="#__codelineno-2-25">25</a></span>
+<span class="normal"><a href="#__codelineno-2-26">26</a></span>
+<span class="normal"><a href="#__codelineno-2-27">27</a></span>
+<span class="normal"><a href="#__codelineno-2-28">28</a></span>
+<span class="normal"><a href="#__codelineno-2-29">29</a></span>
+<span class="normal"><a href="#__codelineno-2-30">30</a></span>
+<span class="normal"><a href="#__codelineno-2-31">31</a></span>
+<span class="normal"><a href="#__codelineno-2-32">32</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.ArrayList</span><span class="p">;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MiniPracticaSalidaTemprana</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">numeros</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">2_000_000</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">            </span><span class="n">numeros</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">objetivo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="c1">// está muy al principio</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a>
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="w">        </span><span class="kt">long</span><span class="w"> </span><span class="n">t1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="w">        </span><span class="kt">boolean</span><span class="w"> </span><span class="n">encontrado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">buscarSinSalir</span><span class="p">(</span><span class="n">numeros</span><span class="p">,</span><span class="w"> </span><span class="n">objetivo</span><span class="p">);</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="w">        </span><span class="kt">long</span><span class="w"> </span><span class="n">t2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17"></a>
+<a id="__codelineno-2-18" name="__codelineno-2-18"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Encontrado: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">encontrado</span><span class="p">);</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Tiempo: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">t2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">t1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" ns"</span><span class="p">);</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21"></a>
+<a id="__codelineno-2-22" name="__codelineno-2-22"></a><span class="w">    </span><span class="c1">// ❌ Recorre toda la lista aunque ya lo haya encontrado</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">buscarSinSalir</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">numeros</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">objetivo</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24"></a><span class="w">        </span><span class="kt">boolean</span><span class="w"> </span><span class="n">encontrado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">numeros</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-26" name="__codelineno-2-26"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">objetivo</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27"></a><span class="w">                </span><span class="n">encontrado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<a id="__codelineno-2-28" name="__codelineno-2-28"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-2-29" name="__codelineno-2-29"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-2-30" name="__codelineno-2-30"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">encontrado</span><span class="p">;</span>
+<a id="__codelineno-2-31" name="__codelineno-2-31"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-32" name="__codelineno-2-32"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pie" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Tema 4 - Introducción">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Tema 4 - Introducción
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../actividad_4_1/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Actividad 4.1">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              <div class="md-ellipsis">
+                Actividad 4.1
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      
+<p style="margin: 0 auto; text-align: center; font-size: 0.7rem;">
+  © 2025 Aitor Ventura — 
+  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">
+    Licencia CC BY-NC-SA 4.0
+  </a>
+</p>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.tracking", "navigation.footer", "content.code.copy", "content.code.select"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  </body>
+</html>
