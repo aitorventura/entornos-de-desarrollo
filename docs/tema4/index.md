@@ -1,32 +1,31 @@
-# 🧪 Tema 3: Verificación y Pruebas de Programas
+# ⚙️ Tema 4: Optimización y Documentación de Programas
 
-> **RA 3**: Verifica el funcionamiento de programas diseñando y realizando pruebas.
+> **RA 4**: Optimiza código empleando las herramientas disponibles en el entorno de desarrollo.
 
 ---
 
 ## 🎯 Criterios de evaluación
 
-✅ Se han identificado los diferentes tipos de pruebas.  
-✅ Se han definido casos de prueba.  
-✅ Se han identificado las herramientas de depuración y prueba de aplicaciones ofrecidas por el entorno de desarrollo.  
-✅ Se han utilizado herramientas de depuración para definir puntos de ruptura y seguimiento.  
-✅ Se han utilizado las herramientas de depuración para examinar y modificar el comportamiento de un programa en tiempo de ejecución.  
-✅ Se han efectuado pruebas unitarias de clases y funciones.  
-✅ Se han implementado pruebas automáticas.  
-✅ Se han documentado las incidencias detectadas.  
-✅ Se han utilizado dobles de prueba para aislar los componentes durante las pruebas.  
+- Se han identificado los patrones de refactorización más usuales.  
+- Se han elaborado las pruebas asociadas a la refactorización.  
+- Se ha revisado el código fuente usando un analizador de código.  
+- Se han identificado las posibilidades de configuración de un analizador de código.  
+- Se han aplicado patrones de refactorización con las herramientas del entorno de desarrollo.  
+- Se ha realizado el control de versiones integrado en el entorno de desarrollo.  
+- Se han utilizado herramientas del entorno de desarrollo para documentar las clases.  
+- Se han utilizado repositorios remotos para el desarrollo colaborativo.  
+- Se han utilizado herramientas para la integración continua del código.  
 
 ---
 
 ## 📘 Índice de contenidos
 
-1. [Planificación de pruebas](planificacion.md)  
-2. [Tipos de pruebas: funcionales, estructurales y regresión](tipos.md)  
-3. [Procedimientos y casos de prueba](casos.md)  
-4. [Pruebas de código: cubrimiento, valores límite y clases de equivalencia](codigo.md)  
-5. [Pruebas unitarias y herramientas de automatización](unitarias.md)  
-6. [Documentación de incidencias](incidencias.md)  
-7. [Dobles de prueba: tipos y características](dobles.md)  
+1. [Concepto de optimización de código y tipos](optimizacion_y_tipos.md)  
+2. [Refactorización: principios, patrones y limitaciones](refactorizacion.md)  
+3. [Analizadores de código: revisión estática y configuración](analizadores.md) 
+4. [Documentación del código: comentarios y herramientas](documentacion.md)  
+5. [Introducción a Git](introduccion-git.md)  
 
----
+// TODO
 
+6. [Integración continua y calidad del software](integracion-continua.md)  

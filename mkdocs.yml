@@ -61,6 +61,22 @@ nav:
       - Pruebas unitarias: tema3/unitarias.md
       - Actividad 3.5: tema3/actividad_3_5.md
       - Actividad 3.6: tema3/actividad_3_6.md
+  - Tema 4:
+      - Tema 4 - Introducción: tema4/index.md
+      - Optimización y tipos: tema4/optimizacion_y_tipos.md
+      - Actividad 4.1: tema4/actividad_4_1.md
+      - Refactorización: tema4/refactorizacion.md
+      - Actividad 4.2: tema4/actividad_4_2.md
+      - Analizadores de código: tema4/analizadores.md
+      - Documentación del código: tema4/documentacion.md
+      - Actividad 4.3: tema4/actividad_4_3.md
+      - Introducción a Git: tema4/introduccion-git.md
+      - Actividad 4.4: tema4/actividad_4_4.md
+
+
+
+
+
 
 
 markdown_extensions:
