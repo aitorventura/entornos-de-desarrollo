@@ -49,12 +49,14 @@ En conjunto, el objetivo es que seas capaz de **trabajar como desarrollador** si
     - [Pruebas unitarias](tema3/unitarias.md)  
 
 ---
-// TODO
-??? warning "🔒 Tema 4: Optimización y Documentación del Código (Próximamente)"
-    - Refactorización y patrones comunes  
-    - Analizadores de código  
-    - Control de versiones y repositorios  
-    - Documentación e integración continua  
+??? success "👨‍💻 Tema 4: Optimización y Documentación del Código"
+    - [Optimización y tipos](tema4/optimizacion_y_tipos.md)
+    - [Refactorización](tema4/refactorizacion.md)
+    - [Analizadores de código](tema4/analizadores.md)
+    - [Documentación del código](tema4/documentacion.md)
+    - [Introducción a Git](tema4/introduccion-git.md)
+    - [Introducción a las Ramas](tema4/ramas.md)
+    - [Introducción a GitHub](tema4/github.md)
 
 ---
 

@@ -5,7 +5,7 @@
     [Exercici — Branques (curs-git)](https://joapuiib.github.io/curs-git/apunts/02_branques/exercici/)
 
 !!! warning "Antes de empezar"
-    Te recomendamos encarecidamente que **leas la actividad entera** de principio a fin, y te asegures de revisar el apartado **📤 Entregable** al final del documento. Así sabrás exactamente qué debes registrar o capturar antes de ponerte a escribir comandos en la terminal.
+    Es recomendable que **leas la actividad entera** de principio a fin, y te asegures de revisar el apartado **📤 Entregable** al final del documento. Así sabrás exactamente qué debes registrar o capturar antes de ponerte a escribir comandos en la terminal.
 
 ---
 
@@ -47,7 +47,7 @@ Practicarás:
 Preparamos el terreno con una rama principal estable.
 
 1. Crea un directorio llamado `bloc2_exercici` en tu carpeta de trabajo y entra en él.
-2. Inicializa un repositorio de Git: `git init`.
+2. Inicializa un repositorio de Git.
 3. Crea un archivo llamado `llibres.txt`. Añade dentro **tres libros** que te gusten (uno por línea).
 4. Haz un **primer commit** con el mensaje "Añadidos libros iniciales".
 5. Si tu rama se llama `master`, renómbrala a `main` para seguir el estándar moderno:
@@ -63,17 +63,11 @@ Check: `git lga` debería mostrar un solo punto (commit) donde está `main` y `H
 
 Vamos a crear una rama, avanzar en ella, y luego integrar los cambios. Como `main` no se moverá mientras tanto, la fusión será lineal.
 
-1. Crea una rama llamada `musica` y sitúate en ella:
-   ```bash
-   git checkout -b musica
-   ```
+1. Crea una rama llamada `musica` y sitúate en ella.
 2. Crea un archivo llamado `musica.txt` y añade **tres canciones** que te gusten.
-3. Haz un **commit** en esta rama: `git add .` y `git commit -m "Añadida música"`.
-4. Vuelve a la rama `main`: `git checkout main`.
-5. Incorpora (fusiona) los cambios de `musica` en `main`:
-   ```bash
-   git merge musica
-   ```
+3. Haz un **commit** en esta rama.
+4. Vuelve a la rama `main`.
+5. Incorpora (fusiona) los cambios de `musica` en `main`.
 6. **Documenta** con una captura el resultado de `git lga`. Verás que `main` simplemente ha avanzado hasta donde estaba `musica`.
 
 ---
@@ -83,26 +77,16 @@ Vamos a crear una rama, avanzar en ella, y luego integrar los cambios. Como `mai
 Ahora simularemos que dos personas trabajan a la vez en cosas distintas, creando historias paralelas que luego uniremos.
 
 1. Estando en `main`, crea dos ramas nuevas: `mes-llibres` y `mes-musica`.
-2. Sitúate en la rama `mes-llibres` (`git checkout mes-llibres`):
+2. Sitúate en la rama `mes-llibres`:
     - Añade un **nuevo libro** al final de `llibres.txt`.
     - Haz un **commit**.
-    - Añade **otro libro más** a `llibres.txt`.
-    - Haz **otro commit**.
-3. Sitúate en la rama `mes-musica` (`git checkout mes-musica`):
+3. Sitúate en la rama `mes-musica`:
     - Añade una **nueva canción** a `musica.txt`.
     - Haz un **commit**.
-    - Añade **otra canción más** a `musica.txt`.
-    - Haz **otro commit**.
 4. Vuelve a `main`.
-5. Incorpora los cambios de `mes-llibres`:
-    ```bash
-    git merge mes-llibres
-    ```
+5. Incorpora los cambios de `mes-llibres`.
     *(Esta será Fast-Forward porque main no había avanzado).*
-6. Incorpora los cambios de `mes-musica`:
-    ```bash
-    git merge mes-musica
-    ```
+6. Incorpora los cambios de `mes-musica`.
     *(Aquí Git creará automáticamente un **commit de fusión** porque las historias divergieron).*
     - Se abrirá un editor para el mensaje del commit. Guarda y sal.
 7. **Documenta** el estado final con `git lga`. Observa cómo se bifurcan y unen las líneas.
@@ -117,16 +101,12 @@ Vamos a provocar que dos ramas toquen **las mismas líneas** del archivo `llibre
 2. En la rama `llibres-ciencia-ficcio`:
     - Modifica `llibres.txt` añadiendo un libro de **ciencia ficción** en la primera línea (o en una línea específica que vayas a tocar en la otra rama).
     - Haz un **commit**.
-    - Añade **otro libro** del género.
-    - Haz **otro commit**.
 3. En la rama `llibres-fantasia`:
     - Modifica `llibres.txt` añadiendo un libro de **fantasía** **en la misma línea** que usaste antes.
     - Haz un **commit**.
-    - Añade **otro libro** del género.
-    - Haz **otro commit**.
 4. Vuelve a `main`.
-5. Fusiona `llibres-ciencia-ficcio`: `git merge llibres-ciencia-ficcio`.
-6. Intenta fusionar `llibres-fantasia`: `git merge llibres-fantasia`.
+5. Fusiona `llibres-ciencia-ficcio`.
+6. Intenta fusionar `llibres-fantasia`.
     - **¡CONFLICTO!** Git te dirá: `CONFLICT (content): Merge conflict in llibres.txt`.
 7. **Resolución**:
     - Abre `llibres.txt`. Busca las marcas `<<<<<<<`, `=======`, `>>>>>>>`.
@@ -170,8 +150,15 @@ Limpieza del repositorio.
 
 ## 📤 Entregable
 
+!!! danger "Atención: Autoría de las capturas"
+    En todas las capturas de pantalla debe apreciarse claramente que **eres el autor** (ruta de las carpetas con tu usuario, nombre de equipo en la terminal, etc.).  
+    **En caso de detectar copias, la calificación de la actividad será de un 0 automático.**
+
 Sube un único **PDF** con:
 
-1. **Capturas de `git lga`** al finalizar las Partes 2, 3, 4 y 5.
-2. **Captura y explicación** breve de cómo resolviste los conflictos (Parte 4).
-3. **Respuesta** a la pregunta de la Parte 5 sobre los commits perdidos.
+1. **Capturas de `git lga`** demostrando la evolución del historial al finalizar las **Partes 2, 3 y 4**.
+2. **Captura en la Parte 5 de un `git branch` o `git lga`** justo después de crear añadir *series* y *pelicules*, demostrando que ambas ramas han existido.
+3. **Captura del error** que te dio Git al intentar borrar la rama sin fusionar en la Parte 5, junto al **lga** con el estado final.
+4. **Explicación breve** de cómo resolviste los conflictos manualmente (Parte 4).
+5. **Respuesta** a la pregunta de la Parte 5 sobre dónde han ido a parar los commits perdidos de esa rama.
+5. Una **breve reflexión personal (5-10 líneas)** sobre cómo crees que el uso de ramas mejorará el trabajo en equipo en tus futuros proyectos (por ejemplo: para programar funcionalidades de forma aislada sin romper el trabajo de los demás, hacer pruebas seguras, etc.).

@@ -1,5 +1,10 @@
 ﻿# 🌿 Ramas en Git
 
+![Ramas](diapositivas/ramas.pdf){ type=application/pdf style="width:100%;min-height:80vh" }
+
+!!!info "Descarga de diapositivas"
+    [Descarga las diapositivas](diapositivas/ramas.pdf){target="_blank" rel="noopener"}
+
 Las **ramas** (branches) son una de las características más potentes de Git. Permiten divergir de la línea principal de desarrollo para trabajar en **nuevas funcionalidades**, **arreglar errores** o **realizar experimentos** sin afectar al código estable.
 
 ---
@@ -375,4 +380,17 @@ Cuando ocurre:
 
 - [Documentación oficial de Git sobre ramas](https://git-scm.com/book/es/v2/Ramificaciones-en-Git-¿Qué-es-una-rama%3F)
 - [Learn Git Branching (Interactivo)](https://learngitbranching.js.org/?locale=es_ES)
+
+---
+
+## ✅ Ideas clave (muy resumidas)
+
+??? tip "Abrir resumen"
+    - `git branch <nombre>` crea una nueva rama.
+    - `git branch` lista las ramas locales y te dice en cuál estás (`*`).
+    - `git checkout <nombre>` (o `git switch <nombre>`) te mueve a otra rama.
+    - `git checkout -b <nombre>` (o `git switch -c <nombre>`) crea una rama e inmediatamente te mueve a ella.
+    - `git merge <rama>` fusiona los cambios de la `<rama>` indicada hacia la rama en la que estás actualmente situado.
+    - `git branch -d <nombre>` borra una rama (siempre que sus cambios ya estén a salvo integrados).
+    - `git log --oneline --graph --all` muestra el árbol visual y resumido de todas las diferentes ramas.
 

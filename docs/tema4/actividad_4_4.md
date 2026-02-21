@@ -5,7 +5,7 @@
     [Exercici — Introducció (curs-git)](https://joapuiib.github.io/curs-git/apunts/01_introduccio/exercici/)
 
 !!! warning "Antes de empezar"
-    Te recomendamos encarecidamente que **leas la actividad entera** de principio a fin, y te asegures de revisar el apartado **📤 Entregable** al final del documento. Así sabrás exactamente qué debes registrar o capturar antes de ponerte a escribir comandos en la terminal.
+    Es recomendable que **leas la actividad entera** de principio a fin, y te asegures de revisar el apartado **📤 Entregable** al final del documento. Así sabrás exactamente qué debes registrar o capturar antes de ponerte a escribir comandos en la terminal.
 
 ---
 
@@ -93,14 +93,19 @@ Crea el repositorio en una carpeta **independiente** para evitar problemas con o
 
 ## 📤 Entregable
 
+!!! danger "Atención: Autoría de las capturas"
+    En todas las capturas de pantalla debe apreciarse claramente que **eres el autor** (ruta de las carpetas con tu usuario, nombre de equipo en la terminal, etc.).  
+    **En caso de detectar copias, la calificación de la actividad será de un 0 automático.**
+
 Entrega un **PDF** que incluya:
 
-- **Capturas de pantalla** de los comandos ejecutados (especialmente `git status` y `git diff` después de cada paso).
-- Una **explicación breve** de **qué ha pasado** tras cada paso:  
-  
-    - qué archivos aparecen como *untracked*, *modified* o *staged*,  
-    - qué cambios muestra `git diff`,  
-    - y qué se ha guardado (o no) en cada commit.
+- **Capturas de pantalla y una explicación breve** (indicando qué archivos son *untracked*, *modified* o *staged*) en los siguientes 5 momentos clave:
+    1. Después del **Paso 4** (tu primer commit).
+    2. Después del **Paso 11** (revisando qué diferencias muestra `git diff` antes de hacer el commit).
+    3. Durante el **Paso 15** (mostrando el uso del comando para descartar modificaciones sueltas y el git status limpio resultante).
+    4. Después del **Paso 20** (mostrando cómo `.gitignore` oculta los archivos).
+    5. Después del **Paso 22** (captura de la historia de cambios o log final del repositorio).
+- Una **breve reflexión personal (5-10 líneas)** al final del documento explicando qué has aprendido en esta actividad básica y en qué situaciones reales crees que te será útil poder "viajar en el tiempo" por el historial de tus propios archivos (recuperar código, entender errores pasados, etc.).
 
 !!! tip "Consejo"
     Si quieres que quede ordenado, usa un apartado por paso: **Paso X → Captura(s) → Explicación**.
