@@ -4,6 +4,9 @@
     Actividad basada en el ejercicio original del curso de Joan Puigcerver:  
     [Exercici — Introducció (curs-git)](https://joapuiib.github.io/curs-git/apunts/01_introduccio/exercici/)
 
+!!! warning "Antes de empezar"
+    Te recomendamos encarecidamente que **leas la actividad entera** de principio a fin, y te asegures de revisar el apartado **📤 Entregable** al final del documento. Así sabrás exactamente qué debes registrar o capturar antes de ponerte a escribir comandos en la terminal.
+
 ---
 
 ## 🧠 Qué vas a practicar 

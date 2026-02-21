@@ -1,4 +1,4 @@
-<a id="intro-git"></a>
+﻿<a id="intro-git"></a>
 
 # 🧩 Introducción a Git (local): control de versiones desde cero
 
@@ -88,7 +88,8 @@ El **staging area** (también llamado **index**) es una especie de **lista de ca
 - Todo lo que está en *staging* = “esto sí lo voy a guardar ahora”.
 - Todo lo que NO está en *staging* = “esto todavía no”.
 
-> El commit no guarda “lo que tengas en la carpeta”, guarda **lo que hayas puesto en staging**.
+!!! warning "Recordatorio"
+    El commit no guarda “lo que tengas en la carpeta”, guarda **lo que hayas puesto en staging**.
 
 ---
 
@@ -128,7 +129,8 @@ Si haces un commit con TODO mezclado, el historial se vuelve difícil de usar:
 
 Con staging puedes separar el trabajo en commits con sentido:
 
-> “Ahora guardo el bug. Después guardo el README. Después el CSS.”
+!!! info "Ejemplo"
+    “Ahora guardo el bug. Después guardo el README. Después el CSS.”
 
 ---
 
@@ -370,7 +372,7 @@ cd ~/Documents/pruebas_git
 git init
 ```
 
-![](capturas/git-init.png)
+![](capturas/intro/git-init.png)
 
 **Qué estás viendo en la captura**
 
@@ -404,7 +406,7 @@ La idea no es memorizar, sino **entender** qué hace cada comando y qué deberí
 git status
 ```
 
-![](capturas/git-status.png)
+![](capturas/intro/git-status.png)
 
 **Qué estás viendo en la captura**
 
@@ -432,7 +434,7 @@ git status
 git diff
 ```
 
-![](capturas/git-diff.png)
+![](capturas/intro/git-diff.png)
 
 **Qué estás viendo en la captura**
 
@@ -456,7 +458,7 @@ Ejemplo (lo típico en tu caso):
 git add adios.txt hola.txt
 ```
 
-![](capturas/git-add.png)
+![](capturas/intro/git-add.png)
 
 **Qué estás viendo en la captura (después del add)**
 
@@ -482,7 +484,7 @@ git add adios.txt hola.txt
 git commit -m "Añado los archivos hola y adios"
 ```
 
-![](capturas/git-commit.png)
+![](capturas/intro/git-commit.png)
 
 **Qué estás viendo en la captura**
 
@@ -508,7 +510,7 @@ Para ver los commits que has hecho:
 git log
 ```
 
-![](capturas/git-log.png)
+![](capturas/intro/git-log.png)
 
 **Qué estás viendo en la captura**
 
@@ -537,7 +539,7 @@ Si modificas `hola.txt` y no quieres esos cambios:
 git restore hola.txt
 ```
 
-![](capturas/git-restore.png)
+![](capturas/intro/git-restore.png)
 
 **Qué estás viendo en la captura**
 
@@ -557,7 +559,7 @@ git restore hola.txt
 
 Esto sirve cuando has hecho `git add` por error (lo metiste en staging), pero aún no has hecho commit.
 
-![](capturas/git-restore-staged.png)
+![](capturas/intro/git-restore-staged.png)
 
 **Qué estás viendo en la captura**
 
@@ -607,3 +609,5 @@ Esto no aparece en tus capturas, pero conviene dejarlo claro aquí porque lo usa
     - `git commit` guarda solo lo que esté en staging.
     - `git log` muestra la historia de commits.
     - `git restore` deshace cambios; `git restore --staged` saca del staging sin borrar cambios.
+
+
