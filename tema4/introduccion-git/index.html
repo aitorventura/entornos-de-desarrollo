@@ -1820,6 +1820,98 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ramas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción a las Ramas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../actividad_4_5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 4.5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../github/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción a GitHub
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../actividad_4_6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 4.6
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2332,9 +2424,10 @@ Ejemplos buenos:</p>
 <li>Todo lo que está en <em>staging</em> = “esto sí lo voy a guardar ahora”.</li>
 <li>Todo lo que NO está en <em>staging</em> = “esto todavía no”.</li>
 </ul>
-<blockquote>
+<div class="admonition warning">
+<p class="admonition-title">Recordatorio</p>
 <p>El commit no guarda “lo que tengas en la carpeta”, guarda <strong>lo que hayas puesto en staging</strong>.</p>
-</blockquote>
+</div>
 <hr>
 <h3 id="metafora-escritorio-bandeja-y-album">🧾 Metáfora: escritorio, bandeja y álbum<a class="headerlink" href="#metafora-escritorio-bandeja-y-album" title="Permanent link">¶</a></h3>
 <ul>
@@ -2368,9 +2461,10 @@ Ejemplos buenos:</p>
 <li>y revisar cambios en equipo se vuelve un lío.</li>
 </ul>
 <p>Con staging puedes separar el trabajo en commits con sentido:</p>
-<blockquote>
+<div class="admonition info">
+<p class="admonition-title">Ejemplo</p>
 <p>“Ahora guardo el bug. Después guardo el README. Después el CSS.”</p>
-</blockquote>
+</div>
 <hr>
 <h3 id="ejemplo-practico-commits-limpios-uno-por-idea">✅ Ejemplo práctico: commits limpios (uno por idea)<a class="headerlink" href="#ejemplo-practico-commits-limpios-uno-por-idea" title="Permanent link">¶</a></h3>
 <p>Supón que has tocado 3 archivos:</p>
@@ -2554,7 +2648,7 @@ Para que no se abra un editor raro, puedes fijar uno. Con VS Code:</p>
 <h3 id="paso-2-inicializa-git">✅ Paso 2) Inicializa Git<a class="headerlink" href="#paso-2-inicializa-git" title="Permanent link">¶</a></h3>
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a>git<span class="w"> </span>init
 </code></pre></div></td></tr></table></div>
-<p><img alt="" src="../capturas/git-init.png"></p>
+<p><img alt="" src="../capturas/intro/git-init.png"></p>
 <p><strong>Qué estás viendo en la captura</strong></p>
 <ul>
 <li>Git confirma que ha creado un repositorio vacío en la carpeta <code>.git/</code>.</li>
@@ -2586,7 +2680,7 @@ Para que no se abra un editor raro, puedes fijar uno. Con VS Code:</p>
 <p><code>git status</code> te dice <strong>en qué situación está tu repo</strong> y <strong>en qué estado están tus archivos</strong>.</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a>git<span class="w"> </span>status
 </code></pre></div></td></tr></table></div>
-<p><img alt="" src="../capturas/git-status.png"></p>
+<p><img alt="" src="../capturas/intro/git-status.png"></p>
 <p><strong>Qué estás viendo en la captura</strong></p>
 <ul>
 <li>Se ejecuta <code>ls</code> y aparecen 3 archivos: <code>adios.txt</code>, <code>hasta-luego.txt</code>, <code>hola.txt</code>.</li>
@@ -2609,7 +2703,7 @@ Para que no se abra un editor raro, puedes fijar uno. Con VS Code:</p>
 <p><code>git diff</code> muestra cambios <strong>línea a línea</strong> respecto al último commit (o respecto al staging, según el caso).</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a>git<span class="w"> </span>diff
 </code></pre></div></td></tr></table></div>
-<p><img alt="" src="../capturas/git-diff.png"></p>
+<p><img alt="" src="../capturas/intro/git-diff.png"></p>
 <p><strong>Qué estás viendo en la captura</strong></p>
 <ul>
 <li>Git te enseña el archivo que cambió: <code>hola.txt</code>.</li>
@@ -2633,7 +2727,7 @@ Para que no se abra un editor raro, puedes fijar uno. Con VS Code:</p>
 <p>Ejemplo (lo típico en tu caso):
 </p><div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a>git<span class="w"> </span>add<span class="w"> </span>adios.txt<span class="w"> </span>hola.txt
 </code></pre></div></td></tr></table></div>
-<p><img alt="" src="../capturas/git-add.png"></p>
+<p><img alt="" src="../capturas/intro/git-add.png"></p>
 <p><strong>Qué estás viendo en la captura (después del add)</strong></p>
 <ul>
 <li>
@@ -2660,7 +2754,7 @@ Al principio, es mejor añadir <strong>archivo a archivo</strong> para no llevar
 <p><code>git commit</code> guarda en el historial <strong>lo que esté en staging</strong>.</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Añado los archivos hola y adios"</span>
 </code></pre></div></td></tr></table></div>
-<p><img alt="" src="../capturas/git-commit.png"></p>
+<p><img alt="" src="../capturas/intro/git-commit.png"></p>
 <p><strong>Qué estás viendo en la captura</strong></p>
 <ul>
 <li>
@@ -2686,7 +2780,7 @@ Al principio, es mejor añadir <strong>archivo a archivo</strong> para no llevar
 <p>Para ver los commits que has hecho:</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a>git<span class="w"> </span>log
 </code></pre></div></td></tr></table></div>
-<p><img alt="" src="../capturas/git-log.png"></p>
+<p><img alt="" src="../capturas/intro/git-log.png"></p>
 <p><strong>Qué estás viendo en la captura</strong></p>
 <ul>
 <li>
@@ -2711,7 +2805,7 @@ Al principio, es mejor añadir <strong>archivo a archivo</strong> para no llevar
 <p>Si modificas <code>hola.txt</code> y no quieres esos cambios:</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a>git<span class="w"> </span>restore<span class="w"> </span>hola.txt
 </code></pre></div></td></tr></table></div>
-<p><img alt="" src="../capturas/git-restore.png"></p>
+<p><img alt="" src="../capturas/intro/git-restore.png"></p>
 <p><strong>Qué estás viendo en la captura</strong></p>
 <p>1) Primero se ejecuta <code>git diff</code> y se ven varias líneas nuevas (<code>+...</code>) en <code>hola.txt</code>.</p>
 <p>2) Luego se ejecuta <code>git restore hola.txt</code>.</p>
@@ -2724,7 +2818,7 @@ Si esos cambios te importan, guarda antes (commit) o copia el archivo.</p>
 <hr>
 <h3 id="b-quitar-un-archivo-del-staging-sin-borrar-sus-cambios-git-restore-staged">B) Quitar un archivo del staging (sin borrar sus cambios): <code>git restore --staged</code><a class="headerlink" href="#b-quitar-un-archivo-del-staging-sin-borrar-sus-cambios-git-restore-staged" title="Permanent link">¶</a></h3>
 <p>Esto sirve cuando has hecho <code>git add</code> por error (lo metiste en staging), pero aún no has hecho commit.</p>
-<p><img alt="" src="../capturas/git-restore-staged.png"></p>
+<p><img alt="" src="../capturas/intro/git-restore-staged.png"></p>
 <p><strong>Qué estás viendo en la captura</strong></p>
 <p>1) <code>git add hasta-luego.txt</code> → lo mete en staging.  </p>
 <p>2) <code>git status</code> muestra:</p>
