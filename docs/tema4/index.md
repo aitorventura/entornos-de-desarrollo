@@ -25,6 +25,9 @@
 3. [Analizadores de código: revisión estática y configuración](analizadores.md) 
 4. [Documentación del código: comentarios y herramientas](documentacion.md)  
 5. [Introducción a Git](introduccion-git.md)  
+6. [Trabajando con ramas](ramas.md)  
+7. [GitHub y trabajo remoto](github.md)  
+8. [Colaboración y Gestión de Proyectos en GitHub](colaboracion.md)  
 
 // TODO
 

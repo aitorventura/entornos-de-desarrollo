@@ -12,6 +12,8 @@
         <link rel="prev" href="../actividad_4_5/">
       
       
+        <link rel="next" href="../actividad_4_6/">
+      
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
@@ -1489,46 +1491,130 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#repositorios-remotos" class="md-nav__link">
+  <a href="#que-es-un-repositorio-remoto" class="md-nav__link">
     <span class="md-ellipsis">
-      ☁️ Repositorios Remotos
+      ☁️ ¿Qué es un Repositorio Remoto?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#metodos-de-autenticacion-en-github" class="md-nav__link">
+  <a href="#registro-en-github" class="md-nav__link">
     <span class="md-ellipsis">
-      🔐 Métodos de autenticación en GitHub
+      📝 Registro en GitHub
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="🔐 Métodos de autenticación en GitHub">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autenticacion-y-conexion-en-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔐 Autenticación y Conexión en GitHub
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔐 Autenticación y Conexión en GitHub">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-token-de-acceso-personal-pat" class="md-nav__link">
+  <a href="#generando-un-token-de-acceso-personal-pat" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Token de acceso personal (PAT)
+      Generando un Token de Acceso Personal (PAT)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-autenticacion-mediante-claves-ssh" class="md-nav__link">
+  <a href="#configurando-la-autenticacion-por-ssh-recomendado" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Autenticación mediante claves SSH
+      Configurando la Autenticación por SSH (Recomendado)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configurando la Autenticación por SSH (Recomendado)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-generar-la-clave-ssh-local" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Generar la clave SSH local
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-autenticacion-mediante-github-cli" class="md-nav__link">
+  <a href="#2-copiar-la-clave-publica" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Autenticación mediante GitHub CLI
+      2. Copiar la Clave Pública
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-anadir-la-llave-a-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Añadir la llave a GitHub
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paso-a-paso-subiendo-tu-proyecto-a-la-nube" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Paso a Paso: Subiendo tu proyecto a la nube
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Paso a Paso: Subiendo tu proyecto a la nube">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-creando-el-espacio-en-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Creando el espacio en GitHub
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-enlazando-el-local-con-el-remoto-git-remote" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Enlazando el local con el remoto (git remote)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-el-primer-empuje-de-codigo-git-push" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. El primer empuje de código (git push)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-visualizando-el-resultado-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Visualizando el resultado web
     </span>
   </a>
   
@@ -1540,37 +1626,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#creacion-y-configuracion-git-remote" class="md-nav__link">
+  <a href="#descargando-y-sincronizando-nuestro-codigo" class="md-nav__link">
     <span class="md-ellipsis">
-      🛠️ Creación y configuración (git remote)
+      🔄 Descargando y sincronizando nuestro código
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="🛠️ Creación y configuración (git remote)">
+    <nav class="md-nav" aria-label="🔄 Descargando y sincronizando nuestro código">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ver-repositorios-asociados" class="md-nav__link">
+  <a href="#clonar-un-repositorio-desde-cero-git-clone" class="md-nav__link">
     <span class="md-ellipsis">
-      Ver repositorios asociados
+      Clonar un repositorio desde cero (git clone)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#anadir-un-remoto" class="md-nav__link">
+  <a href="#comprobar-si-hay-cambios-git-fetch" class="md-nav__link">
     <span class="md-ellipsis">
-      Añadir un remoto
+      Comprobar si hay cambios (git fetch)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#otros-comandos-utiles" class="md-nav__link">
+  <a href="#descargar-e-integrar-actualizaciones-git-pull" class="md-nav__link">
     <span class="md-ellipsis">
-      Otros comandos útiles
+      Descargar e integrar actualizaciones (git pull)
     </span>
   </a>
   
@@ -1582,28 +1668,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#trabajando-con-el-remoto" class="md-nav__link">
+  <a href="#las-ramas-en-el-repositorio-remoto" class="md-nav__link">
     <span class="md-ellipsis">
-      🚀 Trabajando con el Remoto
+      🌳 Las Ramas en el repositorio remoto
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="🚀 Trabajando con el Remoto">
+    <nav class="md-nav" aria-label="🌳 Las Ramas en el repositorio remoto">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-publicacion-de-cambios-git-push" class="md-nav__link">
+  <a href="#borrar-ramas-en-remoto" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Publicación de cambios (git push)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-clonacion-de-un-repositorio-remoto-git-clone" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Clonación de un repositorio remoto (git clone)
+      Borrar ramas en remoto
     </span>
   </a>
   
@@ -1615,28 +1692,47 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#sincronizacion-e-incorporacion-de-cambios" class="md-nav__link">
+  <a href="#resumen-del-flujo-de-trabajo-habitual" class="md-nav__link">
     <span class="md-ellipsis">
-      🔄 Sincronización e incorporación de cambios
+      📋 Resumen del flujo de trabajo habitual
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="🔄 Sincronización e incorporación de cambios">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integracion-de-git-y-github-en-intellij-idea" class="md-nav__link">
+    <span class="md-ellipsis">
+      💻 Integración de Git y GitHub en IntelliJ IDEA
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💻 Integración de Git y GitHub en IntelliJ IDEA">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#git-fetch" class="md-nav__link">
+  <a href="#enlazando-tu-cuenta" class="md-nav__link">
     <span class="md-ellipsis">
-      git fetch
+      Enlazando tu cuenta
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#git-pull" class="md-nav__link">
+  <a href="#el-menu-superior-git-y-control-de-versiones" class="md-nav__link">
     <span class="md-ellipsis">
-      git pull
+      El menú superior "Git" y control de versiones
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="El menú superior &#34;Git&#34; y control de versiones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#controlando-los-mundos-paralelos-las-ramas-en-intellij" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controlando los mundos paralelos: Las ramas en IntelliJ
     </span>
   </a>
   
@@ -1646,11 +1742,16 @@
     </nav>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#resumen-del-flujo-de-trabajo" class="md-nav__link">
+  <a href="#ideas-clave-muy-resumidas" class="md-nav__link">
     <span class="md-ellipsis">
-      📋 Resumen del flujo de trabajo
+      ✅ Ideas clave (muy resumidas)
     </span>
   </a>
   
@@ -1660,6 +1761,29 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../actividad_4_6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 4.6
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1699,46 +1823,130 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#repositorios-remotos" class="md-nav__link">
+  <a href="#que-es-un-repositorio-remoto" class="md-nav__link">
     <span class="md-ellipsis">
-      ☁️ Repositorios Remotos
+      ☁️ ¿Qué es un Repositorio Remoto?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#metodos-de-autenticacion-en-github" class="md-nav__link">
+  <a href="#registro-en-github" class="md-nav__link">
     <span class="md-ellipsis">
-      🔐 Métodos de autenticación en GitHub
+      📝 Registro en GitHub
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="🔐 Métodos de autenticación en GitHub">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autenticacion-y-conexion-en-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔐 Autenticación y Conexión en GitHub
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔐 Autenticación y Conexión en GitHub">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-token-de-acceso-personal-pat" class="md-nav__link">
+  <a href="#generando-un-token-de-acceso-personal-pat" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Token de acceso personal (PAT)
+      Generando un Token de Acceso Personal (PAT)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-autenticacion-mediante-claves-ssh" class="md-nav__link">
+  <a href="#configurando-la-autenticacion-por-ssh-recomendado" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Autenticación mediante claves SSH
+      Configurando la Autenticación por SSH (Recomendado)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configurando la Autenticación por SSH (Recomendado)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-generar-la-clave-ssh-local" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Generar la clave SSH local
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-autenticacion-mediante-github-cli" class="md-nav__link">
+  <a href="#2-copiar-la-clave-publica" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Autenticación mediante GitHub CLI
+      2. Copiar la Clave Pública
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-anadir-la-llave-a-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Añadir la llave a GitHub
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paso-a-paso-subiendo-tu-proyecto-a-la-nube" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Paso a Paso: Subiendo tu proyecto a la nube
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Paso a Paso: Subiendo tu proyecto a la nube">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-creando-el-espacio-en-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Creando el espacio en GitHub
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-enlazando-el-local-con-el-remoto-git-remote" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Enlazando el local con el remoto (git remote)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-el-primer-empuje-de-codigo-git-push" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. El primer empuje de código (git push)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-visualizando-el-resultado-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Visualizando el resultado web
     </span>
   </a>
   
@@ -1750,37 +1958,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#creacion-y-configuracion-git-remote" class="md-nav__link">
+  <a href="#descargando-y-sincronizando-nuestro-codigo" class="md-nav__link">
     <span class="md-ellipsis">
-      🛠️ Creación y configuración (git remote)
+      🔄 Descargando y sincronizando nuestro código
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="🛠️ Creación y configuración (git remote)">
+    <nav class="md-nav" aria-label="🔄 Descargando y sincronizando nuestro código">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ver-repositorios-asociados" class="md-nav__link">
+  <a href="#clonar-un-repositorio-desde-cero-git-clone" class="md-nav__link">
     <span class="md-ellipsis">
-      Ver repositorios asociados
+      Clonar un repositorio desde cero (git clone)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#anadir-un-remoto" class="md-nav__link">
+  <a href="#comprobar-si-hay-cambios-git-fetch" class="md-nav__link">
     <span class="md-ellipsis">
-      Añadir un remoto
+      Comprobar si hay cambios (git fetch)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#otros-comandos-utiles" class="md-nav__link">
+  <a href="#descargar-e-integrar-actualizaciones-git-pull" class="md-nav__link">
     <span class="md-ellipsis">
-      Otros comandos útiles
+      Descargar e integrar actualizaciones (git pull)
     </span>
   </a>
   
@@ -1792,28 +2000,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#trabajando-con-el-remoto" class="md-nav__link">
+  <a href="#las-ramas-en-el-repositorio-remoto" class="md-nav__link">
     <span class="md-ellipsis">
-      🚀 Trabajando con el Remoto
+      🌳 Las Ramas en el repositorio remoto
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="🚀 Trabajando con el Remoto">
+    <nav class="md-nav" aria-label="🌳 Las Ramas en el repositorio remoto">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-publicacion-de-cambios-git-push" class="md-nav__link">
+  <a href="#borrar-ramas-en-remoto" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Publicación de cambios (git push)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-clonacion-de-un-repositorio-remoto-git-clone" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Clonación de un repositorio remoto (git clone)
+      Borrar ramas en remoto
     </span>
   </a>
   
@@ -1825,28 +2024,47 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#sincronizacion-e-incorporacion-de-cambios" class="md-nav__link">
+  <a href="#resumen-del-flujo-de-trabajo-habitual" class="md-nav__link">
     <span class="md-ellipsis">
-      🔄 Sincronización e incorporación de cambios
+      📋 Resumen del flujo de trabajo habitual
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="🔄 Sincronización e incorporación de cambios">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integracion-de-git-y-github-en-intellij-idea" class="md-nav__link">
+    <span class="md-ellipsis">
+      💻 Integración de Git y GitHub en IntelliJ IDEA
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💻 Integración de Git y GitHub en IntelliJ IDEA">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#git-fetch" class="md-nav__link">
+  <a href="#enlazando-tu-cuenta" class="md-nav__link">
     <span class="md-ellipsis">
-      git fetch
+      Enlazando tu cuenta
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#git-pull" class="md-nav__link">
+  <a href="#el-menu-superior-git-y-control-de-versiones" class="md-nav__link">
     <span class="md-ellipsis">
-      git pull
+      El menú superior "Git" y control de versiones
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="El menú superior &#34;Git&#34; y control de versiones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#controlando-los-mundos-paralelos-las-ramas-en-intellij" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controlando los mundos paralelos: Las ramas en IntelliJ
     </span>
   </a>
   
@@ -1856,11 +2074,16 @@
     </nav>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#resumen-del-flujo-de-trabajo" class="md-nav__link">
+  <a href="#ideas-clave-muy-resumidas" class="md-nav__link">
     <span class="md-ellipsis">
-      📋 Resumen del flujo de trabajo
+      ✅ Ideas clave (muy resumidas)
     </span>
   </a>
   
@@ -1883,133 +2106,373 @@
 
 
 <div><h1 id="introduccion-a-github-y-repositorios-remotos">🌐 Introducción a GitHub y Repositorios Remotos<a class="headerlink" href="#introduccion-a-github-y-repositorios-remotos" title="Permanent link">¶</a></h1>
-<p><embed alt="Introducción a GitHub" src="diapositivas/github.pdf" style="width:100%;min-height:80vh" type="application/pdf"></embed></p>
+<p><embed alt="Introducción a GitHub" src="../diapositivas/github.pdf" style="width:100%;min-height:80vh" type="application/pdf"></embed></p>
 <div class="admonition info">
 <p class="admonition-title">Descarga de diapositivas</p>
-<p><a href="diapositivas/github.pdf" rel="noopener" target="_blank">Descarga las diapositivas</a></p>
+<p><a href="../diapositivas/github.pdf" rel="noopener" target="_blank">Descarga las diapositivas</a></p>
 </div>
 <hr>
-<p>En esta sección nos centraremos en los <strong>repositorios remotos</strong>: repositorios que se encuentran alojados en un servidor o en otro lugar fuera de nuestro propio sistema local, lo que permite el acceso a otros usuarios y facilita la colaboración en el desarrollo de proyectos. Utilizaremos <strong>GitHub</strong> como servidor para alojar estos repositorios.</p>
+<p>En esta sección nos centraremos en los <strong>repositorios remotos</strong>: repositorios que se encuentran alojados en un servidor o en otro lugar fuera de nuestro propio sistema local, lo que permite el acceso a otros usuarios y facilita la colaboración en el desarrollo de proyectos. Utilizaremos <strong>GitHub</strong> como servidor principal para alojar estos repositorios durante el curso.</p>
 <hr>
-<h2 id="repositorios-remotos">☁️ Repositorios Remotos<a class="headerlink" href="#repositorios-remotos" title="Permanent link">¶</a></h2>
-<p>Un repositorio remoto es una copia de un repositorio de Git alojado en un servidor. Contiene una réplica completa de la historia del repositorio, incluyendo todas las revisiones y ramas. Sus finalidades principales son:</p>
+<h2 id="que-es-un-repositorio-remoto">☁️ ¿Qué es un Repositorio Remoto?<a class="headerlink" href="#que-es-un-repositorio-remoto" title="Permanent link">¶</a></h2>
+<p>Un repositorio remoto es una copia de tu repositorio de Git alojado en un servidor de internet. Contiene una réplica completa de la historia del proyecto (tus commits y tus ramas). Sus principales ventajas son:</p>
 <ul>
-<li><strong>Colaboración</strong>: Varios desarrolladores pueden trabajar juntos en un proyecto, descargar los cambios y subir sus modificaciones para compartirlas.</li>
-<li><strong>Copia de seguridad</strong>: Sirve como respaldo de tu proyecto en caso de pérdida de datos a nivel local.</li>
-<li><strong>Distribución</strong>: Permite distribuir tu código para compartirlo o desplegarlo en un entorno online.</li>
+<li><strong>Colaboración</strong>: Varios desarrolladores pueden descargar un mismo proyecto, trabajar juntos y compartir sus modificaciones.</li>
+<li><strong>Copia de seguridad</strong>: Sirve como un respaldo vital de tu proyecto por si tu ordenador se estropea.</li>
+<li><strong>Distribución</strong>: Te permite exponer tu trabajo al mundo (portafolio) o integrarlo con servidores reales de despliegue.</li>
 </ul>
 <div class="admonition info">
 <p class="admonition-title">Alternativas a GitHub</p>
-<p>Para el alojamiento de repositorios remotos, existen varios servicios reconocidos además de <a href="https://github.com/">GitHub</a>:
-- <strong><a href="https://gitlab.com/">GitLab</a></strong>: Plataforma de código abierto con múltiples funcionalidades para DevOps.
-- <strong><a href="https://bitbucket.org/">Bitbucket</a></strong>: Propiedad de Atlassian, ofrece una integración estrecha con Jira y otras herramientas de la compañía.</p>
+<p>Para el alojamiento de repositorios remotos, existen varios servicios famosos además de <a href="https://github.com/">GitHub</a>:</p>
+<ul>
+<li><strong><a href="https://gitlab.com/">GitLab</a></strong>: Plataforma Open Source muy completa orientada al entorno DevOps y la Integración Continua.</li>
+<li><strong><a href="https://bitbucket.org/">Bitbucket</a></strong>: Propiedad de Atlassian, ofrece una integración total con la suite de herramientas Jira y Trello.</li>
+</ul>
 </div>
 <hr>
-<h2 id="metodos-de-autenticacion-en-github">🔐 Métodos de autenticación en GitHub<a class="headerlink" href="#metodos-de-autenticacion-en-github" title="Permanent link">¶</a></h2>
-<p>Para conectar nuestro entorno local a los repositorios alojados en GitHub, primero debemos crear una cuenta y luego elegir un método de autenticación válido:</p>
-<h3 id="1-token-de-acceso-personal-pat">1. Token de acceso personal (PAT)<a class="headerlink" href="#1-token-de-acceso-personal-pat" title="Permanent link">¶</a></h3>
-<p>Un <em>Personal Access Token</em> es una clave que permite autenticarse en el servidor mediante el protocolo HTTPS. En GitHub, los creas desde <strong>Settings &gt; Developer settings &gt; Personal access tokens</strong>. </p>
-<p>Al clonar u operar sobre el repositorio mediante HTTPS, Git solicitará el usuario y luego deberás utilizar el token generado como contraseña.</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://&lt;token&gt;@github.com/&lt;usuario&gt;/&lt;repositorio&gt;.git
-</code></pre></div></td></tr></table></div>
-<h3 id="2-autenticacion-mediante-claves-ssh">2. Autenticación mediante claves SSH<a class="headerlink" href="#2-autenticacion-mediante-claves-ssh" title="Permanent link">¶</a></h3>
-<p>Para autenticarse por SSH, necesitas generar una clave pública y privada en local, y luego añadir la clave pública a tu cuenta de GitHub.</p>
-<p>Se genera con el comando:</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>rsa<span class="w"> </span>-b<span class="w"> </span><span class="m">4096</span>
-</code></pre></div></td></tr></table></div>
-<p>Y se utiliza copiando el contenido de tu clave pública (normalmente <code>~/.ssh/id_rsa.pub</code>) a la configuración de SSH en GitHub.</p>
-<h3 id="3-autenticacion-mediante-github-cli">3. Autenticación mediante GitHub CLI<a class="headerlink" href="#3-autenticacion-mediante-github-cli" title="Permanent link">¶</a></h3>
-<p>GitHub ofrece una herramienta de línea de comandos oficial llamada <code>gh</code>. Permite el inicio de sesión de manera interactiva a través del navegador:</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>gh<span class="w"> </span>auth<span class="w"> </span>login
-</code></pre></div></td></tr></table></div>
-<hr>
-<h2 id="creacion-y-configuracion-git-remote">🛠️ Creación y configuración (<code>git remote</code>)<a class="headerlink" href="#creacion-y-configuracion-git-remote" title="Permanent link">¶</a></h2>
-<p>Para crear un repositorio web en GitHub debes iniciar sesión, hacer clic en el botón <strong>New</strong>, rellenar el nombre y seleccionar la visibilidad (Público o Privado).</p>
-<p>Una vez creado, si ya tienes un repositorio local y deseas enlazarlo al remoto, utilizarás el comando <code>git remote</code>.</p>
-<h3 id="ver-repositorios-asociados">Ver repositorios asociados<a class="headerlink" href="#ver-repositorios-asociados" title="Permanent link">¶</a></h3>
-<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>git<span class="w"> </span>remote<span class="w"> </span>-v
-</code></pre></div></td></tr></table></div>
-<h3 id="anadir-un-remoto">Añadir un remoto<a class="headerlink" href="#anadir-un-remoto" title="Permanent link">¶</a></h3>
-<p>Es costumbre utilizar <code>origin</code> como alias por defecto.
-</p><div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>&lt;url&gt;
-</code></pre></div></td></tr></table></div>
-<h3 id="otros-comandos-utiles">Otros comandos útiles<a class="headerlink" href="#otros-comandos-utiles" title="Permanent link">¶</a></h3>
-<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
-<span class="normal"><a href="#__codelineno-5-2">2</a></span>
-<span class="normal"><a href="#__codelineno-5-3">3</a></span>
-<span class="normal"><a href="#__codelineno-5-4">4</a></span>
-<span class="normal"><a href="#__codelineno-5-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="c1"># Renombrar remoto</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a>git<span class="w"> </span>remote<span class="w"> </span>rename<span class="w"> </span>&lt;alias_actual&gt;<span class="w"> </span>&lt;nuevo_alias&gt;
-<a id="__codelineno-5-3" name="__codelineno-5-3"></a>
-<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="c1"># Eliminar remoto</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5"></a>git<span class="w"> </span>remote<span class="w"> </span>remove<span class="w"> </span>&lt;alias&gt;
-</code></pre></div></td></tr></table></div>
-<hr>
-<h2 id="trabajando-con-el-remoto">🚀 Trabajando con el Remoto<a class="headerlink" href="#trabajando-con-el-remoto" title="Permanent link">¶</a></h2>
-<h3 id="1-publicacion-de-cambios-git-push">1. Publicación de cambios (<code>git push</code>)<a class="headerlink" href="#1-publicacion-de-cambios-git-push" title="Permanent link">¶</a></h3>
-<p>Una rama creada localmente no es visible por otros a menos que la subas al repositorio remoto utilizando <code>git push</code>.</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>git<span class="w"> </span>push<span class="w"> </span><span class="o">[</span>-u<span class="w"> </span><span class="p">|</span><span class="w"> </span>--set-upstream<span class="o">]</span><span class="w"> </span><span class="o">[</span>&lt;remoto&gt;<span class="w"> </span><span class="o">[</span>&lt;rama&gt;<span class="o">]]</span>
-</code></pre></div></td></tr></table></div>
-<div class="admonition note">
-<p class="admonition-title">Enlazar ramas</p>
-<p>La opción <code>-u</code> o <code>--set-upstream</code> enlaza tu rama local actual con la rama del repositorio remoto que especifiques, por ejemplo: <code>git push -u origin main</code>. Así, los futuros comandos de publicación y sincronización se podrán efectuar simplemente con <code>git push</code> o <code>git pull</code>.</p>
-</div>
-<h3 id="2-clonacion-de-un-repositorio-remoto-git-clone">2. Clonación de un repositorio remoto (<code>git clone</code>)<a class="headerlink" href="#2-clonacion-de-un-repositorio-remoto-git-clone" title="Permanent link">¶</a></h3>
-<p>Si el repositorio remoto ya está creado con código (o simplemente quieres descargar el de otro usuario en tu máquina), utilizarás el comando de clonación.</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>git<span class="w"> </span>clone<span class="w"> </span>&lt;url&gt;<span class="w"> </span><span class="o">[</span>&lt;directorio&gt;<span class="o">]</span>
-</code></pre></div></td></tr></table></div>
-<p>Esto descarga todo el repositorio (código y toda la historia de Commits) y configura automáticamente el origen remoto (<code>origin</code>) hacia esa URL.</p>
-<hr>
-<h2 id="sincronizacion-e-incorporacion-de-cambios">🔄 Sincronización e incorporación de cambios<a class="headerlink" href="#sincronizacion-e-incorporacion-de-cambios" title="Permanent link">¶</a></h2>
-<h3 id="git-fetch">git fetch<a class="headerlink" href="#git-fetch" title="Permanent link">¶</a></h3>
-<p>El comando <code>git fetch</code> actualiza la información de las ramas remotas en nuestro entorno local (por ejemplo <code>origin/main</code>), pero <strong>no</strong> aplica ni mezcla esos cambios de manera automática en nuestro área de trabajo actual. Sirve para informarte del estado del servidor.</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a>git<span class="w"> </span>fetch
-</code></pre></div></td></tr></table></div>
-<h3 id="git-pull">git pull<a class="headerlink" href="#git-pull" title="Permanent link">¶</a></h3>
-<p>El comando <code>git pull</code> equivale a ejecutar en orden <code>git fetch</code> y luego <code>git merge origin/&lt;rama&gt;</code>. Es decir, descarga los últimos cambios e intenta incorporarlos (fusionarlos) inmediatamente en la rama que tengas actualmente activa.</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>git<span class="w"> </span>pull
-</code></pre></div></td></tr></table></div>
-<div class="admonition warning">
-<p class="admonition-title">Cuidado con los conflictos</p>
-<p>Para evitar problemas de fusión si ambos lados han avanzado de manera distinta, puedes utilizar opciones como:
-- <code>git pull --ff-only</code>: solo avanza si no hay cambios divergentes (Fast-Forward).
-- <code>git pull --rebase</code>: aplica tus commits locales encima de los que vienen del servidor en vez de integrarlos con un merge commit.</p>
-</div>
-<hr>
-<h2 id="resumen-del-flujo-de-trabajo">📋 Resumen del flujo de trabajo<a class="headerlink" href="#resumen-del-flujo-de-trabajo" title="Permanent link">¶</a></h2>
-<p>Un proceso clásico de trabajo diario con Git y GitHub sería algo similar a esto:</p>
+<h2 id="registro-en-github">📝 Registro en GitHub<a class="headerlink" href="#registro-en-github" title="Permanent link">¶</a></h2>
+<p>Antes de poder crear repositorios remotos o colaborar en proyectos, necesitas tener una cuenta en la plataforma. El proceso es gratuito y sencillo:</p>
 <ol>
-<li>Crear una rama nueva localmente:
-   <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>&lt;nueva-rama&gt;
+<li>Visita la página principal de <a href="https://github.com/">GitHub (https://github.com/)</a>.</li>
+<li>Haz clic en el botón <strong>"Sign up"</strong> (Registrarse) en la esquina superior derecha.</li>
+<li>Introduce tu dirección de correo electrónico, elige una contraseña segura y un nombre de usuario único.</li>
+<li>Resuelve el pequeño puzzle de verificación para demostrar que eres humano.</li>
+<li>GitHub te enviará un código numérico a tu correo electrónico. Cópialo y pégalo en la pantalla de confirmación.</li>
+<li>¡Listo! Ya tienes acceso a tu panel de control (<em>dashboard</em>) desde donde podrás empezar a crear y explorar repositorios.</li>
+</ol>
+<p><img alt="Captura de la página de registro o portada de GitHub" src="../capturas/github/0_registro_github.png"></p>
+<p><strong>Qué estás viendo en la captura</strong></p>
+<ul>
+<li>La página inicial de GitHub donde se introduce el nombre de usuario, contraseña y correo electrónico para crear una nueva cuenta en la plataforma.</li>
+</ul>
+<p><img alt="Captura de la página principal (dashboard) de GitHub con la sesión iniciada" src="../capturas/github/0b_dashboard_github.png"></p>
+<p><strong>Qué estás viendo en la captura</strong></p>
+<ul>
+<li>El panel de control principal (<em>dashboard</em>) de GitHub una vez has iniciado sesión con tu nueva cuenta de usuario.</li>
+<li>A la izquierda puedes ver el listado de repositorios (vacío en tu caso si te acabas de registrar) y el botón verde "New" o "Create repository" para crear uno nuevo.</li>
+</ul>
+<hr>
+<h2 id="autenticacion-y-conexion-en-github">🔐 Autenticación y Conexión en GitHub<a class="headerlink" href="#autenticacion-y-conexion-en-github" title="Permanent link">¶</a></h2>
+<p>Para poder subir tu código a GitHub o modificar proyectos privados de forma segura, el servidor necesita saber quién eres. <strong>Antiguamente se usaba la contraseña de tu cuenta general, pero por seguridad ya no está permitido por terminal.</strong> Hoy en día existen tres formas principales de conectarse:</p>
+<ol>
+<li><strong>Token de acceso personal (PAT)</strong>: Es el método más universal por línea de comandos. Generas una especie de "contraseña larga", segura y revocable desde GitHub que sirve de llave específica (solo para repositorios).</li>
+<li><strong>Claves SSH</strong>: Generas un par de claves criptográficas en tu ordenador (una pública y una privada). Es más profesional y cómodo a largo plazo para no escribir contraseñas.</li>
+<li><strong>GitHub CLI (<code>gh</code>)</strong>: La herramienta oficial de consola de GitHub, que permite iniciar sesión a través de una pestaña directa en tu navegador web.</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Recomendación de seguridad: SSH vs PAT</p>
+<p>Aunque para empezar a utilizarlo la opción más rápida por terminal a la que estarás habituado es el <strong>Token de acceso personal (PAT)</strong> clásico, el uso de <strong>Claves SSH es mucho más seguro y profesional a largo plazo</strong>. SSH evita que el token pueda ser interceptado o filtrado por accidente y no requiere que estés acordándote de contraseñas. </p>
+</div>
+<p>A continuación, vamos a ver paso a paso cómo generar tu propio Token PAT (la vía más común al principio), y posteriormente veremos cómo configurar SSH para un entorno profesional.</p>
+<h3 id="generando-un-token-de-acceso-personal-pat">Generando un Token de Acceso Personal (PAT)<a class="headerlink" href="#generando-un-token-de-acceso-personal-pat" title="Permanent link">¶</a></h3>
+<p>El proceso se hace enteramente dentro de tu sesión web de GitHub:</p>
+<ol>
+<li>En GitHub, haz clic en tu foto de perfil redonda (arriba a la derecha) y entra en <strong>Settings</strong> (Ajustes).</li>
+<li>Baja por el menú lateral izquierdo hasta el final del todo y haz clic en <strong><code>&lt; &gt;</code> Developer settings</strong>.</li>
+<li>En la nueva pantalla, ve al penúltimo menú <strong>Personal access tokens</strong> y elige <strong>Tokens (classic)</strong>.</li>
+<li>Pulsa en el botón superior derecho <strong>Generate new token</strong> y selecciona de nuevo <strong>Generate new token (classic)</strong>.</li>
+</ol>
+<p>Llegarás a un formulario de creación del token. Lo más importante aquí es darle acceso a tus repositorios.</p>
+<p><img alt="Captura mostrando el formulario de creación de un token PAT en GitHub" src="../capturas/github/0c_crear_token.png"></p>
+<p><strong>Qué estás viendo en la captura</strong></p>
+<ul>
+<li>El formulario para configurar un nuevo token clásico.</li>
+<li>Se le ha asignado un nombre descriptivo ("Note") para saber para qué se usa.</li>
+<li>Se ha marcado obligatoriamente la casilla principal <strong><code>repo</code></strong> (y automáticamente todas las que contiene dentro) para asegurar que la clave que vamos a generar tenga permisos para leer y escribir código en nuestros repositorios.</li>
+</ul>
+<p>5. Baja hasta el final de la página gigante y haz clic en el gran botón verde <strong>Generate token</strong>.</p>
+<p>6. GitHub te mostrará una pantalla con un recuadro verde avisándote del éxito y enseñándote tu nuevo token (una cadena larga de caracteres que suele empezar por <code>ghp_...</code>). </p>
+<p><strong>¡Cópialo ahora!</strong> Esta es la única vez que GitHub te lo mostrará en pantalla por motivos de seguridad. Si cierras la pestaña y lo pierdes, tendrás que generar uno nuevo, ya que no se puede recuperar el anterior.</p>
+<p><img alt="Captura mostrando el cuadro verde de éxito y el token generado" src="../capturas/github/0d_token_generado.png"></p>
+<p><strong>Qué estás viendo en la captura</strong></p>
+<ul>
+<li>Un mensaje de éxito de fondo verde confirmando la creación.</li>
+<li>El token en sí (una cadena alfanumérica muy larga que suele empezar por <code>ghp_</code>). Parte de ella está censurada por motivos de seguridad; tú deberás copiar la tuya completa usando el icono de los dos recuadros.</li>
+</ul>
+<p>Ese token largo que acabas de copiar será la <em>"contraseña"</em> que deberás "Pegar" (con clic derecho frecuentemente) en la terminal cuando Git te pida autenticarte al intentar descargar proyectos privados o al hacer subir el código la primera vez (<code>git push</code>).</p>
+<hr>
+<h3 id="configurando-la-autenticacion-por-ssh-recomendado">Configurando la Autenticación por SSH (Recomendado)<a class="headerlink" href="#configurando-la-autenticacion-por-ssh-recomendado" title="Permanent link">¶</a></h3>
+<p>Si prefieres la opción más robusta y segura para que Git se autentique sin pedirte el token PAT cada dos por tres, necesitas configurar una llave criptográfica SSH entre tu equipo y GitHub.</p>
+<h4 id="1-generar-la-clave-ssh-local">1. Generar la clave SSH local<a class="headerlink" href="#1-generar-la-clave-ssh-local" title="Permanent link">¶</a></h4>
+<p>Abre tu Git Bash (o terminal en Mac/Linux) e introduce el siguiente comando sustituyendo tu correo electrónico de GitHub:</p>
+<p></p><div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-C<span class="w"> </span><span class="s2">"tu_correo@ejemplo.com"</span>
+</code></pre></div></td></tr></table></div>
+<em>(Si tu sistema no soporta <code>ed25519</code>, puedes usar <code>ssh-keygen -t rsa -b 4096 -C "tu_correo..."</code>).</em>
+<p>La terminal te preguntará dónde guardar la clave y si quieres ponerle un <em>passphrase</em> (contraseña adicional). Puedes darle repetidamente a la tecla <code>Enter</code> para aceptar las opciones por defecto y dejarla sin passphrase por simplicidad.</p>
+<p><img alt="Captura de la terminal generando una clave SSH" src="../capturas/github/0e1_generar_ssh.png"></p>
+<p><strong>Qué estás viendo en la captura</strong></p>
+<ul>
+<li>La terminal de Git Bash (o similar) ejecutando el comando de creación de la clave.</li>
+<li>Las preguntas sobre dónde guardar el archivo y la <em>passphrase</em>, a las que se ha respondido pulsando la tecla <em>Intro</em> para dejar sus valores por defecto en blanco.</li>
+<li>Un dibujo en arte ASCII (el <em>Randomart image</em>) que certifica que la clave criptográfica se ha generado con éxito y ya reside en la carpeta oculta <code>.ssh</code> de tu ordenador.</li>
+</ul>
+<h4 id="2-copiar-la-clave-publica">2. Copiar la Clave Pública<a class="headerlink" href="#2-copiar-la-clave-publica" title="Permanent link">¶</a></h4>
+<p>Esto ha generado dos llaves en tu ordenador, una privada (¡nunca la compartas!) y una <strong>pública</strong> (la que le damos a los servidores). Vamos a copiar el texto de la clave pública:</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span>
+<span class="normal"><a href="#__codelineno-1-6">6</a></span>
+<span class="normal"><a href="#__codelineno-1-7">7</a></span>
+<span class="normal"><a href="#__codelineno-1-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1"># Para Windows en Git Bash</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>clip<span class="w"> </span>&lt;<span class="w"> </span>~/.ssh/id_ed25519.pub
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="c1"># Para Mac</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a>pbcopy<span class="w"> </span>&lt;<span class="w"> </span>~/.ssh/id_ed25519.pub
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="c1"># O simplemente muestra el archivo en pantalla para seleccionarlo y copiarlo:</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a>cat<span class="w"> </span>~/.ssh/id_ed25519.pub
+</code></pre></div></td></tr></table></div>
+<p><img alt="Captura de la terminal mostrando el archivo publico de la llave SSH" src="../capturas/github/0e2_copiar_ssh.png"></p>
+<p><strong>Qué estás viendo en la captura</strong></p>
+<ul>
+<li>El comando <code>cat</code> empleado para volcar el contenido de un archivo de texto por pantalla.</li>
+<li>La clave pública que se ha generado, que empieza siempre por el algoritmo que se utilizó, en este caso <code>ssh-ed25519</code>.</li>
+</ul>
+<h4 id="3-anadir-la-llave-a-github">3. Añadir la llave a GitHub<a class="headerlink" href="#3-anadir-la-llave-a-github" title="Permanent link">¶</a></h4>
+<p>Ahora debes decirle a tu cuenta de GitHub cuál es tu llave "candado" para que reconozca a tu ordenador:</p>
+<ol>
+<li>Ve a GitHub, pulsa en tu foto de perfil y selecciona <strong>Settings</strong>.</li>
+<li>En el menú lateral, pincha en <strong>SSH and GPG keys</strong>.</li>
+<li>Pulsa el botón verde <strong>New SSH key</strong>.</li>
+<li>Escribe un título (ej. "Mi Portátil Clase") y <strong>pega</strong> toda la clave pública en el campo grande de texto.</li>
+<li>Haz clic en <strong>Add SSH key</strong>.</li>
+</ol>
+<p><img alt="Captura del formulario para agregar clave SSH" src="../capturas/github/0e_a%C3%B1adir_ssh.png"></p>
+<p><img alt="Captura del menú de SSH indicando que la clave se ha guardado" src="../capturas/github/0f_a%C3%B1adida_sh.png"></p>
+<p><strong>Qué estás viendo en la captura</strong></p>
+<ul>
+<li><strong>Primera imagen:</strong> El formulario en proceso en la web de GitHub para pegar la llave SSH copiada anteriormente desde la terminal.</li>
+<li><strong>Segunda imagen:</strong> La confirmación en el menú <code>SSH and GPG keys</code> de que la clave ha quedado vinculada y es reconocida por tu cuenta para dejarte acceder en remoto.</li>
+</ul>
+<p>Con este proceso completado, la próxima vez que clones un proyecto, no deberás fijarte en el botón HTTPS verde, sino utilizar la ruta <strong>SSH</strong> (que acostumbra a empezar con <code>git@github.com:...</code>). Desde entonces, cualquier envío a remoto (<code>push</code> o <code>pull</code>) fluirá sin pedírtelo todo el rato.</p>
+<hr>
+<h2 id="paso-a-paso-subiendo-tu-proyecto-a-la-nube">🚀 Paso a Paso: Subiendo tu proyecto a la nube<a class="headerlink" href="#paso-a-paso-subiendo-tu-proyecto-a-la-nube" title="Permanent link">¶</a></h2>
+<p>Imagina que has estado trabajando en tu proyecto final localmente con <code>git init</code>, <code>git add</code> y <code>git commit</code>. Ahora ha llegado el momento de respaldarlo y subirlo a GitHub. Vamos a ver todo el ciclo vital.</p>
+<h3 id="1-creando-el-espacio-en-github">1. Creando el espacio en GitHub<a class="headerlink" href="#1-creando-el-espacio-en-github" title="Permanent link">¶</a></h3>
+<p>Lo primero es entrar en la página web de tu cuenta de GitHub y pulsar el botón <strong>New</strong> para crear un nuevo repositorio. Debes darle un nombre, una descripción y dejarlo como Público o Privado. </p>
+<p>Al crearlo, si ya tienes un repositorio local listo, es crucial <strong>no</strong> crear archivos <code>README</code>, <code>.gitignore</code> ni licencias auto-generadas desde la interfaz web; quieres que GitHub te dé un cajón completamente "vacío" para llenarlo con tu trabajo del ordenador.</p>
+<p><img alt="Captura crear un nuevo repositorio en GitHub" src="../capturas/github/1_crear_repo.png"></p>
+<p><strong>Qué estás viendo en la captura</strong></p>
+<ul>
+<li>El formulario "Create a new repository" rellenado con el nombre <code>mi_proyecto</code>.</li>
+<li>Las opciones para añadir <code>.gitignore</code> o <code>README</code> se han dejado desmarcadas a propósito para obtener un repositorio 100% puro y vacío.</li>
+</ul>
+<h3 id="2-enlazando-el-local-con-el-remoto-git-remote">2. Enlazando el local con el remoto (<code>git remote</code>)<a class="headerlink" href="#2-enlazando-el-local-con-el-remoto-git-remote" title="Permanent link">¶</a></h3>
+<p>Una vez creado tu repositorio vacío, GitHub te mostrará las instrucciones de subida en una caja verde en el centro de tu pantalla. Para conectar tu repositorio local con ese "cajón remoto" emplearemos el comando <code>git remote add</code>. El alias que se suele utilizar para el servidor principal es siempre <code>origin</code>.</p>
+<p>Si te fijas, arriba de las instrucciones hay tres pequeños pestañas para elegir cómo vas a conectarte: <strong>HTTPS</strong>, <strong>SSH</strong> y <strong>GitHub CLI</strong>. Según cuál elijas tú o tu empresa en la vida real, el protocolo de transmisión a añadir cambia:</p>
+<p><strong>Opción A: Por HTTPS (La más común al principio)</strong>
+Es la dirección web clásica. Si no configuras nada especial, Git te pedirá por fuerza el Token PAT (visto antes) cada vez que subas código, salvo que tu sistema operativo tenga el <em>Git Credential Manager</em> activado (lo habitual en Windows o si usas VSCode), lo cual hará que conecte automáticamente con cuentas web guardadas o te salte un pop-up en el navegador.</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>https://github.com/tu-usuario/tu-repositorio.git
+</code></pre></div></td></tr></table></div>
+<p><strong>Opción B: Por SSH (La más recomendada y profesional)</strong>
+Usa en exclusiva las llaves criptográficas generadas por comandos <code>ssh-keygen</code> que has alojado en tu carpeta oculta <code>.ssh</code>. Este método es 100% invisible, seguro y transparente (nunca depende de gestores de credenciales externos de terceros ni abre navegadores molestos).</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>git@github.com:tu-usuario/tu-repositorio.git
+</code></pre></div></td></tr></table></div>
+<div class="admonition info">
+<p class="admonition-title">¿Qué ocurre si he elegido HTTPS y no me ha pedido contraseña al subir?</p>
+<p><em>(Caso de uso habitual en Windows).</em> Si has usado <code>HTTPS</code> en este paso, pero al ejecutar <code>git push</code> más adelante el sistema ni siquiera se ha inmutado ni te ha pedido la contraseña por terminal... ¡Es por culpa del gestor de credenciales de tu Sistema Operativo!</p>
+<p>En algún momento del pasado has iniciado sesión con el navegador al autorizar a <em>Visual Studio Code</em> o al usar <em>Git for Windows</em>, por lo que tu ordenador se ha quedado el Token guardado en su almacén secreto de contraseñas. Esto es comodísimo, pero si ese almacén falla o migras a otro ordenador, el método HTTPS te dejará colgado en medio de la terminal rogándote el <strong>Token de Acceso Personal (PAT)</strong>, y por ello es que la comunidad de desarrollo estandariza crear y configurar las llaves <strong>SSH</strong> siempre.</p>
+</div>
+<p>Independientemente del protocolo escogido que hayas enlazado, puedes comprobar que se han instalado correctamente los parámetros ejecutando:</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>git<span class="w"> </span>remote<span class="w"> </span>-v
+</code></pre></div></td></tr></table></div>
+<p>Este último comando te confirmará dónde intentarán enviar (<code>push</code>) o recoger (<code>fetch</code>) los datos tus comandos remotos de Git.</p>
+<p><img alt="Captura de la terminal mostrando el origin enlazado" src="../capturas/github/2_enlazar_remoto.png"></p>
+<p><strong>Qué estás viendo en la captura</strong></p>
+<ul>
+<li>El comando <code>git remote add origin ...</code> que no produce salida, pero engancha silenciosamente tu base de datos local a la dirección web que se ve (en este caso indicando la ruta <code>https://</code>).</li>
+<li>El comando <code>git remote -v</code> sirviendo de comprobación, donde Git enumera que el destino y origen de nombre "origin" para cualquier operación de subida (push) o descarga (fetch) están conectados.</li>
+</ul>
+<h3 id="3-el-primer-empuje-de-codigo-git-push">3. El primer empuje de código (<code>git push</code>)<a class="headerlink" href="#3-el-primer-empuje-de-codigo-git-push" title="Permanent link">¶</a></h3>
+<p>En este instante tu PC y GitHub están enlazados por cable, pero los datos siguen sin viajar. Debemos dar la orden explícita para subir tus etiquetas, ramas y commits usando <code>git push</code>. La primera vez añadiremos la opción <code>-u</code> para memorizar adónde se dirigen las actualizaciones de la rama principal por defecto en el futuro.</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
+</code></pre></div></td></tr></table></div>
+<p>Con ese mandato, todo tu contenido de la rama <code>main</code> volará por internet hasta situarse en la base de datos de GitHub.</p>
+<div class="admonition info">
+<p class="admonition-title">¿Por qué me pide (o NO me pide) contraseña?</p>
+<p>Al ejecutar <code>git push</code>, te enfrentas al guardia de seguridad de GitHub que necesita verificar quién eres para dejarte alterar el servidor remoto.</p>
+<ol>
+<li><strong>Si pide Usuario y Contraseña:</strong> En la terminal te aparecerá un prompt estricto preguntándote por tu <em>Username</em> y luego tu <em>Password</em>. <strong>NO pongas tu contraseña general de GitHub.</strong> Debes pegar el <strong>Token (PAT)</strong> largo y extraño que creaste en los pasos iniciales. Con el Token PAT introducido (que se escribirá invisible en la terminal, pero está ahí), el servidor aceptará la subida.</li>
+<li><strong>Si NO pide nada (como en la captura inferior):</strong> Puede ocurrir frecuentemente que Windows (con <em>Git Credential Manager</em>), macOS (<em>Keychain</em>) o la CLI de GitHub hayan memorizado y encadenado tu inicio de sesión a través del navegador la vez que usaste VSCode, guardando ya una credencial web. Otra razón es si en el paso anterior usaste la ruta <code>git@github.com...</code> de <strong>SSH</strong>, la cual verifica directamente el criptograma de tu sistema operativo con GitHub tras bambalinas, logrando un proceso transparente e instantáneo sin prompts.</li>
+</ol>
+</div>
+<p><img alt="Captura del terminal con ls y subida git push exitosa" src="../capturas/github/3_primer_push.png"></p>
+<p><strong>Qué estás viendo en la captura</strong></p>
+<ul>
+<li>Primero se ha ejecutado un comando <code>ls</code> a propósito para poder observar qué contenido habita actualmente en nuestro proyecto local (<code>primer_doc.txt</code>) antes de hacer el envío, de forma que sirva de comparativa en la captura siguiente.</li>
+<li>Abajo, la orden <code>git push -u origin main</code> ha empaquetado y mandado a volar a GitHub a lo largo de Internet el archivo completo local.</li>
+<li>Se muestran estadísticas finales ratificando el éxito como un <code>Writing objects: 100% (3/3)</code> y un aviso de seguimiento: la nueva y lejana rama en <code>origin</code> rastreará tus cambios a partir de ahora.</li>
+</ul>
+<h3 id="4-visualizando-el-resultado-web">4. Visualizando el resultado web<a class="headerlink" href="#4-visualizando-el-resultado-web" title="Permanent link">¶</a></h3>
+<p>Si ahora te vas a la pestaña del navegador de tu repositorio (donde antes mostraba las instrucciones iniciales) y refrescas la página, verás listados ahí todos tus ficheros exactamente con los nombres e historial que figuraban en local.</p>
+<p><img alt="Captura de la web de GitHub mostrando los archivos subidos" src="../capturas/github/4_repo_lleno.png"></p>
+<p><strong>Qué estás viendo en la captura</strong></p>
+<ul>
+<li>Al actualizar el navegador, las pantallas de ayuda se han ido, dejando sitio al entorno web de repositorios de GitHub.</li>
+<li>Mágicamente se pueden divisar tus archivos locales ahí (como nuestro documentado <code>primer_doc.txt</code> visualizado antes en el <code>ls</code>), junto con el historial de mensajes exacto y el tiempo transcurrido desde que hiciste localmente cada confirmación o commit. ¡Tu proyecto ya vive en la nube!</li>
+</ul>
+<hr>
+<h2 id="descargando-y-sincronizando-nuestro-codigo">🔄 Descargando y sincronizando nuestro código<a class="headerlink" href="#descargando-y-sincronizando-nuestro-codigo" title="Permanent link">¶</a></h2>
+<p>Hemos visto cómo subir todo, pero ¿qué ocurre si te mudas de ordenador o hay modificaciones aportadas desde otro lugar? </p>
+<h3 id="clonar-un-repositorio-desde-cero-git-clone">Clonar un repositorio desde cero (<code>git clone</code>)<a class="headerlink" href="#clonar-un-repositorio-desde-cero-git-clone" title="Permanent link">¶</a></h3>
+<p>Imagina que llegas a los ordenadores de clase y allí no tienes nada del proyecto. Necesitas una copia 100% igual y vinculada a la de GitHub. En lugar de hacer <code>git init</code>, el proceso empieza entrando a la página web de tu repositorio en GitHub, buscando el botón verde desplegable <strong>"&lt;&gt; Code"</strong> y copiando el enlace exacto del proyecto (que de nuevo te dará la opción de copiar en versión <strong>HTTPS</strong> o <strong>SSH</strong>).</p>
+<p><img alt="Captura mostrando el botón verde Code para copiar la URL de clonación" src="../capturas/github/5a_obtener_enlace_clonar.png"></p>
+<p><strong>Qué estás viendo en la captura</strong></p>
+<ul>
+<li>La página principal del repositorio en GitHub.</li>
+<li>Hemos hecho clic en el botón verde <strong>"&lt;&gt; Code"</strong> que despliega el menú donde se encuentra el enlace de clonación.</li>
+<li>Se observa la URL (en la pestaña HTTPS por defecto, aunque podrías seleccionar SSH) y el botón de las dos hojas superpuestas para copiarlo directamente al portapapeles.</li>
+</ul>
+<p>Con el enlace en el portapapeles, abres una terminal vacía (¡es esencial que no haya otro repositorio de Git sobreescribiendose encima!) y ejecutas <code>git clone</code> pegando la URL:</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/tu-usuario/tu-repositorio.git
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="c1"># ¡O recuerda utilizar la ruta de SSH si la tienes configurada!</span>
+</code></pre></div></td></tr></table></div>
+<p>Este comando:</p>
+<ol>
+<li>Crea una carpeta idéntica al repo.</li>
+<li>Descarga los históricos, la carpeta oculta <code>.git</code> y el código real al estado más reciente.</li>
+<li>Se vincula al remoto (<code>git remote add origin</code> automático!).</li>
+</ol>
+<p><img alt="Captura realizando git clone del repositorio y listando su contenido" src="../capturas/github/5_clone.png"></p>
+<p><strong>Qué estás viendo en la captura</strong></p>
+<ul>
+<li>El comando <code>git clone</code> seguido de la URL (en este caso, HTTPS) que copiamos en el paso anterior. </li>
+<li>Git nos informa de que está clonando en un nuevo directorio llamado <code>mi_proyecto</code> y de que está recibiendo y resolviendo todos los objetos correctamente.</li>
+<li>A continuación usamos el comando <code>cd mi_proyecto</code> para entrar a esa nueva carpeta generada, y con un <code>ls</code> confirmamos que el contenido del repositorio (el archivo <code>primer_doc.txt</code> y demás) ya se encuentra descargado ahí dentro.</li>
+</ul>
+<h3 id="comprobar-si-hay-cambios-git-fetch">Comprobar si hay cambios (<code>git fetch</code>)<a class="headerlink" href="#comprobar-si-hay-cambios-git-fetch" title="Permanent link">¶</a></h3>
+<p>Antes de descargar nuevos archivos "a ciegas", los desarrolladores a menudo utilizan un comando intermedio: <code>git fetch</code>.</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>git<span class="w"> </span>fetch
+</code></pre></div></td></tr></table></div>
+<p>Lo que ha hecho este comando es conectarse a GitHub y traerse (descargar a un área oculta) un mapa actualizado del estado del repositorio remoto, pero <strong>sin modificar ni tocar tu código local en absoluto</strong>. Esto te permite observar si hay nuevas ramas de compañeros o commits lejanos, dándote la libertad de revisarlos primero.</p>
+<h3 id="descargar-e-integrar-actualizaciones-git-pull">Descargar e integrar actualizaciones (<code>git pull</code>)<a class="headerlink" href="#descargar-e-integrar-actualizaciones-git-pull" title="Permanent link">¶</a></h3>
+<p>Imaginemos ahora que ya tienes tu entorno clonado, pero esta mañana has modificado el código vía web en GitHub u otro compañero ha subido funcionalidades a la rama <code>main</code>. Para recibir estas alteraciones reales en tu PC y aplicarlas a tus archivos empleas el comando recíproco al <code>push</code>, que es <code>git pull</code>.</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a>git<span class="w"> </span>pull
+</code></pre></div></td></tr></table></div>
+<p>El proceso es un "descarga e integra (mergea)": Git buscará (<code>fetch</code>) automáticamente qué ocurre de nuevo en la rama lejana, y directamente unificará su trayecto en tu rama local, haciéndote un fast-forward cuando sea posible.</p>
+<p><img alt="Captura actualizando el repositorio local con un git pull" src="../capturas/github/6_pull.png"></p>
+<p><strong>Qué estás viendo en la captura</strong></p>
+<ul>
+<li>La ejecución del comando <code>git pull</code> en la terminal.</li>
+<li><em>(Nota: Para que este comando hiciese algo, previamente en este ejemplo habíamos añadido una pequeña modificación o línea nueva al archivo <code>primer_doc.txt</code> desde otro lugar, como por ejemplo desde la interfaz web de GitHub).</em></li>
+<li>Al hacer <code>git pull</code>, tu Git local se conecta al remoto, comprueba que hay novedades, y procede a aplicarlas realizando un <strong>"Fast-forward"</strong>: avanza tu rama local de golpe hasta la misma posición que tiene en la nube.</li>
+<li>En las estadísticas finales te muestra el archivo que ha sido alterado (<code>primer_doc.txt</code>) y que ha recibido una línea extra de código (<code>1 insertion(+)</code>).</li>
+</ul>
+<hr>
+<h2 id="las-ramas-en-el-repositorio-remoto">🌳 Las Ramas en el repositorio remoto<a class="headerlink" href="#las-ramas-en-el-repositorio-remoto" title="Permanent link">¶</a></h2>
+<p>Hasta ahora hemos trabajado enviando nuestro código únicamente a la rama principal (<code>main</code>). Sin embargo, ¡todo el poder de las ramas y mundos paralelos que hemos aprendido en la teoría anterior también se aplica a GitHub!</p>
+<p>Cuando has creado una nueva funcionalidad en local aislando tu código (usando <code>git checkout -b nueva-funcionalidad</code>), has realizado modificaciones y guardado todas ellas en una nueva foto o punto de control usando tus habituales comandos <strong><code>git add .</code></strong> y <strong><code>git commit -m "..."</code></strong>, todo avance de esta rama solo existe de forma privada en tu disco duro. </p>
+<p>Si quieres que tus compañeros de equipo la vean en la nube de GitHub, o simplemente quieres hacerle una copia de seguridad en internet, deberás empujarla al remoto de la misma manera que hacías en la sección anterior, usando:</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>nueva-funcionalidad
+</code></pre></div></td></tr></table></div>
+<p><em>(El sufijo <code>-u</code> es vital la primera vez para vincular la ruta, desde ese momento en adelante bastará con que teclees <code>git push</code> a secas cuando estés parado sobre esa rama).</em></p>
+<p><img alt="Captura mostrando el proceso de creación y subida de una rama en la terminal" src="../capturas/github/7a_subir_rama_terminal.png"></p>
+<p><strong>Qué estás viendo en la captura</strong></p>
+<ul>
+<li>La terminal en la que creamos la nueva rama y cambiamos a ella mediante <code>git checkout -b nueva-funcionalidad</code>.</li>
+<li>La creación de contenido en la nueva rama y su consolidación local con los comandos rutinarios (un <code>touch</code> de ejemplo, un <code>git add .</code> y su <code>git commit -m "rama"</code>).</li>
+<li>El comando <code>git push -u origin nueva-funcionalidad</code>, el cual vincula por primera vez tu rama local al entorno remoto y envía todo el historial de esta nueva línea de tiempo a GitHub, como atestiguan las estadísticas del servidor al avisar de <code>[new branch]</code>.</li>
+</ul>
+<p>Al entrar en la página web de tu repositorio en GitHub, notarás que arriba a la izquierda del código fuente hay un botón desplegable que dice <strong>"main"</strong>. Si haces clic ahí, verás un listado de <strong>todas las ramas</strong> que tú o tu equipo habéis ido subiendo. Puedes pulsar sobre ellas para navegar en la web a través de sus archivos, ver el historial exacto de commits que componen esa rama o incluso empezar a integrar (<em>mergear</em>) tus aportaciones mediante las llamadas <strong>Pull Requests</strong>.</p>
+<p><img alt="Captura mostrando el selector de ramas en GitHub con una nueva rama disponible" src="../capturas/github/7b_rama_github.png"></p>
+<p><strong>Qué estás viendo en la captura</strong></p>
+<ul>
+<li>La interfaz web del repositorio en GitHub confirmando que la rama enviada desde la terminal ha llegado sana y salva a la nube.</li>
+<li>Al pulsar en el selector que por defecto dice la rama principal en la que estás (<code>main</code>), se nos muestra el submenú de <em>Branches</em>, donde ahora también aparece tu <code>nueva-funcionalidad</code>. Puedes hacer clic para explorar el código base exacto en el estado que se encuentra en esa rama concreta sin alterar las demás.</li>
+</ul>
+<h3 id="borrar-ramas-en-remoto">Borrar ramas en remoto<a class="headerlink" href="#borrar-ramas-en-remoto" title="Permanent link">¶</a></h3>
+<p>Si la rama ha cumplido su función, su código ya está integrado en <code>main</code> y ya la has borrado en local (<code>git branch -d nueva-funcionalidad</code>), es una buena práctica de higiene borrarla también del servidor remoto de GitHub para no acumular basura espacial. </p>
+<p>Tienes dos formas de hacerlo:
+- <strong>Desde la web de GitHub</strong>: Yendo a la lista de ramas (<em>View all branches</em>) y pulsando el icono de la papelera al lado de la rama.
+- <strong>Desde la terminal</strong>: Ejecutando un comando push especial que indica a GitHub explícitamente que proceda a su destrucción.
+</p><div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>--delete<span class="w"> </span>nueva-funcionalidad
+</code></pre></div></td></tr></table></div>
+<hr>
+<h2 id="resumen-del-flujo-de-trabajo-habitual">📋 Resumen del flujo de trabajo habitual<a class="headerlink" href="#resumen-del-flujo-de-trabajo-habitual" title="Permanent link">¶</a></h2>
+<p>Una dinámica clásica de trabajo unificado durante una jornada real será la siguiente:</p>
+<ol>
+<li><strong>Mantenerse al día (pull)</strong>: Antes de tocar código, baja lo más reciente para evitar conflictos.
+   <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>git<span class="w"> </span>pull
 </code></pre></div></td></tr></table></div></li>
-<li>Publicar la rama nueva al repositorio remoto:
-   <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>&lt;nueva-rama&gt;
+<li><strong>Crear una rama nueva</strong> para el cambio o ticket en el que trabajarás (aislando tu progreso de <code>main</code>):
+   <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>&lt;nueva-rama&gt;
 </code></pre></div></td></tr></table></div></li>
-<li>Trabajar en tu entorno local haciendo cambios y creando "commits":
-   <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
-<span class="normal"><a href="#__codelineno-12-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a>git<span class="w"> </span>add<span class="w"> </span>&lt;ficheros&gt;
-<a id="__codelineno-12-2" name="__codelineno-12-2"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"&lt;mensaje&gt;"</span>
+<li>Trabajar en el desarrollo, hacer tu <code>git add</code> y finalmente guardar consolidando una foto (commits frecuentes y claritos!):
+   <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Añadida pantalla de login"</span>
 </code></pre></div></td></tr></table></div></li>
-<li>Publicar esos cambios al remoto:
-   <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a>git<span class="w"> </span>push
-</code></pre></div></td></tr></table></div></li>
-<li>En caso de cambiar de dispositivo o colaborar con otros, descargar los cambios:
+<li><strong>Publicar tu rama</strong> en el remoto, para servir de respaldo a prueba de bombas y mostrar la aportación (aún la <code>main</code> sigue limpia):
    <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
-<span class="normal"><a href="#__codelineno-14-2">2</a></span>
-<span class="normal"><a href="#__codelineno-14-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a>git<span class="w"> </span>fetch
-<a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="c1"># o directamente para fusionar:</span>
-<a id="__codelineno-14-3" name="__codelineno-14-3"></a>git<span class="w"> </span>pull
+<span class="normal"><a href="#__codelineno-14-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>&lt;nueva-rama&gt;<span class="w"> </span>
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="c1"># o simplemente git push después de la primera subida</span>
 </code></pre></div></td></tr></table></div></li>
-<li>Fusionar finalmente tu rama en la rama principal (<code>main</code> o similar) integrándolos, o aplicando <em>rebase</em>.</li>
-<li>Eliminar la rama local y remota que ya no uses:
-   <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
-<span class="normal"><a href="#__codelineno-15-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a>git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>&lt;nueva-rama&gt;
-<a id="__codelineno-15-2" name="__codelineno-15-2"></a>git<span class="w"> </span>push<span class="w"> </span>-d<span class="w"> </span>origin<span class="w"> </span>&lt;nueva-rama&gt;
-</code></pre></div></td></tr></table></div></li>
-<li>Si necesitas limpiar tu entorno local de referencias a ramas eliminadas en el servidor, ejecuta:
-   <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a>git<span class="w"> </span>fetch<span class="w"> </span>--prune
-</code></pre></div></td></tr></table></div></li>
-</ol></div>
+<li>Cuando aprueban y testean la corrección, la envías integrándola (<code>merge</code>) en la línea base (<code>main</code>) con tu propio código o enviando petitorios (pull requests) en el visor web.</li>
+</ol>
+<p>¡El ciclo de desarrollo colaborativo de software ha comenzado!</p>
+<hr>
+<h2 id="integracion-de-git-y-github-en-intellij-idea">💻 Integración de Git y GitHub en IntelliJ IDEA<a class="headerlink" href="#integracion-de-git-y-github-en-intellij-idea" title="Permanent link">¶</a></h2>
+<p>¡No todo pasa por la temida pantalla negra de la terminal! Hasta ahora hemos aprendido la manera más purista e independiente de operar. Sin embargo, en tu día a día como programador Java probablemente utilizarás un IDE potente como <strong>IntelliJ IDEA</strong>, que incorpora sus propios botones visuales y menús de Git preconfigurados para facilitarte drásticamente la vida.</p>
+<h3 id="enlazando-tu-cuenta">Enlazando tu cuenta<a class="headerlink" href="#enlazando-tu-cuenta" title="Permanent link">¶</a></h3>
+<p>Para que IntelliJ funcione como intermediario sin errores, es aconsejable identificarse primero dentro del propio programa:</p>
+<ol>
+<li>Abre los ajustes (File -&gt; Settings o Edit -&gt; Preferences).</li>
+<li>Ve al menú <strong>Version Control -&gt; GitHub</strong>.</li>
+<li>Pulsa el botón <code>+</code> para añadir cuenta y puedes usar <em>"Log in via GitHub..."</em> (que abrirá una pestaña de autorización en tu navegador web) o introduciendo el Token PAT.</li>
+</ol>
+<p><img alt="Captura mostrando la cuenta de GitHub vinculada en IntelliJ IDEA" src="../capturas/github/8a_intellij_cuenta.png"></p>
+<p><strong>Qué estás viendo en la captura</strong></p>
+<ul>
+<li>La ventana de Ajustes (Settings) de IntelliJ IDEA, dentro del submenú <strong>Version Control -&gt; GitHub</strong>.</li>
+<li>Cómo hemos añadido y autorizado satisfactoriamente nuestra cuenta, logrando que el propio IDE pueda interactuar con nuestros repositorios remotos sin preguntarnos por contraseñas en cada momento prestado.</li>
+</ul>
+<h3 id="el-menu-superior-git-y-control-de-versiones">El menú superior "Git" y control de versiones<a class="headerlink" href="#el-menu-superior-git-y-control-de-versiones" title="Permanent link">¶</a></h3>
+<p>Una vez que tengas un proyecto abierto —y siempre que le hayas declarado un <code>git init</code> o directamente lo hayas importado usando la opción <code>Get from VCS</code> al iniciar IntelliJ—, notarás que en la barra de menús principal de arriba (junto a <em>File, Edit, View, Navigate</em>, etc.) ha aparecido un espléndido menú nuevo llamado <strong>Git</strong>.</p>
+<p>Desde ese menú superior desplegable tienes acceso directo y centralizado a todas las operaciones fundamentales que hemos ido viendo por terminal, literalmente a golpe de clic sin tener que teclear ningún mandato, entre las más destacadas:</p>
+<p>A) <strong>Git -&gt; Commit</strong> (o haciendo clic en su panel lateral respectivo): Te abre un entorno espectacular en el que es facilísimo marcar directamente las casillas de los archivos modificados (haciendo en secreto la labor del <code>git add</code>) y escribir en la caja inferio el mensaje para realizar el <code>git commit</code>. Además, al hacer clic sobre un archivo te colorea en verde y rojo las líneas exactas de código que has añadido o borrado sirviendo de <code>git diff</code> visual.</p>
+<p><img alt="Captura del panel lateral de Commit de IntelliJ IDEA" src="../capturas/github/8b_intellij_commit.png"></p>
+<p><strong>Qué estás viendo en la captura</strong></p>
+<ul>
+<li>A la izquierda, el menú especial de la pestaña de <strong>Commit</strong>: vemos seleccionados qué archivos van directos a guardarse (haciendo en secreto un <code>git add</code>).</li>
+<li>Abajo de este menú, la cómoda caja de texto donde se ha rellenado en color claro el mensaje de este commit (haciendo de <code>git commit -m "..."</code>).</li>
+<li>En el panel derecho de la ventana del IDE se puede contemplar un completísimo visor de diferencias (<code>git diff</code>) que pone cara a cara la versión anterior y la versión recién modificada destacando sus adiciones sin tener que adivinarlas en consola.</li>
+</ul>
+<p>B) <strong>Git -&gt; Push</strong>: Equivale directamente a ejecutar <code>git push</code>. Al pulsarlo (o si aprietas <code>Ctrl+Shift+K</code>), se te abrirá un diálogo genial que lista los commits locales exactos y hacia qué rama de <code>origin</code> los estás mandando a la nube, confirmándolo antes de proceder y darle ok.</p>
+<p><img alt="Captura mostrando el diálogo emergente para hacer Push" src="../capturas/github/8c_intellij_push.png"></p>
+<p><strong>Qué estás viendo en la captura</strong></p>
+<ul>
+<li>IntelliJ ha bloqueado la pantalla advirtiéndonos de lo que vamos a empujar al remoto.</li>
+<li>Se indica claramente el sentido: vamos a hacer push desde la rama <code>main</code> local hacia la rama <code>main</code> en <code>origin</code> (GitHub).</li>
+<li>En el lateral izquierdo puedes comprobar el o los commits empaquetados dispuestos a viajar por la red, previniendo así un envío accidental.</li>
+</ul>
+<p>C) <strong>Git -&gt; Pull</strong> (o <em>Fetch</em>): Te abre una sencilla ventana para descargar y actualizar el código de tu ordenador absorbiendo los cambios que hayan puesto en GitHub tus compañeros, haciendo las veces del <code>git pull</code>.</p>
+<h4 id="controlando-los-mundos-paralelos-las-ramas-en-intellij">Controlando los mundos paralelos: Las ramas en IntelliJ<a class="headerlink" href="#controlando-los-mundos-paralelos-las-ramas-en-intellij" title="Permanent link">¶</a></h4>
+<p>Por último, el control de las <strong>ramas</strong> en el IDE lo tienes de forma muy cómoda e integrada desde el propio menú superior (<strong>Git -&gt; Branches...</strong>).</p>
+<p>Al pulsar en esta opción, se abre un panel precioso centralizado listando un bloque con tus ramas <strong>Local</strong> (las tuyas) y las <strong>Remote</strong> (las que tienes compartidas por tu equipo en el servidor). Desde este panel puedes crear ramas nuevas de la nada seleccionando <code>New Branch</code>, traerte las que estén subidas por tus amigos a tu ordenador, o saltar a otra diferente (<code>Checkout</code>) de forma completamente visual. </p>
+<p><img alt="Captura mostrando el potente selector de ramas de IntelliJ" src="../capturas/github/8d_intellij_ramas.png"></p>
+<p><strong>Qué estás viendo en la captura</strong></p>
+<ul>
+<li>El widget del menú de control de ramas de IntelliJ IDEA.</li>
+<li>En primera posición la acción principal estelar <code>+ New Branch</code> que ejecuta instantáneamente un <code>git checkout -b</code> pidiéndote un nombre.</li>
+<li>El listado clarísimo agrupado por orígenes: Tus ramas residentes en el ordenador y en qué estado están (<strong>Local</strong>), seguido del repositorio externo principal de tu equipo (<strong>Remote / origin</strong>) y qué hay guardado ahí para descargar.</li>
+</ul>
+<p>El uso del IDE ahorra una cantidad dramática de tiempo en el día a día y previene los temidos despistes que ocurren por olvidar introducir o vigilar bien el área temporal (Stage) en consola. Las terminales (para control maestro) y las UI visuales (para trabajar con eficiencia) son herramientas complementarias. ¡Aprovéchalas a tu favor en el ciclo del desarrollo profesional!</p>
+<hr>
+<h2 id="ideas-clave-muy-resumidas">✅ Ideas clave (muy resumidas)<a class="headerlink" href="#ideas-clave-muy-resumidas" title="Permanent link">¶</a></h2>
+<details class="tip">
+<summary>Abrir resumen</summary>
+<ul>
+<li><code>git remote add origin &lt;url&gt;</code> vincula tu repositorio local con uno remoto en GitHub.</li>
+<li><code>git remote -v</code> comprueba a qué direcciones remotas está apuntando tu proyecto.</li>
+<li><code>git push -u origin &lt;rama&gt;</code> sube por primera vez tu rama local a internet para hacerle copia de seguridad y las vincula para el futuro.</li>
+<li><code>git push</code> manda tus confirmaciones guardadas (commits) hacia la nube en tu rama actual.</li>
+<li><code>git clone &lt;url&gt;</code> descarga en una carpeta nueva un repositorio entero que ya existía en GitHub.</li>
+<li><code>git fetch</code> se asoma al remoto y descarga el listado de novedades en la sombra, sin tocar tu código local.</li>
+<li><code>git pull</code> trae de internet los cambios de tus compañeros y los mezcla automáticamente (fast-forward o merge) en tu directorio de trabajo.</li>
+<li><code>git push origin --delete &lt;rama&gt;</code> elimina para siempre una rama que estaba subida en el repositorio remoto.</li>
+</ul>
+</details></div>
 
 
 
@@ -2060,6 +2523,22 @@
             </div>
           </a>
         
+        
+          
+          <a href="../actividad_4_6/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Actividad 4.6">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              <div class="md-ellipsis">
+                Actividad 4.6
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
         
       </nav>
     

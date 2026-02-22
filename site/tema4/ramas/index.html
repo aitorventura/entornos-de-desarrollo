@@ -1642,6 +1642,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ideas-clave-muy-resumidas" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Ideas clave (muy resumidas)
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1687,6 +1696,29 @@
   
   <span class="md-ellipsis">
     Introducción a GitHub
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../actividad_4_6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 4.6
     
   </span>
   
@@ -1928,6 +1960,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ideas-clave-muy-resumidas" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Ideas clave (muy resumidas)
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1945,12 +1986,11 @@
 
 
 <div><h1 id="ramas-en-git">🌿 Ramas en Git<a class="headerlink" href="#ramas-en-git" title="Permanent link">¶</a></h1>
-<p><embed alt="Ramas en Git" src="diapositivas/ramas.pdf" style="width:100%;min-height:80vh" type="application/pdf"></embed></p>
+<p><embed alt="Ramas" src="../diapositivas/ramas.pdf" style="width:100%;min-height:80vh" type="application/pdf"></embed></p>
 <div class="admonition info">
 <p class="admonition-title">Descarga de diapositivas</p>
-<p><a href="diapositivas/ramas.pdf" rel="noopener" target="_blank">Descarga las diapositivas</a></p>
+<p><a href="../diapositivas/ramas.pdf" rel="noopener" target="_blank">Descarga las diapositivas</a></p>
 </div>
-<hr>
 <p>Las <strong>ramas</strong> (branches) son una de las características más potentes de Git. Permiten divergir de la línea principal de desarrollo para trabajar en <strong>nuevas funcionalidades</strong>, <strong>arreglar errores</strong> o <strong>realizar experimentos</strong> sin afectar al código estable.</p>
 <hr>
 <h2 id="que-es-una-rama">🌳 ¿Qué es una rama?<a class="headerlink" href="#que-es-una-rama" title="Permanent link">¶</a></h2>
@@ -2105,9 +2145,9 @@ Al ejecutar este comando, Git crea una nueva etiqueta apuntando exactamente al m
 <li>Busca el ancestro común de ambos.</li>
 <li>Crea un <strong>nuevo commit</strong> (Merge Commit) que une los tres puntos.</li>
 </ul>
-<p><img alt="Captura de git lga ANTES del merge, mostrando las ramas bifurcadas en forma de Y" src="../capturas/ramas/8a_antes_merge.png"></p>
 </li>
 </ol>
+<p><img alt="Captura de git lga ANTES del merge, mostrando las ramas bifurcadas en forma de Y" src="../capturas/ramas/8a_antes_merge.png"></p>
 <p><strong>Qué estás viendo en la captura</strong></p>
 <ul>
 <li>
@@ -2118,8 +2158,7 @@ Al ejecutar este comando, Git crea una nueva etiqueta apuntando exactamente al m
 </li>
 </ul>
 <p>6. Como es un "Merge Commit", Git necesita un mensaje. Automáticamente <strong>abrirá tu editor de terminal por defecto</strong> (suele ser Vim o Nano) para que confirmes el mensaje de merge sugerido: <code>Merge branch 'funcionalidad-X'</code>.</p>
-<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>![Captura del editor de commit por defecto de Git en la terminal](capturas/ramas/8c_mensaje_commit.png)
-</code></pre></div></td></tr></table></div>
+<p><img alt="Captura del editor de commit por defecto de Git en la terminal" src="../capturas/ramas/8c_mensaje_commit.png"></p>
 <p><strong>Qué estás viendo en la captura</strong></p>
 <ul>
 <li>Un editor de texto pidiéndote confirmar o modificar el mensaje automático del "Merge Commit".</li>
@@ -2133,8 +2172,7 @@ Al ejecutar este comando, Git crea una nueva etiqueta apuntando exactamente al m
 </ul>
 </div>
 <p>7. Una vez cerrado el editor, Git completará la fusión satisfactoriamente.</p>
-<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>![Captura de `git lga` DESPUÉS del merge, mostrando el bucle cerrado](capturas/ramas/8b_despues_merge.png)
-</code></pre></div></td></tr></table></div>
+<p><img alt="Captura de git lga DESPUÉS del merge, mostrando el bucle cerrado" src="../capturas/ramas/8b_despues_merge.png"></p>
 <p><strong>Qué estás viendo en la captura</strong></p>
 <ul>
 <li>Git ha creado un nuevo "Merge Commit" para unir ambas historias porque no podía hacer <em>Fast-forward</em>.</li>
@@ -2175,120 +2213,108 @@ Al ejecutar este comando, Git crea una nueva etiqueta apuntando exactamente al m
 <li>La creación inicial del archivo y el primer commit en la rama <code>main</code>.</li>
 </ul>
 </li>
-</ol>
-<p>2. Creamos una rama <code>cambio-titulo</code> y cambiamos esa línea por: <code>Hola Universo</code>. Hacemos commit.</p>
-<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>![Captura modificando a hola universo en la nueva rama](capturas/ramas/9b_modicando_titulo_rama.png)
-
-**Qué estás viendo en la captura**
-
-- La modificación del archivo y su posterior commit en la nueva rama.
-
-!!! note "Nota"
-    Aunque en la imagen no se muestre explícitamente el comando de cambio (`git checkout / switch`), podemos saber que estamos allí porque la terminal suele indicarlo entre paréntesis `(cambio-titulo)`.
-
-!!! info "Nota sobre editores"
-    En la captura se ve que se ha usado `vi titulo.txt`. Recuerda que **`vi` (o `vim`) es un editor de texto integrado en la propia terminal**. Sin embargo, **puedes usar cualquier otro editor de texto** (como Visual Studio Code o incluso el Bloc de Notas) para modificar el archivo; no es obligatorio hacerlo por consola.
-</code></pre></div></td></tr></table></div>
-<p>3. Volvemos a <code>main</code> y cambiamos la <strong>misma línea</strong> por: <code>Hola Planeta</code>. Hacemos commit.</p>
-<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>![Captura cambiando la línea en main a hola planeta y realizando git lga](capturas/ramas/9c_cambio_main_y_lga.png)
-
-**Qué estás viendo en la captura**
-
-- El cambio del archivo en la rama principal y un `git lga` que muestra que ambas ramas han avanzado por separado, modificando el mismo archivo.
-</code></pre></div></td></tr></table></div>
-<p>4. Intentamos fusionar:
+<li>
+<p>Creamos una rama <code>cambio-titulo</code> y cambiamos esa línea por: <code>Hola Universo</code>. Hacemos commit.</p>
+<p><img alt="Captura modificando a hola universo en la nueva rama" src="../capturas/ramas/9b_modicando_titulo_rama.png"></p>
+<p><strong>Qué estás viendo en la captura</strong></p>
+<ul>
+<li>La modificación del archivo y su posterior commit en la nueva rama.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Aunque en la imagen no se muestre explícitamente el comando de cambio (<code>git checkout / switch</code>), podemos saber que estamos allí porque la terminal suele indicarlo entre paréntesis <code>(cambio-titulo)</code>. </p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Nota sobre editores</p>
+<p>En la captura se ve que se ha usado <code>vi titulo.txt</code>. Recuerda que <strong><code>vi</code> (o <code>vim</code>) es un editor de texto integrado en la propia terminal</strong>. Sin embargo, <strong>puedes usar cualquier otro editor de texto</strong> (como Visual Studio Code o incluso el Bloc de Notas) para modificar el archivo; no es obligatorio hacerlo por consola.</p>
+</div>
+</li>
+<li>
+<p>Volvemos a <code>main</code> y cambiamos la <strong>misma línea</strong> por: <code>Hola Planeta</code>. Hacemos commit.</p>
+<p><img alt="Captura cambiando la línea en main a hola planeta y realizando git lga" src="../capturas/ramas/9c_cambio_main_y_lga.png"></p>
+<p><strong>Qué estás viendo en la captura</strong></p>
+<ul>
+<li>El cambio del archivo en la rama principal y un <code>git lga</code> que muestra que ambas ramas han avanzado por separado, modificando el mismo archivo.</li>
+</ul>
+</li>
+<li>
+<p>Intentamos fusionar:
     </p><div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a>git<span class="w"> </span>merge<span class="w"> </span>cambio-titulo
 </code></pre></div></td></tr></table></div>
-<p>5. <strong>¡BOOM!</strong> Git lanza un error de "Merge conflict".</p>
-<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>![Captura de la terminal mostrando el error CONFLICT](capturas/ramas/9d_error_merge.png)
-
-**Qué estás viendo en la captura**
-
-- Al intentar ejecutar `git merge cambio-titulo`, Git detiene el proceso de fusión al detectar que las mismas líneas se han modificado de manera distinta en ambas historias.
-</code></pre></div></td></tr></table></div>
-<p>6. Si abres el archivo en tu editor, verás las marcas del conflicto.</p>
-<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>![Captura del editor de código mostrando las marcas de colores del conflicto](capturas/ramas/9e_editor_fix_merge.png)
-
-**Qué estás viendo en la captura**
-
-- El editor resalta los cambios actuales de `main` (`&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD`) frente a los cambios entrantes de `cambio-titulo` (`&gt;&gt;&gt;&gt;&gt;&gt;&gt; cambio-titulo`).
-</code></pre></div></td></tr></table></div>
-<p>7. <strong>Solución</strong>: Editas el archivo, borras las marcas <code>&lt;&lt;&lt;</code>, <code>===</code>, <code>&gt;&gt;&gt;</code> y dejas solo la versión final deseada o una mezcla de ambas (ej. <code>Hola planeta!</code>).</p>
-<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>![Captura del editor con el conflicto solucionado](capturas/ramas/9f_editor_solved.png)
-
-**Qué estás viendo en la captura**
-
-- El archivo limpio, con el código tal y como queremos que quede definitivamente. Ya no hay rastro de las marcas de Git.
-</code></pre></div></td></tr></table></div>
-<p>8. Guardas el archivo y lo añades al <em>staging area</em> para resolver el conflicto, seguido de un commit para cerrar la fusión.
+</li>
+<li>
+<p><strong>¡BOOM!</strong> Git lanza un error de "Merge conflict".</p>
+<p><img alt="Captura de la terminal mostrando el error CONFLICT" src="../capturas/ramas/9d_error_merge.png"></p>
+<p><strong>Qué estás viendo en la captura</strong></p>
+<ul>
+<li>Al intentar ejecutar <code>git merge cambio-titulo</code>, Git detiene el proceso de fusión al detectar que las mismas líneas se han modificado de manera distinta en ambas historias.</li>
+</ul>
+</li>
+<li>
+<p>Si abres el archivo en tu editor, verás las marcas del conflicto.</p>
+<p><img alt="Captura del editor de código mostrando las marcas de colores del conflicto" src="../capturas/ramas/9e_editor_fix_merge.png"></p>
+<p><strong>Qué estás viendo en la captura</strong></p>
+<ul>
+<li>El editor resalta los cambios actuales de <code>main</code> (<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code>) frente a los cambios entrantes de <code>cambio-titulo</code> (<code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; cambio-titulo</code>).</li>
+</ul>
+</li>
+<li>
+<p><strong>Solución</strong>: Editas el archivo, borras las marcas <code>&lt;&lt;&lt;</code>, <code>===</code>, <code>&gt;&gt;&gt;</code> y dejas solo la versión final deseada o una mezcla de ambas (ej. <code>Hola planeta!</code>).</p>
+<p><img alt="Captura del editor con el conflicto solucionado" src="../capturas/ramas/9f_editor_solved.png"></p>
+<p><strong>Qué estás viendo en la captura</strong></p>
+<ul>
+<li>El archivo limpio, con el código tal y como queremos que quede definitivamente. Ya no hay rastro de las marcas de Git.</li>
+</ul>
+</li>
+<li>
+<p>Guardas el archivo y lo añades al <em>staging area</em> para resolver el conflicto, seguido de un commit para cerrar la fusión.
     </p><div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1">1</a></span>
 <span class="normal"><a href="#__codelineno-18-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a>git<span class="w"> </span>add<span class="w"> </span>titulo.txt
 <a id="__codelineno-18-2" name="__codelineno-18-2"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Solucionando el conflicto"</span>
 </code></pre></div></td></tr></table></div>
-<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>![Captura solucionando el conflicto con add y commit en la terminal](capturas/ramas/9g_conflicto_solucionado.png)
-
-**Qué estás viendo en la captura**
-
-- La confirmación en la terminal de que hemos resuelto el conflicto añadiendo el archivo al índice de Git y consolidando el "Merge Commit".
-</code></pre></div></td></tr></table></div>
-<p>9. El historial vuelve a unirse tras resolver la colisión.</p>
-<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>![Captura de git lga tras solucionar el conflicto](capturas/ramas/9h_lga.png)
-
-**Qué estás viendo en la captura**
-
-- El comando `git lga` ilustra la esperada unión ("Merge Commit") de las ramas `cambio-titulo` y `main`, pero esta vez originada por la resolución manual de un conflicto.
-</code></pre></div></td></tr></table></div>
-<p>10. Resultado final:</p>
-<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>![Captura mostrando el archivo titulo.txt finalizado](capturas/ramas/9i_final.png)
-
-**Qué estás viendo en la captura**
-
-- El contenido del archivo al volver a la terminal comprueba la correcta resolución del conflicto con el resultado deseado.
-</code></pre></div></td></tr></table></div>
+<p><img alt="Captura solucionando el conflicto con add y commit en la terminal" src="../capturas/ramas/9g_conflicto_solucionado.png"></p>
+<p><strong>Qué estás viendo en la captura</strong></p>
+<ul>
+<li>La confirmación en la terminal de que hemos resuelto el conflicto añadiendo el archivo al índice de Git y consolidando el "Merge Commit".</li>
+</ul>
+</li>
+<li>
+<p>El historial vuelve a unirse tras resolver la colisión.</p>
+<p><img alt="Captura de git lga tras solucionar el conflicto" src="../capturas/ramas/9h_lga.png"></p>
+<p><strong>Qué estás viendo en la captura</strong></p>
+<ul>
+<li>El comando <code>git lga</code> ilustra la esperada unión ("Merge Commit") de las ramas <code>cambio-titulo</code> y <code>main</code>, pero esta vez originada por la resolución manual de un conflicto.</li>
+</ul>
+</li>
+<li>
+<p>Resultado final:</p>
+<p><img alt="Captura mostrando el archivo titulo.txt finalizado" src="../capturas/ramas/9i_final.png"></p>
+<p><strong>Qué estás viendo en la captura</strong></p>
+<ul>
+<li>El contenido del archivo al volver a la terminal comprueba la correcta resolución del conflicto con el resultado deseado.</li>
+</ul>
+</li>
+</ol>
 <hr>
 <h2 id="recursos-adicionales">📚 Recursos adicionales<a class="headerlink" href="#recursos-adicionales" title="Permanent link">¶</a></h2>
 <ul>
 <li><a href="https://git-scm.com/book/es/v2/Ramificaciones-en-Git-%C2%BFQu%C3%A9-es-una-rama%3F">Documentación oficial de Git sobre ramas</a></li>
 <li><a href="https://learngitbranching.js.org/?locale=es_ES">Learn Git Branching (Interactivo)</a></li>
-</ul></div>
+</ul>
+<hr>
+<h2 id="ideas-clave-muy-resumidas">✅ Ideas clave (muy resumidas)<a class="headerlink" href="#ideas-clave-muy-resumidas" title="Permanent link">¶</a></h2>
+<details class="tip">
+<summary>Abrir resumen</summary>
+<ul>
+<li><code>git branch &lt;nombre&gt;</code> crea una nueva rama.</li>
+<li><code>git branch</code> lista las ramas locales y te dice en cuál estás (<code>*</code>).</li>
+<li><code>git checkout &lt;nombre&gt;</code> (o <code>git switch &lt;nombre&gt;</code>) te mueve a otra rama.</li>
+<li><code>git checkout -b &lt;nombre&gt;</code> (o <code>git switch -c &lt;nombre&gt;</code>) crea una rama e inmediatamente te mueve a ella.</li>
+<li><code>git merge &lt;rama&gt;</code> fusiona los cambios de la <code>&lt;rama&gt;</code> indicada hacia la rama en la que estás actualmente situado.</li>
+<li><code>git branch -d &lt;nombre&gt;</code> borra una rama (siempre que sus cambios ya estén a salvo integrados).</li>
+<li><code>git log --oneline --graph --all</code> muestra el árbol visual y resumido de todas las diferentes ramas.</li>
+</ul>
+</details></div>
 
 
 

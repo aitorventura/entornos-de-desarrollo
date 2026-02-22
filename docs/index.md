@@ -57,6 +57,7 @@ En conjunto, el objetivo es que seas capaz de **trabajar como desarrollador** si
     - [Introducción a Git](tema4/introduccion-git.md)
     - [Introducción a las Ramas](tema4/ramas.md)
     - [Introducción a GitHub](tema4/github.md)
+    - [Colaboración y Gestión de Proyectos en GitHub](tema4/colaboracion.md)
 
 ---
 

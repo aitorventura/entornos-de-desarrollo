@@ -1586,6 +1586,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../actividad_4_6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 4.6
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1730,7 +1753,7 @@
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Antes de empezar</p>
-<p>Te recomendamos encarecidamente que <strong>leas la actividad entera</strong> de principio a fin, y te asegures de revisar el apartado <strong>📤 Entregable</strong> al final del documento. Así sabrás exactamente qué debes registrar o capturar antes de ponerte a escribir comandos en la terminal.</p>
+<p>Es recomendable que <strong>leas la actividad entera</strong> de principio a fin, y te asegures de revisar el apartado <strong>📤 Entregable</strong> al final del documento. Así sabrás exactamente qué debes registrar o capturar antes de ponerte a escribir comandos en la terminal.</p>
 </div>
 <hr>
 <h2 id="que-vas-a-practicar">🧠 Qué vas a practicar<a class="headerlink" href="#que-vas-a-practicar" title="Permanent link">¶</a></h2>
@@ -1765,7 +1788,7 @@
 <p>Preparamos el terreno con una rama principal estable.</p>
 <ol>
 <li>Crea un directorio llamado <code>bloc2_exercici</code> en tu carpeta de trabajo y entra en él.</li>
-<li>Inicializa un repositorio de Git: <code>git init</code>.</li>
+<li>Inicializa un repositorio de Git.</li>
 <li>Crea un archivo llamado <code>llibres.txt</code>. Añade dentro <strong>tres libros</strong> que te gusten (uno por línea).</li>
 <li>Haz un <strong>primer commit</strong> con el mensaje "Añadidos libros iniciales".</li>
 <li>Si tu rama se llama <code>master</code>, renómbrala a <code>main</code> para seguir el estándar moderno:
@@ -1777,15 +1800,11 @@
 <h3 id="parte-2-fusion-directa-fast-forward">Parte 2: Fusión directa (Fast-Forward)<a class="headerlink" href="#parte-2-fusion-directa-fast-forward" title="Permanent link">¶</a></h3>
 <p>Vamos a crear una rama, avanzar en ella, y luego integrar los cambios. Como <code>main</code> no se moverá mientras tanto, la fusión será lineal.</p>
 <ol>
-<li>Crea una rama llamada <code>musica</code> y sitúate en ella:
-   <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>musica
-</code></pre></div></td></tr></table></div></li>
+<li>Crea una rama llamada <code>musica</code> y sitúate en ella.</li>
 <li>Crea un archivo llamado <code>musica.txt</code> y añade <strong>tres canciones</strong> que te gusten.</li>
-<li>Haz un <strong>commit</strong> en esta rama: <code>git add .</code> y <code>git commit -m "Añadida música"</code>.</li>
-<li>Vuelve a la rama <code>main</code>: <code>git checkout main</code>.</li>
-<li>Incorpora (fusiona) los cambios de <code>musica</code> en <code>main</code>:
-   <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>git<span class="w"> </span>merge<span class="w"> </span>musica
-</code></pre></div></td></tr></table></div></li>
+<li>Haz un <strong>commit</strong> en esta rama.</li>
+<li>Vuelve a la rama <code>main</code>.</li>
+<li>Incorpora (fusiona) los cambios de <code>musica</code> en <code>main</code>.</li>
 <li><strong>Documenta</strong> con una captura el resultado de <code>git lga</code>. Verás que <code>main</code> simplemente ha avanzado hasta donde estaba <code>musica</code>.</li>
 </ol>
 <hr>
@@ -1793,28 +1812,20 @@
 <p>Ahora simularemos que dos personas trabajan a la vez en cosas distintas, creando historias paralelas que luego uniremos.</p>
 <ol>
 <li>Estando en <code>main</code>, crea dos ramas nuevas: <code>mes-llibres</code> y <code>mes-musica</code>.</li>
-<li>Sitúate en la rama <code>mes-llibres</code> (<code>git checkout mes-llibres</code>):<ul>
+<li>Sitúate en la rama <code>mes-llibres</code>:<ul>
 <li>Añade un <strong>nuevo libro</strong> al final de <code>llibres.txt</code>.</li>
 <li>Haz un <strong>commit</strong>.</li>
-<li>Añade <strong>otro libro más</strong> a <code>llibres.txt</code>.</li>
-<li>Haz <strong>otro commit</strong>.</li>
 </ul>
 </li>
-<li>Sitúate en la rama <code>mes-musica</code> (<code>git checkout mes-musica</code>):<ul>
+<li>Sitúate en la rama <code>mes-musica</code>:<ul>
 <li>Añade una <strong>nueva canción</strong> a <code>musica.txt</code>.</li>
 <li>Haz un <strong>commit</strong>.</li>
-<li>Añade <strong>otra canción más</strong> a <code>musica.txt</code>.</li>
-<li>Haz <strong>otro commit</strong>.</li>
 </ul>
 </li>
 <li>Vuelve a <code>main</code>.</li>
-<li>Incorpora los cambios de <code>mes-llibres</code>:
-    <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>git<span class="w"> </span>merge<span class="w"> </span>mes-llibres
-</code></pre></div></td></tr></table></div>
+<li>Incorpora los cambios de <code>mes-llibres</code>.
     <em>(Esta será Fast-Forward porque main no había avanzado).</em></li>
-<li>Incorpora los cambios de <code>mes-musica</code>:
-    <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>git<span class="w"> </span>merge<span class="w"> </span>mes-musica
-</code></pre></div></td></tr></table></div>
+<li>Incorpora los cambios de <code>mes-musica</code>.
     <em>(Aquí Git creará automáticamente un </em><em>commit de fusión</em><em> porque las historias divergieron).</em><ul>
 <li>Se abrirá un editor para el mensaje del commit. Guarda y sal.</li>
 </ul>
@@ -1829,20 +1840,16 @@
 <li>En la rama <code>llibres-ciencia-ficcio</code>:<ul>
 <li>Modifica <code>llibres.txt</code> añadiendo un libro de <strong>ciencia ficción</strong> en la primera línea (o en una línea específica que vayas a tocar en la otra rama).</li>
 <li>Haz un <strong>commit</strong>.</li>
-<li>Añade <strong>otro libro</strong> del género.</li>
-<li>Haz <strong>otro commit</strong>.</li>
 </ul>
 </li>
 <li>En la rama <code>llibres-fantasia</code>:<ul>
 <li>Modifica <code>llibres.txt</code> añadiendo un libro de <strong>fantasía</strong> <strong>en la misma línea</strong> que usaste antes.</li>
 <li>Haz un <strong>commit</strong>.</li>
-<li>Añade <strong>otro libro</strong> del género.</li>
-<li>Haz <strong>otro commit</strong>.</li>
 </ul>
 </li>
 <li>Vuelve a <code>main</code>.</li>
-<li>Fusiona <code>llibres-ciencia-ficcio</code>: <code>git merge llibres-ciencia-ficcio</code>.</li>
-<li>Intenta fusionar <code>llibres-fantasia</code>: <code>git merge llibres-fantasia</code>.<ul>
+<li>Fusiona <code>llibres-ciencia-ficcio</code>.</li>
+<li>Intenta fusionar <code>llibres-fantasia</code>.<ul>
 <li><strong>¡CONFLICTO!</strong> Git te dirá: <code>CONFLICT (content): Merge conflict in llibres.txt</code>.</li>
 </ul>
 </li>
@@ -1869,28 +1876,36 @@
 </li>
 <li>Desde <code>main</code>:<ul>
 <li>Elimina la rama <code>pelicules</code>:
-  <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>pelicules
+  <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>pelicules
 </code></pre></div></td></tr></table></div>
   <em>(Como no tiene cambios propios, se borra sin rechistar).</em></li>
 <li>Intenta eliminar la rama <code>series</code>:
-  <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>series
+  <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>series
 </code></pre></div></td></tr></table></div>
   <em>(Git te dará un error: <code>error: The branch 'series' is not fully merged</code>)</em>.</li>
 </ul>
 </li>
 <li><strong>Fuerza la eliminación</strong>:
-   <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a>git<span class="w"> </span>branch<span class="w"> </span>-D<span class="w"> </span>series
+   <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>git<span class="w"> </span>branch<span class="w"> </span>-D<span class="w"> </span>series
 </code></pre></div></td></tr></table></div></li>
 <li><strong>Pregunta</strong>: ¿Qué ha pasado con los commits de la rama <code>series</code>? (Piensa: ¿Están accesibles? ¿Están en el historial de <code>main</code>?).</li>
 <li><strong>Documenta</strong> con captura el error que te dio Git y el estado final.</li>
 </ol>
 <hr>
 <h2 id="entregable">📤 Entregable<a class="headerlink" href="#entregable" title="Permanent link">¶</a></h2>
+<div class="admonition danger">
+<p class="admonition-title">Atención: Autoría de las capturas</p>
+<p>En todas las capturas de pantalla debe apreciarse claramente que <strong>eres el autor</strong> (ruta de las carpetas con tu usuario, nombre de equipo en la terminal, etc.).<br>
+<strong>En caso de detectar copias, la calificación de la actividad será de un 0 automático.</strong></p>
+</div>
 <p>Sube un único <strong>PDF</strong> con:</p>
 <ol>
-<li><strong>Capturas de <code>git lga</code></strong> al finalizar las Partes 2, 3, 4 y 5.</li>
-<li><strong>Captura y explicación</strong> breve de cómo resolviste los conflictos (Parte 4).</li>
-<li><strong>Respuesta</strong> a la pregunta de la Parte 5 sobre los commits perdidos.</li>
+<li><strong>Capturas de <code>git lga</code></strong> demostrando la evolución del historial al finalizar las <strong>Partes 2, 3 y 4</strong>.</li>
+<li><strong>Captura en la Parte 5 de un <code>git branch</code> o <code>git lga</code></strong> justo después de crear añadir <em>series</em> y <em>pelicules</em>, demostrando que ambas ramas han existido.</li>
+<li><strong>Captura del error</strong> que te dio Git al intentar borrar la rama sin fusionar en la Parte 5, junto al <strong>lga</strong> con el estado final.</li>
+<li><strong>Explicación breve</strong> de cómo resolviste los conflictos manualmente (Parte 4).</li>
+<li><strong>Respuesta</strong> a la pregunta de la Parte 5 sobre dónde han ido a parar los commits perdidos de esa rama.</li>
+<li>Una <strong>breve reflexión personal (5-10 líneas)</strong> sobre cómo crees que el uso de ramas mejorará el trabajo en equipo en tus futuros proyectos (por ejemplo: para programar funcionalidades de forma aislada sin romper el trabajo de los demás, hacer pruebas seguras, etc.).</li>
 </ol></div>
 
 
