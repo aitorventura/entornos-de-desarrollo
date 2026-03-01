@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#introduccion-a-git-local-control-de-versiones-desde-cero" class="md-skip">
+        <a href="#5-introduccion-a-git-local-control-de-versiones-desde-cero" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -1645,13 +1645,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#crear-un-repositorio-git-init-con-captura" class="md-nav__link">
+  <a href="#crear-un-repositorio-git-init" class="md-nav__link">
     <span class="md-ellipsis">
-      🧱 Crear un repositorio: git init (con captura)
+      🧱 Crear un repositorio: git init
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="🧱 Crear un repositorio: git init (con captura)">
+    <nav class="md-nav" aria-label="🧱 Crear un repositorio: git init">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2238,13 +2238,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#crear-un-repositorio-git-init-con-captura" class="md-nav__link">
+  <a href="#crear-un-repositorio-git-init" class="md-nav__link">
     <span class="md-ellipsis">
-      🧱 Crear un repositorio: git init (con captura)
+      🧱 Crear un repositorio: git init
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="🧱 Crear un repositorio: git init (con captura)">
+    <nav class="md-nav" aria-label="🧱 Crear un repositorio: git init">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2398,7 +2398,7 @@
 
 
 <div><p><a id="intro-git"></a></p>
-<h1 id="introduccion-a-git-local-control-de-versiones-desde-cero">🧩 Introducción a Git (local): control de versiones desde cero<a class="headerlink" href="#introduccion-a-git-local-control-de-versiones-desde-cero" title="Permanent link">¶</a></h1>
+<h1 id="5-introduccion-a-git-local-control-de-versiones-desde-cero">🧩 5. Introducción a Git (local): control de versiones desde cero<a class="headerlink" href="#5-introduccion-a-git-local-control-de-versiones-desde-cero" title="Permanent link">¶</a></h1>
 <p><embed alt="Introducción a Git" src="../diapositivas/intro-git.pdf" style="width:100%;min-height:80vh" type="application/pdf"></embed></p>
 <div class="admonition info">
 <p class="admonition-title">Descarga de diapositivas</p>
@@ -2686,7 +2686,7 @@ Para que no se abra un editor raro, puedes fijar uno. Con VS Code:</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>core.editor<span class="w"> </span><span class="s2">"code --wait"</span>
 </code></pre></div></td></tr></table></div>
 <hr>
-<h2 id="crear-un-repositorio-git-init-con-captura">🧱 Crear un repositorio: <code>git init</code> (con captura)<a class="headerlink" href="#crear-un-repositorio-git-init-con-captura" title="Permanent link">¶</a></h2>
+<h2 id="crear-un-repositorio-git-init">🧱 Crear un repositorio: <code>git init</code><a class="headerlink" href="#crear-un-repositorio-git-init" title="Permanent link">¶</a></h2>
 <p>Para que Git empiece a guardar el historial de un proyecto, primero necesitas un <strong>repositorio</strong>: una carpeta “con Git activado”.</p>
 <h3 id="paso-1-entra-en-la-carpeta-del-proyecto">✅ Paso 1) Entra en la carpeta del proyecto<a class="headerlink" href="#paso-1-entra-en-la-carpeta-del-proyecto" title="Permanent link">¶</a></h3>
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="nb">cd</span><span class="w"> </span>~/Documents/pruebas_git
@@ -2882,7 +2882,8 @@ Si esos cambios te importan, guarda antes (commit) o copia el archivo.</p>
 </div>
 <hr>
 <h2 id="gitignore-cosas-que-no-queremos-guardar-en-el-historial">🚫 <code>.gitignore</code>: cosas que NO queremos guardar en el historial<a class="headerlink" href="#gitignore-cosas-que-no-queremos-guardar-en-el-historial" title="Permanent link">¶</a></h2>
-<p>Esto no aparece en tus capturas, pero conviene dejarlo claro aquí porque lo usarás en el ejercicio.</p>
+<p>El archivo .gitignore sirve para decirle a Git qué archivos o carpetas no debe seguir (trackear) ni incluir en los commits.</p>
+<p>Es decir: aunque esos archivos estén en tu proyecto, Git hará como si no existieran.</p>
 <ul>
 <li>
 <p>Ignorar logs:
