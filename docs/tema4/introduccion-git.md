@@ -1,6 +1,6 @@
 ﻿<a id="intro-git"></a>
 
-# 🧩 Introducción a Git (local): control de versiones desde cero
+# 🧩 5. Introducción a Git (local): control de versiones desde cero
 
 ![Introducción a Git](diapositivas/intro-git.pdf){ type=application/pdf style="width:100%;min-height:80vh" }
 
@@ -358,7 +358,7 @@ git config --global core.editor "code --wait"
 
 ---
 
-## 🧱 Crear un repositorio: `git init` (con captura)
+## 🧱 Crear un repositorio: `git init` 
 
 Para que Git empiece a guardar el historial de un proyecto, primero necesitas un **repositorio**: una carpeta “con Git activado”.
 
@@ -581,7 +581,9 @@ Esto sirve cuando has hecho `git add` por error (lo metiste en staging), pero a�
 
 ## 🚫 `.gitignore`: cosas que NO queremos guardar en el historial
 
-Esto no aparece en tus capturas, pero conviene dejarlo claro aquí porque lo usarás en el ejercicio.
+El archivo .gitignore sirve para decirle a Git qué archivos o carpetas no debe seguir (trackear) ni incluir en los commits.
+
+Es decir: aunque esos archivos estén en tu proyecto, Git hará como si no existieran.
 
 - Ignorar logs:
 ```gitignore
