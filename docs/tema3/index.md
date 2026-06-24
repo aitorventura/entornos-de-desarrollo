@@ -20,10 +20,12 @@
 
 ## 📘 Índice de contenidos
 
-1. [Depuración de programas](depuracion.md)  
-2. [Pruebas de software](pruebas.md)  
-3. [Casos de prueba](casos.md)  
-4. [Pruebas unitarias](unitarias.md)  
+1. [Depuración de programas](depuracion.md)
+2. [Pruebas de software](pruebas.md)
+3. [Técnicas de casos de prueba](casos.md)
+4. [Pruebas unitarias](unitarias.md)
 
 ---
 
+!!! info "¿Cómo avanzar por el contenido?"
+    Utiliza el índice o las flechas de navegación al final de cada página para desplazarte por los distintos apartados de este tema.

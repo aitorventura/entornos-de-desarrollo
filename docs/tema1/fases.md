@@ -3,65 +3,68 @@
 
 # 🧭 4. Fases del desarrollo del software
 
-![Fases del desarrollo del software](diapositivas/fases.pdf){ type=application/pdf style="width:100%;min-height:80vh" }
+![Diapositivas](diapositivas/fases.pdf){ type=application/pdf style="width:100%;min-height:80vh" }
 
 !!!info "Descarga de diapositivas"
-    [Descarga las diapositivas](diapositivas/fases.pdf){target="_blank" rel="noopener"}
-
+    [Descarga las diapositivas](diapositivas/fases.pptx){target="_blank" rel="noopener"}
 
 ---
 
-## 🗺️ Visión general del ciclo
+## Visión general del ciclo
 
-Antes de escribir código, un producto pasa por varias **fases conectadas**. Cada fase produce **salidas** (artefactos) que sirven de **entrada** a la siguiente. El ciclo no es completamente lineal: solemos **iterar** y volver atrás cuando aparecen cambios o nueva información.
+Desarrollar software no es solo sentarse a programar. Antes hay que entender qué se necesita, pensar cómo organizarlo, implementarlo, probarlo, entregarlo a los usuarios y mantenerlo funcionando. Cada una de estas actividades forma una **fase**, y la salida de una es la entrada de la siguiente.
 
 ```mermaid
 flowchart TB
-  A[Idea / Necesidad] --> B["4.1 Análisis de requisitos"]
-  B --> C["4.2 Diseño "]
-  C --> D["4.3 Implementación"]
-  D --> E["4.4 Pruebas "]
-  E --> G["4.5 Despliegue "]
-  G --> H["4.6 Operación y mantenimiento "]
-  H --> I["4.7 Documentación"]
-  I -->|feedback| B
+  A["💡 Idea / Necesidad"] --> B["📋 4.1 Análisis\n¿Qué debe hacer?"]
+  B --> C["🏗️ 4.2 Diseño\n¿Cómo lo organizamos?"]
+  C --> D["💻 4.3 Implementación\nEscribir el código"]
+  D --> E["🧪 4.4 Pruebas\n¿Funciona bien?"]
+  E --> G["🚀 4.5 Despliegue\nPonerlo en manos de los usuarios"]
+  G --> H["⚙️ 4.6 Operación\nMantenimiento y mejoras"]
+  H --> I["📚 4.7 Documentación\nExplicar qué hace y cómo"]
+  I -->|"feedback / cambios"| B
 ```
 
-> **Idea clave:** cada fase reduce la **incertidumbre** y mejora la **calidad** del resultado. El objetivo no es “cumplir etapas”, sino **entregar valor** con seguridad y previsibilidad.
+!!! note "Por qué existen estas fases"
+    Imagina que te piden construir una casa. Si empiezas a poner ladrillos antes de tener un plano, cuando llegue el fontanero ya no podrá pasar la tubería donde tiene que ir. El software pasa lo mismo: cada euro que cuesta arreglar un error en producción habría costado mucho menos si se hubiera detectado antes. Las fases existen para detectar problemas cuando todavía son baratos de resolver.
+
+| Fase | Pregunta clave | Resultado típico |
+|---|---|---|
+| Análisis | ¿Qué debe hacer el sistema? | Lista de requisitos, historias de usuario |
+| Diseño | ¿Cómo lo organizamos? | Diagramas, decisiones de arquitectura |
+| Implementación | ¿Cómo lo codificamos? | Código fuente revisado |
+| Pruebas | ¿Funciona como se espera? | Informes de prueba, bugs corregidos |
+| Despliegue | ¿Cómo lo entregamos? | Versión publicada |
+| Operación | ¿Sigue funcionando? | Métricas, alertas, parches |
+| Documentación | ¿Cómo lo explicamos? | README, guías, comentarios |
 
 ---
 
-## 4.1 Análisis de requisitos: funcionales / no funcionales; historias de usuario
+## 4.1 Análisis de requisitos
 
-El **análisis** transforma una necesidad en una lista de **condiciones verificables** que el software debe cumplir. Si esta fase es ambigua, todo lo posterior tambalea.
+El **análisis** transforma una necesidad en una lista de condiciones verificables que el software debe cumplir. Si esta fase queda poco clara, los problemas aparecen en la implementación o, peor aún, cuando el programa ya está en manos de los usuarios.
 
-<div class="grid cards" markdown>
--   :material-flag-checkered: **Propósito**
-    - Alinear **negocio ↔ equipo técnico**.
-    - Acotar alcance, riesgos y dependencias.
-    - Definir **criterios de éxito** medibles.
+En esta fase participan los **stakeholders** —las personas interesadas en el proyecto: el cliente, los usuarios finales, el equipo técnico, dirección…— y el objetivo es que todos acaben con la misma imagen de lo que hay que construir.
 
--   :material-account-group: **Cuándo**
-    - Al inicio de cada **iteración** o **proyecto**.
-    - Antes de decisiones de arquitectura.
-</div>
+### Requisitos funcionales y no funcionales
 
-### ✅ Requisitos **funcionales** (¿qué debe hacer?)
-Describen las **funciones** del sistema: pantallas, reglas, flujos, validaciones…  
-**Ejemplo:** “El sistema permite **registrar** usuarios con email y contraseña”.
+Los **requisitos funcionales** describen qué debe hacer el sistema: pantallas, flujos, validaciones, reglas de negocio.
 
-### ⚙️ Requisitos **no funcionales** (¿cómo debe ser?)
-Definen **calidades y restricciones**: rendimiento, seguridad, accesibilidad, escalabilidad, cumplimiento legal (RGPD), usabilidad…  
-**Ejemplo:** “El inicio de sesión debe responder en **< 300 ms** para el 95% de peticiones”.
+> Ejemplo: *"El sistema permite registrar usuarios con email y contraseña."*
 
-### ✍️ Historias de usuario: qué son, cuándo y para qué
-Una **historia de usuario** es una forma **ligera** de capturar una necesidad desde la perspectiva del usuario. Se usan en enfoques **ágiles** para **planificar**, **priorizar** y **probar** funcionalidades. Se redactan al inicio y se **refinan** (grooming) continuamente.
+Los **requisitos no funcionales** describen cómo debe ser: rendimiento, seguridad, accesibilidad, cumplimiento legal.
 
-**Formato recomendado**
-> **Como** _tipo de usuario_, **quiero** _objetivo_, **para** _beneficio_.  
-> **Criterios de aceptación** (Given/When/Then) para verificar la historia.
+> Ejemplo: *"El inicio de sesión debe responder en menos de 300 ms para el 95% de las peticiones."*
 
-**Ejemplo**
+### Historias de usuario
+
+Una **historia de usuario** es una forma sencilla de capturar una necesidad desde el punto de vista de quien va a usar el sistema. Se usan en entornos ágiles para planificar y priorizar funcionalidades, y se escriben con este formato:
+
+> **Como** *tipo de usuario*, **quiero** *objetivo*, **para** *beneficio*.
+
+A cada historia se le añaden **criterios de aceptación** —condiciones concretas que deben cumplirse para considerar la historia terminada— usando el formato Given/When/Then:
+
 ```gherkin
 Historia: Recuperación de contraseña
   Como cliente
@@ -71,68 +74,72 @@ Historia: Recuperación de contraseña
 Criterios de aceptación:
   Given estoy en "Olvidé mi contraseña"
   When introduzco mi email y confirmo
-  Then recibo un enlace de recuperación válido 30 minutos
+  Then recibo un enlace de recuperación válido durante 30 minutos
 ```
 
-!!! tip "Calidad de historias (INVEST)"
-    - **I**ndependiente · **N**egociable · **V**aliosa · **E**stimable · **S**imple · **T**estable
+!!! tip "¿Qué hace una buena historia? — INVEST"
+    Una historia bien escrita cumple seis criterios:
+
+    | Letra | Significa | Qué implica |
+    |---|---|---|
+    | **I** | Independiente | No depende de otra historia para poder desarrollarse |
+    | **N** | Negociable | El cómo puede cambiar; el qué también, si hay razón |
+    | **V** | Valiosa | Aporta algo concreto al usuario o al negocio |
+    | **E** | Estimable | El equipo puede calcular cuánto cuesta hacerla |
+    | **S** | Simple | Cabe en una iteración; si no, hay que partirla |
+    | **T** | Testable | Tiene criterios de aceptación verificables |
 
 !!! info "Entradas → Salidas"
-    - **Entradas:** objetivos de negocio, restricciones, normativa, *stakeholders*.
-    - **Salidas:** requisitos priorizados, historias con criterios, *mockups* y flujo de alto nivel.
+    - **Entradas:** objetivos del proyecto, restricciones, normativa aplicable, necesidades de los usuarios.
+    - **Salidas:** lista de requisitos priorizados, historias con criterios de aceptación, bocetos (*mockups* —representaciones visuales rápidas de cómo quedará la interfaz—) y flujo general de la aplicación.
 
 ---
 
-## 4.2 Diseño: arquitectura, patrones, diagramas UML (clases, casos de uso, actividad)
+## 4.2 Diseño: arquitectura, patrones y diagramas UML
 
 !!! info "¿Qué es el diseño?"
-    Es el **puente** entre *lo que queremos* (requisitos) y *cómo lo construiremos* (código).  
-    Sirve para **dividir el problema en piezas**, **acordar cómo encajan** y **evitar sorpresas** cuando programemos.
+    Es el puente entre *lo que queremos* (requisitos) y *cómo lo construiremos* (código). Sirve para dividir el problema en piezas, acordar cómo encajan y evitar sorpresas cuando programemos.
 
-### 🎯 Objetivos del diseño 
-- **Elegir** cómo vamos a **organizar** el programa (en una pieza o por capas).
-- **Diseñar diagramas** (qué datos hay, qué pasos sigue un flujo).
-- **Escribir** 2–3 decisiones clave (y por qué), para recordarlas después.
+### Arquitectura
 
----
+La arquitectura define la forma general de la aplicación: cómo se divide, qué piezas hay y cómo se comunican. Para empezar, con tres modelos es suficiente:
 
-### 🏗️ Arquitectura 
-Piensa en “**la forma**” de la aplicación. Empezaremos con **tres** modelos fáciles:
+<div class="tabs-colored" markdown>
 
-<div class="grid cards" markdown>
--   :material-package-variant-closed: **Una sola pieza (monolito)**
-    - Todo va **junto** en una misma aplicación.
-    - ✅ Fácil de arrancar y entender.
-    - 💡 Útil para **proyectos pequeños** o primeras prácticas.
--   :material-layers: **Por capas (3 capas)**
-    - **Presentación** (lo que se ve) → **Lógica** (reglas) → **Datos** (base de datos/archivos).
-    - ✅ Ordena el código y separa responsabilidades.
-    - 💡 Típico en **apps web** o de escritorio sencillas.
--   :material-vector-triangle: **Varias piezas que hablan (servicios)**
-    - La app se divide en **varias partes** que se envían **mensajes**.
-    - ✅ Escala bien si crece mucho.
-    - ⚠️ **Más avanzado**: no lo necesitamos para empezar.
+=== "📦 Monolito"
+    Todo el código vive en una sola aplicación. Es el punto de partida natural para proyectos pequeños o primeras prácticas: fácil de arrancar, de entender y de desplegar.
+
+    **Cuándo usarlo:** proyectos pequeños, primeras prácticas, equipos de una o dos personas.
+
+=== "🗂️ Tres capas"
+    El código se divide en tres niveles con responsabilidades distintas:
+
+    - **Presentación** — lo que el usuario ve (pantallas, formularios).
+    - **Lógica** — las reglas del negocio y los cálculos.
+    - **Datos** — el acceso a la base de datos o a archivos.
+
+    ```mermaid
+    flowchart TB
+      UI["Presentación\n(pantallas / formularios)"]
+      LOG["Lógica de negocio\n(validaciones, cálculos)"]
+      DAT["Datos\n(base de datos / archivos)"]
+      UI --> LOG --> DAT
+    ```
+
+    **Cuándo usarlo:** aplicaciones web o de escritorio de tamaño medio; es la arquitectura más habitual en los proyectos de DAW y DAM.
+
+=== "🔗 Servicios"
+    La aplicación se divide en varias piezas independientes que se comunican entre sí enviándose mensajes. Escala bien cuando el sistema crece mucho, pero añade complejidad que no es necesaria para empezar.
+
+    **Cuándo usarlo:** sistemas grandes con equipos independientes. No lo necesitarás en los primeros proyectos.
+
 </div>
 
-Diagrama simple de **tres capas**:
+### Diagramas UML
 
-```mermaid
-flowchart TB
-  UI["Presentación<br/>(pantallas / terminal)"]:::box
-  LOG["Lógica de negocio<br/>(validaciones, cálculos)"]:::box
-  DAT["Datos<br/>(BD / archivos)"]:::box
+UML (*Unified Modeling Language*) es un conjunto de tipos de diagramas estándar para documentar software. Usaremos solo los más útiles:
 
-  UI --> LOG --> DAT
-
-```
-
----
-
-
-### 📐 UML para elaborar diagramas
-UML son **diagramas simples** que nos permiten documentar el software. Usaremos **solo** lo esencial:
-
-**1) Clases (qué datos hay y cómo se relacionan)**
+**Diagrama de clases — qué datos hay y cómo se relacionan**
 
 ```mermaid
 classDiagram
@@ -147,200 +154,153 @@ classDiagram
   Carrito "1" o-- "*" Producto : contiene
 ```
 
-- **Producto** tiene **nombre** y **precio**.  
-- **Carrito** puede **agregar** productos y calcular el **total**.
+**Diagrama de actividad — los pasos de un flujo**
 
-**2) Actividad (los pasos de un flujo)**
 ```mermaid
 flowchart TD
   S([Inicio]) --> A[Usuario introduce email y contraseña]
   A --> B{¿Son correctos?}
   B -- Sí --> C[Accede al sistema]
-  B -- No --> D[Muestra error y vuelve a pedir]
+  B -- No --> D[Muestra error]
   D --> A
   C --> E([Fin])
 ```
-- Representa **decisiones** y **bucles** (intento de login).
 
-**3) Casos de uso (quién usa qué)**
+**Casos de uso — quién hace qué**
+Una lista sencilla de acciones y actores ya es suficiente para el alcance: *"Registrar (Cliente)", "Iniciar sesión (Cliente)", "Ver pedidos (Admin)"*. No hace falta un diagrama formal para empezar.
 
-- Lista sencilla: *“Registrar”, “Iniciar sesión”, “Añadir al carrito”, “Pagar”*.  
-- **Actor**: quién lo hace (Cliente, Admin).  
-- 💡 No hace falta dibujar ahora; con **títulos y actores** ya aclaramos el alcance.
-
----
-
-### 🧾 ¿Qué entrego al acabar el diseño (mínimo útil)?
-- Los **diagramas elaborados**.  
-- Las **decisiones** tomadas: “Usaremos 3 capas porque…”, “La lógica de compra va aparte…”.  
-
-!!! tip "Pista para tus primeros ejercicios"
-    - Empieza **en monolito** y **tres capas** (Presentación/Lógica/Datos).  
-    - Dibuja **solo** lo que necesitas para ponerte de acuerdo.  
-    - Si dudas, prioriza **claridad** frente a “técnicas avanzadas”.
+!!! tip "Para tus primeros proyectos"
+    Empieza siempre en monolito con tres capas. Dibuja solo lo que necesitas para ponerte de acuerdo con el equipo. Si dudas, prioriza claridad frente a técnicas avanzadas.
 
 !!! info "Entradas → Salidas"
-    - **Entradas:** requisitos priorizados e historias; restricciones y normativa; objetivos de calidad (rendimiento, seguridad, etc.).
-    - **Salidas:** diagramas UML mínimos; decisiones registradas (ADR); contratos de API/datos; prototipos o *mockups* acordados.
+    - **Entradas:** requisitos e historias, restricciones, objetivos de calidad.
+    - **Salidas:** diagramas UML mínimos, decisiones de arquitectura documentadas, bocetos acordados.
 
 ---
 
-## 4.3 Implementación: estilos de código, revisiones
+## 4.3 Implementación
 
-**Objetivo:** convertir el diseño en **código que funciona** y que cualquier compañero pueda **leer y mantener**.
+**Objetivo:** convertir el diseño en código que funciona y que cualquier compañero pueda leer y mantener. No es solo "que compile": también importa que el código sea claro, coherente y fácil de cambiar.
 
-!!! info "¿Qué es la implementación?"
-    Es el paso donde tomamos los requisitos y el diseño y los transformamos en **archivos fuente** (por ejemplo, `.java`) que el ordenador puede **compilar y ejecutar**. No es solo “hacer que funcione”: también importa que el código sea **claro, coherente y seguro**.
+### Principios básicos
 
----
+<div class="tabs-colored" markdown>
 
-### 🧭 Principios mínimos de buena implementación
+=== "📖 Claridad"
+    Escribe código para la persona que lo leerá después (que muchas veces serás tú mismo seis meses más tarde). Los nombres de variables y funciones deben explicar qué hacen sin necesidad de comentarios.
 
-1. **Claridad por encima de “ingenio”**  
+    ```java
+    // ❌ Poco claro
+    double r = f(p, i);
 
-    - Nombres que expliquen **qué hacen**: `calcularTotalPedido`, `precioConIVA`.  
-    - Evita abreviaturas crípticas.
+    // ✅ Claro
+    double totalConImpuestos = calcularTotalPedido(precio, iva);
+    ```
 
-2. **Una función, una responsabilidad**  
+=== "🎯 Una responsabilidad"
+    Cada función debe hacer una sola cosa. Si una función hace validaciones, cálculos y envía emails a la vez, es muy difícil de probar y de cambiar sin romper algo.
 
-    - Si una función hace muchas cosas, **divídela** en partes más pequeñas con buenos nombres.
+    ```java
+    // ❌ Mezcla demasiadas cosas
+    void procesar(Pedido p) { /* valida + calcula + guarda + notifica */ }
 
-3. **No te repitas (DRY)**  
+    // ✅ Cada función tiene su tarea
+    void procesar(Pedido p) {
+        validar(p);
+        double total = calcularTotal(p);
+        guardar(p, total);
+        notificarCliente(p);
+    }
+    ```
 
-    - Si copias y pegas código, probablemente necesitas una **función reutilizable**.
+=== "🔁 No te repitas (DRY)"
+    Si copias y pegas el mismo bloque de código en varios sitios, cuando haya que cambiarlo tendrás que buscarlo y cambiarlo en todos. La solución es extraerlo a una función reutilizable.
 
-4. **Comentarios con intención (el “por qué”)**  
+=== "💬 Comentarios útiles"
+    No comentes lo que el código ya dice. Comenta el *porqué*: decisiones, reglas de negocio, restricciones que no son obvias.
 
-    - No comentes lo obvio; explica decisiones o reglas de negocio.
+    ```java
+    // Evitamos dividir por cero: si b es 0 devolvemos 0 por política de negocio
+    int dividir(int a, int b) {
+        return (b == 0) ? 0 : a / b;
+    }
+    ```
 
-5. **Manejo básico de errores**  
+=== "🎨 Estilo consistente"
+    Misma indentación, llaves y espacios en todo el proyecto. Si trabajas en equipo, un formateador automático (como *Checkstyle* en Java) evita discusiones y errores.
 
-    - Comprueba entradas (p. ej., división por cero) y da **mensajes útiles**.
-
-6. **Consistencia de estilo** 
-
-    - Misma indentación, llaves y espacios en todo el proyecto.  
-    - Si es posible, usa formateador (p. ej., *Checkstyle/Spotless* en Java).
-
----
-
-### ✏️ Ejemplos breves en Java
-
-**Nombres que cuentan una historia**
-```java
-// ❌ Poco claro
-double r = f(p, i);
-
-// ✅ Claro
-double totalConImpuestos = calcularTotalPedido(precio, iva);
-```
-
-**Una función, una responsabilidad**
-```java
-// ❌ Mezcla validaciones, cálculos y notificaciones
-void procesar(Pedido p) { /* muchas cosas aquí */ }
-
-// ✅ Separa tareas con nombres claros
-void procesar(Pedido p) {
-    validar(p);
-    double total = calcularTotal(p);
-    guardar(p, total);
-    notificarCliente(p);
-}
-```
-
-**Comentarios que explican el porqué**
-```java
-// Evitamos dividir por cero: si b es 0 devolvemos 0 por política de negocio
-int dividir(int a, int b) {
-    return (b == 0) ? 0 : a / b;
-}
-```
-
----
+</div>
 
 !!! info "Entradas → Salidas"
-    - **Entradas:** requisitos claros y un diseño sencillo (qué módulos habrá y cómo se comunican).
-    - **Salidas:** código legible que compila y se ejecuta; instrucciones mínimas de cómo ejecutar; casos de uso básicos probados (aunque sea manualmente).
+    - **Entradas:** requisitos claros y diseño acordado.
+    - **Salidas:** código que compila y se ejecuta, instrucciones mínimas de cómo arrancarlo, casos básicos probados manualmente.
 
 ---
 
-## 4.4 Pruebas: unitarias, integración, sistema, aceptación; TDD/BDD
+## 4.4 Pruebas
 
-Las **pruebas** son experimentos controlados que hacemos al software para **detectar errores pronto**, mantener la **calidad** y poder **cambiar con confianza**.
+Las pruebas son comprobaciones sistemáticas que hacemos al software para detectar errores pronto y poder hacer cambios sin miedo a romper lo que ya funciona. Probar no es "desconfiar del código": es aprender rápido si algo funciona como esperamos. Cuanto antes pruebas, más barato es corregir.
 
-!!! info "Idea clave"
-    Probar no es “desconfiar del código”, es **aprender rápido** si algo funciona como esperamos. Cuanto **antes** pruebas, **más barato** es corregir.
+### La pirámide de pruebas
 
----
-
-### 🧱 La “pirámide” de pruebas 
+La idea es sencilla: muchas pruebas rápidas y baratas en la base, pocas pruebas lentas y costosas arriba. Si la pirámide está al revés (más pruebas de sistema que unitarias), el feedback es lento y los fallos tardan en detectarse.
 
 ```mermaid
 flowchart TB
-  U["Unitarias (muchas)"] --> I["Integración (algunas)"]
-  I --> S["Sistema / E2E (pocas)"]
-  S --> A["Aceptación (con negocio)"]
-
+  U["🧱 Unitarias\n(muchas, rápidas, baratas)"]
+  I["🔗 Integración\n(algunas)"]
+  S["🌐 Sistema / E2E\n(pocas, lentas, costosas)"]
+  A["✅ Aceptación\n(con el cliente)"]
+  U --> I --> S --> A
 ```
 
- - **Más** pruebas **unitarias** que de integración, y **muy pocas** E2E.  
-- Las unitarias son **rápidas** y **baratas**; las E2E son **lentas** y **frágiles**.
+### Tipos de prueba
 
----
+<div class="tabs-colored" markdown>
 
-### 🧪 Tipos de prueba (con ejemplos sencillos)
+=== "🧱 Unitarias"
+    Prueban una sola función o clase de forma aislada. Son las más rápidas y las más fáciles de escribir y mantener.
 
-<div class="grid cards" markdown>
+    **Ejemplo:** comprobar que `calcularTotal(10, 0.21)` devuelve `12.1`.
 
--   :material-function-variant: **Unitarias**  
-    **¿Qué prueban?** Una **función** o **clase** aislada.  
-    **Ejemplo:** comprobar que `calcularTotal(10, 21%)` devuelve `12.1`.  
-    **Objetivo:** detectar fallos **locales** rápido.  
+    **Herramientas:** JUnit (Java), Jest (JavaScript), pytest (Python).
 
--   :material-call-merge: **Integración**  
-    **¿Qué prueban?** El **encaje** entre piezas (función + base de datos, servicio + API, etc.).  
-    **Ejemplo:** guardar un pedido y **leerlo** después desde la BD de pruebas.  
-    **Objetivo:** verificar **contratos** y entradas/salidas reales.  
+=== "🔗 Integración"
+    Prueban el encaje entre piezas: una función con su base de datos, un servicio con una API externa. Verifican que los contratos entre partes se cumplen.
 
--   :material-web: **Sistema / E2E**  
-    **¿Qué prueban?** El **flujo completo** como lo ve el usuario.  
-    **Ejemplo:** “comprar” un producto: login → carrito → pagar → confirmación.  
-    **Objetivo:** comprobar que **todo junto** funciona.  
+    **Ejemplo:** guardar un pedido en la base de datos de pruebas y leerlo después para comprobar que se guardó bien.
 
--   :material-account-check: **Aceptación (UAT)**  
-    **¿Qué prueban?** Que se cumplen los **requisitos** acordados con negocio.  
-    **Ejemplo:** “Como cliente, puedo **restablecer contraseña** en menos de 30 min”.  
-    **Objetivo:** validar valor para el **usuario**.
+=== "🌐 Sistema / E2E"
+    Prueban el flujo completo tal como lo ve el usuario, de principio a fin.
+
+    **Ejemplo:** "comprar" un producto: login → añadir al carrito → pagar → ver confirmación.
+
+    **Herramientas:** Selenium, Cypress, Playwright.
+
+=== "✅ Aceptación"
+    Verifican que el sistema cumple los requisitos acordados con el cliente. Se basan directamente en los criterios de aceptación de las historias de usuario.
+
+    **Ejemplo:** *"Como cliente, puedo restablecer mi contraseña y recibir el enlace en menos de 5 minutos."*
+
 </div>
 
-!!! tip "Cuándo ejecutar"
-    - Cada vez que cambies código.  
-    - Antes de entregar una tarea.  
-    - Siempre que arregles un bug (añade una prueba que lo **reproduzca**).
+### TDD: escribir la prueba antes que el código
 
----
+**TDD** (*Test-Driven Development*) propone un ciclo muy corto que invierte el orden habitual: primero escribes la prueba, luego el código mínimo para que pase, y luego limpias.
 
-### 🔁 TDD: pensar con pruebas primero
+```mermaid
+flowchart LR
+  R["🔴 Red\nEscribe una prueba\nque falle"] --> G["🟢 Green\nEscribe el mínimo\ncódigo para que pase"]
+  G --> RF["🔵 Refactor\nMejora el código\nsin romper nada"]
+  RF --> R
+```
 
-**TDD (Test‑Driven Development)** propone este ciclo muy corto:
+La ventaja es que al terminar tienes el código y las pruebas a la vez, y el diseño suele ser más simple porque solo escribes lo que la prueba necesita.
 
-1. **Red** → escribe una prueba **pequeña** que **falle** (todavía no hay código).
-2. **Green** → escribe el **mínimo** código para que **pase**.
-3. **Refactor** → mejora el diseño, sin romper lo que ya pasa.
+### BDD: describir comportamientos en lenguaje común
 
-!!! example "Mini‑ejemplo mental"
-    1) Prueba: “`suma(2,3)` debe devolver `5`” → **falla**.  
-    2) Implemento `suma(a,b)` → **pasa**.  
-    3) Limpio nombres y casos borde → siguen **en verde**.
+**BDD** (*Behavior-Driven Development*) describe el comportamiento esperado en un lenguaje que tanto el equipo técnico como el cliente pueden entender. Se usa sobre todo para las pruebas de aceptación.
 
----
-
-### 🧾 BDD: comportamientos en lenguaje común
-
-**BDD (Behavior‑Driven Development)** describe comportamientos con un lenguaje cercano al negocio. Se usa a menudo para **aceptación**.
-
-**Formato Gherkin (ejemplo):**
 ```gherkin
 Feature: Recuperar contraseña
   Scenario: Enlace válido
@@ -349,525 +309,311 @@ Feature: Recuperar contraseña
     Then recibo un enlace válido durante 30 minutos
 ```
 
-- **Given**: contexto inicial. **When**: acción. **Then**: resultado esperado.
-
----
-
-### ✅ Buenas prácticas para principiantes
-
-- **Una idea por prueba** y nombres **claros** (qué esperas que pase).  
-- Prepara **datos propios** en cada prueba (no dependas de los de otra).  
-- Evita depender de **Internet** o servicios externos en unitarias.  
-- Si algo es difícil de probar, **divide** el problema en piezas más pequeñas.  
-- Cuando encuentres un bug, **primero** escribe la prueba que lo reproduce.
-
-!!! warning "Errores típicos"
-    - Demasiadas pruebas E2E y **pocas** unitarias → feedback lento.  
-    - Pruebas que dependen del **orden** o comparten **estado** → resultados impredecibles.  
-    - “Aprobar” a mano sin criterios → la próxima persona no sabrá qué validar.
-
----
-
-### 🧰 Herramientas (por si las necesitas más adelante)
-
-- **Java**: JUnit (unitarias/integ.), Cucumber (BDD), Selenium (E2E web).  
-- **JavaScript**: Jest/Testing Library (unit), Cypress/Playwright (E2E).  
-- **Python**: pytest (unit/integr.).
-
-> No es necesario instalarlas para entender este apartado; son **referencias** para cuando empieces a automatizar.
-
----
+!!! warning "Errores frecuentes en pruebas"
+    - Demasiadas pruebas E2E y pocas unitarias → el feedback tarda mucho.
+    - Pruebas que dependen del orden de ejecución → resultados impredecibles.
+    - Cuando encuentras un bug, escribe primero la prueba que lo reproduce, luego corrígelo.
 
 !!! info "Entradas → Salidas"
-    - **Entradas:** requisitos y criterios de aceptación; código fuente y cambios propuestos; datos de prueba controlados; entorno de pruebas preparado.
-    - **Salidas:** lista de pruebas ejecutadas y su resultado (verde/rojo); notas de defectos detectados y cómo se corrigieron; evidencias (capturas/logs) si se piden en la entrega.
+    - **Entradas:** criterios de aceptación, código a probar, datos de prueba controlados.
+    - **Salidas:** resultados de las pruebas, lista de bugs detectados y corregidos.
 
 ---
 
-## 4.5 Despliegue: on-prem, nube, móvil; *release management*
+## 4.5 Despliegue
 
-Llevar el software desde “listo para usar” hasta “en manos de los usuarios” **de forma segura** y con **plan de vuelta atrás**.
+Desplegar es llevar el software desde "listo en el repositorio" hasta "en manos de los usuarios" de forma segura y con un plan de vuelta atrás si algo falla.
 
----
+### Dónde puede vivir tu aplicación
 
-### 🌍 Modalidades de despliegue (visión rápida)
-
-| Modalidad | ¿Dónde vive tu app? | Ventajas claras | A tener en cuenta |
+| Modalidad | Dónde se ejecuta | Ventajas | A tener en cuenta |
 |---|---|---|---|
-| **On-premises** | En **tu** propio servidor o CPD | Control total, datos “en casa” | Coste y tareas de sistema: backups, parches, monitorización |
-| **Nube (IaaS/PaaS/FaaS)** | En proveedores (AWS, Azure, GCP…) | Elasticidad, servicios gestionados, pago por uso | Dependes del proveedor, costes si crece sin control |
-| **Móvil (Android/iOS)** | En **tiendas** (Play/App Store) | Distribución masiva y actualizaciones guiadas | Firmas, revisiones de tienda, tiempos de aprobación |
+| **Servidor propio** (*on-premises*) | En máquinas que tú o tu empresa gestionáis físicamente | Control total, datos sin salir de la empresa | Tú te encargas de todo: actualizaciones, backups, seguridad |
+| **Nube** | En servidores de un proveedor externo (AWS, Azure, Google Cloud…) | Pagas solo lo que usas; escala fácil | Dependes del proveedor; los costes pueden subir si no se controlan |
+| **Tienda móvil** | Play Store (Android) o App Store (iOS) | Distribución masiva y actualizaciones automáticas | La tienda revisa la app antes de publicarla; puede tardar días |
 
-!!! tip "Ejemplos típicos"
-    - **Web estática**: HTML/CSS/JS en un hosting/CDN.  
-    - **Backend**: API desplegada en un servicio gestionado (por ejemplo, una máquina virtual o “App Service”).  
-    - **Escritorio**: instalador firmado y actualizaciones automáticas.  
-    - **Móvil**: APK/IPA firmado y subido a tienda.
+### Estrategias de publicación
 
----
+Cuando tienes una versión nueva lista, no siempre conviene dársela a todos los usuarios de golpe. Existen tres estrategias habituales para reducir el riesgo:
 
-### 🚦 Estrategias de *release* 
+| Estrategia | Cómo funciona | Ventaja principal | Cuándo usarla |
+|---|---|---|---|
+| **Blue/Green** | Mantienes dos entornos idénticos (azul = actual, verde = nueva versión). Cuando la versión verde está lista, cambias el tráfico de golpe. | Si algo falla, vuelves al entorno azul en segundos | Cambios grandes donde quieres poder revertir rápido |
+| **Canary** | Publicas la nueva versión solo a un porcentaje pequeño de usuarios (p. ej., el 5%). Si va bien, amplías gradualmente hasta el 100%. | Los errores afectan a muy poca gente | Cuando quieres observar el comportamiento real antes de publicar del todo |
+| **Rolling** | Actualizas las instancias del servidor una a una. Mientras una se actualiza, las demás siguen funcionando. | No hay corte de servicio | Sistemas con varias instancias en paralelo |
 
-#### 1) Blue/Green (Azul/Verde)
-Imagina que tienes **dos copias** del mismo sistema: una es la **azul** (la que usan los usuarios ahora) y otra es la **verde** (vacía, lista para probar la nueva versión).  
-Actualizas la **verde** y la pruebas. Si todo va bien, **cambias el tráfico** de azul → verde.
+### Versionado con SemVer
 
-**Ventajas**
-
-- Cambio casi **instantáneo**.
-- Si hay fallos, **vuelves** a la azul y listo.
-
-**Cuándo usarlo**
-
-- Cuando necesitas un cambio rápido y seguro.
-- Tienes recursos para mantener **dos copias** del sistema.
-
----
-
-#### 2) Canary (Canario)
-Publicas la versión nueva a un **% pequeño** de usuarios (ej.: 5%). Si todo bien, subes al 20%, 50%… hasta el 100%.
-
-**Ventajas**
-
-- **Riesgo bajo**: si algo falla, afecta a poca gente.
-- Ves **problemas reales** pronto.
-
-**Cuándo usarlo**
-
-- Cuando puedes dividir a tus usuarios por grupos.
-- Quieres observar **comportamiento real** con poco riesgo.
-
----
-
-#### 3) Rolling (Despliegue gradual)
-Tienes varias “copias” del sistema funcionando. Las vas **actualizando una a una**.  
-Mientras actualizas una, las demás siguen atendiendo a los usuarios.
-
-**Ventajas**
-
-- Evita **cortes** de servicio.
-- No necesitas dos entornos completos (como en Blue/Green).
-
-**Cuándo usarlo**
-
-- Cuando tu sistema tiene **varias instancias** (más de una máquina/contendor).
-- No te importa que el proceso tarde un poco más.
-
----
-
-### Versionado SemVer (3 números que lo dicen todo)
 Las versiones suelen tener tres números: **MAJOR.MINOR.PATCH** (por ejemplo, `2.4.7`).
 
-- **MAJOR** (**2**.x.x): cambios **grandes** que pueden **romper compatibilidad** con versiones anteriores.
-- **MINOR** (x.**4**.x): **funciones nuevas** que no rompen lo anterior.
-- **PATCH** (x.x.**7**): **arreglos** de errores o mejoras pequeñas.
+- **MAJOR** → cambio que rompe compatibilidad con versiones anteriores.
+- **MINOR** → función nueva que no rompe nada.
+- **PATCH** → arreglo de un bug.
 
 !!! example "Ejemplos rápidos"
-    - `1.3.5 → 1.3.6`: arreglaste un bug (**PATCH**).  
-    - `1.3.6 → 1.4.0`: añadiste una función (**MINOR**).  
-    - `1.4.0 → 2.0.0`: cambió algo importante y hay que adaptar el uso (**MAJOR**).
-
-!!! tip "Buenas prácticas"
-    - Acompaña cada versión con un **changelog** (lista de cambios).
-    - Ten a mano un **plan de vuelta atrás** (rollback) por si algo sale mal.
-    - Prueba la versión **antes** de darla a todos (canary o entorno verde).
-
----
-
-#### ✅ Resumen 
-- **Blue/Green**: dos copias; cambias de una a otra rápidamente.  
-- **Canary**: primero pocos usuarios, luego todos.  
-- **Rolling**: actualizas poco a poco, sin parar el servicio.  
-- **SemVer**: `MAJOR.MINOR.PATCH` para que todos entiendan el tamaño del cambio.
-
----
-
-### 🔄 Flujo simple de un despliegue
-
-```mermaid
-flowchart TB
-  P["Preparar versión<br/>(build firmado)"] --> C["Configurar entorno<br/>(vars/secretos)"]
-  C --> D["Desplegar<br/>(blue/green, canary o rolling)"]
-  D --> V["Verificar<br/>(health checks, smoke tests)"]
-  V --> M["Monitorizar<br/>(errores y métricas)"]
-  V -->|falla| R["Rollback<br/>(volver a versión anterior)"]
-
-```
-
----
-
-### ✅ Lista de comprobación (antes / durante / después)
-
-**Antes**
-
-- Configuración y **secretos** preparados (sin subirlos al repo).  
-- **Copia de seguridad** y/o plan de migración de BD.  
-- **Notas de versión** y cambios destacados (*changelog*).  
-
-**Durante**
-
-- Activar **mantenimiento** si aplica (mensaje claro al usuario).  
-- Ejecutar **smoke tests**: entrar, crear algo, listar, borrar (lo mínimo).  
-- Revisar **health checks** y logs de arranque.
-
-**Después**
-
-- Vigilar **errores** y **métricas** (latencia, tasa de error) los primeros minutos.  
-- Confirmar **funcionalidades clave** con un recorrido corto.  
-- Comunicar finalización y **próximos pasos** (por ejemplo, cuándo se hará el siguiente despliegue).
-
----
-
-### 🧯 Rollback (plan de vuelta atrás)
-
-!!! info "Opciones comunes"
-    - **Volver de Blue a Green** (o al revés).  
-    - **Reinstalar** la **versión anterior** empaquetada.  
-    - **Deshacer migraciones** (si son reversibles) o tener **backup** para restaurar.  
-    - Desactivar cambios con **feature flags** (si los usas). Las feature flags son **interruptores en el código** que te permiten encender o apagar una funcionalidad sin volver a desplegar. Si la novedad da **problemas, apagas** solo esa parte y el resto del sistema sigue funcionando. Además, puedes **probarla con un % de usuarios primero y ampliarlo si todo va bien** (las flags suelen controlarse por configuración o un servicio remoto).
-
-!!! warning "Errores frecuentes"
-    - Hacer un despliegue **sin** plan de rollback.  
-    - Olvidar la **base de datos** en el plan (migraciones irreversibles).  
-    - No comprobar **configuraciones** por entorno (producción ≠ desarrollo).
-
----
-
-!!! info "Entradas → Salidas"
-    - **Entradas:** build aprobado, configuración/secretos, instrucciones de despliegue.
-    - **Salidas:** versión publicada; *changelog*/notas; rollback verificado y métricas iniciales revisadas.
-
----
-
-## 🛠️ 4.6 Operación y mantenimiento: *logging*, métricas, *tracing*, observabilidad
-
----
-
-Una vez que el software está en producción, el trabajo **no termina**: hay que **vigilarlo**, **resolver incidencias** y **mejorarlo**. A esto lo llamamos **operación y mantenimiento**. El objetivo es que las personas usuarias **reciban un buen servicio** (rápido, disponible y seguro) y que el equipo pueda **detectar problemas a tiempo**.
-
----
-
-### 👀 Observabilidad: ver lo que pasa por dentro
-
-**Observabilidad** es la capacidad de **entender** qué ocurre en el sistema usando sus señales. Nos apoyamos en **cuatro** tipos de señales principales:
-
-#### 1) Logs (registros)
-- **Qué son:** mensajes de texto que el sistema escribe cuando pasa algo (inicio, error, dato procesado…).  
-- **Para qué sirven:** reconstruir lo ocurrido ante un problema.  
-- **Buenas prácticas:** niveles (`debug`, `info`, `warn`, `error`) y formato consistente (idealmente **estructurado/JSON**).
-
-```json
-{"nivel":"error","mensaje":"No se pudo guardar el pedido","pedidoId":1234,"causa":"timeout"}
-```
-
-#### 2) Métricas
-- **Qué son:** números que se miden a intervalos (por ejemplo, **tiempo de respuesta**, **nº de errores**, **usuarios activos**).  
-- **Tipos comunes:** contadores (suben), *gauges* (suben/bajan), histogramas (distribución de tiempos).  
-- **Ejemplos útiles:**  
-
-    - Latencia media y **p95** (el 95% de peticiones son más rápidas que X ms).  
-    - Errores por minuto.  
-    - Uso de CPU/RAM.
-
-#### 3) *Tracing* distribuido
-- **Qué es:** seguimiento de una **misma petición** cuando pasa por varios servicios (A → B → C).  
-- **Para qué sirve:** localizar **dónde** se pierde tiempo o **dónde** falla.  
-- **Truco práctico:** añade un **ID de correlación** a cada petición y **propágalo** entre servicios.
-
-#### 4) Eventos / perfiles
-- **Eventos:** señales de cosas concretas que han ocurrido (ej.: “pedido_creado”).  
-- **Perfiles:** mediciones internas para diagnosticar rendimiento (*profiling*). Útiles cuando algo va **lento** y no sabemos por qué.
-
-!!! tip "Resumen rápido"
-    - **Logs** para **narrar** lo que pasó.  
-    - **Métricas** para **medir** salud y tendencias.  
-    - **Traces** para **seguir** una petición compleja.  
-    - **Eventos/perfiles** para **diagnosticar** detalles.
-
----
-
-### 🛠️ Operativa del día a día
-
-#### SLI / SLO (objetivos de servicio)
-
-- **SLI** (indicador): cómo medimos la calidad (p. ej., *disponibilidad*, *latencia*).  
-- **SLO** (objetivo): el valor que promete el servicio (p. ej., **99.9%** de disponibilidad mensual o **p95 < 300 ms**).  
-- **¿Por qué importan?** Porque guían **qué vigilar** y **cuándo alertar**.
-
-#### Alertas (solo cuando toca)
-
-- **Accionables**: si salta, alguien **sabe qué hacer**.  
-- Basadas en **SLO**: alertar por **impacto a la persona usuaria**, no por cualquier pico técnico.  
-- **Evita** duplicar alertas; agrupa y silencia cuando hay mantenimiento planificado.
-
-#### Runbooks y post‑mortems
-
-- **Runbook**: guía paso a paso para **resolver** una incidencia (qué mirar, comandos, plan B).  
-- **Post‑mortem**: análisis **sin culpas** tras un incidente; causas, impacto y **acciones de mejora**.
-
-#### Mantenimiento preventivo
-
-- **Copias de seguridad** verificadas, **parches** de seguridad al día, limpieza de **logs** antiguos y **rotación** de claves/secretos cuando aplique.
-
----
-
-### 🔎 Ejemplos de “qué mirar” en una web sencilla
-
-- **Disponibilidad:** % de peticiones que responden **200/OK**.  
-- **Rendimiento:** tiempo de respuesta **medio** y **p95**.  
-- **Errores:** nº de **5xx** por minuto y su causa más común.  
-- **Experiencia:** tiempo de carga de la **página principal**.  
-
-!!! warning "Señales de alarma"
-    - Subida brusca de **5xx** o de **latencia p95**.  
-    - Más **reintentos** de lo normal hacia un servicio externo.  
-    - Uso de **CPU/RAM** al 90% sostenido.
-
----
-
-!!! info "Entradas → Salidas"
-    - **Entradas:** versión desplegada, configuración y *dashboards* iniciales.
-    - **Salidas:** alertas configuradas; paneles útiles; *runbooks*; acciones de mejora y parches aplicados.
-
----
-
-## 4.7 Documentación y gestión del conocimiento
-
-La documentación reduce la dependencia de personas clave, acelera el **onboarding**, baja el coste de mantenimiento y facilita la **toma de decisiones**. No es un “extra”: es parte del producto.
-
----
-
-### 🎯 Objetivos 
-- **Encontrable**: cualquier persona localiza lo que necesita en < 2 minutos.
-- **Actualizada**: cada cambio relevante en código/proceso viene con su actualización de docs.
-- **Accionable**: guía pasos concretos (no solo teoría).
-- **Consistente**: misma voz, estructura y convenciones.
-- **Trazable**: saber **quién** cambió **qué** y **por qué** (historial y versión).
-
----
-
-### 🧱 Mínimo viable de documentación (MVD)
-Mantén siempre estos básicos al día en el repositorio principal:
-
-1) **README** (1 página)
-
-- Qué es, arquitectura, cómo ejecutar/desarrollar, cómo probar, cómo desplegar en dev.
-- Enlaces al resto de documentación.
-
-2) **Guía de Contribución** (`CONTRIBUTING.md`)
-
-- Flujo de ramas/PRs, estilo de código, cómo correr linter y tests, etiqueta de commits.
-
-3) **Decisiones (ADR)** (`/docs/adr/`)
-
-- Cada decisión técnica relevante, con fecha, contexto, opción elegida y consecuencias.
-
-4) **API y contratos**
-
-- **OpenAPI**/JSON Schema y ejemplos ejecutables (curl/HTTPie).
-- Matriz de compatibilidad y política de versionado (SemVer).
-
-5) **Operación**
-
-- **Runbooks** (cómo actuar ante incidentes comunes), **checklists** de despliegue/rollback y **SLO/SLI**.
-
----
-
-### 🧾 ADR: plantilla breve
-```
-# ADR-XXX: Título
-Fecha: YYYY-MM-DD
-Estado: Propuesto | Aprobado | Obsoleto | Reemplazado por ADR-YYY
-
-## Contexto
-Problema / fuerzas en conflicto (breve).
-
-## Opciones consideradas
-- Opción A
-- Opción B
-- Opción C
-
-## Decisión
-Opción elegida y por qué.
-
-## Consecuencias
-Impactos positivos/negativos, riesgos, seguimiento.
-```
-
----
-
-!!! info "Entradas → Salidas"
-    - **Entradas:** código y procesos actuales; decisiones recientes; SLO/SLI definidos; estándares de estilo.
-    - **Salidas:** documentación mencionada.
-
----
-
-## ✅ Checklist rápida por fase
-
-??? tip "Abrir checklist"
-    **Análisis**  
-
-    - Requisitos claros, medibles y priorizados (MoSCoW/INVEST).  
-    - Historias con criterios verificables y glosario.
-
-    **Diseño**  
-
-    - Arquitectura justificada (ADR).  
-    - UML mínimo actualizado; contratos de API.
-
-    **Implementación** 
-
-    - Estilo automático; PRs pequeños; commits atómicos.  
-    - Revisiones con checklist y cobertura mínima acordada.
-
-    **Pruebas**  
-
-    - Pirámide equilibrada; datos de prueba controlados.  
-    - BDD/TDD cuando aplique.
-
-    **Despliegue**  
-
-    - Estrategia (blue/green, canary, rolling) y rollback probado.
-
-    **Operación**  
-
-    - SLI/SLO definidos; alertas; dashboards; runbooks.  
-    - Post-mortems con acciones de mejora.
-
-    **Documentación** 
-     
-    - README, ADR, API, guías; DoD incluye actualización de docs.
-
----
-
-## 🗂️ Tabla resumen: Entradas → Salidas por fase
-
-| Fase | Entradas (clave) | Salidas (clave) |
-|---|---|---|
-| **4.1 Análisis** | Objetivos de negocio; restricciones; normativa; *stakeholders* | Requisitos priorizados; historias con criterios; *mockups*; flujo alto nivel |
-| **4.2 Diseño** | Requisitos e historias; restricciones; objetivos de calidad | Diagramas UML mínimos; ADR; contratos API/datos; prototipos |
-| **4.3 Implementación** | Requisitos claros; diseño acordado | Código legible y ejecutable; guía de ejecución; casos básicos probados |
-| **4.4 Pruebas** | Criterios de aceptación; código y cambios; datos de prueba; entorno | Resultados de pruebas; defectos y correcciones; evidencias |
-| **4.5 Despliegue** | Build aprobado; configuración/secretos; instrucciones | Versión publicada; *changelog*/notas; rollback verificado; métricas iniciales |
-| **4.6 Operación** | Versión desplegada; configuración; *dashboards* | Alertas configuradas; paneles; *runbooks*; mejoras y parches |
-| **4.7 Documentación** | Código/procesos; decisiones; SLO/SLI; estándares | Documentación MVD publicada y versionada (README, ADR, API, operación) |
-
-
-## 📚 4.8 Metodologías de ciclo de vida 
-
----
-
-Este apartado resume los **principales enfoques** para organizar las fases del desarrollo. No sustituyen a las fases vistas (análisis → diseño → implementación → pruebas → despliegue → operación → documentación), sino que **ordenan cómo iteramos, entregamos y controlamos el riesgo**.
-
-!!! tip "Idea clave"
-    Elige el modelo según **incertidumbre**, **riesgo**, **regulación** y **necesidad de feedback**. Puedes combinar enfoques (modelos **híbridos**).
-
----
-
-### 💧 Cascada (Waterfall)
-
-**Secuencial**: cada fase se completa antes de pasar a la siguiente.
+    - `1.3.5 → 1.3.6` → arreglaste un bug (**PATCH**).
+    - `1.3.6 → 1.4.0` → añadiste una función nueva (**MINOR**).
+    - `1.4.0 → 2.0.0` → cambiaste algo que obliga a los usuarios a adaptar su código (**MAJOR**).
+
+### Flujo típico de un despliegue
 
 ```mermaid
 flowchart LR
-  A[Análisis] --> B[Diseño]
-  B --> C[Implementación]
-  C --> D[Pruebas]
-  D --> E[Despliegue]
-  E --> F[Operación]
+  P["Preparar versión"] --> D["Desplegar\n(blue/green, canary o rolling)"]
+  D --> V["Verificar\n(¿arranca bien?)"]
+  V --> M["Monitorizar\n(errores y rendimiento)"]
+  V -->|"algo falla"| R["Rollback\n(volver a la versión anterior)"]
 ```
 
-**Ventajas**
+!!! warning "Antes de desplegar, comprueba siempre"
+    - Los datos de configuración (contraseñas, URLs de base de datos) están en el entorno destino, **no en el código**.
+    - Tienes una copia de seguridad de la base de datos si vas a hacer cambios en su estructura.
+    - Sabes cómo volver atrás si algo sale mal.
 
-- Claridad de **entregables** y **fechas**.
-- Útil con **requisitos muy estables** y en **entornos regulados**.
-
-**Riesgos**
-
-- **Feedback tardío**; cambios costosos.
-- Puede ocultar supuestos hasta muy tarde.
-
-**Cuándo**: software con **alto grado de certeza**, contratos cerrados, normativa estricta.
+!!! info "Entradas → Salidas"
+    - **Entradas:** versión aprobada, configuración del entorno, instrucciones de despliegue.
+    - **Salidas:** versión publicada, lista de cambios, plan de vuelta atrás verificado.
 
 ---
 
-### ✅ Modelo en V
+## 4.6 Operación y mantenimiento
 
-Extiende cascada con **trazabilidad entre fases y pruebas**: cada etapa de definición tiene su **pareja de verificación**.
+Una vez que el software está en producción, el trabajo no termina: hay que vigilarlo, resolver problemas y mejorarlo con el tiempo. El objetivo es que los usuarios reciban un servicio fiable y que el equipo detecte los problemas antes de que los noten los usuarios.
+
+### Observar qué está pasando
+
+Para saber si el sistema funciona bien sin tener que estar mirando la pantalla todo el tiempo, se recogen señales automáticas:
+
+<div class="tabs-colored" markdown>
+
+=== "📋 Logs"
+    Los **logs** son mensajes de texto que la aplicación escribe mientras funciona: "usuario X inició sesión", "error al guardar el pedido 1234", "proceso iniciado". Son el primer sitio donde mirar cuando algo falla.
+
+    Es importante clasificarlos por nivel de gravedad:
+
+    | Nivel | Cuándo usarlo |
+    |---|---|
+    | `DEBUG` | Información detallada para desarrollo; no en producción |
+    | `INFO` | Eventos normales: inicio, cierre, acciones del usuario |
+    | `WARN` | Algo raro que no ha roto nada pero merece atención |
+    | `ERROR` | Algo ha fallado y hay que actuar |
+
+    ```json
+    {"nivel": "error", "mensaje": "No se pudo guardar el pedido", "pedidoId": 1234}
+    ```
+
+=== "📊 Métricas"
+    Las **métricas** son números que se miden a intervalos regulares: cuántas peticiones por segundo recibe el servidor, cuánto tarda en responder, cuántos errores se producen por minuto.
+
+    Las más útiles para empezar:
+
+    - **Tiempo de respuesta** — ¿cuánto tarda el servidor en responder?
+    - **Tasa de errores** — ¿qué porcentaje de peticiones falla?
+    - **Uso de CPU y memoria** — ¿el servidor está al límite?
+
+    Estas métricas se suelen mostrar en un panel (*dashboard*) que el equipo puede consultar en cualquier momento.
+
+=== "🚨 Alertas"
+    Una **alerta** es una notificación automática que se dispara cuando una métrica supera un umbral preocupante. Por ejemplo: "si la tasa de errores sube por encima del 5%, avisa al equipo".
+
+    Para que las alertas sean útiles tienen que ser **accionables**: cuando salta una, alguien sabe exactamente qué tiene que hacer. Un equipo con demasiadas alertas que nadie entiende acaba por ignorarlas todas.
+
+    Los **runbooks** —guías paso a paso que explican cómo responder ante una incidencia concreta— ayudan a que cualquier persona del equipo pueda actuar sin depender de quien lo creó.
+
+</div>
+
+### Tipos de mantenimiento
+
+No todo el mantenimiento es urgente. Hay cuatro tipos:
+
+| Tipo | Cuándo ocurre | Ejemplo |
+|---|---|---|
+| **Correctivo** | Cuando se detecta un bug en producción | Arreglar un error que hace que la app cierre sola |
+| **Adaptativo** | Cuando cambia el entorno externo | Actualizar la app porque Android lanzó una nueva versión |
+| **Perfectivo** | Para mejorar el rendimiento o la usabilidad | Reducir el tiempo de carga de una pantalla |
+| **Preventivo** | Para evitar problemas futuros | Actualizar dependencias con vulnerabilidades conocidas |
+
+!!! warning "Señales de que algo va mal"
+    - Subida brusca de errores en los logs.
+    - El tiempo de respuesta aumenta progresivamente sin causa aparente.
+    - El uso de memoria no para de crecer (posible *memory leak* — pérdida de memoria: el programa reserva memoria pero nunca la libera).
+
+!!! info "Entradas → Salidas"
+    - **Entradas:** versión desplegada, logs y métricas iniciales.
+    - **Salidas:** alertas configuradas, panel de monitorización, mejoras y parches aplicados.
+
+---
+
+## 4.7 Documentación
+
+La documentación reduce la dependencia de personas clave, facilita que alguien nuevo entienda el proyecto rápido (*onboarding* — el proceso de incorporación de una persona nueva al equipo) y baja el coste de mantenimiento. No es un "extra": es parte del producto.
+
+### Qué documentar como mínimo
+
+**README** — el punto de entrada de cualquier proyecto. Debe responder a: ¿qué hace este programa?, ¿cómo lo instalo?, ¿cómo lo ejecuto?, ¿cómo lo pruebo?
+
+**Comentarios en el código** — no para explicar qué hace el código (los nombres ya lo hacen), sino para explicar *por qué* se tomó una decisión concreta o qué restricción hay que recordar.
+
+```java
+// Usamos precio sin IVA aquí porque el descuento se aplica antes de impuestos
+// (ver requisito RF-14 del documento de análisis)
+double precioConDescuento = precio * (1 - descuento);
+```
+
+**Registro de decisiones** — cuando el equipo toma una decisión técnica importante (elegir una base de datos, un framework, una arquitectura), conviene anotar qué se eligió y por qué. Así, meses después, nadie se pregunta "¿y por qué lo hicimos así?".
+
+Un formato sencillo basta:
+
+```
+Decisión: usamos PostgreSQL como base de datos
+Fecha: 2024-03-15
+Motivo: necesitamos transacciones ACID y el equipo ya tiene experiencia con SQL
+Alternativas descartadas: MongoDB (no teníamos experiencia), SQLite (no escala)
+```
+
+**Guía de contribución** — si más de una persona trabaja en el proyecto, un documento corto que explique cómo hacer cambios, cómo nombrar ramas, cómo pasar las pruebas antes de entregar.
+
+!!! tip "La regla del nuevo compañero"
+    Una buena forma de comprobar si la documentación es suficiente: ¿podría una persona que empieza hoy en el equipo poner el proyecto en marcha en menos de una hora siguiendo solo lo que está escrito? Si la respuesta es no, falta documentación.
+
+!!! info "Entradas → Salidas"
+    - **Entradas:** código y procesos actuales, decisiones tomadas durante el proyecto.
+    - **Salidas:** README actualizado, comentarios útiles en el código, registro de decisiones importantes.
+
+---
+
+## Checklist rápida por fase
+
+??? tip "Abrir checklist"
+    **Análisis**
+    - Requisitos claros, medibles y priorizados.
+    - Historias con criterios de aceptación verificables.
+
+    **Diseño**
+    - Arquitectura justificada y documentada.
+    - Diagramas UML mínimos acordados con el equipo.
+
+    **Implementación**
+    - Nombres claros, funciones con una sola responsabilidad.
+    - Revisión de código antes de integrar.
+
+    **Pruebas**
+    - Pirámide equilibrada: más unitarias que E2E.
+    - Datos de prueba controlados y aislados.
+
+    **Despliegue**
+    - Estrategia de publicación elegida y plan de vuelta atrás preparado.
+    - Configuración del entorno separada del código.
+
+    **Operación**
+    - Logs, métricas y alertas configuradas.
+    - Runbook para las incidencias más probables.
+
+    **Documentación**
+    - README completo y actualizado.
+    - Decisiones importantes registradas.
+
+---
+
+## Tabla resumen: Entradas → Salidas por fase
+
+| Fase | Entradas | Salidas |
+|---|---|---|
+| **4.1 Análisis** | Objetivos, restricciones, necesidades de los usuarios | Requisitos priorizados, historias con criterios, bocetos |
+| **4.2 Diseño** | Requisitos, restricciones, objetivos de calidad | Diagramas UML, decisiones de arquitectura, bocetos acordados |
+| **4.3 Implementación** | Requisitos claros, diseño acordado | Código legible y ejecutable, instrucciones de arranque |
+| **4.4 Pruebas** | Criterios de aceptación, código, datos de prueba | Resultados, bugs detectados y corregidos |
+| **4.5 Despliegue** | Versión aprobada, configuración del entorno | Versión publicada, lista de cambios, plan de vuelta atrás |
+| **4.6 Operación** | Versión desplegada, métricas iniciales | Alertas, panel de monitorización, mejoras y parches |
+| **4.7 Documentación** | Código y decisiones actuales | README, comentarios, registro de decisiones |
+
+---
+
+## 4.8 Modelos de ciclo de vida
+
+Las fases anteriores (análisis → diseño → implementación → pruebas → despliegue → operación → documentación) siempre están presentes. Lo que cambia según el modelo es **el orden en que se recorren**, **cuándo se entrega algo al usuario** y **cómo se gestionan los cambios**.
+
+### Cascada
+
+Las fases se completan en orden, una detrás de otra, sin volver atrás.
+
+```mermaid
+flowchart LR
+  A[Análisis] --> B[Diseño] --> C[Implementación] --> D[Pruebas] --> E[Despliegue]
+```
+
+**Cuándo funciona bien:** requisitos muy estables desde el principio, proyectos con contrato cerrado, entornos regulados donde hay que documentar cada paso.
+
+**Riesgo principal:** si el cliente cambia de idea a mitad del proyecto, o si los requisitos no estaban bien definidos, el coste de corregirlo es muy alto porque ya se ha construido sobre una base incorrecta.
+
+---
+
+### Modelo en V
+
+Extiende la cascada añadiendo una fase de pruebas correspondiente a cada fase de definición. El lado izquierdo define; el lado derecho verifica.
 
 ```mermaid
 flowchart LR
   subgraph Definición
-  A1[Requisitos] --> A2[Diseño de sistema] --> A3[Diseño detallado]
+    A1[Requisitos] --> A2[Diseño de sistema] --> A3[Diseño detallado]
   end
   subgraph Verificación
-  B3[Pruebas unitarias] --> B2[Pruebas de integración] --> B1[Pruebas de sistema/aceptación]
+    B3[Pruebas unitarias] --> B2[Pruebas de integración] --> B1[Pruebas de aceptación]
   end
   A3 -.-> B3
   A2 -.-> B2
   A1 -.-> B1
 ```
 
-**Ventajas**: planificación de pruebas desde el principio, **trazabilidad** clara.
-
-**Cuándo**: sectores **críticos** (automoción, aeroespacial, sanitario) o exigencia formal de **verificación/validación**.
+**Cuándo usarlo:** sectores donde el fallo tiene consecuencias graves (automoción, sanidad, aeroespacial) y se exige documentar la trazabilidad entre requisitos y pruebas.
 
 ---
 
-### 🧱 Incremental
+### Incremental e iterativo
 
-Se entrega el producto en **bloques funcionales** (incrementos) que **suman valor**.
+Estos dos modelos se confunden con frecuencia porque los dos repiten ciclos, pero la diferencia es importante:
 
-**Ventajas**
+| | Incremental | Iterativo |
+|---|---|---|
+| **Qué se repite** | Se añaden funcionalidades nuevas en cada ciclo | Se mejora la misma funcionalidad en cada ciclo |
+| **Analogía** | Construir la casa habitación a habitación | Hacer un boceto, luego un plano, luego el plano definitivo |
+| **Resultado de cada ciclo** | Una pieza nueva que suma al producto anterior | Una versión mejorada de lo que ya había |
 
-- Valor **temprano** y priorizable.
-- Reduce el riesgo de “gran entrega final”.
+**Cuándo usar incremental:** el proyecto es grande pero se puede partir en funcionalidades independientes que entregan valor por separado.
 
-**Riesgos**
-
-- Puede acumular **deuda de arquitectura** si no se piensa a medio plazo.
-
-**Cuándo**: alcance grande que puede **partirse en funcionalidades**.
-
----
-
-### 🔁 Iterativo
-
-Se repiten ciclos completos (**analizar→diseñar→construir→probar**) para **refinar** el mismo producto.
-
-**Diferencia con incremental**: 
-
-- **Incremental** = añado **nuevas piezas**.
-- **Iterativo** = **mejora** la **misma pieza** en vueltas sucesivas.
-
-**Cuándo**: requisitos **difusos** o descubrimiento de UX.
+**Cuándo usar iterativo:** los requisitos son difusos al principio y se van descubriendo a medida que el usuario ve el producto.
 
 ---
 
-### 🌀 Espiral (Boehm)
+### Espiral
 
-Ciclos que **ponen el riesgo en el centro**. En cada vuelta: 1) **objetivos** y alternativas, 2) **análisis de riesgos** y mitigación (prototipos), 3) **desarrollo y validación**, 4) **planificación** de la siguiente vuelta.
+Organiza el desarrollo en ciclos donde el **análisis de riesgos** es el centro de cada vuelta. En cada iteración: se definen objetivos, se identifican y mitigan los riesgos principales, se desarrolla y valida, y se planifica la siguiente vuelta.
 
 ```mermaid
 flowchart TD
-  P[Planificar objetivos] --> R[Identificar/mitigar riesgos]
+  P[Planificar objetivos] --> R[Identificar y mitigar riesgos]
   R --> D[Desarrollar y validar]
-  D --> N[Plan siguiente iteración]
+  D --> N[Planificar siguiente iteración]
   N --> P
 ```
 
-**Ventajas**: gestión **explícita** de riesgos; combina prototipado y entregas.
-
-**Riesgos**: complejidad de gestión; requiere experiencia.
-
-**Cuándo**: proyectos **innovadores** o de **alto riesgo** técnico/negocio.
+**Cuándo usarlo:** proyectos innovadores con mucha incertidumbre técnica, donde no se sabe bien qué puede salir mal y hay que ir descubriéndolo. Es más complejo de gestionar que los modelos anteriores.
 
 ---
 
-### ⚡ Enfoques ágiles (Scrum, Kanban, XP)
+### Enfoques ágiles
 
-Los veremos en la última parte del tema.
+Los veremos en detalle en el siguiente apartado del tema.
 
 ---
 
+### Comparativa de modelos
 
+| Modelo | Ritmo de entrega | Gestión del cambio | Mejor para |
+|---|---|---|---|
+| **Cascada** | Una entrega al final | Costoso, hay que rediseñar | Requisitos fijos, contratos cerrados |
+| **Modelo en V** | Una entrega al final, con verificación formal | Costoso | Sectores regulados, seguridad crítica |
+| **Incremental** | Entregas parciales funcionales | Moderado entre incrementos | Proyectos grandes divisibles en partes |
+| **Iterativo** | Versiones sucesivas mejoradas | Bien tolerado | Requisitos difusos que se clarifican con el uso |
+| **Espiral** | Ciclos con prototipos | Bien gestionado si hay experiencia | Proyectos de alto riesgo técnico |
+| **Ágil** | Entregas frecuentes (semanas) | Alta, es su punto fuerte | Proyectos donde el cliente necesita feedback rápido |

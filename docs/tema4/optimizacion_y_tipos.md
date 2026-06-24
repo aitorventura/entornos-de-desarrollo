@@ -1,6 +1,6 @@
 <a id="optimizacion"></a>
 
-# ⚡ Optimización de código: concepto y tipos
+# ⚡ 1. Optimización de código: concepto y tipos
 
 ![Optimización de código](diapositivas/optimizacion.pdf){ type=application/pdf style="width:100%;min-height:80vh" }
 

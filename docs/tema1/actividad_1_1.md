@@ -1,247 +1,107 @@
 # 🧪 Actividad 1.1: Del problema al programa
 
 !!! info "Objetivo"
-    Comprender cómo un **programa** transforma **entradas** en **salidas** y qué papel juegan la **CPU, la RAM y la E/S**.
+    Demostrar que entiendes cómo un programa transforma **entradas en salidas**, la diferencia entre **algoritmo y programa**, y qué papel juega cada **componente del hardware** cuando un programa se ejecuta.
 
 ---
 
-## 🔹 Parte A. Identificar EPS (Entrada → Proceso → Salida)
+## 🔹 Parte A. Identificar el modelo Entrada → Proceso → Salida
 
-<div class="tabs-colored" markdown>
+1. Piensa en **tres situaciones cotidianas** (que se puedan relacionar con la informática) donde haya claramente entrada, proceso y salida. Los ejemplos de los apuntes no valen.
 
-=== "Gupo presencial"
-    1. Ponte en pareja con un compañero.  
-    2. Pensad en **tres situaciones cotidianas** (que se puedan relacionar con la informática) donde haya claramente entrada, proceso y salida.  
-    Ejemplos (esos no valen):  
-        - Cajero automático.  
-        - Reproductor de música.  
-        - Calculadora del móvil.  
-    3. Dibujad una tabla con columnas:  
+2. Para cada una, rellena esta tabla:
 
-    | Entrada | Proceso | Salida |  
-    |---------|---------|--------|  
+    | Situación | Entrada | Proceso | Salida |
+    |---|---|---|---|
+    | | | | |
+    | | | | |
+    | | | | |
 
-    📸 Añadid un esquema rápido (a mano o con un diagrama simple) para representar el flujo.
+3. Elige **uno** de los tres casos y dibuja el diagrama de flujo correspondiente (a mano o con una herramienta como draw.io).
 
-=== "Grupo semipresencial"
-    1. Piensa en **tres situaciones cotidianas** (que se puedan relacionar con la informática) donde haya claramente entrada, proceso y salida.  
-    Ejemplos (esos no valen):  
-        - Cajero automático.  
-        - Reproductor de música.  
-        - Calculadora del móvil.  
-    2. Dibuja una tabla con columnas:  
-
-    | Entrada | Proceso | Salida |  
-    |---------|---------|--------|  
-
-    📸 Añade un esquema rápido (a mano o con un diagrama simple) para representar el flujo.
-
-</div>
+4. Responde por escrito: en ese caso concreto, ¿hay algún dato que podría considerarse tanto entrada como configuración del programa? Razona la respuesta.
 
 ---
 
-## 🔹 Parte B. Relacionar con componentes
-Para cada caso de la tabla, responde:
+## 🔹 Parte B. Algoritmo vs. programa
 
-- ¿Qué haría la **CPU**?  
-- ¿Qué datos guardarían en la **RAM**?  
-- ¿Qué papel tendría la **E/S**?  
-- ¿Intervendría la **red** o el **almacenamiento**?
+Describe con tus propias palabras el **algoritmo** que resuelve uno de tus tres casos de la Parte A. No escribas código: explica los pasos en lenguaje natural, como si le explicaras a alguien cómo hacerlo.
+
+Luego responde estas preguntas:
+
+1. ¿Podría ejecutar el ordenador directamente el algoritmo que has descrito? ¿Por qué?
+2. Si quisieras implementar ese algoritmo en dos lenguajes distintos (por ejemplo, Java y Python), ¿cambiaría el algoritmo o solo el programa? Explícalo.
+3. Imagina que tu programa da un resultado incorrecto. ¿Cómo distinguirías si el error está en el algoritmo o en cómo lo has escrito en el lenguaje? ¿Qué harías para comprobarlo?
 
 ---
 
-## 🔹 Parte C. Mini-reto práctico
-Analiza este pequeño código en **Java** e investiga y deduce dónde estaría la **entrada, proceso y salida**:
+## 🔹 Parte C. Análisis de un programa real
+
+Estudia este programa Java. Todavía no tienes que saber escribirlo: el objetivo es leerlo y entender qué hace.
 
 ```java
 import java.util.Scanner;
 
 public class MediaNotas {
     public static void main(String[] args) {
-        Scanner teclado = new Scanner(System.in);
+        Scanner teclado = new Scanner(System.in); // prepara la lectura por teclado
         int suma = 0;
 
         for (int i = 1; i <= 3; i++) {
-            System.out.print("Introduce una nota: ");
-            int n = teclado.nextInt();
-            suma += n;
+            System.out.print("Introduce una nota: "); // pide al usuario un dato
+            int n = teclado.nextInt();                // lee el número que escribe
+            suma += n;                               // lo acumula en suma
         }
 
-        double media = suma / 3.0;
-        System.out.println("La media es: " + media);
+        double media = suma / 3.0;                          // calcula la media
+        System.out.println("La media es: " + media);        // muestra el resultado
 
         teclado.close();
     }
 }
 ```
 
-- ¿Qué parte es **entrada**?  
-- ¿Qué hace el **proceso**?  
-- ¿Cuál es la **salida**?  
+Responde:
+
+1. Identifica con precisión qué líneas corresponden a la **entrada**, cuáles al **proceso** y cuáles a la **salida**. Copia cada línea o bloque y etiquétala.
+
+2. ¿Qué componente del hardware entra en juego cuando el programa ejecuta `teclado.nextInt()`? ¿Y cuando ejecuta `System.out.println`? ¿Y cuando se calcula `suma / 3.0`?
+
+3. Mientras este programa espera a que el usuario escriba una nota, ¿qué está haciendo la CPU? ¿Por qué puede ser un problema en una aplicación más compleja con muchos usuarios a la vez?
+
+4. **Predicción antes de ejecutar:** sin ejecutar el código, ¿qué resultado imprimirá si el usuario introduce las notas `6`, `7` y `8`? Razona el cálculo paso a paso. Si tuvieras acceso a un ordenador, comprueba si tu predicción es correcta.
+
+5. Este programa tiene una limitación: si el usuario introduce `0`, `0` y `0`, la media será 0,0, que es un resultado válido. Pero si introduce letras en lugar de números, el programa falla. ¿En qué parte del modelo E/P/S está ese problema? ¿Cómo lo resolverías conceptualmente (sin escribir código)?
 
 ---
 
-## ✅ Entregable
-Un documento breve con:
+## 🔹 Parte D. Componentes del sistema
 
-- La tabla con los tres ejemplos.  
-- Un diagrama sencillo de un caso.  
-- Las respuestas sobre CPU, RAM, E/S, red y almacenamiento.  
-- El análisis del programa en Java.  
-# 🐞 Actividad 3.1: Depuración con IntelliJ
+Para el programa `MediaNotas` de la Parte C, describe qué ocurre con cada componente del hardware cuando se ejecuta. Usa la tabla como guía, pero desarrolla cada celda con una explicación real, no con una frase genérica:
 
-!!! info "Objetivo"
-    Aprender a utilizar el **depurador de IntelliJ IDEA** para:
+| Componente | ¿Qué hace exactamente en este programa? |
+|---|---|
+| 💾 Disco | |
+| 🧠 RAM | |
+| ⚙️ CPU | |
+| 🖥️ E/S | |
+| 🌐 Red | |
 
-    - Configurar y usar diferentes tipos de **puntos de interrupción (breakpoints)**.  
-    - Inspeccionar el **estado del programa en tiempo de ejecución**.  
-    - Modificar valores y **evaluar expresiones en tiempo real**.  
-    - Rastrear errores y comprender el **flujo de llamadas** de un programa Java.
-
----
-
-## 🔹 Descripción de la actividad
-
-La depuración es una herramienta esencial en el desarrollo de software, que permite analizar el comportamiento de un programa **paso a paso**, identificar errores y comprender cómo fluye la ejecución.
-
-En esta práctica utilizarás **IntelliJ IDEA** para explorar los distintos tipos de **breakpoints** y sus configuraciones, aplicándolos sobre varios **programas Java sencillos** que contienen errores.
-
-A continuación se te proporcionan varios códigos.  
-Cada uno tiene **al menos un error** y tu objetivo es, mediante la herramienta de depuración de IntelliJ, **encontrarlo y corregirlo**.
-
----
-
-## 🔹 Trabajo a realizar con cada código
-
-Para **cada código** deberás elaborar una **tabla** que contenga:
-
-1. **Código inicial**  
-   - Copia el código con el error tal como fue proporcionado.
-
-2. **Identificación del error**  
-   - Explica brevemente el tipo de error:  
-     - Lógico  
-     - Sintáctico  
-     - De ejecución (runtime)
-
-3. **Proceso de depuración**  
-   - Describe los pasos que has seguido, por ejemplo:  
-     - Dónde colocaste los **puntos de interrupción**.  
-     - Qué **valores de variables** observaste.  
-     - Qué viste en la **pila de llamadas**.  
-     - Cómo esa información te llevó a encontrar la solución.
-
-4. **Capturas**  
-   - Incluye imágenes donde se vea el uso del depurador:  
-     - Breakpoints.  
-     - Ventana de variables.  
-     - Evaluate Expression / Watches.  
-     - Cualquier configuración relevante.
-
-5. **Código corregido**  
-   - Presenta la **versión corregida** del código, sin el error.
-
-6. **Reflexión**  
-   - Resume brevemente:  
-     - Qué has aprendido.  
-     - Qué herramientas del depurador te han resultado más útiles.  
-     - Qué dificultades has tenido y cómo las has resuelto.
-
-!!! info "Modelo de tabla"
-    En el siguiente enlace encontrarás un **ejemplo de la tabla** a rellenar por cada uno de los códigos:  
-    _Tabla de ejemplo para la actividad 4.1._  
-    _(Añade aquí el enlace cuando lo tengas disponible en el aula o en los recursos.)_
-
----
-
-## 🔹 Códigos a analizar
-
-### 🅰️ Código A  
-**Descripción**  
-Realiza la **suma de los números del 0 al 5**.
-
-```java
-public class Main {
-    public static void main(String[] args) {
-        int sum = 0;
-        int limit = 5;
-
-        for (int i = 1; i < limit; i++) {
-            sum += i;
-        }
-
-        System.out.println("La suma de los números es: " + sum);
-    }
-}
-```
-
----
-
-### 🅱️ Código B  
-**Descripción**  
-Calcula el **número de divisores** que tiene el número 10.
-
-```java
-public class Main {
-    public static void main(String[] args) {
-        int divisorCount = 0;
-        int number = 10;
-
-        System.out.println("Divisores de " + number + ":");
-        for (int i = 10; i >= 0; i--) { 
-            if (number % i == 0) { 
-                divisorCount++; 
-            }
-        }
-
-        System.out.println("El número " + number + " tiene " + divisorCount + " divisores.");
-    }
-}
-```
-
----
-
-### 🅾️ Código C  
-**Descripción**  
-Determina el **número más grande** dentro de un rango de números introducido por teclado.
-
-```java
-import java.util.Scanner;
-
-public class Main {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Introduce el número inicial del rango: ");
-        int start = scanner.nextInt();
-
-        System.out.print("Introduce el número final del rango: ");
-        int end = scanner.nextInt();
-
-        int max = 0; 
-
-        for (int i = start; i <= end; i++) {
-            if (i > max) {
-                max = i;
-            }
-        }
-
-        System.out.println("El número más grande en el rango es: " + max);
-    }
-}
-```
+Para la red: este programa no la usa. Pero si quisieras que `MediaNotas` enviara la nota media a un servidor para guardarla en una base de datos, ¿en qué parte del código añadirías esa funcionalidad (entrada, proceso o salida)? Razona por qué.
 
 ---
 
 ## ✅ Entregable
 
-- Crea un **PDF** donde incluyas las **3 tablas completas**, una por cada código (A, B y C).  
-- Cada tabla debe contener todos los apartados indicados:  
-  - Código inicial  
-  - Identificación del error  
-  - Proceso de depuración  
-  - Capturas de pantalla  
-  - Código corregido  
-  - Reflexión final  
+!!! note "Plantilla"
+    Usa la plantilla oficial para entregar esta actividad: [📄 Actividad_1_1_Plantilla.docx](plantillas/Actividad_1_1_Plantilla.docx)
 
+Un documento (PDF o entrada en el portfolio) con:
 
+- La tabla de los tres ejemplos E/P/S y el diagrama de uno de ellos.
+- Las respuestas razonadas de la Parte B (algoritmo vs programa).
+- El análisis línea a línea del programa Java con las cinco preguntas respondidas.
+- La tabla de componentes con explicaciones desarrolladas.
+
+!!! warning "Criterios de corrección"
+    No se valorará rellenar las celdas con frases de una línea copiadas de los apuntes. Se espera que **apliques los conceptos a este programa concreto** y que **razones** cada respuesta. Si en una corrección oral no puedes explicar lo que has escrito, la actividad no se considera superada.

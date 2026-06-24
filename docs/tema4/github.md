@@ -1,4 +1,4 @@
-# 🌐 Introducción a GitHub y Repositorios Remotos
+# 🌐 7. Introducción a GitHub y Repositorios Remotos
 
 ![Introducción a GitHub](diapositivas/github.pdf){ type=application/pdf style="width:100%;min-height:80vh" }
 
@@ -175,7 +175,7 @@ Imagina que has estado trabajando en tu proyecto final localmente con `git init`
 
 Lo primero es entrar en la página web de tu cuenta de GitHub y pulsar el botón **New** para crear un nuevo repositorio. Debes darle un nombre, una descripción y dejarlo como Público o Privado. 
 
-Al crearlo, si ya tienes un repositorio local listo, es crucial **no** crear archivos `README`, `.gitignore` ni licencias auto-generadas desde la interfaz web; quieres que GitHub te dé un cajón completamente "vacío" para llenarlo con tu trabajo del ordenador.
+Al crearlo, si ya tienes un repositorio local listo, **no** crees archivos `README`, `.gitignore` ni licencias auto-generadas desde la interfaz web; quieres que GitHub te dé un repositorio completamente vacío para llenarlo con tu trabajo del ordenador.
 
 ![Captura crear un nuevo repositorio en GitHub](capturas/github/1_crear_repo.png)
 
@@ -277,7 +277,7 @@ Imagina que llegas a los ordenadores de clase y allí no tienes nada del proyect
 - Hemos hecho clic en el botón verde **"<> Code"** que despliega el menú donde se encuentra el enlace de clonación.
 - Se observa la URL (en la pestaña HTTPS por defecto, aunque podrías seleccionar SSH) y el botón de las dos hojas superpuestas para copiarlo directamente al portapapeles.
 
-Con el enlace en el portapapeles, abres una terminal vacía (¡es esencial que no haya otro repositorio de Git sobreescribiendose encima!) y ejecutas `git clone` pegando la URL:
+Con el enlace en el portapapeles, abre una terminal en una carpeta vacía (asegúrate de que no haya ningún repositorio de Git ahí ya) y ejecuta `git clone` pegando la URL:
 
 ```bash
 git clone https://github.com/tu-usuario/tu-repositorio.git
@@ -421,7 +421,7 @@ Para que IntelliJ funcione como intermediario sin errores, es aconsejable identi
 
 ### El menú superior "Git" y control de versiones
 
-Una vez que tengas un proyecto abierto —y siempre que le hayas declarado un `git init` o directamente lo hayas importado usando la opción `Get from VCS` al iniciar IntelliJ—, notarás que en la barra de menús principal de arriba (junto a *File, Edit, View, Navigate*, etc.) ha aparecido un espléndido menú nuevo llamado **Git**.
+Una vez que tengas un proyecto abierto —y siempre que le hayas declarado un `git init` o directamente lo hayas importado usando la opción `Get from VCS` al iniciar IntelliJ—, verás que en la barra de menús de arriba (junto a *File, Edit, View, Navigate*, etc.) ha aparecido un nuevo menú llamado **Git**.
 
 Desde ese menú superior desplegable tienes acceso directo y centralizado a todas las operaciones fundamentales que hemos ido viendo por terminal, literalmente a golpe de clic sin tener que teclear ningún mandato, entre las más destacadas:
 

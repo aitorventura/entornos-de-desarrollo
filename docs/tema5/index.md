@@ -1,4 +1,4 @@
-# 🏗️ Tema 5: Diagramas de Clases en el Desarrollo de Aplicaciones
+# 🏗️ Tema 5: Diagramas de Clases
 
 > **RA 5**: Genera diagramas de clases valorando su importancia en el desarrollo de aplicaciones y empleando herramientas específicas.
 
@@ -17,13 +17,15 @@
 
 ## 📘 Índice de contenidos
 
-1. [Conceptos básicos de la POO: clases, atributos y métodos](poo-basicos.md)  
-2. [Objetos e instanciación](objetos.md)  
-3. [Relaciones en diagramas de clases](relaciones.md)  
-4. [Notación de los diagramas de clases](notacion.md)  
-5. [Herramientas para la elaboración de diagramas](herramientas.md)  
-6. [Generación automática de código](generacion-codigo.md)  
-7. [Ingeniería inversa: de código a diagrama](ingenieria-inversa.md)  
+1. [Conceptos básicos de la POO: clases, atributos y métodos](poo-basicos.md)
+2. [Objetos e instanciación](objetos.md)
+3. [Relaciones en diagramas de clases](relaciones.md)
+4. [Notación de los diagramas de clases](notacion.md)
+5. [Herramientas para la elaboración de diagramas](herramientas.md)
+6. [Generación automática de código](generacion-codigo.md)
+7. [Ingeniería inversa: de código a diagrama](ingenieria-inversa.md)
 
 ---
 
+!!! info "¿Cómo avanzar por el contenido?"
+    Utiliza el índice o las flechas de navegación al final de cada página para desplazarte por los distintos apartados de este tema.

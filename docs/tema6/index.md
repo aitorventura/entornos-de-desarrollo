@@ -1,4 +1,4 @@
-# 🔄 Tema 6: Diagramas de Comportamiento en el Desarrollo de Aplicaciones
+# 🔄 Tema 6: Diagramas de Comportamiento
 
 > **RA 6**: Genera diagramas de comportamiento valorando su importancia en el desarrollo de aplicaciones y empleando herramientas específicas.
 
@@ -19,12 +19,15 @@
 
 ## 📘 Índice de contenidos
 
-1. [Tipos de diagramas de comportamiento y campo de aplicación](tipos.md)  
-2. [Diagrama de casos de uso: actores, escenarios y comunicación](casos-uso.md)  
-3. [Diagramas de interacción](interaccion.md)  
-   - [Diagrama de secuencia](secuencia.md)  
-   - [Diagrama de comunicación](comunicacion.md)  
-4. [Diagrama de actividades](actividades.md)  
-5. [Diagrama de estados](estados.md)  
+1. [Tipos de diagramas de comportamiento y campo de aplicación](tipos.md)
+2. [Diagrama de casos de uso: actores, escenarios y comunicación](casos-uso.md)
+3. [Diagramas de interacción](interaccion.md)
+4. [Diagrama de secuencia](secuencia.md)
+5. [Diagrama de comunicación](comunicacion.md)
+6. [Diagrama de actividades](actividades.md)
+7. [Diagrama de estados](estados.md)
 
 ---
+
+!!! info "¿Cómo avanzar por el contenido?"
+    Utiliza el índice o las flechas de navegación al final de cada página para desplazarte por los distintos apartados de este tema.

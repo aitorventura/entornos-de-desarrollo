@@ -1,49 +1,90 @@
-# 🧪 Práctica 2.4: Trabajo con NetBeans — Personalización, módulos y ejecutables
+# 🧪 Actividad 2.4: Generación de ejecutables y comparativa de entornos
 
-!!! info "Objetivo"
-    Profundizar en el uso del entorno de desarrollo **NetBeans**, aplicando conceptos comunes a otros IDE (como IntelliJ), para:
-    
-    - Explorar e instalar **plugins** desde el Marketplace.  
-    - Usar **atajos de teclado** y acceder a la **configuración**.  
-    - Aplicar **formateo automático del código** y normas de estilo.  
-    - Crear y relacionar **módulos Java** (principal y secundario).  
-    - Definir y utilizar **Code Templates (snippets)**.  
-    - Generar **ejecutables .jar** manualmente.  
+## Objetivo
+
+Demostrar que el mismo código fuente Java produce el mismo resultado en dos entornos distintos (IntelliJ IDEA y VSCodium), generar un ejecutable `.jar` y hacer una comparativa razonada de los dos IDEs trabajados en la unidad.
 
 ---
 
-## ▶️ ¿Qué tienes que hacer?
+## Lo que tienes que entregar
 
-**Descarga y utiliza la plantilla de la práctica**, que contiene la teoría y los espacios donde deberás incluir tus capturas de pantalla y respuestas:
+Completa la **plantilla** con las capturas y respuestas de cada apartado, expórtala a PDF y súbela al Aula Virtual con el nombre:
 
-!!!warning "Usa la plantilla"
-    📄 [Plantilla 2.4 – Trabajo con NetBeans](plantilla2-4.docx){target="_blank" rel="noopener"}
+```
+A2-4_NombreApellido.pdf
+```
 
-> Si alguna opción varía en tu versión de NetBeans, indícalo y explica cómo la has localizado o resuelto.
-
-**Sigue los apartados de la plantilla y completa las evidencias** que se piden.
-
-**Nombra y exporta tu entrega:**  
-`P2-4_TuNombre_TuApellido.pdf`
-
-!!!note "¡No lo olvides!"
-    🧭 Al finalizar, añade tu reflexión en el **Diario de aprendizaje (Práctica 2.1)** sobre:  
-
-    - Diferencias y similitudes entre IntelliJ y NetBeans.  
-    - Qué IDE te ha resultado más intuitivo.  
-    - Qué aspectos de la personalización o los módulos te han parecido más útiles.
-    - El resto de cosas que se pide en el diario: dificultades, reflexiones...
-
-    Tras esta tarea ya puedes entregar el diario de aprendizaje en la tarea Actividad 2.1.
+!!!warning "Descarga la plantilla"
+    📄 [Plantilla 2.4 — Ejecutables y comparativa](plantillas/Actividad_2_4_Plantilla.docx){target="_blank" rel="noopener"}
 
 ---
 
-## ⚠️ Indicaciones importantes
-- Las capturas deben ser **propias y verificables**, mostrando el **nombre del proyecto** cuando sea posible.  
-- No se admite contenido redactado o generado con **IA**. Cualquier indicio supondrá **calificación 0**.  
-- Si surge un error o diferencia de versión, documenta el problema y cómo lo resolviste.  
+## Resumen de tareas
+
+**A — El mismo código en dos IDEs**
+
+Crea una clase Java `Calculadora` con métodos para suma, resta y multiplicación. Un `main` que los llame e imprima los resultados.
+
+- Abre el proyecto en **IntelliJ IDEA** → compila y ejecuta → captura de la salida en la consola.
+- Abre el mismo proyecto en **VSCodium** (sin modificar el código) → compila y ejecuta → captura de la misma salida.
+
+Ambas capturas deben mostrar **el mismo resultado**. Razona brevemente: ¿por qué el resultado es el mismo si el IDE es diferente?
+
+**B — Generar un `.jar` ejecutable**
+
+Desde IntelliJ IDEA, empaqueta el proyecto como `.jar`:
+
+- `File → Project Structure → Artifacts → JAR → From modules with dependencies`
+- `Build → Build Artifacts`
+- Ejecuta el `.jar` desde la terminal: `java -jar Calculadora.jar`
+- Captura de la terminal con la salida correcta.
+
+!!! warning "Error habitual: UnsupportedClassVersionError"
+    Si al ejecutar el `.jar` aparece este mensaje:
+
+    ```
+    Error: Se ha producido un error de enlace al cargar la clase principal Calculadora
+    java.lang.UnsupportedClassVersionError: Calculadora has been compiled
+    by a more recent version of the Java Runtime (class file version 69.0),
+    this version of the Java Runtime only recognizes class file versions up to 65.0
+    ```
+
+    **Qué significa:** el `.jar` se compiló con una versión de Java más moderna (en este caso Java 25, que produce class files versión 69) que la que está instalada en el sistema donde se ejecuta (Java 21, versión 65). Java es compatible hacia atrás pero no hacia delante: una JVM antigua no puede ejecutar bytecode compilado con una JVM más nueva.
+
+    **Cómo solucionarlo:** indica a IntelliJ que compile para una versión de Java compatible con la que tienes instalada en el sistema:
+
+    1. `File → Project Structure → Project` → cambia **Language level** a `21` (o la versión que tengas instalada).
+    2. `File → Project Structure → Modules → Dependencies` → comprueba que el **Module SDK** apunta a la misma JDK.
+    3. Vuelve a generar el artefacto: `Build → Build Artifacts → Rebuild`.
+    4. Ejecuta de nuevo: `java -jar Calculadora.jar`.
+
+    Para saber qué versión de Java tienes instalada en la terminal, ejecuta `java -version`.
+
+**C — Dos lenguajes en el mismo IDE (VSCodium)**
+
+Dentro del mismo workspace de VSCodium:
+
+- Ya tienes el proyecto Java funcionando.
+- Añade un script en **Python** o **JavaScript** que haga las mismas operaciones (suma, resta, multiplicación de dos números).
+- Ejecuta ambos archivos desde el terminal integrado de VSCodium.
+- Captura de las dos ejecuciones en la misma sesión del editor.
+
+**D — Reflexión y comparativa final**
+
+Rellena la tabla comparativa de IntelliJ IDEA vs. VSCodium que encontrarás en la plantilla (criterios: facilidad de configuración inicial, gestión de plugins/extensiones, calidad del autocompletado Java, generación de ejecutables, soporte multilenguaje, consumo de recursos…).
+
+Responde luego por escrito: ¿cuál elegirías para un proyecto Java de tamaño medio y por qué? ¿Y si el proyecto mezcla varios lenguajes?
 
 ---
 
-## 📅 Entrega
-- Sube el PDF final al **Aula Virtual**, apartado **Entrega 2.4 – Trabajo con NetBeans**.
+## Indicaciones importantes
+
+- En el apartado A, el proyecto debe ser el **mismo** en los dos IDEs (misma carpeta, mismos archivos `.java`). No copies el código a mano: abre la misma carpeta en los dos programas.
+- En el `.jar`, el `main` debe estar correctamente declarado en el manifest. Si falla, documenta el error y cómo lo resolviste.
+- La reflexión del apartado D debe estar justificada con lo que has vivido en la unidad, no con frases genéricas.
+
+---
+
+## Entrega
+
+Sube el archivo al **Aula Virtual**, apartado **Actividad 2.4**.

@@ -1,52 +1,55 @@
-# 🧪 Práctica 2.2: Instalación y uso de IntelliJ y NetBeans
+# 🧪 Actividad 2.2: Personalización de IntelliJ IDEA
 
-!!! info "Objetivo"
-    Instalar y configurar dos **entornos de desarrollo integrados (IDE)** —*IntelliJ IDEA* y *NetBeans*— dentro de una **máquina virtual con Windows 10**, con el fin de conocer su interfaz, sus herramientas y sus diferencias principales.
+## Objetivo
 
----
+Explorar las opciones de personalización de IntelliJ IDEA: tema visual, fuente, atajos de teclado, gestión de plugins, estilo de codificación y configuración del sistema de actualizaciones.
 
-## ▶️ ¿Qué tienes que hacer?
-
-Instala una **máquina virtual con Windows 10** utilizando **VirtualBox**.  
-   > Aquí tienes una guía de cómo hacerlo si no sabes.
-   
-   ![Guía de instalación de Windows 10 en VirtualBox](manual-windows10.pdf){ type=application/pdf style="width:100%;min-height:80vh" }
-
-!!!info "Descarga el manual"
-      [Abrir documento completo en PDF](manual-windows10.pdf){target="_blank" rel="noopener"}
-
-
-Sigue los pasos descritos en el siguiente documento de plantilla, que servirá para insertar tus **capturas de pantalla** y comentarios:
-
-!!!warning "Usa la plantilla de la práctica"
-      📄 [Práctica: Instalación y uso de IntelliJ y NetBeans](plantilla2-2.docx){target="_blank" rel="noopener"}
-
-Realiza todas las tareas indicadas en el documento:
-
-   - Instalación completa de **IntelliJ IDEA**.  
-   - Instalación completa de **NetBeans**.  
-   - Creación de proyectos Java en ambos IDE.  
-   - Cambios en la interfaz, refactorización, ejecución y localización de ficheros `.class`.  
-   - Explicación final de qué es el archivo `.class`.
-
-Añade las **capturas solicitadas** directamente en la plantilla y exporta el documento con el nombre:
-   `P2-2_TuNombre_TuApellido.pdf`
-
-!!!note "¡No lo olvides!"
-      🧭 **Recuerda:** al finalizar, añade en tu **Diario de aprendizaje (Práctica 2.1)** una breve reflexión sobre esta práctica:  
-
-      - Qué has aprendido durante la instalación y configuración.  
-      - Qué dificultades has tenido y cómo las resolviste.  
-      - Qué IDE te ha resultado más cómodo o intuitivo.
+Al terminar deberías poder adaptar el IDE a tus preferencias y saber añadir o quitar funcionalidades mediante plugins.
 
 ---
 
-## ⚙️ Requisitos técnicos
-- La instalación debe realizarse **dentro de una máquina virtual Windows 10** (no en el sistema anfitrión).  
-- Los IDE deben quedar **funcionales** y configurados según las instrucciones del documento.  
-- No se admiten capturas genéricas descargadas de Internet: deben ser **propias y verificables**.
+## Lo que tienes que entregar
+
+Completa la **plantilla** con las capturas y respuestas de cada apartado, expórtala a PDF y súbela al Aula Virtual con el nombre:
+
+```
+A2-2_NombreApellido.pdf
+```
+
+!!!warning "Descarga la plantilla"
+    📄 [Plantilla 2.2 — Personalización de IntelliJ IDEA](plantillas/Actividad_2_2_Plantilla.docx){target="_blank" rel="noopener"}
 
 ---
 
-## 📅 Entrega
-- Sube tu archivo al **Aula Virtual**, en el apartado **Entrega 2.2**.
+## Resumen de tareas
+
+La plantilla contiene todos los pasos detallados. A modo de orientación, los apartados son:
+
+**A — Tema visual y fuente**
+Cambia el tema a uno distinto del que tienes por defecto (puedes instalar un tema desde el Marketplace de plugins). Configura una fuente monoespaciada con ligaduras como **JetBrains Mono** o **Fira Code**.
+
+**B — Gestión de plugins**
+Instala al menos dos plugins desde el JetBrains Marketplace (por ejemplo, *Rainbow Brackets* y *GitToolBox*). Desactiva un plugin que no uses habitualmente. Documenta el proceso con capturas.
+
+**C — Atajos de teclado y plantillas de código**
+Localiza los atajos para las acciones más habituales (ejecutar, depurar, reformatear, autocompletar, ir a la definición). Crea una **plantilla de código** (*Live Template*) propia: por ejemplo, `slog` que se expanda a `System.out.println("DEBUG: " + );` al pulsar Tab.
+
+**D — Estilo de codificación**
+Configura el estilo de código del proyecto (indentación con 4 espacios, línea máxima de 120 caracteres). Aplica el reformateado automático sobre un archivo con `Ctrl + Alt + L` y documenta el resultado.
+
+**E — Actualización del entorno**
+Localiza la sección de actualizaciones en la configuración del IDE. Comprueba el canal activo (debe ser *Stable*) y documenta la pantalla con una captura.
+
+---
+
+## Indicaciones importantes
+
+- Las capturas deben mostrar el **nombre del proyecto** y el **nombre de usuario del sistema** cuando sea posible.
+- Si un atajo no funciona en tu versión o sistema operativo, explícalo y describe cómo lo has resuelto.
+- **No uses IA para redactar las respuestas.** Las reflexiones deben ser tuyas.
+
+---
+
+## Entrega
+
+Sube el archivo al **Aula Virtual**, apartado **Actividad 2.2**.

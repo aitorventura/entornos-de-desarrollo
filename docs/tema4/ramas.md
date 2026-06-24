@@ -1,4 +1,4 @@
-﻿# 🌿 Ramas en Git
+﻿# 🌿 6. Ramas en Git
 
 ![Ramas](diapositivas/ramas.pdf){ type=application/pdf style="width:100%;min-height:80vh" }
 

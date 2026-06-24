@@ -1,80 +1,33 @@
-# 📚 Entornos de Desarrollo
+# 📚 Entornos de Desarrollo — 0487
 
-Bienvenido al módulo **Entornos de Desarrollo**.  
-Aquí encontrarás todos los temas organizados y enlazados, cada uno con sus criterios de evaluación, resultados de aprendizaje y contenidos prácticos.  
+Módulo de **DAW / DAM**
 
----
-
-## 🎯 Objetivo general
-
-Desarrollar las competencias necesarias para **crear, probar y mejorar software** utilizando herramientas profesionales. 
-
-A lo largo del módulo aprenderás a:  
-
-- Comprender qué es un **programa informático** y cómo se ejecuta en un sistema.  
-- Utilizar **entornos de desarrollo (IDE)** para editar y generar ejecutables.  
-- Diseñar y aplicar **pruebas** que verifiquen el correcto funcionamiento del software.  
-- Mejorar la calidad del código mediante **refactorización, control de versiones e integración continua**.  
-- Representar programas con **diagramas UML** (clases, actividades, estados, casos de uso) para planificar y comunicar mejor las soluciones.  
-
-En conjunto, el objetivo es que seas capaz de **trabajar como desarrollador** siguiendo buenas prácticas, con una visión completa del ciclo de vida del software.
-
+En este módulo aprendes a trabajar como desarrollador de software: cómo se construye un programa, con qué herramientas, cómo se prueba y cómo se trabaja en equipo sin romper nada.
 
 ---
 
-## 📘 Índice de contenidos
+## 🎯 Qué vas a aprender
 
-!!! success "👨‍💻 [Tema 1: Desarrollo de Software](tema1/index.md)"
-    - [Concepto de programa informático](tema1/concepto.md)  
-    - [Código fuente, objeto y ejecutable](tema1/codigo.md)  
-    - [Lenguajes de programación y paradigmas](tema1/lenguajes.md)  
-    - [Fases del desarrollo del software](tema1/fases.md)  
-    - [Herramientas y procesos de compilación](tema1/herramientas.md)  
-    - [Metodologías ágiles](tema1/metodologias.md)  
+- 💻 Cómo pasa un programa de código fuente a ejecutable, y qué papel juegan compiladores, intérpretes y máquinas virtuales.
+- 🧰 A usar entornos de desarrollo (IntelliJ, NetBeans) para editar, compilar, depurar y ejecutar.
+- 🧪 A diseñar y ejecutar pruebas para verificar que el software funciona como se espera.
+- 🔧 A mejorar código con refactorización, analizadores y a gestionar versiones con Git y GitHub.
+- 📐 A representar programas con diagramas UML: clases, casos de uso, actividades y estados.
 
 ---
 
+## 📘 Temas del módulo
 
-??? success "👨‍💻 Tema 2: Entornos Integrados de Desarrollo"
-    - [Entornos de desarrollo](tema2/entornos-de-desarrollo.md)  
-    - [Instalación y uso de IntelliJ y Netbeans](tema2/actividad_2_2.md)  
-    - [Trabajo con IntelliJ](tema2/actividad_2_3.md)  
-    - [Trabajo con NetBeans](tema2/actividad_2_4.md)  
-
-
-??? success "👨‍💻 Tema 3: Verificación y Pruebas de Programas"
-    - [Depuración de programas](tema3/depuracion.md)  
-    - [Pruebas de software](tema3/pruebas.md)  
-    - [Casos de prueba](tema3/casos.md)  
-    - [Pruebas unitarias](tema3/unitarias.md)  
-
----
-??? success "👨‍💻 Tema 4: Optimización y Documentación del Código"
-    - [Optimización y tipos](tema4/optimizacion_y_tipos.md)
-    - [Refactorización](tema4/refactorizacion.md)
-    - [Analizadores de código](tema4/analizadores.md)
-    - [Documentación del código](tema4/documentacion.md)
-    - [Introducción a Git](tema4/introduccion-git.md)
-    - [Introducción a las Ramas](tema4/ramas.md)
-    - [Introducción a GitHub](tema4/github.md)
-    - [Colaboración y Gestión de Proyectos en GitHub](tema4/colaboracion.md)
-
----
-
-??? warning "🔒 Tema 5: Diagramas de Clases (Próximamente)"
-    - Clases, atributos y métodos  
-    - Relaciones (herencia, agregación, composición, dependencia)  
-    - Herramientas UML  
-    - Generación de código e ingeniería inversa  
-
----
-
-??? warning "🔒 Tema 6: Diagramas de Comportamiento (Próximamente)"
-    - Diagramas de secuencia y comunicación  
-    - Diagramas de actividades  
-    - Diagramas de estados  
+| Tema | Qué cubre | RA |
+|------|-----------|-----|
+| 👨‍💻 [Tema 1 — Desarrollo de software](tema1/index.md) | Programas, compilación, lenguajes, fases del desarrollo, herramientas, metodologías ágiles | RA1 |
+| 🖥️ [Tema 2 — Entornos integrados de desarrollo](tema2/index.md) | IDEs, IntelliJ IDEA, NetBeans, personalización y generación de ejecutables | RA2 |
+| 🧪 [Tema 3 — Verificación y pruebas](tema3/index.md) | Tipos de prueba, casos de prueba, pruebas unitarias con JUnit, depuración | RA3 |
+| 🔧 [Tema 4 — Optimización y documentación](tema4/index.md) | Refactorización, analizadores, Javadoc, Git, GitHub, integración continua | RA4 |
+| 📐 [Tema 5 — Diagramas de clases](tema5/index.md) | Clases, objetos, relaciones UML, generación de código e ingeniería inversa | RA5 |
+| 🔄 [Tema 6 — Diagramas de comportamiento](tema6/index.md) | Casos de uso, secuencia, actividades, estados, comunicación | RA6 |
 
 ---
 
 !!! tip "Cómo navegar"
-    Puedes acceder a cada tema desde este índice o usando las **flechas de navegación** al final de cada página.
+    Haz clic en cualquier tema de arriba para empezar. Dentro de cada tema encontrarás los apuntes y las actividades en orden. Puedes usar las **flechas al pie de cada página** para avanzar o retroceder.
