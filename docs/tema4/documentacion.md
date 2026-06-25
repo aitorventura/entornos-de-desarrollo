@@ -79,6 +79,55 @@ return total;
 
 ---
 
+## 🗂️ ¿Qué documentar primero en un proyecto?
+
+Antes de ponerse a documentar métodos uno por uno, vale la pena pensar en qué tiene más valor. No todo necesita la misma atención.
+
+<div class="grid cards" markdown>
+-   :material-file-document-outline: **README (nivel proyecto)**
+    - Qué es el proyecto, cómo ejecutarlo, cómo probarlo
+
+-   :material-api: **Puntos de entrada**
+    - Métodos/servicios clave, controladores, endpoints
+
+-   :material-alert-circle-outline: **Reglas de negocio**
+    - Validaciones, permisos, descuentos, casos especiales
+
+-   :material-wrench-outline: **Decisiones que no son obvias**
+    - "Esto está así por X motivo"
+</div>
+
+---
+
+## 📄 El README: la primera documentación del proyecto
+
+El fichero `README.md` (o `README.txt`) es lo primero que ve cualquiera que llega a un proyecto. No hace falta que sea largo, pero sí útil. Una estructura mínima funciona bien:
+
+```markdown
+# Nombre del proyecto
+
+Descripción breve: qué hace y para qué sirve.
+
+## Cómo ejecutar
+
+1. Abre el proyecto en IntelliJ.
+2. Ejecuta `Main.java` (o el punto de entrada del proyecto).
+
+## Cómo pasar los tests
+
+Desde IntelliJ: clic derecho en la carpeta `test` → Run All Tests.
+O desde terminal: `mvn test`
+
+## Notas
+- Requiere Java 17 o superior.
+- La base de datos se inicializa automáticamente al arrancar.
+```
+
+!!! tip "Regla práctica"
+    Si alguien que no conoce el proyecto puede ejecutarlo en 5 minutos leyendo solo el README, el README es bueno.
+
+---
+
 ## 📚 4.2 Javadoc: qué es, para qué sirve y etiquetas más usadas
 
 **Javadoc** es el formato estándar de Java para documentar **clases** y **métodos**.  
@@ -117,7 +166,7 @@ Se escribe con `/** ... */` y dentro se combinan:
  * Servicio de cálculo de precios para pedidos.
  * Aplica reglas simples de descuento y validaciones básicas.
  *
- * <p>Uso típico: se llama desde la capa de servicio/controlador para obtener el total.</p>
+ * Uso típico: se llama desde la capa de servicio/controlador para obtener el total.
  *
  * @author Aitor
  * @version 1.0
@@ -242,32 +291,20 @@ Una de las ventajas de Javadoc es que puedes generar una **web HTML** con la doc
 
 ---
 
-### ✅ Opción B (alternativa): Generar Javadoc con Maven
+??? info "Si usas Maven o Gradle"
+    **Maven:** usa el objetivo `javadoc:javadoc`.
+    ```bash
+    mvn javadoc:javadoc
+    ```
+    La salida se genera en `target/site/apidocs/`.
 
-Si el proyecto usa Maven, suele existir el objetivo `javadoc:javadoc`.
+    **Gradle:** usa la tarea `javadoc`.
+    ```bash
+    ./gradlew javadoc
+    ```
+    La salida va a `build/docs/javadoc/`.
 
-```bash
-mvn javadoc:javadoc
-```
-
-Normalmente la salida se genera en una carpeta del tipo `target/site/apidocs/` (depende del proyecto).
-
----
-
-### ✅ Opción C (alternativa): Generar Javadoc con Gradle
-
-En proyectos Gradle suele existir la tarea `javadoc`:
-
-```bash
-./gradlew javadoc
-```
-
-La salida suele ir a algo parecido a `build/docs/javadoc/`.
-
-!!! info "Cuándo usar Maven/Gradle"
-    - Si el proyecto ya está configurado con build tool.
-    - Si quieres que la generación sea reproducible por todo el equipo.
-    - Si más adelante lo conectas con integración continua (CI).
+    Estas opciones son útiles cuando el proyecto ya usa build tool y quieres que la generación sea reproducible por todo el equipo, o si más adelante conectas el proceso con integración continua (CI).
 
 ---
 
@@ -287,24 +324,6 @@ La salida suele ir a algo parecido a `build/docs/javadoc/`.
 - Documentar cosas que el nombre ya deja claras.
 - Copiar/pegar docs y dejarlas incoherentes.
 - No indicar restricciones de entrada (`null`, rangos, etc.).
-
----
-
-## 🗂️ ¿Qué documentar primero en un proyecto?
-
-<div class="grid cards" markdown>
--   :material-file-document-outline: **README (nivel proyecto)**
-    - Qué es, cómo ejecutar, cómo probar
-
--   :material-api: **Puntos de entrada**
-    - Métodos/servicios clave, controladores, endpoints
-
--   :material-alert-circle-outline: **Reglas de negocio**
-    - Validaciones, permisos, descuentos, casos especiales
-
--   :material-wrench-outline: **Decisiones raras**
-    - “Esto está así por X motivo”
-</div>
 
 ---
 

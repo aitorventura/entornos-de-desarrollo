@@ -1,161 +1,141 @@
-# 🎯 Actividad 3.3: Pruebas de caja negra (Partición Equivalente y Valores Límite)
+# 🎯 Actividad 3.3: Pruebas de caja negra
+
+!!! warning "Descarga la plantilla"
+    📄 [Plantilla 3.3 — Pruebas de caja negra](plantillas/Actividad_3_3_Plantilla.docx){target="_blank" rel="noopener"}
 
 !!! info "Objetivo"
-    Aplicar técnicas de **pruebas de caja negra** para diseñar casos de prueba efectivos utilizando:
-    
-    - **Partición Equivalente (PE)**: Agrupar entradas en clases que se comportan de forma similar.  
-    - **Análisis de Valores Límite (AVL)**: Probar valores en los bordes de las particiones.
+    Aplicar **Partición Equivalente (PE)** y **Análisis de Valores Límite (AVL)** para diseñar casos de prueba de caja negra sobre dos sistemas reales.
 
 ---
 
-## 🔹 Contexto de la actividad
+## 🔹 Resumen de las técnicas
 
-En esta actividad vamos a aplicar las técnicas de **pruebas de caja negra**, centrándonos en:
+### Partición Equivalente (PE)
 
-- **Partición Equivalente**  
-  Identificaremos y agruparemos las entradas del sistema en **clases o particiones** que se comportan de manera similar.  
-  Reducimos así el número de pruebas seleccionando **un representante por clase**.
+La idea es simple: si el sistema trata igual a todos los valores de un grupo, basta con probar uno de ese grupo.
+Se dividen las entradas en **clases válidas** (lo que el sistema acepta) e **inválidas** (lo que debe rechazar), y se diseña un caso de prueba por clase.
 
-- **Análisis de los Valores Límite**  
-  Nos fijaremos en los **valores extremos** o cercanos a los límites de las particiones para detectar errores que aparecen en **condiciones críticas**.
-
-El objetivo principal es **diseñar y documentar casos de prueba** que validen el correcto funcionamiento del sistema, cubriendo tanto **escenarios comunes** como **casos extremos**.
-
----
-
-## 🔹 Recordatorio de directrices
-
-### Partición Equivalente
-
-| Tipo de entrada                          | Nº clases válidas                              | Nº clases inválidas                                           |
-|-----------------------------------------|------------------------------------------------|---------------------------------------------------------------|
-| Rango de valores (ej. `[20..30]`)       | 1: valor en rango (25)                         | 2: por debajo y por encima del rango (15, 40)                |
-| Conjunto finito (ej. `{2,4,6,8}`)       | 1: valor en el conjunto (4)                    | 2: fuera del conjunto, por debajo y por encima (1, 10)       |
-| Condición booleana (T/F)                | 1: valor evaluado a cierto (“j”)               | 1: valor evaluado a falso (“?”)                              |
-| Conjunto de valores admitidos           | tantas como valores admitidos                  | 1: valor no admitido (p.e. opción4)                          |
-
----
+| Tipo de entrada | Clases válidas | Clases inválidas |
+|---|---|---|
+| Rango `[20..30]` | 1 (ej. 25) | 2: uno por debajo, otro por encima |
+| Conjunto `{A, B, C}` | tantas como elementos (una por valor) | 1 (cualquier valor fuera del conjunto) |
+| Longitud `[1..10]` | 1 (ej. 5 caracteres) | 2: longitud 0 y longitud 11 |
+| Booleano / binario | 2 (verdadero / falso) | — |
 
 ### Análisis de Valores Límite (AVL)
 
-| Tipo de entrada                          | Nº clases válidas                                                      | Nº clases inválidas                                                    |
-|-----------------------------------------|-------------------------------------------------------------------------|-------------------------------------------------------------------------|
-| Rango de valores (ej. `[20..30]`)       | 4: límites y adyacentes dentro del rango (20, 21, 29, 30)              | 2: justo por debajo y por encima (19, 31)                             |
-| Conjunto finito (ej. `{2,4,6,8}`)       | 4: mínimo, máximo y adyacentes dentro del conjunto (2, 4, 6, 8)        | 2: justo por debajo y por encima del conjunto (1, 9)                  |
+Complementa la PE probando los **valores extremos** de cada rango o conjunto, porque ahí es donde suelen esconderse los errores.
+
+| Tipo de entrada | Clases válidas (4) | Clases inválidas (2) |
+|---|---|---|
+| Rango `[20..30]` | 20, 21, 29, 30 | 19, 31 |
+| Longitud `[1..10]` | 1, 2, 9, 10 caracteres | 0, 11 caracteres |
+
+Para conjuntos de valores discretos, se toma el primer elemento, el último y, si hay, el del medio.
 
 ---
 
-## 🔹 Tarea general
+## 🔹 Estructura de la respuesta (para cada enunciado)
 
-Para **cada enunciado** deberás realizar **caja negra** siguiendo la estructura trabajada en clase:
+Debes completar cuatro secciones:
 
-1. **Identificar entradas**  
-    - Listar todas las entradas del sistema, su **tipo de dato** y restricciones (rango, longitud, conjunto de valores, etc.).
+1. **Identificación de entradas**: nombre, tipo de dato y restricciones de cada campo.
+2. **Tabla PE**: clases válidas e inválidas numeradas (ej. `(1)`, `(2)`...).
+3. **Casos de prueba PE**: un caso por clase válida y uno por cada clase inválida.
+4. **Tabla AVL + casos de prueba AVL**: límites de los campos que lo permitan.
 
-2. **Partición Equivalente (PE)**  
-    - Determinar el nº de **clases válidas** e **inválidas** para cada entrada.  
-    - Construir una **tabla de clases de equivalencia**.  
-    - Diseñar **casos de prueba** que cubran todas las clases (al menos uno por clase válida y uno por cada clase inválida).
-
-3. **Análisis de Valores Límite (AVL)**  
-    - Identificar los **límites** de cada entrada que lo permita (rangos, conjuntos).  
-    - Construir una tabla con los **valores límite** válidos e inválidos.  
-    - Diseñar **casos de prueba adicionales** para cubrir esos valores.
-
-4. **Casos de prueba finales**  
-    - Presentar las pruebas en **tablas** con:  
-        - Entradas  
-        - Clase de equivalencia / tipo de límite  
-        - Descripción  
-        - Salida esperada
-
-Puedes usar el los ejemplos resueltos como plantilla para realizar los ejercicios.
+Los casos de prueba van en tabla con columnas: entrada completa, clases que cubre, salida esperada.
 
 ---
 
-## 🧩 Enunciado 1 – Prima de empleados
+## 🧩 Enunciado 1 — Prima de empleados
 
-Un programa toma como entrada un fichero cuyo formato de registro es:
+Un programa lee registros del formato:
 
-`(Número-empleado, Nombre-empleado, Meses-Trabajo, Directivo)`
+```
+(Número-empleado, Nombre-empleado, Meses-Trabajo, Directivo)
+```
 
-Donde:
+Con las siguientes restricciones:
 
-- **Número-empleado**: entero positivo de 3 dígitos (excluido `000`).  
-- **Nombre-empleado**: alfanumérico (mínimo 1, máximo 10 caracteres).  
-- **Meses-Trabajo**: entero positivo de 3 dígitos (incluye `000`).  
-- **Directivo**: carácter que puede ser `+` (directivo) o `-` (no directivo).
+| Campo | Tipo | Restricciones |
+|---|---|---|
+| Número-empleado | Entero | 3 dígitos, rango `[001..999]` (excluido `000`) |
+| Nombre-empleado | Texto | Entre 1 y 10 caracteres alfanuméricos |
+| Meses-Trabajo | Entero | 3 dígitos, rango `[000..999]` |
+| Directivo | Carácter | Solo `+` (directivo) o `-` (no directivo) |
 
-El programa asigna una **prima** según:
+El programa asigna una prima según la combinación de los dos últimos campos:
 
-- **P1**: directivos con al menos **12 meses** de antigüedad.  
-- **P2**: no directivos con al menos **12 meses** de antigüedad.  
-- **P3**: directivos con menos de 12 meses.  
-- **P4**: no directivos con menos de 12 meses.
+| Directivo | Meses ≥ 12 | Meses < 12 |
+|---|---|---|
+| `+` (directivo) | **P1** | **P3** |
+| `-` (no directivo) | **P2** | **P4** |
 
-### Trabajo a realizar (Enunciado 1)
+### Lo que debes entregar (Enunciado 1)
 
-Para este enunciado debes:
+1. Tabla de clases de equivalencia PE (identifica cuántas clases válidas e inválidas tiene cada campo y nómbralas con un número entre paréntesis).
+2. Casos de prueba PE: asegúrate de cubrir las cuatro primas (P1, P2, P3, P4) y todos los casos de error.
+3. Tabla AVL con los valores límite de `Número-empleado`, `Meses-Trabajo` y `Nombre-empleado`.
+4. Casos de prueba AVL.
 
-1. Identificar las **entradas** y sus **tipos**.  
-2. Calcular el nº de **clases válidas e inválidas** para cada entrada (PE).  
-3. Construir la **tabla de clases de equivalencia** (incluyendo identificadores de clase).  
-4. Diseñar **casos de prueba** usando **Partición Equivalente**:  
-    - Asegúrate de cubrir todas las categorías de prima (P1, P2, P3, P4).  
-5. Diseñar **casos de prueba adicionales** con **Valores Límite** cuando tenga sentido (ej. meses de trabajo, número-empleado, longitud del nombre).  
-6. Presentar todo en tablas claras:  
-    - Tabla de clases de equivalencia.  
-    - Tabla(s) de casos de prueba (PE y AVL).
+!!! tip "Pista: el campo Directivo"
+    El campo `Directivo` es un **conjunto de dos valores admitidos**, no un rango.
+    Según las reglas de PE, eso genera **2 clases válidas** (una para `+` y otra para `-`) y **1 clase inválida** (cualquier otro carácter).
+
+!!! tip "Pista: las cuatro primas"
+    Para cubrir P1, P2, P3 y P4 necesitas probar las cuatro combinaciones de (directivo/no directivo) × (meses ≥ 12 / meses < 12).
+    Con una entrada se puede cubrir varias clases válidas a la vez.
 
 ---
 
-## 🧳 Enunciado 2 – Tarifa de billetes
+## 🧳 Enunciado 2 — Tarifa de billetes
 
-Un programa calcula la **tarifa de cada billete** según el trayecto, la antelación y la edad del pasajero. La empresa sólo opera viajes entre **Santander, Madrid y Barcelona**.
+Una empresa de transporte opera entre **Santander (SNT)**, **Madrid (MAD)** y **Barcelona (BCN)**. Un programa calcula la tarifa según:
 
-Datos de entrada:
+| Campo | Tipo | Restricciones |
+|---|---|---|
+| CiudadOrigen | Texto | `"SNT"`, `"MAD"` o `"BCN"` |
+| CiudadDestino | Texto | `"SNT"`, `"MAD"` o `"BCN"` |
+| Fecha | Fecha | Día del viaje (debe ser una fecha futura válida) |
+| Edad | Entero | 3 dígitos, rango `[000..999]` |
 
-- **CiudadOrigen**: `"SNT"`, `"MAD"`, `"BCN"`.  
-- **CiudadDestino**: `"SNT"`, `"MAD"`, `"BCN"`.  
-- **Fecha**: tipo fecha (día del viaje).  
-- **Edad**: número entero positivo de 3 cifras (incluyendo `000`).
+Descuentos (no acumulables, se aplica el mayor):
 
-Descuentos (no acumulables, se aplica el MAYOR):
+| Descuento | Condición |
+|---|---|
+| 15% | Compra con más de 1 semana de antelación |
+| 25% | Compra con más de 1 mes de antelación |
+| 30% | Edad < 25 años |
+| 40% | Edad > 65 años |
 
-- **Antelación**:  
-    - 15% si se compra con **> 1 semana** de antelación.  
-    - 25% si se compra con **> 1 mes** de antelación.
+!!! note "Simplificación para el AVL"
+    Para el AVL **solo analiza los campos con rango numérico o conjunto discreto** (`Edad`, `CiudadOrigen`, `CiudadDestino`).
+    No analices los límites de semana/mes de antelación en el campo Fecha.
 
-- **Edad**:  
-    - 30% si **edad < 25** años.  
-    - 40% si **edad > 65** años.
+### Lo que debes entregar (Enunciado 2)
 
-> **NOTA simplificada para esta actividad**  
-> Para hacer el ejercicio más asequible, **solo tomarás como límites** los que aparecen en los **datos de entrada** (por ejemplo, límites del campo Edad, códigos de ciudad, etc.), no los de fechas, semanas y meses.
+1. Tabla de clases de equivalencia PE.
+2. Casos de prueba PE: cubre los distintos descuentos posibles (0%, 15%, 25%, 30%, 40%) y los casos de error.
+3. Tabla AVL + casos de prueba AVL para `Edad` y las ciudades.
 
-### Trabajo a realizar (Enunciado 2)
+!!! tip "Pista: las ciudades"
+    `CiudadOrigen` y `CiudadDestino` son **conjuntos de tres valores admitidos**: SNT, MAD, BCN.
+    Para PE eso son **3 clases válidas** y **1 clase inválida**.
+    Para AVL trata los tres valores como si fueran los límites del conjunto (inferior, medio, superior).
 
-Para este enunciado debes:
-
-1. Identificar las **entradas** y sus **restricciones** (valores posibles, formato, etc.).  
-2. Determinar **clases de equivalencia válidas e inválidas** para cada entrada:  
-    - Ejemplo: ciudades válidas / ciudad no válida.  
-3. Elaborar la **tabla de clases de equivalencia**.  
-4. Diseñar **casos de prueba** que cubran:  
-    - Trayectos válidos e inválidos.  
-    - Edades en diferentes rangos relevantes (niños/jóvenes, adultos, mayores…).  
-    - Situaciones sin descuento / con cada tipo de descuento.  
-5. Diseñar **casos de prueba usando AVL** solo sobre los límites de los datos de entrada que tenga sentido aplicar.  
-6. Presentar las pruebas en **tablas**, indicando también el **descuento esperado** (0%, 15%, 25%, 30%, 40%).
+!!! tip "Pista: los descuentos"
+    Los descuentos dependen de la fecha (cuánta antelación hay) y de la edad.
+    Para cubrir los 5 escenarios (sin descuento y cada uno de los cuatro descuentos) necesitarás combinar
+    valores de fecha y edad que disparen cada caso. La fecha de referencia para los ejemplos es el **4 de enero de 2025**.
 
 ---
 
 ## ✅ Entregable
 
-Un **PDF** que contenga, para **cada enunciado (1 y 2)**:
+Un **PDF** exportado desde la plantilla, con para **cada enunciado**:
 
-- Identificación de entradas y tipos.  
-- Tabla(s) de **clases de equivalencia** (PE).  
-- Tabla(s) de **valores límite** (AVL), cuando proceda.  
-- Tabla(s) de **casos de prueba** con: entradas, clase, tipo de técnica (PE/AVL) y salida esperada.  
-
+- Tabla de clases de equivalencia (PE)
+- Tabla de casos de prueba PE
+- Tabla de valores límite (AVL)
+- Tabla de casos de prueba AVL

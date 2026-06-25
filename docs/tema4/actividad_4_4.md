@@ -1,111 +1,92 @@
-# 🧩 Actividad 4.4: Git local — tu primer historial de cambios
+# Actividad 4.4: Análisis estático con IntelliJ y SonarLint
 
-!!! info "Créditos"
-    Actividad basada en el ejercicio original del curso de Joan Puigcerver:  
-    [Exercici — Introducció (curs-git)](https://joapuiib.github.io/curs-git/apunts/01_introduccio/exercici/)
+!!! info "Objetivo"
+    Usar las herramientas de análisis estático del IDE para revisar el código de forma sistemática:
 
-!!! warning "Antes de empezar"
-    Es recomendable que **leas la actividad entera** de principio a fin, y te asegures de revisar el apartado **📤 Entregable** al final del documento. Así sabrás exactamente qué debes registrar o capturar antes de ponerte a escribir comandos en la terminal.
-
----
-
-## 🧠 Qué vas a practicar 
-
-En esta actividad vas a practicar Git **en local** para aprender a:
-
-- crear e inicializar un repositorio,
-- añadir archivos y hacer commits,
-- realizar cambios y entender qué ocurre,
-- consultar el estado del repositorio,
-- consultar el historial de cambios,
-- configurar lo básico (por ejemplo, ignorar archivos/carpetas).
+    - Ejecutar las **inspecciones de IntelliJ** sobre el código refactorizado de la Actividad 4.2.
+    - Interpretar los avisos: entender qué detectan y decidir qué hacer con cada uno.
+    - Comparar los resultados con **SonarLint** (si lo tienes instalado).
 
 ---
 
-## 🧰 Requisitos previos
+## Contexto
 
-1) Tener Git instalado:
+Cuando refactorizas código, es fácil centrarse en lo que ves a simple vista. Los analizadores estáticos hacen algo diferente: aplican cientos de reglas automáticamente sobre el código completo y señalan patrones que, aunque no rompen el programa ahora mismo, suelen convertirse en problemas más adelante.
 
-```bash
-git --version
-```
-
-2) Tener configurado tu nombre y email (solo una vez en tu ordenador):
-
-```bash
-git config --global user.name "Tu Nombre"
-git config --global user.email "tuemail@ejemplo.com"
-```
+Esta actividad te pide que uses las herramientas que ya tiene IntelliJ para obtener ese informe y que decidas, aviso por aviso, qué hacer.
 
 ---
 
-## 📌 Norma de la actividad
+## Trabajo a realizar
 
-!!! warning "Obligatorio durante TODO el ejercicio"
-    Comprueba el estado del repositorio con:
+### 1) Preparación
 
-    - `git status`
-    - `git diff`
-
-    **después de cada paso**.  
-    El objetivo es que aprendas a interpretar los estados en los que puede estar el repositorio y los archivos.
+Abre en IntelliJ el proyecto con el código refactorizado de la **Actividad 4.2** (los dos códigos: `TriangleCalculator` y `WeatherAnalyzer`, ya refactorizados).
 
 ---
 
-## 🗂️ Recomendación importante
+### 2) Ejecutar inspecciones con IntelliJ
 
-Crea el repositorio en una carpeta **independiente** para evitar problemas con otros ejercicios o repos.
+En IntelliJ, ve a:
 
-!!! warning "Evita carpetas sincronizadas"
-    Si usas OneDrive/Google Drive/iCloud u otros sistemas similares, es recomendable **no** crear el repo dentro de esas carpetas.
+**Analyze → Inspect Code**
 
----
+- Elige el ámbito: selecciona el módulo o el proyecto completo.
+- Deja la configuración de perfiles por defecto (Default).
+- Haz clic en **OK** y espera a que termine el análisis.
 
-## 🧪 Ejercicio (pasos)
+Se abrirá un panel con los problemas encontrados, agrupados por categorías (por ejemplo: *Probable bugs*, *Code style*, *Performance*, etc.).
 
-> En cada paso, recuerda ejecutar **`git status`** y **`git diff`**.
-
-1. Crea un directorio llamado **`bloc1_exercici`** dentro de tu carpeta de trabajo.
-2. Inicializa un repositorio de Git en ese directorio.
-3. Crea un archivo llamado **`llibres.txt`** y añade **tres libros** que te gusten.
-4. Haz un **primer commit**. Elige un **mensaje significativo**.
-5. Añade **otro libro** a `llibres.txt`.
-6. Haz un **segundo commit**.
-7. Crea un archivo llamado **`musica.txt`** y añade **tres canciones** que te gusten.
-8. Crea un archivo llamado **`pelicules.txt`** y añade **tres películas** que te gusten.
-9. Haz un **tercer commit** que **solo** incluya el archivo `musica.txt`.
-10. Crea un archivo llamado **`series.txt`** y añade **tres series** que te gusten.
-11. Haz un **cuarto commit** que incluya los archivos `pelicules.txt` y `series.txt`.
-12. Modifica `llibres.txt` para **eliminar** uno de los libros.
-13. Haz un **quinto commit**.
-14. Modifica `pelicules.txt` para **añadir** una película.
-15. **Sin modificar el archivo manualmente**, descarta el cambio de `pelicules.txt` mediante una **orden de Git**.
-16. Añade un archivo llamado **`{fecha}.log`** con cualquier contenido.  
-    - `{fecha}` es la **fecha actual** en formato `YYYYMMDD`.
-17. Configura el repositorio para **ignorar** los archivos con extensión **`.log`**.
-18. Haz un commit con esa configuración.
-19. Crea la carpeta **`tmp`** y copia todos los archivos de texto (`.txt`) dentro de esa carpeta.
-20. Configura el repositorio para **ignorar** la carpeta `tmp`.
-21. Haz un commit con esa configuración.
-22. Comprueba la **historia de cambios** del repositorio.
+!!! tip "Cómo navegar el informe"
+    Despliega cada categoría para ver los avisos. Haz clic en un aviso para que IntelliJ te lleve directamente a la línea de código correspondiente.
 
 ---
 
-## 📤 Entregable
+### 3) Documentar los avisos encontrados
 
-!!! danger "Atención: Autoría de las capturas"
-    En todas las capturas de pantalla debe apreciarse claramente que **eres el autor** (ruta de las carpetas con tu usuario, nombre de equipo en la terminal, etc.).  
-    **En caso de detectar copias, la calificación de la actividad será de un 0 automático.**
+En tu entregable, recoge **al menos 3 avisos** del informe. Para cada uno indica:
 
-Entrega un **PDF** que incluya:
+| Campo | Qué poner |
+|---|---|
+| **Categoría** | La sección del informe donde aparece (ej: *Probable bugs*, *Code style*) |
+| **Descripción** | Qué dice el aviso (puedes copiar el texto del panel) |
+| **Archivo y línea** | Dónde se encuentra en el código |
+| **Decisión** | ¿Lo has corregido? ¿Por qué sí o por qué no? |
 
-- **Capturas de pantalla y una explicación breve** (indicando qué archivos son *untracked*, *modified* o *staged*) en los siguientes 5 momentos clave:
-    1. Después del **Paso 4** (tu primer commit).
-    2. Después del **Paso 11** (revisando qué diferencias muestra `git diff` antes de hacer el commit).
-    3. Durante el **Paso 15** (mostrando el uso del comando para descartar modificaciones sueltas y el git status limpio resultante).
-    4. Después del **Paso 20** (mostrando cómo `.gitignore` oculta los archivos).
-    5. Después del **Paso 22** (captura de la historia de cambios o log final del repositorio).
-- Una **breve reflexión personal (5-10 líneas)** al final del documento explicando qué has aprendido en esta actividad básica y en qué situaciones reales crees que te será útil poder "viajar en el tiempo" por el historial de tus propios archivos (recuperar código, entender errores pasados, etc.).
+!!! warning "Importante"
+    No se espera que corrijas todos los avisos. Lo importante es que entiendas qué detecta cada uno y que justifiques tu decisión.
 
-!!! tip "Consejo"
-    Si quieres que quede ordenado, usa un apartado por paso: **Paso X → Captura(s) → Explicación**.
+---
+
+### 4) Ejercicio con SonarLint (si lo tienes instalado)
+
+Si tienes el plugin **SonarLint** activo en IntelliJ, abre el mismo archivo que tiene más avisos en las inspecciones y mira el panel de SonarLint (parte inferior del IDE).
+
+Compara los resultados con los de IntelliJ Inspect Code:
+
+- ¿Coinciden los avisos? ¿SonarLint detecta algo que IntelliJ no señaló, o al revés?
+- ¿Las explicaciones de SonarLint son más o menos detalladas?
+
+Describe brevemente la comparación (4–6 líneas).
+
+!!! info "Si no tienes SonarLint"
+    Puedes saltarte este apartado. Si quieres instalarlo, búscalo en **File → Settings → Plugins → Marketplace → SonarLint**.
+
+---
+
+## Pregunta de reflexión
+
+Responde por escrito (6–10 líneas):
+
+¿Qué tipo de problemas ha detectado el analizador que tú no habrías visto leyendo el código a simple vista? ¿Hay algún aviso que te haya sorprendido? ¿Crees que un analizador estático puede sustituir a una revisión manual del código, o son complementarios?
+
+---
+
+## Entregable
+
+Entrega un **PDF** con:
+
+1. **Captura del panel de resultados** de IntelliJ Inspect Code (la pantalla con el informe completo).
+2. **Tabla con al menos 3 avisos** (categoría, descripción, archivo/línea, decisión tomada).
+3. **Comparación con SonarLint** (si lo tienes instalado): 4–6 líneas.
+4. **Respuesta a la pregunta de reflexión**: 6–10 líneas.

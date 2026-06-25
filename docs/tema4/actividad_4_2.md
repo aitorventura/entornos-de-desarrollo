@@ -109,14 +109,17 @@ Para **cada código** (Código 1 y Código 2):
 - Describe los pasos que has seguido durante la refactorización.
 - Justifica los cambios: por qué es mejor ahora (legibilidad, reutilización, mantenimiento).
 
-### 3) Documentación básica 
-- Añade **comentarios cortos** solo donde aporten valor:
+### 3) Javadoc en los métodos extraídos
 
-    - para explicar una decisión,
-    - para aclarar una parte con lógica importante,
-    - para indicar qué hace un bloque.
+Después de refactorizar, añade **Javadoc** a los métodos públicos que hayas creado con Extract Method:
 
-- No comentes lo obvio (“incrementa i”); comenta el **por qué** o la intención.
+- una frase que explique **qué hace** el método,
+- `@param` para cada parámetro (si los tiene),
+- `@return` si devuelve un valor,
+- `@throws` si puede lanzar una excepción.
+
+!!! tip “Regla práctica”
+    Documenta lo que el método **promete**: qué recibe, qué devuelve y en qué condiciones falla. No comentes lo que ya dice el nombre del método.
 
 ---
 
@@ -130,7 +133,7 @@ Debes entregar un **informe en PDF** donde, para cada código, incluyas:
 
 2. **Código final refactorizado**
 
-    - Pegado completo y con comentarios básicos.
+    - Pegado completo y con Javadoc en los métodos públicos extraídos.
 
 3. **Explicación**
 
@@ -152,7 +155,7 @@ Debes entregar un **informe en PDF** donde, para cada código, incluyas:
     - ...
     - ...
 
-    **Código final (refactorizado + comentarios básicos)**
+    **Código final (refactorizado + Javadoc en métodos públicos)**
 
     ```java
     // tu código aquí

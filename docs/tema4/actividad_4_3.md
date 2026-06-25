@@ -89,10 +89,24 @@ public class UserValidator {
 
 ---
 
+## 🤔 Pregunta de reflexión
+
+Antes de entregar, responde por escrito (6–10 líneas):
+
+- `isValidEmail` acepta `"@algo.com"` o `"algo@"` — ¿quedan estas restricciones reflejadas en el Javadoc que has escrito?
+- `isValidPassword` no valida que la contraseña tenga mayúsculas, números o caracteres especiales — ¿debería mencionarse en el Javadoc que eso no se comprueba?
+- ¿Por qué es importante documentar no solo lo que el método hace, sino también lo que **no** hace o lo que **no** valida?
+
+!!! tip "Por qué importa"
+    Quien use un método que no ha escrito confía en el Javadoc para saber si puede pasarle `null`, si tiene que validar antes, o si el método ya lanza una excepción. Un Javadoc incompleto puede llevar a bugs reales.
+
+---
+
 ## ✅ Entregable
 
 Entrega un **PDF** con:
 
 1. El código final con Javadoc (o adjunta el `.java`).
 2. Una captura del `index.html` (o de la clase `UserValidator` dentro de la documentación HTML).
+3. Las respuestas a la pregunta de reflexión.
 

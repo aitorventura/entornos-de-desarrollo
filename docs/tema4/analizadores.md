@@ -128,34 +128,41 @@ Ejemplos:
 
 ## 🧰 Herramientas habituales (Java)
 
-En entornos Java, es común ver:
+En entornos Java, es común ver varias herramientas. Cada una tiene su punto fuerte, aunque hay bastante solape entre ellas:
 
-- **Inspections del IDE** (por ejemplo, IntelliJ: warnings y sugerencias).
-- **Checkstyle**: reglas de estilo y convenciones.
-- **PMD**: malas prácticas y calidad.
-- **SpotBugs** (antes FindBugs): bugs típicos por patrones.
+| Herramienta | Qué detecta principalmente | Cuándo usarla |
+|---|---|---|
+| **IntelliJ Inspections** | NPE probables, código muerto, estilo, simplificaciones | Siempre: ya viene integrada en el IDE |
+| **Checkstyle** | Convenciones de estilo: nombres, longitud de línea, imports | Cuando el equipo quiere un estilo uniforme definido en fichero de reglas |
+| **PMD** | Malas prácticas: código duplicado, variables sin usar, complejidad excesiva | Cuando se quiere analizar calidad de diseño más allá del estilo |
+| **SpotBugs** | Bugs típicos por patrones: comparaciones peligrosas, recursos sin cerrar, NPE | Cuando se quiere detectar errores reales, no solo estilo |
 
-!!! info "Importante"
-    El IDE ya incluye muchas inspecciones útiles. Las herramientas externas suelen integrarse en el proyecto (y a veces en CI).
+!!! info “Para el día a día”
+    En clase, con **IntelliJ Inspections** y **SonarLint** tienes más que suficiente. Las otras aparecen en proyectos de empresa integradas en el pipeline de CI.
 
 ---
 
-## 🛠️ Analizadores dentro del IDE (IntelliJ)
+## 🛠️ Cómo se ven los avisos en IntelliJ
 
-En IntelliJ, lo normal es:
+Cuando IntelliJ detecta un posible problema, lo señala de varias formas visibles sin que tengas que hacer nada:
 
-- avisos en el editor (subrayado, bombilla),
-- inspecciones por archivo o proyecto,
-- sugerencias de refactor.
+- **Subrayado en el editor**: líneas con subrayado amarillo (warning) o rojo (error probable) directamente sobre el código.
+- **Bombilla a la izquierda**: aparece al situar el cursor en una línea con aviso; haz clic para ver las opciones de solución rápida (*quick fix*).
+- **Panel lateral derecho**: la barra de scroll muestra marcas de colores (rojo, amarillo) que indican en qué línea del archivo hay problemas, sin tener que desplazarte.
+- **Indicador en la esquina superior derecha**: muestra el número total de problemas del archivo con un icono de estado (verde = sin avisos, amarillo/rojo = hay algo que revisar).
+
+Para lanzar un análisis de todo el proyecto en vez de solo el archivo actual:
+
+**Analyze → Inspect Code** → elige el ámbito (archivo, módulo o proyecto) → verás un informe con los problemas agrupados por categoría.
 
 ### Acciones típicas
 
-- Aplicar un *quick fix* (solución rápida).
-- Ejecutar inspecciones del proyecto.
-- Revisar advertencias por severidad.
+- Aplicar un *quick fix* con `Alt + Enter` (Windows/Linux) o `Option + Enter` (Mac) en la línea subrayada.
+- Ejecutar inspecciones del proyecto con **Analyze → Inspect Code**.
+- Revisar advertencias por severidad en el panel de resultados.
 
-!!! tip "Buena práctica"
-    No aceptes *quick fixes* “a ciegas”. Entiende qué cambia y por qué.
+!!! tip “Buena práctica”
+    No aceptes *quick fixes* “a ciegas”. Entiende qué cambia y por qué. Algunos arreglos automáticos pueden alterar el comportamiento si no lees bien la sugerencia.
 
 ---
 
@@ -225,17 +232,30 @@ if (password.length() < MIN_PASSWORD_LENGTH) {
 
 ---
 
-!!! info "Recordatorio: SonarQube (antes SonarLint)"
-    En el tema de entornos de desarrollo instalamos y usamos el plugin SonarLint en IntelliJ como ejemplo de plugin útil.
+---
 
-    Es un **ejemplo de analizador estático**:
+## 🔍 SonarLint: análisis estático directamente en el IDE
 
-    - marca avisos directamente en el editor (**bugs probables**, **malas prácticas** y **código mejorable**),
-    - propone *quick fixes*,
-    - y ayuda a mantener un estilo y calidad más constantes en el proyecto.
+En el tema de entornos de desarrollo instalamos el plugin **SonarLint** en IntelliJ. Es un analizador estático que funciona directamente dentro del editor, sin necesidad de ejecutar el proyecto.
 
-    **Idea importante:** SonarLint (y herramientas similares) no “arreglan el programa por ti”; te dan **señales** para que tú decidas si:
+Lo que hace SonarLint:
 
-    - corriges el problema,
-    - refactorizas,
-    - o justificas por qué en ese caso no aplica.
+- marca avisos directamente en el editor (**bugs probables**, **malas prácticas** y **código mejorable**),
+- propone *quick fixes* para los problemas más comunes,
+- muestra una explicación del problema y por qué es un riesgo,
+- y ayuda a mantener un estilo y calidad más constantes en el proyecto.
+
+### Flujo de uso con SonarLint
+
+```mermaid
+flowchart LR
+  A[Instalar plugin SonarLint en IntelliJ] --> B[Abrir un archivo .java]
+  B --> C[Ver avisos subrayados en el editor]
+  C --> D[Revisar el panel SonarLint en la parte inferior]
+  D --> E[Decidir: corregir / refactorizar / justificar que no aplica]
+```
+
+El panel de SonarLint (pestaña inferior del IDE) muestra los avisos del archivo actual con una descripción del problema, la regla que lo detecta y una explicación de por qué es un problema real.
+
+!!! tip “Idea importante”
+    SonarLint no “arregla el programa por ti”. Te da señales para que tú decidas si corriges el problema, refactorizas, o justificas por qué en ese caso concreto no aplica. Un aviso es una pregunta, no una orden.

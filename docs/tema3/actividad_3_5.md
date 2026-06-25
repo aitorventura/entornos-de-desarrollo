@@ -20,7 +20,7 @@ El instituto necesita una aplicación para calcular la **calificación final** d
 El proyecto incluye:
 
 - La estructura de paquetes lista para trabajar.
-- Un ejemplo resuelto (`EjemploTest`) que muestra cómo usar JUnit 5.
+- Un ejemplo resuelto (`EjemploTest`) con su clase de producción `Conversor` que muestra cómo usar JUnit 5.
 - Las firmas de las clases que debes implementar (ver a continuación).
 
 ---
@@ -74,11 +74,12 @@ public class GestorCalificaciones {
 ## 🔹 Tarea 1 – Revisar el ejemplo resuelto
 
 1. Abre el proyecto en **IntelliJ IDEA**.
-2. Localiza la clase `EjemploTest` y léela con atención.
+2. Localiza la clase `EjemploTest` (en `src/test/java`) y su clase de producción `Conversor` (en `src/main/java`). Léelas con atención.
 3. Identifica:
     - Cómo se declara una clase de test con JUnit 5.
-    - Cómo se usan `@Test`, `@BeforeEach` y los métodos `assertEquals`, `assertThrows`.
-    - Cómo se nombran los métodos de test de forma descriptiva.
+    - Cómo se usa `@BeforeEach` para crear una instancia fresca antes de cada test.
+    - Cómo se usan `assertEquals` y `assertThrows` para verificar el comportamiento.
+    - Cómo se nombran los métodos de test de forma descriptiva: `método_escenario_resultadoEsperado`.
 
 ---
 

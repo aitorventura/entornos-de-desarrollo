@@ -175,6 +175,27 @@ Entrega un **PDF** con:
     - Captura o copia de la salida (tiempos y valores clave).
     - Explicación breve (6–10 líneas): qué cambia, por qué mejora, qué se mantiene igual.
 
+3. **Ejercicio D (obligatorio, sin código):** optimización global — ver más abajo.
+
+---
+
+## 🧪 Ejercicio D: Cargar solo lo necesario (optimización global)
+
+Los ejercicios A, B y C eran optimizaciones **locales**: cambias un fragmento concreto. Este ejercicio trabaja una optimización **global**: la mejora afecta al diseño de cómo el sistema accede a los datos.
+
+**Situación:** tienes una aplicación que muestra un catálogo de productos. En la base de datos hay 50.000 productos. Al abrir la pantalla de catálogo, el programa carga los 50.000 en memoria para mostrar solo los primeros 20.
+
+**Lo que tienes que hacer:**
+
+Describe por escrito (8–12 líneas) cómo cambiarías este diseño para que el programa cargue solo los datos que necesita. En tu respuesta explica:
+
+- qué técnica usarías (paginación, filtros en la consulta, límite de resultados...),
+- qué pasa con la memoria y el tiempo de respuesta si cargas 50.000 registros de golpe,
+- y por qué esta mejora no la ves en los tiempos de un bucle `for`, sino en el comportamiento real de la aplicación.
+
+!!! tip “Pista”
+    La idea clave es que la base de datos haga el trabajo de filtrar, no el programa. En SQL sería algo como `SELECT ... LIMIT 20 OFFSET 0`. No hace falta que escribas SQL, solo que expliques la idea.
+
 ---
 
 ## 🎯 Retos extra (opcionales, sin código)
@@ -185,10 +206,6 @@ Elige **uno**, reflexiona y descríbelo (8–12 líneas): qué harías y por qu�
 En una pantalla se listan pedidos y, para cada pedido, se consulta el cliente con otra consulta.  
 Explica cómo reducirías el número de consultas.
 
-### Reto 2: Cargar solo lo necesario
-Tienes miles de productos y cargas todos para mostrar 20.  
-Explica cómo lo cambiarías (paginación / filtros) y qué mejorarías.
-
-### Reto 3: Reutilizar resultados
+### Reto 2: Reutilizar resultados
 Un programa convierte el mismo texto a mayúsculas en varios sitios (mismo texto, muchas veces).  
 Explica cómo evitarías repetir esa conversión.

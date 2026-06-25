@@ -49,15 +49,40 @@ Algunos conceptos clave antes de escribir el primer test:
 
 ### 2.1 Configuración básica con Maven
 
-JUnit se usa dentro de un proyecto **Maven** —una herramienta de automatización que gestiona la estructura, las dependencias y la construcción del proyecto a través de un archivo central llamado `pom.xml` (*Project Object Model*)—. Al crear el proyecto Maven en IntelliJ, el IDE genera automáticamente ese `pom.xml`.
+Para usar JUnit necesitas crear un **proyecto Maven** —una herramienta de construcción que gestiona por ti la estructura de carpetas, la descarga de librerías externas y la compilación del proyecto—. Sin Maven tendrías que descargar los JARs de JUnit a mano, copiarlos a una carpeta y decirle tú mismo al compilador dónde encontrarlos. Maven automatiza todo eso.
+
+Al crear el proyecto en IntelliJ con Maven como *build system*, el IDE genera automáticamente esta estructura de carpetas:
+
+```
+mi-proyecto/
+├── pom.xml                  ← configuración del proyecto
+└── src/
+    ├── main/java/           ← código de producción (tu aplicación)
+    └── test/java/           ← tests (aquí irán tus clases de prueba)
+```
 
 ![Asistente de nuevo proyecto en IntelliJ con build system Maven seleccionado](img/junit-nuevo-proyecto-maven.png)
 
-Para poder usar JUnit, hay que añadir su dependencia dentro de `<dependencies>` en el `pom.xml`, buscando la versión más reciente en el repositorio oficial de Maven:
+El archivo `pom.xml` (*Project Object Model*) es el corazón del proyecto Maven: describe el proyecto, su versión de Java y las **dependencias** —librerías externas que el proyecto necesita y que Maven descargará automáticamente desde Internet al construirlo—.
 
-![Fragmento de dependencia Maven con groupId, artifactId, version y scope test](img/junit-dependencia-maven-snippet.png)
+#### ¿Qué es una dependencia?
 
-Tras pegarla, IntelliJ muestra un icono de Maven para volver a construir el proyecto y descargar la nueva dependencia:
+Imagina que quieres usar JUnit. Sin Maven tendrías que ir a la web de JUnit, descargar el JAR, guardarlo en alguna carpeta y añadirlo manualmente al classpath cada vez. Con Maven basta con declarar que lo necesitas en el `pom.xml`: Maven lo busca en **Maven Central** —el repositorio público donde se publican casi todas las librerías Java— y lo descarga solo.
+
+Para encontrar la dependencia correcta, entra en [mvnrepository.com](https://mvnrepository.com){target="_blank" rel="noopener"} (o directamente en [search.maven.org](https://search.maven.org){target="_blank" rel="noopener"}), busca la librería y copia el bloque XML que aparece bajo la pestaña *Maven*. Para JUnit 5, el bloque que hay que añadir dentro de `<dependencies>` en el `pom.xml` es:
+
+```xml
+<dependency>
+    <groupId>org.junit.jupiter</groupId>    <!-- organización que publica la librería -->
+    <artifactId>junit-jupiter</artifactId>  <!-- nombre del módulo concreto -->
+    <version>5.11.4</version>               <!-- versión que Maven descargará -->
+    <scope>test</scope>                     <!-- solo disponible al compilar y ejecutar tests -->
+</dependency>
+```
+
+El `<scope>test</scope>` le dice a Maven que esta librería solo hace falta durante las pruebas: no se incluirá en el JAR final de la aplicación. Si omites el scope, la librería se añade también al código de producción, que no es lo que queremos.
+
+Tras pegar la dependencia en el `pom.xml`, IntelliJ muestra un icono de Maven en el margen del editor. Al hacer clic, Maven descarga la librería y la deja disponible en el proyecto.
 
 ![pom.xml con la dependencia de JUnit ya pegada dentro de las etiquetas dependencies](img/junit-pom-dependencia.png)
 
@@ -96,6 +121,22 @@ sequenceDiagram
 | `assertNull(objeto)` | el objeto es `null` |
 | `assertNotNull(objeto)` | el objeto no es `null` |
 | `assertThrows(TipoExcepcion.class, () -> { ... })` | el código del lambda lanza esa excepción concreta |
+
+### 2.4 TDD — Desarrollo guiado por pruebas
+
+En el desarrollo normal escribes primero el código y luego los tests. **TDD** (*Test-Driven Development*) invierte ese orden: primero escribes un test que falla, luego escribes el mínimo código necesario para que pase, y finalmente mejoras el código sin romper los tests. El ciclo se repite para cada nueva funcionalidad.
+
+```mermaid
+flowchart LR
+    R["🔴 Rojo\nEscribe el test\nantes de tener\nla implementación"] --> G["🟢 Verde\nEscribe el código\nmínimo para\nque el test pase"]
+    G --> RF["🔵 Refactoriza\nMejora el código\nsin romper\nlos tests"]
+    RF --> R
+```
+
+La ventaja de TDD no es solo tener tests: es que el diseño del código mejora porque lo piensas desde el punto de vista de quien lo va a usar, no de quien lo va a implementar. Si algo resulta difícil de testear, probablemente está mal diseñado.
+
+!!! tip "Recuerda"
+    El test debe fallar antes de escribir la implementación. Si el test pasa desde el principio, o está mal escrito, o la funcionalidad ya existía. Un test en verde sin haber implementado nada no aporta nada.
 
 ---
 
@@ -251,7 +292,33 @@ flowchart LR
 
     Usando un mock de `Calculadora`, controlamos exactamente qué devuelve cada método, y el test solo depende de la lógica del propio servicio.
 
-    ![Test CalculadoraServiceTest con los 5 pasos: crear el mock, configurarlo, instanciar el servicio, llamar al método y comprobar el resultado](img/junit-mockito-test-ejemplo.png)
+    ```java
+    import org.junit.jupiter.api.Test;
+    import static org.junit.jupiter.api.Assertions.assertEquals;
+    import static org.mockito.Mockito.*;
+
+    class CalculadoraServiceTest {
+
+        @Test
+        void testDobleDeLaSuma() {
+            // Paso 1: crear el mock (objeto falso que sustituye a Calculadora real)
+            Calculadora mockCalculadora = mock(Calculadora.class);
+
+            // Paso 2: configurar qué devuelve cada método cuando se lo llamemos
+            when(mockCalculadora.sumar(2, 3)).thenReturn(5);
+            when(mockCalculadora.multiplicar(5, 2)).thenReturn(10);
+
+            // Paso 3: instanciar el servicio pasándole el mock, no el objeto real
+            CalculadoraService servicio = new CalculadoraService(mockCalculadora);
+
+            // Paso 4: ejecutar el método que queremos probar
+            int resultado = servicio.dobleDeLaSuma(2, 3);
+
+            // Paso 5: comprobar que el resultado es el esperado
+            assertEquals(10, resultado);
+        }
+    }
+    ```
 
 !!! tip "El cocinero y sus herramientas"
     Imagina que quieres evaluar las habilidades de un cocinero (`CalculadoraService`) que usa ciertas herramientas (`Calculadora`). Si quieres juzgar solo al cocinero, no tiene sentido usar herramientas defectuosas de verdad: le das herramientas simuladas que sabes que funcionan perfectamente, y así te concentras en evaluar lo que él hace. Eso es exactamente lo que hace un mock dentro de una prueba unitaria.

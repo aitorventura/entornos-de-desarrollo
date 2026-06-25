@@ -234,8 +234,20 @@ En IntelliJ (y otros IDEs) hay refactorizaciones automáticas que reducen errore
 - Move
 - Change Signature
 
+Las más usadas tienen atajos de teclado directos en IntelliJ:
+
+| Acción | Windows / Linux | Mac |
+|--------|----------------|-----|
+| Rename | `Shift + F6` | `Shift + F6` |
+| Extract Method | `Ctrl + Alt + M` | `Cmd + Alt + M` |
+| Extract Variable / Constant | `Ctrl + Alt + V` / `Ctrl + Alt + C` | `Cmd + Alt + V` / `Cmd + Alt + C` |
+
 !!! tip "Recomendación"
-    Usa las refactorizaciones del IDE siempre que puedas, porque actualizan referencias y reducen fallos.
+    Usa las refactorizaciones del IDE siempre que puedas, porque actualizan automáticamente todas las referencias al símbolo renombrado o extraído, algo que hacerlo a mano con buscar-y-reemplazar falla en seguida.
+
+!!! warning "Refactorizar sin tests es arriesgado"
+    Cuando tocas código que funciona, siempre existe el riesgo de romper algo sin darte cuenta.  
+    Lo ideal es tener pruebas unitarias antes de refactorizar (recuerda RA3: pruebas unitarias con JUnit). Si no las tienes, trabaja en pasos muy pequeños y prueba manualmente después de cada cambio.
 
 ---
 
@@ -471,24 +483,5 @@ public class CheckoutServiceRefactor {
 - Es más fácil añadir reglas (por ejemplo, un nuevo cupón) sin tocar todo el método.
 
 ---
-
-## 🧪 Mini-práctica (no entregable)
-
-**Objetivo:** aplicar 2–3 refactors sencillos sin cambiar el comportamiento.
-
-1) Coge un método largo de tu proyecto o de un ejercicio.
-
-2) Aplica:
-   
-   - `Rename` (nombres claros)
-   - `Extract Method` (divide en 2–4 métodos)
-   - `Extract Constant` (quita números mágicos)
-
-3) Ejecuta el programa o tests y comprueba que se comporta igual.
-
-!!! example "Entrega mínima"
-    - Captura o descripción de los refactors aplicados
-    - Breve explicación de por qué el código queda más claro
-    - Confirmación de que funciona igual
 
 

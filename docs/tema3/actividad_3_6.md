@@ -21,9 +21,9 @@ Una empresa de alquiler de vehículos necesita un sistema para calcular el **pre
 
 El proyecto incluye:
 
-- La estructura de paquetes lista.
-- Un ejemplo de test parametrizado ya resuelto (`EjemploParametrizadoTest`).
-- Un ejemplo de mock ya resuelto (`EjemploMockTest`).
+- Dos paquetes bien separados: `ejemplos/` (código de referencia ya resuelto) y `alquiler/` (el sistema que debes implementar).
+- `CalculadoraTest` — tests parametrizados sobre `Calculadora` (ejemplo de `@CsvSource` y `@ValueSource`).
+- `CalculadoraServiceTest` — tests con Mockito sobre `CalculadoraService` (ejemplo de mocks, `verify` y `thenThrow`).
 - Las firmas de las clases que debes probar (ver a continuación).
 
 ---
@@ -31,6 +31,7 @@ El proyecto incluye:
 ## 🔹 Clases del sistema
 
 ```java
+// paquete alquiler/
 public class CalculadoraTarifa {
 
     /**
@@ -51,6 +52,7 @@ public class CalculadoraTarifa {
 ```
 
 ```java
+// paquete alquiler/
 public interface VehiculoRepository {
     /** Devuelve true si hay al menos una unidad disponible del tipo indicado. */
     boolean estaDisponible(String tipoVehiculo);
@@ -61,6 +63,7 @@ public interface VehiculoRepository {
 ```
 
 ```java
+// paquete alquiler/
 public class GestorAlquiler {
 
     private final CalculadoraTarifa calculadora;

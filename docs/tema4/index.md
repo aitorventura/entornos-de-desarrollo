@@ -25,6 +25,13 @@
 3. [Analizadores de código: revisión estática y configuración](analizadores.md)
 4. [Documentación del código: comentarios y herramientas](documentacion.md)
 5. [Introducción a Git](introduccion-git.md)
+
+**Actividades:**
+
+- [Actividad 4.1 — Optimización básica en Java](actividad_4_1.md)
+- [Actividad 4.2 — Refactorización y Javadoc](actividad_4_2.md)
+- [Actividad 4.3 — Documentar con Javadoc y generar HTML](actividad_4_3.md)
+- [Actividad 4.4 — Análisis estático con IntelliJ y SonarLint](actividad_4_4.md)
 6. [Trabajando con ramas](ramas.md)
 7. [GitHub y trabajo remoto](github.md)
 8. [Colaboración y gestión de proyectos en GitHub](colaboracion.md)
