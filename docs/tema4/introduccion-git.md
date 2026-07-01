@@ -2,10 +2,10 @@
 
 # 🧩 5. Introducción a Git (local): control de versiones desde cero
 
-![Introducción a Git](diapositivas/intro-git.pdf){ type=application/pdf style="width:100%;min-height:80vh" }
+![Introducción a Git](diapositivas/introduccion-git.pdf){ type=application/pdf style="width:100%;min-height:80vh" }
 
 !!!info "Descarga de diapositivas"
-    [Descarga las diapositivas](diapositivas/intro-git.pdf){target="_blank" rel="noopener"}
+    [Descarga las diapositivas](diapositivas/introduccion-git.pdf){target="_blank" rel="noopener"}
 
 ---
 
@@ -20,7 +20,7 @@ Eso significa que Git sirve para:
 - y poder **volver atrás** si algo se rompe.
 
 !!! tip "Metáfora: máquina del tiempo"
-    Git es como una máquina del tiempo para tu proyecto: puedes guardar “puntos” y viajar a versiones anteriores.
+    Git es como una máquina del tiempo para tu proyecto: puedes guardar "puntos" y viajar a versiones anteriores.
 
 ---
 
@@ -28,10 +28,10 @@ Eso significa que Git sirve para:
 
 Sin Git, cuando programamos suele pasar esto:
 
-- “Antes funcionaba… ¿qué he tocado?”
-- “Voy a guardar una copia por si acaso” → `final.zip`, `final_final.zip`, `ahora_si.zip`
-- “He mezclado cambios de varias cosas y ya no sé separar lo que hice”
-- “He borrado algo importante sin querer”
+- "Antes funcionaba… ¿qué he tocado?"
+- "Voy a guardar una copia por si acaso" → `final.zip`, `final_final.zip`, `ahora_si.zip`
+- "He mezclado cambios de varias cosas y ya no sé separar lo que hice"
+- "He borrado algo importante sin querer"
 
 Git resuelve todo eso porque crea un historial **ordenado** y **recuperable**.
 
@@ -41,7 +41,7 @@ Git resuelve todo eso porque crea un historial **ordenado** y **recuperable**.
 
 Un **commit** es un **punto de guardado** del proyecto.
 
-### Metáfora: “guardar partida”
+### Metáfora: "guardar partida"
 Como en un videojuego:
 
 - estás jugando (programando),
@@ -50,7 +50,7 @@ Como en un videojuego:
 - si luego la lías, vuelves a esa partida.
 
 ### ¿Qué lleva un commit?
-- una “foto” del estado de los archivos,
+- una "foto" del estado de los archivos,
 - el **autor** (tu nombre/email),
 - la **fecha**,
 - y un **mensaje**.
@@ -59,17 +59,17 @@ Como en un videojuego:
     Un mensaje debe decir **qué** has hecho y **para qué**.  
     Ejemplos buenos:
 
-    - “Añade lista inicial de libros”
-    - “Corrige cálculo del total con descuento”
-    - “Añade validación de email en registro”
+    - "Añade lista inicial de libros"
+    - "Corrige cálculo del total con descuento"
+    - "Añade validación de email en registro"
 
 ---
 
 ## 🧺 La idea que más cuesta: *staging* (la bandeja)
 
-Cuando trabajas con Git, no guardas cambios “a lo bruto”. Git te obliga (para bien) a pasar por un paso intermedio antes del commit: el **staging**.
+Cuando trabajas con Git, no guardas cambios "a lo bruto". Git te obliga (para bien) a pasar por un paso intermedio antes del commit: el **staging**.
 
-Piensa que Git no funciona como un “guardar” de Word. Funciona más como:
+Piensa que Git no funciona como un "guardar" de Word. Funciona más como:
 
 1) **trabajo y ensayo** (cambio cosas),
 
@@ -85,18 +85,18 @@ Ese paso 2 es el *staging*.
 
 El **staging area** (también llamado **index**) es una especie de **lista de cambios seleccionados** que van a entrar en el **próximo commit**.
 
-- Todo lo que está en *staging* = “esto sí lo voy a guardar ahora”.
-- Todo lo que NO está en *staging* = “esto todavía no”.
+- Todo lo que está en *staging* = "esto sí lo voy a guardar ahora".
+- Todo lo que NO está en *staging* = "esto todavía no".
 
 !!! warning "Recordatorio"
-    El commit no guarda “lo que tengas en la carpeta”, guarda **lo que hayas puesto en staging**.
+    El commit no guarda "lo que tengas en la carpeta", guarda **lo que hayas puesto en staging**.
 
 ---
 
 ### 🧾 Metáfora: escritorio, bandeja y álbum
 
 - **Escritorio** (*working directory*): donde editas, pruebas y rompes cosas.
-- **Bandeja** (*staging area*): donde colocas lo que ya está listo para quedar “registrado”.
+- **Bandeja** (*staging area*): donde colocas lo que ya está listo para quedar "registrado".
 - **Álbum** (*historial*): donde quedan guardadas las versiones (commits).
 
 ```mermaid
@@ -106,8 +106,8 @@ flowchart LR
 ```
 
 !!! tip "Traducción a comandos"
-    - `git add` = “pon esto en la bandeja”
-    - `git commit` = “pega lo de la bandeja en el álbum”
+    - `git add` = "pon esto en la bandeja"
+    - `git commit` = "pega lo de la bandeja en el álbum"
 
 ---
 
@@ -124,13 +124,13 @@ Imagina que, mientras arreglas una cosa, también tocas otras:
 Si haces un commit con TODO mezclado, el historial se vuelve difícil de usar:
 
 - no se entiende qué se hizo,
-- si un día quieres deshacer “solo el bug”, arrastras lo demás,
+- si un día quieres deshacer "solo el bug", arrastras lo demás,
 - y revisar cambios en equipo se vuelve un lío.
 
 Con staging puedes separar el trabajo en commits con sentido:
 
 !!! info "Ejemplo"
-    “Ahora guardo el bug. Después guardo el README. Después el CSS.”
+    "Ahora guardo el bug. Después guardo el README. Después el CSS."
 
 ---
 
@@ -148,7 +148,7 @@ git add .
 git commit -m "Cambios"
 ```
 
-Este commit es un “batiburrillo”: mezcla cosas y luego cuesta entenderlo o deshacerlo.
+Este commit es un "batiburrillo": mezcla cosas y luego cuesta entenderlo o deshacerlo.
 
 !!! warning "git add ."
     `git add .` añade al área de staging TODOS los documentos nuevos o modificados desde el último commit.
@@ -175,7 +175,7 @@ git commit -m "Mejora estilos del layout"
 
 !!! tip "Qué ganas con esto"
     - Historial claro (se entiende de un vistazo).
-    - Más fácil deshacer cambios “por partes”.
+    - Más fácil deshacer cambios "por partes".
     - Revisiones más rápidas y seguras.
 
 ---
@@ -202,8 +202,8 @@ git status
 
 Git te da un botón mental de:
 
-- “esto sí entra en el próximo commit”
-- “esto todavía no”
+- "esto sí entra en el próximo commit"
+- "esto todavía no"
 
 Y esa es la razón por la que Git ayuda a trabajar **ordenado** incluso cuando tú vas tocando cosas sobre la marcha.
 
@@ -248,7 +248,7 @@ git --version
 ```
 
 - ✅ Si te devuelve algo tipo `git version 2.4x.x`, **ya lo tienes**.
-- ❌ Si sale un error tipo “command not found”, “no se reconoce…”, etc., **hay que instalarlo**.
+- ❌ Si sale un error tipo "command not found", "no se reconoce…", etc., **hay que instalarlo**.
 
 !!! tip "¿Qué significa la versión?"
     No necesitas la última. Si te funciona `git --version`, para clase te vale.
@@ -265,7 +265,7 @@ Instala **Git for Windows** desde aquí:
 **Qué instalar y qué te aporta**
 
 - Instalas Git.
-- Te aparece **Git Bash**, una terminal “tipo Linux” que va genial para empezar.
+- Te aparece **Git Bash**, una terminal "tipo Linux" que va genial para empezar.
 
 **Después de instalar**
 
@@ -284,13 +284,13 @@ A veces Git está instalado, pero la terminal no lo encuentra por el PATH. La pr
 - Si quieres arreglarlo, revisa el instalador y asegúrate de seleccionar que Git se añada al PATH.
 
 !!! warning "Carpetas sincronizadas"
-    Evita crear repositorios dentro de OneDrive/Google Drive/iCloud: pueden aparecer cambios “fantasma” al cambiar de versión.
+    Evita crear repositorios dentro de OneDrive/Google Drive/iCloud: pueden aparecer cambios "fantasma" al cambiar de versión.
 
 ---
 
 ### 🍎 macOS
 
-En macOS, a menudo Git viene “a medio instalar”.
+En macOS, a menudo Git viene "a medio instalar".
 
 Prueba:
 
@@ -331,7 +331,7 @@ git config --global --list
 ```
 
 !!! warning "Muy típico"
-    Si Git te dice “Please tell me who you are…”, es que falta `user.name` o `user.email`.
+    Si Git te dice "Please tell me who you are…", es que falta `user.name` o `user.email`.
 
 ---
 
@@ -360,7 +360,7 @@ git config --global core.editor "code --wait"
 
 ## 🧱 Crear un repositorio: `git init` 
 
-Para que Git empiece a guardar el historial de un proyecto, primero necesitas un **repositorio**: una carpeta “con Git activado”.
+Para que Git empiece a guardar el historial de un proyecto, primero necesitas un **repositorio**: una carpeta "con Git activado".
 
 ### ✅ Paso 1) Entra en la carpeta del proyecto
 ```bash
@@ -383,8 +383,8 @@ git init
     - `No commits yet` → todavía no has hecho ningún commit.
     - `nothing to commit (create/copy files and use "git add" to track)` → aún no hay archivos preparados para guardar.
 
-!!! info "¿Qué es `.git`?"
-    Es la “memoria” del repositorio: ahí Git guarda historial, ramas y metadatos.
+!!! info "¿Qué es la carpeta .git?"
+    Es la "memoria" del repositorio: ahí Git guarda historial, ramas y metadatos.
 
 !!! warning
     - No borres ni edites `.git` a mano.
@@ -398,7 +398,7 @@ La idea no es memorizar, sino **entender** qué hace cada comando y qué deberí
 
 ---
 
-### 1) `git status` — el “¿qué está pasando?”
+### 1) `git status` — el "¿qué está pasando?"
 
 `git status` te dice **en qué situación está tu repo** y **en qué estado están tus archivos**.
 
@@ -426,7 +426,7 @@ git status
 
 ---
 
-### 2) `git diff` — el “¿qué ha cambiado exactamente?”
+### 2) `git diff` — el "¿qué ha cambiado exactamente?"
 
 `git diff` muestra cambios **línea a línea** respecto al último commit (o respecto al staging, según el caso).
 
@@ -445,11 +445,11 @@ git diff
 
 !!! tip "¿Por qué usar diff?"
     - Para revisar cambios antes de guardarlos.
-    - Para comprobar que no has tocado algo “sin querer”.
+    - Para comprobar que no has tocado algo "sin querer".
 
 ---
 
-### 3) `git add` — “pongo esto en la bandeja (staging)”
+### 3) `git add` — "pongo esto en la bandeja (staging)"
 
 `git add` no guarda nada todavía: solo **prepara** archivos para el próximo commit.
 
@@ -468,15 +468,15 @@ git add adios.txt hola.txt
     - `modified: hola.txt` → los cambios de `hola.txt` también están en staging.
 
 - En **Untracked files** sigue apareciendo:
-    - `hasta-luego.txt` → sigue sin estar “bajo control” porque no lo has añadido.
+    - `hasta-luego.txt` → sigue sin estar "bajo control" porque no lo has añadido.
 
-!!! warning "Ojo con `git add .`"
+!!! warning "Cuidado con git add ."
     `git add .` mete en staging **todo** lo nuevo/modificado.  
     Al principio, es mejor añadir **archivo a archivo** para no llevarte cosas sin querer.
 
 ---
 
-### 4) `git commit` — “guardo la partida”
+### 4) `git commit` — "guardo la partida"
 
 `git commit` guarda en el historial **lo que esté en staging**.
 
@@ -502,7 +502,7 @@ git commit -m "Añado los archivos hola y adios"
 
 ---
 
-### 5) `git log` — “muéstrame el historial”
+### 5) `git log` — "muéstrame el historial"
 
 Para ver los commits que has hecho:
 
@@ -514,21 +514,25 @@ git log
 
 **Qué estás viendo en la captura**
 
-- Aparecen los commits en orden (más reciente arriba).
+- Los commits aparecen en orden, el más reciente arriba.
+- `HEAD -> main` indica que estás en la rama `main` y que `HEAD` apunta al último commit.
 
-- `HEAD -> main` indica:
+Cada commit tiene un identificador único llamado **hash** — una cadena larga de letras y números como `a3f8c21d9e4b...`. No hace falta usarlo entero; con los 7 primeros caracteres es suficiente.
 
-    - estás en la rama `main`,
-    - y `HEAD` apunta al último commit (el “actual”).
+La versión más usada en el día a día es con `--oneline`, que muestra una sola línea por commit:
 
-!!! tip "Versión corta (recomendada en clase)"
-    ```bash
-    git log --oneline
-    ```
+```bash
+git log --oneline
+```
+
+![Salida de git log --oneline con los commits del repositorio de ejemplo](capturas/intro/git-log-oneline.png)
+
+!!! tip "El hash abreviado"
+    Los 7 caracteres del inicio de cada línea (`1cd8f5a`, `448751c`…) son los que usarás después en comandos como `git show` o `git revert`.
 
 ---
 
-## ♻️ “Me he equivocado”: descartar cambios (`git restore`)
+## ♻️ "Me he equivocado": descartar cambios (`git restore`)
 
 
 ### A) Descartar cambios de un archivo (volver al último commit)
@@ -574,42 +578,262 @@ Esto sirve cuando has hecho `git add` por error (lo metiste en staging), pero a�
 4) `git status` vuelve a mostrarlo como **Untracked files**.
 
 !!! tip "Truco mental"
-    - `restore --staged` = “saca de la bandeja”
-    - `restore` (sin `--staged`) = “deshaz cambios del archivo”
+    - `restore --staged` = "saca de la bandeja"
+    - `restore` (sin `--staged`) = "deshaz cambios del archivo"
+
+---
+
+## ⏪ Volver a una versión anterior
+
+Esta es una de las razones principales por las que existe Git: poder recuperar el estado del proyecto en cualquier punto del historial. La pregunta clave antes de actuar es: **¿qué quiero exactamente?**
+
+```mermaid
+flowchart TD
+    Q{"¿Qué necesitas?"} --> A["Ver qué cambió un commit"]
+    Q --> B["Recuperar un archivo concreto"]
+    Q --> C["Deshacer un commit entero"]
+
+    A --> A1["git show hash"]
+    B --> B1["git restore --source=hash archivo"]
+    C --> C1{"¿Ya has subido\neste repo a GitHub?"}
+    C1 -->|"Sí"| C2["git revert — seguro,\nno borra historial"]
+    C1 -->|"No, es local"| C3["git reset — potente,\npuede borrar historial"]
+
+    style C2 fill:#e8f5e9,stroke:#388e3c,color:#1b5e20
+    style C3 fill:#fff3e0,stroke:#f57c00,color:#e65100
+    style A1 fill:#e3f2fd,stroke:#1976d2,color:#0d47a1
+    style B1 fill:#e3f2fd,stroke:#1976d2,color:#0d47a1
+```
+
+---
+
+### Paso previo: ver el historial
+
+Antes de hacer cualquier cosa, necesitas saber **qué commits tienes y cuáles son sus hashes**:
+
+```bash
+git log --oneline
+```
+
+![Salida de git log --oneline mostrando los commits con sus hashes y mensajes](capturas/intro/git-log-oneline.png)
+
+Esos 7 caracteres al inicio de cada línea (`1cd8f5a`, `448751c`…) son el **hash abreviado** — el identificador único de cada commit. Los vas a necesitar para todos los comandos que siguen.
+
+!!! info "¿Qué es HEAD?"
+    `HEAD` es una etiqueta que señala el commit en el que estás ahora — normalmente el último. `HEAD~1` es el anterior, `HEAD~2` es dos atrás. Es una forma de referirse a commits sin escribir el hash exacto.
+
+---
+
+### Ver qué cambió en un commit concreto
+
+Antes de deshacer nada, conviene ver exactamente qué hizo ese commit:
+
+```bash
+git show 58fbc71
+```
+
+![Salida de git show con el hash, autor, fecha y el diff del commit](capturas/intro/git-show.png)
+
+Las líneas con `+` son lo que ese commit añadió. Las líneas con `-` son lo que eliminó. Mientras solo ejecutas `git show`, **no cambias nada** en el proyecto.
+
+---
+
+### Opción A — Recuperar un archivo a como estaba antes
+
+Esto es útil cuando **un archivo concreto** ha empeorado y quieres recuperarlo a una versión anterior, sin tocar el resto del proyecto.
+
+```bash
+git restore --source=58fbc71 llibres.txt
+```
+
+![Ejecución de git restore --source y comprobación del contenido recuperado con cat](capturas/intro/git-restore-source.png)
+
+El archivo queda exactamente como estaba en el commit `58fbc71`. Aparece como **modified** en `git status` — los cambios están en tu carpeta de trabajo, pero el historial no ha cambiado. Puedes revisarlo y hacer un `git commit` si quieres guardar esa recuperación.
+
+!!! warning "Esto no deshace el commit"
+    Solo trae una versión antigua del archivo a tu carpeta. El historial no cambia. Para guardarlo definitivamente, tienes que hacer `git add` y `git commit` después.
+
+---
+
+### Opción B — Deshacer un commit completo (`git revert`)
+
+`git revert` **crea un commit nuevo** que deshace exactamente los cambios de un commit anterior. Es la opción más segura: no borra nada del historial, solo añade un paso nuevo que revierte lo que se hizo.
+
+```bash
+git revert 1cd8f5a
+```
+
+![git revert crea un nuevo commit de reversión, y el log muestra cuatro commits](capturas/intro/git-revert.png)
+
+Git genera el mensaje del commit de reversión automáticamente. El historial queda así — el commit original sigue ahí, pero neutralizado:
+
+```mermaid
+gitGraph
+   commit id: "Primer commit"
+   commit id: "Afegeix el quart llibre"
+   commit id: "Elimina un llibre"
+   commit id: "Revert: Elimina un llibre" type: REVERSE
+```
+
+!!! tip "Cuándo usar revert"
+    Siempre que hayas subido el repo a GitHub o trabajado con otras personas. Al no reescribir el historial, no crea conflictos con el trabajo de los demás.
+
+---
+
+### Opción C — Mover el repo a un commit anterior (`git reset`)
+
+`git reset` mueve `HEAD` hacia atrás en el historial. Es más potente que `revert` porque **borra commits** — como si nunca hubieran existido. Solo se recomienda cuando el repo es estrictamente local y no lo ha visto nadie más.
+
+**Situación de partida** — los tres ejemplos usan un repo con estos 3 commits:
+
+![Situación de partida: git log --oneline con 3 commits — Corregeix majúscules, Afegeix el quart llibre, Primer commit](capturas/intro/git-reset-comun.png)
+
+El commit más reciente ("Corregeix majuscules del titol") es el que va a desaparecer con el reset. Lo que cambia entre variantes es **adónde van sus cambios**.
+
+<div class="tabs-colored" markdown>
+
+=== "--soft — cambios en staging"
+
+    El commit desaparece, pero Git deja los cambios **ya preparados para el siguiente commit** — como si ya hubieras hecho `git add`. Solo te faltaría escribir `git commit`.
+
+    Caso típico: has hecho un commit con un mensaje mal escrito. Con `--soft` deshaces el commit, el archivo queda listo para commit y puedes volver a hacer `git commit -m "mensaje correcto"` sin tocar nada más.
+
+    ```bash
+    git reset --soft HEAD~1
+    # A continuación puedes hacer directamente:
+    git commit -m "mensaje correcto"
+    ```
+
+    ![git reset --soft: el log pasa a 2 commits y git status short muestra M dos espacios llibres.txt](capturas/intro/git-reset-soft.png)
+
+    `git status --short` muestra `M  llibres.txt` — la M está en la zona de **staging**. No hace falta `git add`.
+
+=== "--mixed — cambios en el escritorio"
+
+    El commit desaparece y los cambios vuelven al archivo, pero Git **no los prepara** para el siguiente commit. Es como si nunca hubieras hecho `git add`.
+
+    Caso típico: quieres deshacer el commit y revisitar los cambios desde cero — decidiendo qué añadir y qué dejar fuera. Necesitas hacer `git add` de nuevo antes de poder hacer commit.
+
+    ```bash
+    git reset HEAD~1
+    # A continuación necesitas:
+    git add llibres.txt
+    git commit -m "mensaje"
+    ```
+
+    ![git reset mixed: Git avisa Unstaged changes after reset, el log pasa a 2 commits y git status muestra M con espacio delante](capturas/intro/git-reset-mixed.png)
+
+    Git avisa: `Unstaged changes after reset`. `git status --short` muestra ` M llibres.txt` — la M está en la zona de **trabajo** (fuera de staging). Necesitas `git add` antes de poder hacer commit.
+
+=== "--hard — cambios borrados"
+
+    El commit desaparece **y los cambios se borran definitivamente**. El proyecto vuelve exactamente al estado del commit anterior.
+
+    ```bash
+    git reset --hard HEAD~1
+    ```
+
+    ![git reset hard: HEAD is now at el commit anterior, log muestra 2 commits, cat muestra el archivo sin la corrección de mayúsculas](capturas/intro/git-reset-hard.png)
+
+    Git confirma con `HEAD is now at ...`. El log pasa a 2 commits. `cat llibres.txt` muestra el archivo **sin la corrección de mayúsculas** — ese cambio ha desaparecido para siempre.
+
+    !!! danger "Sin vuelta atrás"
+        Con `--hard` los cambios del commit eliminado se pierden para siempre. No hay papelera ni deshacer. Úsalo solo si estás completamente seguro.
+
+</div>
+
+La diferencia entre las tres variantes se resume en una sola pregunta: **¿adónde van los cambios del commit eliminado?**
+
+| Variante | ¿Adónde van los cambios? | `git status` muestra | ¿Recuperable? |
+|---|---|---|---|
+| `--soft` | Staging | `M  archivo` (M en zona staging) | Sí |
+| `--mixed` | Escritorio de trabajo | ` M archivo` (M en zona trabajo) | Sí |
+| `--hard` | Se borran | *(nada)* | No |
+
+---
+
+### ¿Cuál uso?
+
+| Situación | Comando recomendado |
+|---|---|
+| Quiero ver qué cambió en un commit concreto | `git show <hash>` |
+| Quiero recuperar un archivo a una versión anterior | `git restore --source=<hash> <archivo>` |
+| Quiero deshacer un commit sin borrar historial | `git revert <hash>` |
+| Quiero rehacer el último commit (solo local) | `git reset --soft HEAD~1` |
+| Quiero borrar el último commit y sus cambios (solo local) | `git reset --hard HEAD~1` |
 
 ---
 
 ## 🚫 `.gitignore`: cosas que NO queremos guardar en el historial
 
-El archivo .gitignore sirve para decirle a Git qué archivos o carpetas no debe seguir (trackear) ni incluir en los commits.
+El archivo `.gitignore` sirve para decirle a Git qué archivos o carpetas debe ignorar — aunque estén en la carpeta del proyecto, Git actuará como si no existieran.
 
-Es decir: aunque esos archivos estén en tu proyecto, Git hará como si no existieran.
+Esto es útil para no incluir en el historial cosas que no tienen sentido versionar: archivos generados automáticamente, credenciales, binarios compilados o carpetas temporales.
 
-- Ignorar logs:
+Para crearlo, simplemente crea un archivo llamado `.gitignore` en la raíz del repositorio y añade reglas:
+
 ```gitignore
+# Archivos de log
 *.log
-```
 
-- Ignorar carpeta `tmp` en la raíz del repo:
-```gitignore
+# Carpeta de archivos temporales
 /tmp/
+
+# Carpeta de compilación de Java
+/target/
+/out/
+*.class
+
+# Archivos de configuración del IDE (IntelliJ)
+.idea/
+*.iml
+
+# Variables de entorno y credenciales — NUNCA deben subirse
+.env
+secrets.txt
 ```
 
-!!! tip
-    `.gitignore` solo afecta “a partir de ahora”.  
-    Si un archivo ya está commiteado, seguirá en el historial.
+Cada línea es un patrón:
+- `*.log` → ignora cualquier archivo que acabe en `.log`
+- `/tmp/` → ignora la carpeta `tmp` en la raíz del repo
+- `.idea/` → ignora la carpeta de configuración de IntelliJ
+
+!!! warning "Solo afecta a lo que aún no está en el historial"
+    Si un archivo ya ha sido commiteado, añadirlo al `.gitignore` no lo elimina del historial. Para eso habría que usar `git rm --cached <archivo>` — un paso extra que veremos más adelante.
+
+!!! tip "Plantillas listas para usar"
+    En [gitignore.io](https://www.toptal.com/developers/gitignore) puedes generar un `.gitignore` completo para tu tipo de proyecto (Java, Node, Python…) con un solo clic.
 
 ---
 
 ## ✅ Ideas clave (muy resumidas)
 
 ??? tip "Abrir resumen"
-    - `git init` crea un repositorio local (aparece `.git/`).
-    - `git status` te dice qué está en staging, qué está modificado y qué es untracked.
-    - `git diff` te enseña exactamente qué cambió.
-    - `git add` mete archivos en staging (bandeja).
-    - `git commit` guarda solo lo que esté en staging.
-    - `git log` muestra la historia de commits.
-    - `git restore` deshace cambios; `git restore --staged` saca del staging sin borrar cambios.
+
+    **Flujo habitual**
+
+    - `git init` — crea un repositorio local (aparece `.git/`).
+    - `git status` — qué está en staging, qué modificado y qué untracked.
+    - `git diff` — qué cambió exactamente, línea a línea.
+    - `git add <archivo>` — mete archivos en staging (bandeja).
+    - `git commit -m "mensaje"` — guarda solo lo que esté en staging.
+    - `git log` / `git log --oneline` — historial de commits.
+
+    **Descartar cambios**
+
+    - `git restore <archivo>` — deshace cambios del escritorio (vuelve al último commit).
+    - `git restore --staged <archivo>` — saca del staging sin borrar los cambios.
+
+    **Volver a una versión anterior**
+
+    - `git show <hash>` — ver qué cambió en un commit concreto.
+    - `git restore --source=<hash> <archivo>` — recuperar un archivo a una versión anterior.
+    - `git revert <hash>` — deshacer un commit creando uno nuevo (seguro, no borra historial).
+    - `git reset --soft HEAD~1` — deshacer el último commit, cambios en staging.
+    - `git reset --hard <hash>` — volver a un punto borrando todo lo posterior (⚠ irreversible).
+
+    **Ignorar archivos**
+
+    - `.gitignore` — lista de archivos/carpetas que Git debe ignorar.
 
 

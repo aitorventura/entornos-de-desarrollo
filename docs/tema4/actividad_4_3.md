@@ -1,62 +1,28 @@
-# 📝 Actividad 4.3: Documentar con Javadoc y generar HTML (IntelliJ)
+# 📝 Actividad 4.3: Documentar con Javadoc y generar HTML
+
+!!! warning "Descarga la plantilla"
+    📄 [Plantilla 4.3 — Documentar con Javadoc](Actividad_4_3_Plantilla.docx){target="_blank" rel="noopener"}
 
 !!! info "Objetivo"
     Practicar el ciclo completo de documentación en Java:
 
-    - Escribir **Javadoc** en una clase y sus métodos (sin inventar información).
-    - Generar la **documentación HTML** desde IntelliJ.
-    - Entregar evidencias: **código comentado** + **captura del HTML** generado.
+    - Leer código ajeno y entender qué promete, qué espera y qué **no** valida.
+    - Escribir **Javadoc** que refleje fielmente lo que el código hace (sin inventar comportamiento).
+    - Generar la **documentación HTML** desde IntelliJ y verificar que tiene sentido.
 
 ---
 
-## 🔹 Contexto
+## Contexto
 
-En un equipo de desarrollo, es habitual documentar clases y métodos para que:
+Imagina que llegas a un proyecto heredado y te encuentras esta clase: `UserValidator`. No tiene documentación. Tienes que llamar a `validateUser` desde otro módulo, pero no sabes si puedes pasarle `null`, qué pasa si el email no tiene dominio, o qué significa "contraseña válida" para este sistema.
 
-- se entienda rápido **cómo usar** un método,
-- queden claras **restricciones** y **valores devueltos**,
-- y se pueda generar una **web de documentación** automáticamente.
+Ese es exactamente el problema que resuelve Javadoc: que quien usa un método no tenga que leer la implementación para saber cómo usarlo.
 
 ---
 
-## ✅ Trabajo a realizar
+## Código a documentar
 
-### 1) Añadir Javadoc al código proporcionado
-Debes documentar:
-
-- La **clase** (qué representa y qué responsabilidad tiene).
-- Los **métodos públicos**:
-  
-    - `@param` (parámetros),
-    - `@return` (si aplica),
-    - `@throws` (si aplica),
-    - y, si procede, `@since` / `@version` / `@author`.
-
-!!! tip "Regla práctica"
-    Documenta lo que el método **promete** y lo que **espera**.  
-    Si el método no valida algo, no lo pongas como si lo validara.
-
----
-
-### 2) Generar el HTML con IntelliJ
-1. IntelliJ → **Tools → Generate JavaDoc...**
-2. Elige una carpeta de salida (por ejemplo `docs/javadoc`).
-3. Selecciona visibilidad **Public**.
-4. Genera y abre el `index.html` en el navegador.
-
----
-
-### 3) Entregar evidencias
-Debes entregar:
-
-- El **código final** con Javadoc (archivo `.java` o copiado en un PDF).
-- Una **captura** donde se vea el `index.html` generado (o la página principal de Javadoc en el navegador).
-
----
-
-## 🧩 Código a documentar (no modificar la lógica)
-
-Copia este código en tu proyecto como `UserValidator.java`.
+Copia este código en tu proyecto como `UserValidator.java`. **No modifiques la lógica** — solo añades documentación.
 
 ```java
 public class UserValidator {
@@ -83,30 +49,95 @@ public class UserValidator {
 }
 ```
 
-!!! warning "Importante"
-    En esta actividad **no se refactoriza** ni se cambia la lógica del código.  
-    Solo se documenta con Javadoc y se genera la web HTML.
+---
+
+## Instrucciones
+
+### Paso 1 — Analiza antes de escribir nada
+
+Lee cada método y responde por escrito **antes de abrir IntelliJ**:
+
+- ¿Qué hace exactamente `isValidEmail`? ¿Qué considera válido y qué no?
+- ¿Qué hace `isValidPassword`? ¿Qué **no** comprueba aunque podría?
+- ¿Qué lanza `validateUser`? ¿Cuándo? ¿Puede recibir `null`?
+
+Esto va en tu entregable como "análisis previo". No se puede hacer bien el Javadoc sin haber respondido esto primero.
+
+### Paso 2 — Detecta el error en este Javadoc
+
+Alguien ha intentado documentar `isValidPassword` y ha cometido un error. Encuéntralo y explica por qué es un problema:
+
+```java
+/**
+ * Valida que la contraseña sea segura.
+ * Comprueba que tenga al menos 8 caracteres, una mayúscula y un número.
+ *
+ * @param password la contraseña a validar
+ * @return true si la contraseña es segura, false si no lo es
+ */
+public boolean isValidPassword(String password) {
+    if (password == null) return false;
+    return password.length() >= 8;
+}
+```
+
+!!! warning "Pista"
+    Compara lo que dice el Javadoc con lo que hace el código línea por línea.
+
+### Paso 3 — Escribe el Javadoc correcto
+
+Documenta la clase y sus tres métodos. Para cada uno:
+
+- Usa las etiquetas que **aporten información real** (`@param`, `@return`, `@throws`).
+- Indica qué pasa si se pasa `null`.
+- Indica qué **no** valida el método aunque parezca que debería.
+
+!!! tip "Regla clave"
+    Si el método no valida algo, no lo pongas en el Javadoc como si lo validara — eso es peor que no documentar.
+
+### Paso 4 — Justifica tus etiquetas
+
+Para cada método, rellena esta tabla en tu entregable:
+
+| Método | Etiquetas usadas | Por qué esas y no otras |
+|--------|------------------|-------------------------|
+| `isValidEmail` | | |
+| `isValidPassword` | | |
+| `validateUser` | | |
+
+### Paso 5 — Genera el HTML desde IntelliJ
+
+1. Ve a **Tools → Generate JavaDoc...**
+2. **Output directory**: crea una carpeta `docs/javadoc` dentro de tu proyecto.
+3. **Scope**: *Whole project*.
+4. **Visibility**: *Public* (para que el HTML quede limpio).
+5. Pulsa **OK** y abre el `index.html` en el navegador.
+6. Haz una captura donde se vea la documentación de `UserValidator` (la página de la clase, no solo el índice).
 
 ---
 
-## 🤔 Pregunta de reflexión
+## Preguntas de reflexión
 
-Antes de entregar, responde por escrito (6–10 líneas):
+Responde por escrito (6–10 líneas en total):
 
-- `isValidEmail` acepta `"@algo.com"` o `"algo@"` — ¿quedan estas restricciones reflejadas en el Javadoc que has escrito?
-- `isValidPassword` no valida que la contraseña tenga mayúsculas, números o caracteres especiales — ¿debería mencionarse en el Javadoc que eso no se comprueba?
-- ¿Por qué es importante documentar no solo lo que el método hace, sino también lo que **no** hace o lo que **no** valida?
-
-!!! tip "Por qué importa"
-    Quien use un método que no ha escrito confía en el Javadoc para saber si puede pasarle `null`, si tiene que validar antes, o si el método ya lanza una excepción. Un Javadoc incompleto puede llevar a bugs reales.
+1. `isValidEmail` rechaza tanto `"@algo.com"` como `"a@"`, pero acepta `"a@b"` (sin punto de dominio ni extensión). ¿Has reflejado este comportamiento en tu Javadoc? ¿Cómo lo has descrito?
+2. ¿Por qué es importante documentar lo que un método **no** hace, no solo lo que hace? Pon un ejemplo concreto con `isValidPassword`.
+3. ¿Qué consecuencia real puede tener que otro desarrollador confíe en el Javadoc incorrecto del Paso 2?
 
 ---
 
-## ✅ Entregable
+## Entregable
 
 Entrega un **PDF** con:
 
-1. El código final con Javadoc (o adjunta el `.java`).
-2. Una captura del `index.html` (o de la clase `UserValidator` dentro de la documentación HTML).
-3. Las respuestas a la pregunta de reflexión.
+| Qué | Cómo se evalúa |
+|-----|---------------|
+| Análisis previo (Paso 1) | ¿Has entendido lo que hace y lo que no hace cada método? |
+| Error detectado (Paso 2) | ¿Has identificado exactamente qué está mal y por qué es un problema? |
+| Código con Javadoc (Paso 3) | ¿El Javadoc refleja fielmente el código sin inventar comportamiento? |
+| Tabla de etiquetas (Paso 4) | ¿Puedes justificar por qué has usado cada etiqueta? |
+| Captura del HTML (Paso 5) | ¿Se ve la página de `UserValidator` en el navegador? |
+| Respuestas a las preguntas | ¿Razonas sobre qué documentar y por qué importa? |
 
+!!! warning "Lo que no vale"
+    Un Javadoc que documente cosas que el código no hace. Si escribes `@throws` cuando el método no lanza nada, o describres validaciones que no existen, la actividad no se supera aunque el HTML se genere correctamente.

@@ -1,164 +1,361 @@
-# 🧩 Actividad 4.5: Ramas en Git — Gestión avanzada de versiones
+# Actividad 4.5: Git local — construir historial y saber volver atrás
 
-!!! info "Créditos"
-    Actividad basada en el ejercicio original del curso de Joan Puigcerver:  
-    [Exercici — Branques (curs-git)](https://joapuiib.github.io/curs-git/apunts/02_branques/exercici/)
+!!! warning "Descarga la plantilla"
+    📄 [Plantilla 4.5 — Git local: construir historial y saber volver atrás](Actividad_4_5_Plantilla.docx){target="_blank" rel="noopener"}
 
-!!! warning "Antes de empezar"
-    Es recomendable que **leas la actividad entera** de principio a fin, y te asegures de revisar el apartado **📤 Entregable** al final del documento. Así sabrás exactamente qué debes registrar o capturar antes de ponerte a escribir comandos en la terminal.
+## Qué vas a practicar
 
----
+En esta actividad crearás un repositorio desde cero, construirás un historial de cambios y practicarás los comandos para volver atrás cuando algo sale mal. No se trata solo de ejecutar comandos: en cada paso tendrás que **predecir** qué va a pasar antes de hacerlo y **razonar** qué opción elegirías en distintas situaciones.
 
-## 🧠 Qué vas a practicar 
+Aspectos que cubre la actividad:
 
-En esta actividad profundizarás en el uso de ramas en Git, cubriendo desde lo básico hasta operaciones complejas. El objetivo no es solo ejecutar comandos, sino entender la **topología** del historial de Git.
-
-Practicarás:
-
-- **Creación y fusión** de ramas (Merge).
-- Gestión de **ramas divergentes**.
-- **Resolución de conflictos** en fusiones.
-- **Eliminación** de ramas.
-
----
-
-## 🧰 Requisitos previos
-
-1.  **Alias Gráfico**: Asegúrate de tener configurado el alias `git lga` para ver el historial gráficamente. Es esencial para entender este ejercicio.
-    ```bash
-    git config --global alias.lga "log --graph --oneline --all --decorate"
-    ```
-2.  **Entorno Limpio**: Crea el repositorio en una carpeta limpia para evitar mezclarlo con ejercicios anteriores.
+- Inicializar un repositorio y configurar Git.
+- Añadir archivos y hacer commits con mensajes claros.
+- Leer el historial con `git log` y examinar commits concretos con `git show`.
+- Descartar cambios antes de hacer commit con `git restore`.
+- Sacar archivos del staging sin perder los cambios.
+- Recuperar una versión anterior de un archivo con `git restore --source`.
+- Deshacer un commit de forma segura con `git revert`.
+- Entender la diferencia entre `git reset --soft`, `--mixed` y `--hard`.
+- Ignorar archivos con `.gitignore`.
 
 ---
 
-## 🧪 Ejercicio (pasos)
+## Requisitos previos
 
-!!! warning "Importante: Tu herramienta principal"
-    Después de **CADA** paso, es obligatorio que ejecutes:
-    
-    1. `git status`: Para ver en qué rama estás y si hay cambios pendientes.
-    2. `git lga`: Para visualizar el dibujo (grafo) de las ramas. **¡Fíjate bien en dónde apunta cada rama!**
+Antes de empezar, comprueba que Git está instalado y configurado:
 
----
+```bash
+git --version
+git config --global user.name "Tu Nombre"
+git config --global user.email "tuemail@ejemplo.com"
+```
 
-### Parte 1: Inicialización
-
-Preparamos el terreno con una rama principal estable.
-
-1. Crea un directorio llamado `bloc2_exercici` en tu carpeta de trabajo y entra en él.
-2. Inicializa un repositorio de Git.
-3. Crea un archivo llamado `llibres.txt`. Añade dentro **tres libros** que te gusten (uno por línea).
-4. Haz un **primer commit** con el mensaje "Añadidos libros iniciales".
-5. Si tu rama se llama `master`, renómbrala a `main` para seguir el estándar moderno:
-   ```bash
-   git branch -m master main
-   ```
-
-Check: `git lga` debería mostrar un solo punto (commit) donde está `main` y `HEAD`.
+Si `user.name` y `user.email` ya están configurados de sesiones anteriores, no hace falta repetirlo.
 
 ---
 
-### Parte 2: Fusión directa (Fast-Forward)
+## Norma de la actividad
 
-Vamos a crear una rama, avanzar en ella, y luego integrar los cambios. Como `main` no se moverá mientras tanto, la fusión será lineal.
+!!! warning "Obligatorio en cada paso"
+    Antes de ejecutar cualquier comando que modifique el repositorio (add, commit, restore, revert, reset…), escribe **qué esperas que pase**. Después ejecuta y comprueba si has acertado.
 
-1. Crea una rama llamada `musica` y sitúate en ella.
-2. Crea un archivo llamado `musica.txt` y añade **tres canciones** que te gusten.
-3. Haz un **commit** en esta rama.
-4. Vuelve a la rama `main`.
-5. Incorpora (fusiona) los cambios de `musica` en `main`.
-6. **Documenta** con una captura el resultado de `git lga`. Verás que `main` simplemente ha avanzado hasta donde estaba `musica`.
+    Esto es lo que se va a valorar: que entiendas lo que hace cada comando, no que lo copies sin más.
 
 ---
 
-### Parte 3: Fusión de ramas divergentes
+## Preparación del repositorio
 
-Ahora simularemos que dos personas trabajan a la vez en cosas distintas, creando historias paralelas que luego uniremos.
+Crea una carpeta llamada `actividad4_5` en un lugar de tu disco que **no esté dentro de OneDrive, iCloud ni Google Drive** (esos sistemas de sincronización y Git no se llevan bien).
 
-1. Estando en `main`, crea dos ramas nuevas: `mes-llibres` y `mes-musica`.
-2. Sitúate en la rama `mes-llibres`:
-    - Añade un **nuevo libro** al final de `llibres.txt`.
-    - Haz un **commit**.
-3. Sitúate en la rama `mes-musica`:
-    - Añade una **nueva canción** a `musica.txt`.
-    - Haz un **commit**.
-4. Vuelve a `main`.
-5. Incorpora los cambios de `mes-llibres`.
-    *(Esta será Fast-Forward porque main no había avanzado).*
-6. Incorpora los cambios de `mes-musica`.
-    *(Aquí Git creará automáticamente un **commit de fusión** porque las historias divergieron).*
-    - Se abrirá un editor para el mensaje del commit. Guarda y sal.
-7. **Documenta** el estado final con `git lga`. Observa cómo se bifurcan y unen las líneas.
+Inicializa el repositorio dentro de esa carpeta:
+
+```bash
+git init
+git status
+```
 
 ---
 
-### Parte 4: Resolución de conflictos en la fusión
+## Parte A — Construir el historial
 
-Vamos a provocar que dos ramas toquen **las mismas líneas** del archivo `llibres.txt`.
+### Paso 1 — Primer commit
 
-1. Desde `main`, crea las ramas `llibres-ciencia-ficcio` y `llibres-fantasia`.
-2. En la rama `llibres-ciencia-ficcio`:
-    - Modifica `llibres.txt` añadiendo un libro de **ciencia ficción** en la primera línea (o en una línea específica que vayas a tocar en la otra rama).
-    - Haz un **commit**.
-3. En la rama `llibres-fantasia`:
-    - Modifica `llibres.txt` añadiendo un libro de **fantasía** **en la misma línea** que usaste antes.
-    - Haz un **commit**.
-4. Vuelve a `main`.
-5. Fusiona `llibres-ciencia-ficcio`.
-6. Intenta fusionar `llibres-fantasia`.
-    - **¡CONFLICTO!** Git te dirá: `CONFLICT (content): Merge conflict in llibres.txt`.
-7. **Resolución**:
-    - Abre `llibres.txt`. Busca las marcas `<<<<<<<`, `=======`, `>>>>>>>`.
-    - Decide cómo quieres que quede el archivo (quizás conservando ambos libros).
-    - Borra las marcas de Git.
-    - Guarda el archivo.
-    - Ejecuta `git add llibres.txt`.
-    - Ejecuta `git commit` (sin argumentos) para confirmar la fusión.
-8. **Documenta** el estado final con `git lga`.
+Crea un archivo llamado `recetas.txt` con exactamente este contenido (puedes cambiar los nombres de platos, pero tiene que haber tres):
+
+```
+Tortilla de patatas
+Gazpacho
+Paella valenciana
+```
+
+Antes de añadir nada: **¿qué estado tiene el archivo según `git status`?** Escríbelo.
+
+Después:
+
+```bash
+git add recetas.txt
+git status
+git commit -m "Añade recetas iniciales"
+```
+
+### Paso 2 — Segundo commit
+
+Añade dos recetas más al final de `recetas.txt`. Elige las que quieras.
+
+**Predice**: ¿qué mostrará `git status`? ¿Y `git diff`? Escríbelo antes de ejecutar.
+
+```bash
+git status
+git diff
+git add recetas.txt
+git commit -m "Añade dos recetas nuevas"
+```
+
+### Paso 3 — Tercer commit con dos archivos
+
+- Crea un archivo `ingredientes.txt` con los ingredientes de una de tus recetas (al menos 5 líneas).
+- Crea también un archivo `borrador.txt` con el texto `trabajo en progreso`.
+
+Haz un commit que **solo incluya** `ingredientes.txt`. El archivo `borrador.txt` no debe estar en este commit.
+
+```bash
+git add ingredientes.txt
+git commit -m "Añade ingredientes de una receta"
+git status
+```
+
+**Pregunta**: ¿por qué `borrador.txt` sigue apareciendo como untracked? ¿Qué tendría que pasar para que desapareciera del todo?
+
+### Paso 4 — Cuarto commit con un error deliberado
+
+Edita `recetas.txt` y **elimina** una de las recetas que añadiste en el Paso 1 (una de las tres originales). Luego haz commit:
+
+```bash
+git add recetas.txt
+git commit -m "Elimina receta por error"
+```
+
+Ahora tienes un historial con cuatro commits. Consúltalo:
+
+```bash
+git log --oneline
+```
+
+Copia el resultado en tu entrega.
 
 ---
 
-### Parte 5: Eliminación de una rama
+## Parte B — Leer el historial
 
-Limpieza del repositorio.
+### Paso 5 — Examinar un commit concreto
 
-1. Desde `main`, crea una rama `series` y otra `pelicules`.
-2. En la rama `series`:
-    - Crea `series.txt`, añade una serie y haz commit.
-    - Añade otra serie y haz commit.
-3. Desde `main`:
-    - Elimina la rama `pelicules`:
-      ```bash
-      git branch -d pelicules
-      ```
-      *(Como no tiene cambios propios, se borra sin rechistar).*
-    - Intenta eliminar la rama `series`:
-      ```bash
-      git branch -d series
-      ```
-      *(Git te dará un error: `error: The branch 'series' is not fully merged`)*.
-4. **Fuerza la eliminación**:
-   ```bash
-   git branch -D series
-   ```
-5. **Pregunta**: ¿Qué ha pasado con los commits de la rama `series`? (Piensa: ¿Están accesibles? ¿Están en el historial de `main`?).
-6. **Documenta** con captura el error que te dio Git y el estado final.
+Usa `git show` con el hash del **segundo commit** (el que añadió dos recetas nuevas):
 
+```bash
+git show <hash>
+```
+
+**Preguntas a responder**:
+
+1. ¿Qué líneas aparecen en verde (con `+`)? ¿Qué representan?
+2. ¿Qué líneas aparecen en rojo (con `-`)? ¿Cuántas hay en este commit?
+3. ¿Para qué sirve `git show` en tu día a día como desarrollador?
 
 ---
 
-## 📤 Entregable
+## Parte C — Descartar cambios antes de commit
 
-!!! danger "Atención: Autoría de las capturas"
-    En todas las capturas de pantalla debe apreciarse claramente que **eres el autor** (ruta de las carpetas con tu usuario, nombre de equipo en la terminal, etc.).  
-    **En caso de detectar copias, la calificación de la actividad será de un 0 automático.**
+### Paso 6 — Descartar cambios en el área de trabajo
 
-Sube un único **PDF** con:
+Modifica `ingredientes.txt`: borra todas las líneas y escribe `borrador`. No hagas commit.
 
-1. **Capturas de `git lga`** demostrando la evolución del historial al finalizar las **Partes 2, 3 y 4**.
-2. **Captura en la Parte 5 de un `git branch` o `git lga`** justo después de crear añadir *series* y *pelicules*, demostrando que ambas ramas han existido.
-3. **Captura del error** que te dio Git al intentar borrar la rama sin fusionar en la Parte 5, junto al **lga** con el estado final.
-4. **Explicación breve** de cómo resolviste los conflictos manualmente (Parte 4).
-5. **Respuesta** a la pregunta de la Parte 5 sobre dónde han ido a parar los commits perdidos de esa rama.
-5. Una **breve reflexión personal (5-10 líneas)** sobre cómo crees que el uso de ramas mejorará el trabajo en equipo en tus futuros proyectos (por ejemplo: para programar funcionalidades de forma aislada sin romper el trabajo de los demás, hacer pruebas seguras, etc.).
+**Predice**: ¿qué mostrará `git status`? Escríbelo.
+
+Ahora descarta ese cambio sin borrar el archivo ni usar Ctrl+Z:
+
+```bash
+git restore ingredientes.txt
+cat ingredientes.txt
+```
+
+**Pregunta**: ¿qué ha pasado? ¿El archivo ha recuperado el contenido que tenía en el último commit?
+
+### Paso 7 — Sacar un archivo del staging
+
+Añade `ingredientes.txt` al staging pero **no hagas commit**:
+
+```bash
+echo "Aceite de oliva extra virgen" >> ingredientes.txt
+git add ingredientes.txt
+git status
+```
+
+**Predice**: ¿qué verás en `git status` en este momento?
+
+Ahora quieres sacar `ingredientes.txt` del staging pero **sin perder el cambio** (la línea que has añadido debe seguir en el archivo):
+
+```bash
+git restore --staged ingredientes.txt
+git status
+cat ingredientes.txt
+```
+
+**Preguntas a responder**:
+
+1. ¿El archivo tiene todavía la línea nueva o ha desaparecido?
+2. ¿En qué se diferencia `git restore --staged` de `git restore` (sin `--staged`)?
+
+---
+
+## Parte D — Recuperar una versión anterior de un archivo
+
+### Paso 8 — Recuperar el archivo desde un commit pasado
+
+En el Paso 4 borraste una receta por error. Ahora quieres recuperar `recetas.txt` tal como estaba en el **segundo commit** (antes del error).
+
+Busca el hash del segundo commit con `git log --oneline` y ejecuta:
+
+```bash
+git restore --source=<hash-segundo-commit> recetas.txt
+cat recetas.txt
+git status
+```
+
+**Preguntas a responder**:
+
+1. ¿Cuántas recetas tiene el archivo ahora?
+2. ¿`git status` dice que el archivo está modified o staged? ¿Por qué?
+3. ¿Se ha creado un nuevo commit automáticamente? ¿Qué tendrías que hacer para guardar este estado?
+
+Haz commit de esta recuperación:
+
+```bash
+git add recetas.txt
+git commit -m "Recupera recetas del segundo commit"
+git log --oneline
+```
+
+---
+
+## Parte E — Deshacer commits
+
+### Paso 9 — git revert: deshacer sin borrar historial
+
+Antes de practicar `git revert` necesitas el directorio limpio (sin cambios pendientes). En el Paso 7 dejaste una línea nueva en `ingredientes.txt` sin commitear. Confírmala ahora:
+
+```bash
+git status
+git add ingredientes.txt
+git commit -m "Añade ingrediente nuevo"
+git status
+```
+
+Ahora el directorio está limpio. Crea un error deliberado para practicar el revert:
+
+```bash
+echo "ESTA LÍNEA ES UN ERROR" >> recetas.txt
+git add recetas.txt
+git commit -m "Añade línea incorrecta por error"
+git log --oneline
+```
+
+**Predice**: ¿qué hará `git revert HEAD`? ¿Borrará ese commit o creará uno nuevo encima?
+
+Ahora deshaz ese commit **sin borrar el historial** (simula que el proyecto ya lo has subido a un servidor y otra persona podría haberlo descargado):
+
+```bash
+git revert HEAD
+git log --oneline
+git show HEAD
+```
+
+!!! tip "El editor de mensajes"
+    Al ejecutar `git revert`, Git abrirá un editor para que confirmes el mensaje del commit de revert. Si se abre Vim, escribe `:wq` y pulsa Enter para guardar y salir. Si prefieres evitarlo, puedes usar `git revert HEAD --no-edit`.
+
+**Preguntas a responder**:
+
+1. ¿Cuántos commits hay ahora en el historial?
+2. ¿`git revert` ha borrado el commit del error o ha creado uno nuevo encima?
+3. ¿En qué situaciones usarías `git revert` en lugar de `git reset`?
+
+### Paso 10 — git reset --soft
+
+Haz un commit de prueba que puedas deshacer. Añade una línea a `ingredientes.txt` y haz commit:
+
+```bash
+echo "Sal al gusto" >> ingredientes.txt
+git add ingredientes.txt
+git commit -m "Commit de prueba para reset"
+```
+
+Ahora deshaz ese commit con `--soft`:
+
+```bash
+git reset --soft HEAD~1
+git status
+git log --oneline
+```
+
+**Predice antes de ejecutar**: ¿dónde van los cambios del commit deshecho — al staging, al área de trabajo o desaparecen?
+
+**Preguntas a responder**:
+
+1. ¿El commit ha desaparecido del log?
+2. ¿Los cambios están staged o unstaged?
+3. ¿Qué tendrías que hacer ahora para rehacer el commit con un mensaje diferente?
+
+### Paso 11 — git reset --mixed
+
+Haz otro commit de prueba:
+
+```bash
+git add ingredientes.txt
+git commit -m "Otro commit de prueba"
+```
+
+Deshaz con `--mixed`:
+
+```bash
+git reset --mixed HEAD~1
+git status
+```
+
+**Preguntas a responder**:
+
+1. ¿En qué se diferencia el resultado de `--soft` respecto a `--mixed`?
+2. ¿Los cambios siguen en el archivo o han desaparecido?
+3. ¿Cuándo elegirías `--mixed` en lugar de `--soft`?
+
+### Paso 12 — Tabla de decisión
+
+Rellena esta tabla sin ejecutar nada — razona a partir de lo que has practicado:
+
+| Situación | Comando que usarías | Por qué |
+|---|---|---|
+| Hiciste commit con un mensaje mal escrito y quieres corregirlo | | |
+| Quieres deshacer los últimos cambios del archivo sin perder el commit | | |
+| Borraste accidentalmente un párrafo y todavía no has hecho commit | | |
+| Alguien más ya ha descargado tu commit y quieres deshacerlo de forma segura | | |
+| Hiciste commit pero olvidaste añadir un archivo | | |
+
+---
+
+## Parte F — Ignorar archivos
+
+### Paso 13 — .gitignore
+
+Crea archivos que no deberían estar en el repositorio:
+
+```bash
+echo "log de prueba" > 20250101.log
+echo "otro log" > 20250628.log
+```
+
+Configura Git para ignorar todos los archivos `.log` y el archivo `borrador.txt`:
+
+1. Crea el archivo `.gitignore`.
+2. Añade las reglas necesarias.
+3. Comprueba con `git status` que los archivos ignorados ya no aparecen como untracked.
+4. Haz commit: `"Configura .gitignore"`.
+
+**Pregunta**: ¿qué pasa si intentas hacer `git add 20250101.log` después de haberlo añadido al `.gitignore`?
+
+---
+
+## Entregable
+
+Entrega un PDF que incluya, para cada paso:
+
+1. **Predicción** (escrita antes de ejecutar): qué esperabas que pasara.
+2. **Captura de pantalla** del comando ejecutado y su resultado.
+3. **Comparación**: ¿ha pasado lo que esperabas? Si no, ¿por qué crees que ha sido diferente?
+4. **Respuestas** a las preguntas de cada paso.
+
+!!! tip "Consejo de estructura"
+    Organiza el PDF por partes (A, B, C…) y dentro de cada parte por pasos. Un apartado por paso: predicción → captura → comparación → respuesta.
+
+!!! warning "Lo que NO se valorará"
+    - Capturas sin texto explicativo.
+    - Respuestas copiadas de los apuntes sin aplicarlas al resultado concreto que has obtenido tú.
+    - La tabla del Paso 12 sin justificación en la columna "Por qué".

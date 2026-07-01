@@ -18,12 +18,15 @@
 
 ## 📘 Índice de contenidos
 
-1. [Entornos de desarrollo](entornos-de-desarrollo.md) — Teoría completa del tema
-2. [Actividad 2.1 — Instalación de IDEs](actividad_2_1.md) *(IntelliJ IDEA + VSCodium)*
-3. [Actividad 2.2 — Personalización de IntelliJ IDEA](actividad_2_2.md) *(plugins, temas, atajos, estilos, actualización)*
-4. [Actividad 2.3 — VSCodium: extensiones y personalización](actividad_2_3.md) *(extensiones, settings.json, snippets, multilenguaje)*
-5. [Actividad 2.4 — Generación de ejecutables y comparativa](actividad_2_4.md) *(mismo código en dos IDEs, .jar, comparativa final)*
-6. [Actividad 2.5 — Cuestionario](actividad_2_5.md)
+1. [Entornos de desarrollo](entornos-de-desarrollo.md)
+
+**Actividades:**
+
+- [Actividad 2.1 — Instalación de IDEs](actividad_2_1.md)
+- [Actividad 2.2 — Personalización de IntelliJ IDEA](actividad_2_2.md)
+- [Actividad 2.3 — VSCodium: extensiones y personalización](actividad_2_3.md)
+- [Actividad 2.4 — Generación de ejecutables y comparativa](actividad_2_4.md)
+- [Actividad 2.5 — Cuestionario](actividad_2_5.md)
 
 ---
 

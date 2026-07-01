@@ -68,17 +68,20 @@ nav:
       - Actividad 4.1: tema4/actividad_4_1.md
       - Refactorización: tema4/refactorizacion.md
       - Actividad 4.2: tema4/actividad_4_2.md
-      - Analizadores de código: tema4/analizadores.md
       - Documentación del código: tema4/documentacion.md
       - Actividad 4.3: tema4/actividad_4_3.md
-      - Introducción a Git: tema4/introduccion-git.md
+      - Analizadores de código: tema4/analizadores.md
       - Actividad 4.4: tema4/actividad_4_4.md
-      - Introducción a las Ramas: tema4/ramas.md
+      - Introducción a Git: tema4/introduccion-git.md
       - Actividad 4.5: tema4/actividad_4_5.md
-      - Introducción a GitHub: tema4/github.md
+      - Introducción a las Ramas: tema4/ramas.md
       - Actividad 4.6: tema4/actividad_4_6.md
-      - Colaboración y Forks: tema4/colaboracion.md
+      - Introducción a GitHub: tema4/github.md
       - Actividad 4.7: tema4/actividad_4_7.md
+      - Colaboración y Forks: tema4/colaboracion.md
+      - Actividad 4.8: tema4/actividad_4_8.md
+      - Integración continua con GitHub Actions: tema4/github-actions.md
+      - Actividad 4.9: tema4/actividad_4_9.md
   - Tema 5:
       - Tema 5 - Introducción: tema5/index.md
       - Conceptos básicos de la POO: tema5/poo-basicos.md

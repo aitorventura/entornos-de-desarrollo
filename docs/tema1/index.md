@@ -25,7 +25,17 @@
 5. [Herramientas y procesos de compilación](herramientas.md)
 6. [Metodologías ágiles](metodologias.md)
 
---- 
+**Actividades:**
+
+- [Actividad 1.1 — Del problema al programa](actividad_1_1.md)
+- [Actividad 1.2 — De código fuente a ejecutable](actividad_1_2.md)
+- [Actividad 1.3 — Estructura básica de un programa Java](actividad_1_3.md)
+- [Actividad 1.4 — Clasifica, compara y justifica lenguajes](actividad_1_4.md)
+- [Actividad 1.5 — El ciclo de vida completo](actividad_1_5.md)
+- [Actividad 1.6 — Cuestionario — Herramientas y procesos](actividad_1_6.md)
+- [Actividad 1.7 — Simula una empresa y ejecuta Sprints en Jira](actividad_1_7.md)
+
+---
 
 !!! info "¿Cómo avanzar por el contenido?"
     Utiliza el índice o las flechas de navegación al final de cada página para desplazarte por los distintos apartados de este tema.

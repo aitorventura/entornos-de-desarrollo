@@ -5,149 +5,149 @@
 !!!info "Descarga de diapositivas"
     [Descarga las diapositivas](diapositivas/colaboracion.pdf){target="_blank" rel="noopener"}
 
-Una de las grandes ventajas de usar Git junto con plataformas de alojamiento como GitHub es la capacidad de colaborar con miles de desarrolladores alrededor del mundo en proyectos de código abierto (Open Source), o coordinarte eficientemente con los compañeros de tu propia empresa.
+---
 
-En este apartado exploraremos dos de los conceptos estrella de GitHub para el trabajo colaborativo: **los Forks y las Pull Requests**.
+Git y GitHub no son solo una herramienta para guardar código: son la base sobre la que se organiza el trabajo en equipo en la mayoría de empresas de software. En este apartado veremos cómo contribuir a proyectos ajenos y cómo gestionar el trabajo dentro de un equipo usando las herramientas que GitHub pone a disposición.
 
 ---
 
 ## 🍴 Forks (Bifurcaciones)
 
-Un **Fork** consiste en hacer una copia exacta de un repositorio ajeno (perteneciente a otro usuario u organización) directamente en tu propia cuenta de GitHub. 
+Un **Fork** es una copia de un repositorio ajeno que GitHub crea dentro de tu propia cuenta. La diferencia respecto a un clon normal es que el fork vive en el servidor, bajo tu usuario, y tú tienes control total sobre él.
 
-Imagina que encuentras un proyecto interesantísimo (por ejemplo, el código fuente de un videojuego o de una biblioteca que usas a diario) y quieres mejorarlo añadiendo una funcionalidad, pero **tú no tienes permisos de escritura** en su repositorio original para hacer un `push`. 
+El caso típico: encuentras un proyecto en GitHub que te interesa mejorar, pero no eres colaborador del repositorio original y no puedes hacer `push` directamente. La solución es hacer un fork: pulsas el botón "Fork" en la esquina superior derecha y GitHub copia todo el repositorio bajo tu cuenta en cuestión de segundos.
 
-La solución es hacer un *Fork*. Al pulsar el botón "Fork" situado arriba a la derecha en la interfaz de GitHub de cualquier repositorio público:
+A partir de ahí puedes clonar tu copia, crear ramas, modificar lo que quieras y hacer push sin afectar en absoluto al proyecto original. GitHub mantiene internamente la referencia al repositorio de origen, lo que facilita después proponer tus cambios de vuelta al autor mediante una Pull Request.
 
-1. GitHub crea una copia clonada y aislada de ese proyecto dentro de *tu usuario*.
-2. En esa nueva copia "bifurcada" **tú tienes el control total**. Puedes clonarlo a tu ordenador local, crear ramas, editar código, borrar archivos y hacer tantos `push` como desees, sin miedo a romper el proyecto del autor original.
-3. Git y GitHub siempre recordarán mediante un enlace invisible de qué proyecto original proviene tu Fork, facilitando el trasvase de información entre ambos en el futuro.
+!!! tip "¿Fork o clone directo?"
+    Clona directamente si ya eres colaborador del repositorio y tienes permisos de escritura. Haz un fork cuando quieras contribuir a un proyecto ajeno donde no tienes permisos: tu fork actúa como puerta de entrada para proponer cambios mediante Pull Request.
 
 ![Botón Fork en GitHub](../capturas/colaboracion/menu_fork.png)
 
-**Qué estás viendo en la captura**
-
-- Botón de **Fork** en la esquina superior derecha de un repositorio ajeno.
+**Qué estás viendo en la captura:** el botón Fork en la esquina superior derecha de un repositorio ajeno.
 
 ![Crear Fork](../capturas/colaboracion/fork.png)
 
-**Qué estás viendo en la captura**
+**Qué estás viendo en la captura:** la pantalla de creación del fork, donde se elige bajo qué cuenta o organización se crea la copia.
 
-- Pantalla de creación del Fork, donde se crea la copia del proyecto bajo tu propio *namespace*.
 ### Sincronización del Fork
-A medida que pasa el tiempo, los dueños del proyecto principal seguirán avanzando y subiendo código. Si quieres que tu Fork en GitHub reciba esos avances, en la propia página principal de tu repositorio verás un botón llamado **Sync fork**. Al pulsarlo, GitHub integrará limpiamente las novedades del repositorio original dentro de tu copia local.
+
+Con el tiempo, el repositorio original seguirá recibiendo commits. Para poner tu fork al día sin tener que hacerlo a mano, GitHub ofrece el botón **Sync fork** en la página principal de tu repositorio bifurcado.
+
+!!! tip "¿Qué es upstream?"
+    En el contexto de los forks, **upstream** es el nombre que se le da al repositorio original del que proviene tu fork. Tu copia es `origin`; el proyecto del que la hiciste es `upstream`. Cuando sincronizas el fork, estás trayendo los cambios de `upstream` a tu `origin`.
+
+Si el repositorio original y el tuyo han avanzado por separado, la sincronización puede generar conflictos que tendrás que resolver igual que harías con un `git pull` con cambios divergentes. Por eso conviene sincronizar antes de empezar a trabajar en una nueva funcionalidad, no después.
 
 ---
 
 ## 📩 Pull Requests (PRs)
 
-Una **Pull Request** (abreviada comúnmente como PR) es una **solicitud formal** que envías a los responsables de un repositorio diciéndoles: *"Oye, he escrito este código en una de mis ramas y creo que mejora el proyecto. Solicito que lo reviséis y lo integréis (hagáis pull) hacia vuestra rama principal"*.
+Una **Pull Request** es una propuesta formal para integrar los commits de una rama en otra. Le estás diciendo a los responsables del repositorio: "He hecho estos cambios en esta rama; ¿los revisáis y los integráis en `main`?"
 
-### ¿Cuándo y cómo se crean?
+Es el mecanismo estándar en la industria tanto para contribuir a proyectos de terceros (desde un fork) como para trabajar en equipo dentro del mismo repositorio (desde una rama propia hacia `main`).
 
-Las Pull Requests son el estándar de la industria tanto si intentas aportar código al proyecto Open Source del que previamente hiciste un *Fork*, como si estás trabajando dentro del mismo repositorio de empresa junto a tu equipo (en este caso, habrás creado una rama local propia `feature/nueva-pantalla`, la habrás subido y abrirás la PR contra la rama `main` comunitaria).
+El flujo completo, desde el fork hasta el merge, tiene este aspecto:
 
-A la hora de redactar y abrir una PR en GitHub, debes configurar cuatro selectores clave:
+```mermaid
+flowchart LR
+    A[Repositorio original] -->|Fork| B[Tu fork en GitHub]
+    B -->|git clone| C[Tu copia local]
+    C -->|git switch -c mi-rama| D["Rama local (trabajar + commits)"]
+    D -->|git push| B
+    B -->|Abrir PR| E{Revisión}
+    E -->|Aprobada| F[Merge en main]
+    E -->|Cambios pedidos| D
+```
 
-- **Base repository**: El proyecto recipiente final (donde va a ir a parar tu código).
-- **Base**: La rama de destino de ese proyecto (casi siempre `main` o `develop`).
-- **Head repository**: El proyecto desde donde ofreces el código (suele ser tu propio Fork).
-- **Compare**: La rama exacta donde tienes guardados los *commits* que estás ofreciendo.
+### Abrir una Pull Request
 
-Además de configurar esos selectores, se te pedirá que escribas un **Título claro** y una **Descripción detallada** explicando qué problemática resuelve tu código y cómo funciona.
+Cuando subes una rama nueva con `git push`, GitHub muestra automáticamente un aviso con el botón **"Compare & pull request"**. Al pulsarlo, llegas al formulario de creación de la PR, donde tienes que configurar cuatro selectores:
+
+| Selector | Qué indica | Ejemplo |
+|---|---|---|
+| **Base repository** | Dónde va a ir el código | `torvalds/linux` |
+| **Base** | La rama de destino | `main` |
+| **Head repository** | Desde dónde ofreces los cambios | `tu-usuario/linux` |
+| **Compare** | La rama con tus commits | `arreglo-bug-red` |
+
+Si la PR es dentro del mismo repositorio (sin fork), base y head son el mismo repositorio y solo cambian las ramas.
+
+Además de los selectores, escribe un **título claro** y una **descripción** que explique qué problema resuelve el cambio y cómo funciona. Eso facilita la revisión y queda como documentación permanente del proyecto.
 
 ![Aviso de nueva rama para PR](../capturas/colaboracion/nueva_rama_peticion_pr.png)
 
-**Qué estás viendo en la captura**
-
-- Aviso en el repositorio tras hacer `push` de una rama nueva, invitándote a crear la PR con el botón **Compare & pull request**.
+**Qué estás viendo en la captura:** el aviso que aparece en el repositorio justo después de hacer push de una rama nueva, con el botón para crear la PR directamente.
 
 ![Crear Pull Request](../capturas/colaboracion/pr.png)
 
-**Qué estás viendo en la captura**
-
-- Pantalla de apertura de la Pull Request en GitHub ("Open a pull request").
-
-!!! info "PR desde el mismo repositorio vs desde un Fork"
-    En las capturas anteriores, la Pull Request **se ha hecho desde el mismo proyecto y usuario** (ofreciendo una rama propia secundaria hacia la rama `base: main` del mismo repositorio).
-    
-    Sin embargo, si estuvieses contribuyendo al código de otra persona desde tu Fork, los menús desplegables del bloque "Compare changes" serían ligeramente diferentes. Mostrarían como `base repository` el repositorio del autor original (ej. `autor original/proyecto`), y en `head repository` aparecería tu copia bifurcada que contiene tus cambios locales (ej. `tu-usuario/proyecto`).
+**Qué estás viendo en la captura:** el formulario de apertura de la Pull Request con los selectores de rama y el campo de descripción.
 
 ![Pull Request abierta](../capturas/colaboracion/pr_hecha.png)
 
-**Qué estás viendo en la captura**
-
-- Vista de la PR una vez abierta. Aquí el equipo puede revisar el código propuesto, discutir detalles en el chat integrado o aprobar los cambios (**Approve**).
+**Qué estás viendo en la captura:** la PR ya abierta, donde el equipo puede revisar el código línea a línea, comentar y aprobar los cambios.
 
 ![Confirmar Merge](../capturas/colaboracion/confirm-merge.png)
 
-**Qué estás viendo en la captura**
-
-- El administrador del repositorio hace clic en **Merge pull request** una vez todos consideran que el código es válido.
+**Qué estás viendo en la captura:** el botón Merge pull request que activa el administrador una vez el equipo ha dado el visto bueno.
 
 ![Pull Request Fusionada](../capturas/colaboracion/pr-merged.png)
 
-**Qué estás viendo en la captura**
+**Qué estás viendo en la captura:** la PR en estado "Merged" (etiqueta morada), confirmando que los cambios han pasado a la rama principal.
 
-- Estado de la PR convertida a "Merged" (etiqueta morada), lo que confirma que el trabajo ha pasado oficialmente a integrarse a la rama principal.
+!!! info "PR desde el mismo repositorio vs desde un Fork"
+    En las capturas anteriores la PR se hace desde una rama propia del mismo repositorio. Si contribuyes desde un fork, los selectores "Base repository" y "Head repository" apuntarán a repositorios distintos: el del autor original y el tuyo respectivamente.
 
-!!! tip "El paradigma del Trabajo Colaborativo Abierto"
-    1. Crear el Fork del proyecto principal.
-    2. Clonártelo (`git clone`) a tu ordenador.
-    3. Crear una nueva rama dedicada al arreglo (`git checkout -b arreglo-x`).
-    4. Programar, guardar y consolidar (`git commit`).
-    5. Subir la rama a TU versión del repositorio (`git push origin arreglo-x`).
-    6. Ir a la web de GitHub y darle al botón dorado **"Compare & pull request"**.
+### Enlazar PRs con Issues
 
-### Enlazando PRs con Incidencias (Issues)
+En proyectos con muchos colaboradores el trabajo se organiza con **Issues** (veremos su funcionamiento completo en la sección siguiente) — tareas o errores documentados con un número. Si en la descripción de tu PR escribes `Closes #10`, GitHub cierra automáticamente el Issue #10 en el momento en que se aprueba el merge. Esto evita trabajo de gestión manual y deja un historial claro de qué PR resolvió qué problema.
 
-En grandes proyectos el trabajo se organiza usando **Issues** (incidencias o tickets). GitHub tiene una función mágica: si en la descripción de tu Pull Request escribes ciertas **palabras clave** (como `Closes`, `Fixes` o `Resolves`) seguidas del número del ticket, GitHub lo enlazará todo automáticamente.
-
-Si en tu PR escribes `Closes #10`, al momento en que los mantenedores acepten y fusionen tu PR, el ticket #10 de la pestaña *Issues* pasará a estado cerrado ("Done") automáticamente, ahorrando trabajo de gestión manual y creando un historial de desarrollo perfectamente trazable.
+Las palabras que activan el cierre automático son: `Closes`, `Fixes` y `Resolves` (cualquiera de las tres, seguida del número con `#`).
 
 ---
 
-## 🎫 Gestión y Seguimiento: Otras herramientas de GitHub
+## 🎫 Gestión del proyecto: Issues y Projects
 
-Además del código en sí (Pestaña **Code**) y las **Pull requests**, la interfaz de un repositorio en GitHub ofrece herramientas integradas muy potentes para la gestión del proyecto y el trabajo en equipo:
+Además del código, GitHub ofrece herramientas integradas para organizar el trabajo del equipo.
 
-### 🎯 Issues (Incidencias)
-La pestaña **Issues** es el sistema principal de seguimiento de tareas, reporte de errores (bug tracking) y solicitudes de nuevas características o mejoras. 
+| | Issues | Projects |
+|---|---|---|
+| **Para qué sirve** | Registrar tareas, errores o propuestas de mejora | Visualizar y priorizar el trabajo del equipo |
+| **Unidad de trabajo** | Un ticket por tarea o bug, con su hilo de conversación | Tablero con columnas (`To Do`, `In Progress`, `Done`) |
+| **Integración** | Se cierran automáticamente con palabras clave en PRs | Las tarjetas enlazan a Issues y PRs; se mueven solas al fusionar |
+| **Cuándo usarlo** | Siempre que hay algo por hacer o un bug que reportar | Cuando el equipo necesita ver el estado global del proyecto |
 
-- Permite a los usuarios, miembros del equipo y desarrolladores externos reportar problemas, proponer ideas o discutir detalles antes de escribir código.
-- Cada Issue posee su propio hilo de conversación temporal y persistente.
-- Se le pueden asignar responsables (*Assignees*), añadir etiquetas de colores (*Labels* como `bug`, `documentation` o `enhancement`) y agrupar en torno a fechas de entrega o versiones (*Milestones*).
-- Como vimos en el apartado anterior, se pueden enlazar y cerrar automáticamente mediante palabras clave (ej. `Closes #12`) emitidas desde *commits* o *Pull Requests*.
-
-### 🗂️ Projects (Proyectos)
-La pestaña **Projects** ofrece tableros visuales personalizables en vistas Kanban o como tablas (similares a herramientas como Trello o Jira) combinadas directamente con tus repositorios.
-
-- Ayuda en la organización, planificación y priorización de la carga de trabajo arrastrando las tarjetas por columnas semánticas (`To Do`, `In Progress`, `Done`).
-- La verdadera ventaja radica en su integración: estas tarjetas enlazan vivamente a **Issues** o **Pull Requests** del repositorio. Si una PR vinculada se aprueba y se fusiona, la tarjeta correspondiente puede saltar por sí sola a la columna final de "Terminado".
-
-### 📚 Otros elementos importantes
-- **Wiki**: Es un espacio integrado destinado a documentar extensivamente y con estructura de páginas web un determinado proyecto. Funciona como el lugar idóneo para guardar manuales de uso detallados, guías para desarrolladores externos, FAQs, etc., liberando al archivo principal `README.md` de saturación de texto y facilitando la navegación.
-- **Actions**: Es el cerebro que permite definir automatizaciones (Integración y Entrega Continua, CI/CD) específicas para tu repositorio. Mediante *"Actions"*, GitHub puede ser instruido para que lance comandos o servidores temporales en la nube de forma transparente respondiendo a eventos concretos (como pasar unos tests obligatorios siempre que alguien trate de introducir código mediante una PR al entorno de producción, o desplegar una web estática sola cuando tu rama `main` cambie).
+Cada Issue puede tener asignados responsables (*Assignees*), etiquetas de colores (*Labels* como `bug`, `enhancement`, `documentation`) y fechas de entrega (*Milestones*).
 
 ---
 
-## 🔒 Protecciones y Reglas de ramas
+## 📚 Otras herramientas del repositorio
 
-Como ya te imaginarás, cuando múltiples personas convergen haciendo *Pull Requests* hacia la rama `main`, dejar la puerta abierta a que cualquiera pueda empujar código (`push`) reescribiendo la historia directamente o rompiendo cosas no es viable.
+**Wiki** — Espacio de documentación con estructura de páginas. Ideal para manuales de uso, guías para nuevos colaboradores o FAQs. Mantiene el `README.md` limpio y navegable.
 
-En "Settings > Rules" de los repositorios de GitHub, los administradores suelen blindar sus ramas principales exigiendo que:
-
-- Solo se pueda introducir código allí mediante mecanismos formales como PRs aprobadas, bloqueando un `push` a la brava desde consola.
-- Que un cierto número de compañeros hayan revisado humanamente el código y lo hayan aprobado.
-- Que el código supere exitosamente tests automatizados de forma transparente (Integración Continua) antes de activar el botón verde brillante de "Merge".
+**Actions** — Permite automatizar tareas que se ejecutan en respuesta a eventos del repositorio: pasar tests cuando alguien abre una PR, desplegar la aplicación cuando se fusiona en `main`, generar documentación automáticamente... Lo veremos con detalle en la [sección siguiente](github-actions.md).
 
 ---
 
-## ✅ Ideas clave (muy resumidas)
+## 🔒 Protecciones de ramas
 
-!!! tip "Cheatsheet Colaborativo de GitHub"
+Cuando varias personas hacen PRs hacia `main`, conviene blindar esa rama para evitar que alguien suba código directamente sin revisión. En **Settings → Rules** los administradores pueden exigir que:
 
-    - **Fork**: Botón web para hacerte dueño absoluto de una copia de un proyecto de otro usuario sin tocarle su trabajo orginal.
-    - **Pull Request (PR)**: Solicitud diplomática en la nube para que empaqueten tus *commits* aportados con el software general. Pasa por procesos de revisión manual.
-    - **Sync fork**: Función para poner la rama `main` de tu Fork al día con las novedades que ha tenido el canal principal (`upstream`).
-    - Palabras mágicas en las PRs como `Fixes #25` vincularán permanentemente tu código a ese problema documentado en el sistema de tickets (Issues) del proyecto.
+- Todo el código entre por PR, bloqueando el `push` directo a `main`.
+- Al menos un compañero haya revisado y aprobado el código antes del merge.
+- Los tests automatizados pasen antes de que el botón de merge se active.
+
+Esto no es burocracia: es lo que impide que un error de un miembro del equipo rompa el proyecto para todos los demás.
+
+---
+
+## ✅ Ideas clave
+
+!!! tip "Resumen"
+    - **Fork**: copia de un repositorio ajeno bajo tu cuenta. Tú tienes control total; el original no se toca.
+    - **Sync fork**: sincroniza tu fork con los nuevos commits del repositorio original (`upstream`).
+    - **Pull Request**: propuesta formal para integrar una rama en otra. Pasa por revisión del equipo antes del merge.
+    - `Closes #10` en la descripción de una PR cierra el Issue #10 automáticamente al hacer merge.
+    - **Issues**: sistema de seguimiento de tareas y errores. Cada tarea es un ticket numerado.
+    - **Projects**: tablero visual que agrupa Issues y PRs por estado.
+    - **Branch protection**: reglas que obligan a usar PRs y pasar tests antes de tocar `main`.

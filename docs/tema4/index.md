@@ -25,16 +25,22 @@
 3. [Analizadores de código: revisión estática y configuración](analizadores.md)
 4. [Documentación del código: comentarios y herramientas](documentacion.md)
 5. [Introducción a Git](introduccion-git.md)
+6. [Trabajando con ramas](ramas.md)
+7. [GitHub y trabajo remoto](github.md)
+8. [Colaboración y gestión de proyectos en GitHub](colaboracion.md)
+9. [Integración continua con GitHub Actions](github-actions.md)
 
 **Actividades:**
 
 - [Actividad 4.1 — Optimización básica en Java](actividad_4_1.md)
-- [Actividad 4.2 — Refactorización y Javadoc](actividad_4_2.md)
+- [Actividad 4.2 — Refactorización de código](actividad_4_2.md)
 - [Actividad 4.3 — Documentar con Javadoc y generar HTML](actividad_4_3.md)
-- [Actividad 4.4 — Análisis estático con IntelliJ y SonarLint](actividad_4_4.md)
-6. [Trabajando con ramas](ramas.md)
-7. [GitHub y trabajo remoto](github.md)
-8. [Colaboración y gestión de proyectos en GitHub](colaboracion.md)
+- [Actividad 4.4 — Análisis estático con IntelliJ y SonarQube for IDE](actividad_4_4.md)
+- [Actividad 4.5 — Git local: construir historial y saber volver atrás](actividad_4_5.md)
+- [Actividad 4.6 — Ramas en Git: trabajo paralelo y fusiones](actividad_4_6.md)
+- [Actividad 4.7 — Tu portafolio en GitHub](actividad_4_7.md)
+- [Actividad 4.8 — Contribuir al portafolio de un compañero](actividad_4_8.md)
+- [Actividad 4.9 — Pipeline de CI para un proyecto Java real](actividad_4_9.md)
 
 ---
 

@@ -7,472 +7,448 @@
 
 ---
 
-En esta sección nos centraremos en los **repositorios remotos**: repositorios que se encuentran alojados en un servidor o en otro lugar fuera de nuestro propio sistema local, lo que permite el acceso a otros usuarios y facilita la colaboración en el desarrollo de proyectos. Utilizaremos **GitHub** como servidor principal para alojar estos repositorios durante el curso.
+En esta sección nos centraremos en los **repositorios remotos**: repositorios alojados en un servidor externo que permiten a otros usuarios acceder al proyecto y colaborar en él. Utilizaremos **GitHub** como servidor principal durante el curso.
 
 ---
 
 ## ☁️ ¿Qué es un Repositorio Remoto?
 
-Un repositorio remoto es una copia de tu repositorio de Git alojado en un servidor de internet. Contiene una réplica completa de la historia del proyecto (tus commits y tus ramas). Sus principales ventajas son:
+Un repositorio remoto es una copia de tu repositorio de Git alojada en un servidor de internet. Contiene una réplica completa de la historia del proyecto: commits, ramas y etiquetas. Sus principales utilidades son:
 
-- **Colaboración**: Varios desarrolladores pueden descargar un mismo proyecto, trabajar juntos y compartir sus modificaciones.
-- **Copia de seguridad**: Sirve como un respaldo vital de tu proyecto por si tu ordenador se estropea.
-- **Distribución**: Te permite exponer tu trabajo al mundo (portafolio) o integrarlo con servidores reales de despliegue.
+- **Colaboración**: varios desarrolladores pueden trabajar sobre el mismo proyecto y compartir sus cambios.
+- **Copia de seguridad**: si tu ordenador falla, el código sigue estando en la nube.
+- **Distribución**: puedes mostrar tu trabajo como portafolio o conectarlo a servidores de despliegue.
+
+El diagrama siguiente muestra cómo se relacionan tu máquina local y el servidor remoto, y qué comando actúa en cada paso:
+
+```mermaid
+flowchart LR
+    subgraph LOCAL["🖥️ Tu ordenador"]
+        A[Área de trabajo] -->|git add| B[Staging / índice]
+        B -->|git commit| C[Repositorio local]
+    end
+    subgraph REMOTO["☁️ GitHub"]
+        D[Repositorio remoto]
+    end
+    C -->|git push| D
+    D -->|git pull| C
+    D -.->|git fetch\n solo descarga info | C
+```
 
 !!! info "Alternativas a GitHub"
-    Para el alojamiento de repositorios remotos, existen varios servicios famosos además de [GitHub](https://github.com/):
-    
-    - **[GitLab](https://gitlab.com/)**: Plataforma Open Source muy completa orientada al entorno DevOps y la Integración Continua.
-    - **[Bitbucket](https://bitbucket.org/)**: Propiedad de Atlassian, ofrece una integración total con la suite de herramientas Jira y Trello.
+    Además de [GitHub](https://github.com/), existen otros servicios para alojar repositorios remotos:
+
+    - **[GitLab](https://gitlab.com/)**: plataforma open source muy usada en entornos empresariales y DevOps.
+    - **[Bitbucket](https://bitbucket.org/)**: propiedad de Atlassian, se integra bien con Jira y Trello.
 
 ---
 
 ## 📝 Registro en GitHub
 
-Antes de poder crear repositorios remotos o colaborar en proyectos, necesitas tener una cuenta en la plataforma. El proceso es gratuito y sencillo:
+Antes de crear repositorios remotos o colaborar en proyectos, necesitas una cuenta. El proceso es gratuito:
 
-1. Visita la página principal de [GitHub (https://github.com/)](https://github.com/).
-2. Haz clic en el botón **"Sign up"** (Registrarse) en la esquina superior derecha.
-3. Introduce tu dirección de correo electrónico, elige una contraseña segura y un nombre de usuario único.
-4. Resuelve el pequeño puzzle de verificación para demostrar que eres humano.
-5. GitHub te enviará un código numérico a tu correo electrónico. Cópialo y pégalo en la pantalla de confirmación.
-6. ¡Listo! Ya tienes acceso a tu panel de control (*dashboard*) desde donde podrás empezar a crear y explorar repositorios.
+1. Visita [https://github.com/](https://github.com/).
+2. Haz clic en **"Sign up"** (arriba a la derecha).
+3. Introduce tu correo electrónico, elige una contraseña y un nombre de usuario.
+4. Resuelve el puzzle de verificación.
+5. GitHub te enviará un código numérico al correo. Introdúcelo en la pantalla de confirmación.
+6. Ya tienes acceso a tu panel de control (*dashboard*) desde donde puedes crear y explorar repositorios.
 
 ![Captura de la página de registro o portada de GitHub](capturas/github/0_registro_github.png)
 
-**Qué estás viendo en la captura**
-
-- La página inicial de GitHub donde se introduce el nombre de usuario, contraseña y correo electrónico para crear una nueva cuenta en la plataforma.
+**Qué estás viendo en la captura:** la página inicial de GitHub donde se introduce el nombre de usuario, contraseña y correo para crear una cuenta nueva.
 
 ![Captura de la página principal (dashboard) de GitHub con la sesión iniciada](capturas/github/0b_dashboard_github.png)
 
-**Qué estás viendo en la captura**
-
-- El panel de control principal (*dashboard*) de GitHub una vez has iniciado sesión con tu nueva cuenta de usuario.
-- A la izquierda puedes ver el listado de repositorios (vacío en tu caso si te acabas de registrar) y el botón verde "New" o "Create repository" para crear uno nuevo.
+**Qué estás viendo en la captura:** el panel de control de GitHub una vez iniciada sesión. A la izquierda verás el listado de repositorios (vacío si acabas de registrarte) y el botón verde "New" para crear uno nuevo.
 
 ---
 
 ## 🔐 Autenticación y Conexión en GitHub
 
-Para poder subir tu código a GitHub o modificar proyectos privados de forma segura, el servidor necesita saber quién eres. **Antiguamente se usaba la contraseña de tu cuenta general, pero por seguridad ya no está permitido por terminal.** Hoy en día existen tres formas principales de conectarse:
+Para subir código o modificar proyectos privados, GitHub necesita verificar tu identidad. Antiguamente se usaba la contraseña de la cuenta, pero por seguridad ya no está permitido desde la terminal. Hoy existen tres formas:
 
-1. **Token de acceso personal (PAT)**: Es el método más universal por línea de comandos. Generas una especie de "contraseña larga", segura y revocable desde GitHub que sirve de llave específica (solo para repositorios).
-2. **Claves SSH**: Generas un par de claves criptográficas en tu ordenador (una pública y una privada). Es más profesional y cómodo a largo plazo para no escribir contraseñas.
-3. **GitHub CLI (`gh`)**: La herramienta oficial de consola de GitHub, que permite iniciar sesión a través de una pestaña directa en tu navegador web.
+1. **Token de acceso personal (PAT)**: generas una "contraseña larga" específica para repositorios, revocable en cualquier momento. Es el método más habitual al empezar.
+2. **Claves SSH**: generas un par de claves criptográficas en tu ordenador. Es el método más profesional y cómodo a largo plazo.
+3. **GitHub CLI (`gh`)**: herramienta oficial de consola que permite autenticarte a través del navegador.
 
-!!! tip "Recomendación de seguridad: SSH vs PAT"
-    Aunque para empezar a utilizarlo la opción más rápida por terminal a la que estarás habituado es el **Token de acceso personal (PAT)** clásico, el uso de **Claves SSH es mucho más seguro y profesional a largo plazo**. SSH evita que el token pueda ser interceptado o filtrado por accidente y no requiere que estés acordándote de contraseñas. 
-
-A continuación, vamos a ver paso a paso cómo generar tu propio Token PAT (la vía más común al principio), y posteriormente veremos cómo configurar SSH para un entorno profesional.
+!!! tip "Recomendación: SSH vs PAT"
+    El PAT es más rápido de configurar al principio. Las claves SSH son más seguras y no requieren pegar ningún token cada vez que haces `push`. En un entorno profesional, SSH es el estándar.
 
 ### Generando un Token de Acceso Personal (PAT)
 
-El proceso se hace enteramente dentro de tu sesión web de GitHub:
-
-1. En GitHub, haz clic en tu foto de perfil redonda (arriba a la derecha) y entra en **Settings** (Ajustes).
-2. Baja por el menú lateral izquierdo hasta el final del todo y haz clic en **`< >` Developer settings**.
-3. En la nueva pantalla, ve al penúltimo menú **Personal access tokens** y elige **Tokens (classic)**.
-4. Pulsa en el botón superior derecho **Generate new token** y selecciona de nuevo **Generate new token (classic)**.
-
-Llegarás a un formulario de creación del token. Lo más importante aquí es darle acceso a tus repositorios.
+1. En GitHub, haz clic en tu foto de perfil (arriba a la derecha) → **Settings**.
+2. Baja por el menú lateral hasta **`< >` Developer settings**.
+3. Ve a **Personal access tokens** → **Tokens (classic)**.
+4. Pulsa **Generate new token** → **Generate new token (classic)**.
 
 ![Captura mostrando el formulario de creación de un token PAT en GitHub](capturas/github/0c_crear_token.png)
 
-**Qué estás viendo en la captura**
+**Qué estás viendo en la captura:** el formulario para configurar un nuevo token clásico. Se ha asignado un nombre descriptivo y se ha marcado la casilla **`repo`** para dar permisos de lectura y escritura sobre repositorios.
 
-- El formulario para configurar un nuevo token clásico.
-- Se le ha asignado un nombre descriptivo ("Note") para saber para qué se usa.
-- Se ha marcado obligatoriamente la casilla principal **`repo`** (y automáticamente todas las que contiene dentro) para asegurar que la clave que vamos a generar tenga permisos para leer y escribir código en nuestros repositorios.
+5. Baja al final de la página y haz clic en **Generate token**.
 
-5\. Baja hasta el final de la página gigante y haz clic en el gran botón verde **Generate token**.
+6. GitHub te mostrará el token generado (una cadena larga que empieza por `ghp_...`).
 
-6\. GitHub te mostrará una pantalla con un recuadro verde avisándote del éxito y enseñándote tu nuevo token (una cadena larga de caracteres que suele empezar por `ghp_...`). 
-
-**¡Cópialo ahora!** Esta es la única vez que GitHub te lo mostrará en pantalla por motivos de seguridad. Si cierras la pestaña y lo pierdes, tendrás que generar uno nuevo, ya que no se puede recuperar el anterior.
+!!! warning "Cópialo ahora"
+    Esta es la **única vez** que GitHub te lo muestra. Si cierras la pestaña sin copiarlo, tendrás que generar uno nuevo.
 
 ![Captura mostrando el cuadro verde de éxito y el token generado](capturas/github/0d_token_generado.png)
 
-**Qué estás viendo en la captura**
+**Qué estás viendo en la captura:** el mensaje de éxito y el token generado (parte censurada por seguridad). Copia el tuyo completo usando el icono de copiar.
 
-- Un mensaje de éxito de fondo verde confirmando la creación.
-- El token en sí (una cadena alfanumérica muy larga que suele empezar por `ghp_`). Parte de ella está censurada por motivos de seguridad; tú deberás copiar la tuya completa usando el icono de los dos recuadros.
-
-Ese token largo que acabas de copiar será la *"contraseña"* que deberás "Pegar" (con clic derecho frecuentemente) en la terminal cuando Git te pida autenticarte al intentar descargar proyectos privados o al hacer subir el código la primera vez (`git push`).
+Cuando Git te pida contraseña al hacer `git push`, pega este token en lugar de tu contraseña de GitHub.
 
 ---
 
 ### Configurando la Autenticación por SSH (Recomendado)
 
-Si prefieres la opción más robusta y segura para que Git se autentique sin pedirte el token PAT cada dos por tres, necesitas configurar una llave criptográfica SSH entre tu equipo y GitHub.
+Si no quieres pegar el token cada vez que subes código, configura una clave SSH entre tu equipo y GitHub. El proceso es de una sola vez.
 
 #### 1. Generar la clave SSH local
-Abre tu Git Bash (o terminal en Mac/Linux) e introduce el siguiente comando sustituyendo tu correo electrónico de GitHub:
+
+Abre Git Bash y ejecuta el siguiente comando con tu correo de GitHub:
 
 ```bash
 ssh-keygen -t ed25519 -C "tu_correo@ejemplo.com"
 ```
-*(Si tu sistema no soporta `ed25519`, puedes usar `ssh-keygen -t rsa -b 4096 -C "tu_correo..."`).*
 
-La terminal te preguntará dónde guardar la clave y si quieres ponerle un *passphrase* (contraseña adicional). Puedes darle repetidamente a la tecla `Enter` para aceptar las opciones por defecto y dejarla sin passphrase por simplicidad.
+La terminal te preguntará dónde guardar la clave y si quieres añadir una contraseña (*passphrase*). Puedes pulsar `Enter` varias veces para aceptar los valores por defecto.
 
 ![Captura de la terminal generando una clave SSH](capturas/github/0e1_generar_ssh.png)
 
-**Qué estás viendo en la captura**
+**Qué estás viendo en la captura:** Git Bash ejecutando el comando. Las preguntas de ruta y passphrase se han respondido pulsando Intro. El dibujo ASCII al final confirma que la clave se ha generado correctamente en la carpeta `.ssh` de tu ordenador.
 
-- La terminal de Git Bash (o similar) ejecutando el comando de creación de la clave.
-- Las preguntas sobre dónde guardar el archivo y la *passphrase*, a las que se ha respondido pulsando la tecla *Intro* para dejar sus valores por defecto en blanco.
-- Un dibujo en arte ASCII (el *Randomart image*) que certifica que la clave criptográfica se ha generado con éxito y ya reside en la carpeta oculta `.ssh` de tu ordenador.
+#### 2. Copiar la clave pública
 
-#### 2. Copiar la Clave Pública
-Esto ha generado dos llaves en tu ordenador, una privada (¡nunca la compartas!) y una **pública** (la que le damos a los servidores). Vamos a copiar el texto de la clave pública:
+El proceso ha generado dos archivos: la clave **privada** (nunca la compartas) y la clave **pública** (la que le damos a GitHub). Copia la pública así:
 
 ```bash
-# Para Windows en Git Bash
+# Windows (Git Bash)
 clip < ~/.ssh/id_ed25519.pub
 
-# Para Mac
+# Mac
 pbcopy < ~/.ssh/id_ed25519.pub
 
-# O simplemente muestra el archivo en pantalla para seleccionarlo y copiarlo:
+# O muéstrala en pantalla y cópiala manualmente:
 cat ~/.ssh/id_ed25519.pub
 ```
 
 ![Captura de la terminal mostrando el archivo publico de la llave SSH](capturas/github/0e2_copiar_ssh.png)
 
-**Qué estás viendo en la captura**
+**Qué estás viendo en la captura:** el contenido de la clave pública mostrado con `cat`. Siempre empieza por `ssh-ed25519`.
 
-- El comando `cat` empleado para volcar el contenido de un archivo de texto por pantalla.
-- La clave pública que se ha generado, que empieza siempre por el algoritmo que se utilizó, en este caso `ssh-ed25519`.
+#### 3. Añadir la clave a GitHub
 
-#### 3. Añadir la llave a GitHub
-Ahora debes decirle a tu cuenta de GitHub cuál es tu llave "candado" para que reconozca a tu ordenador:
-
-1. Ve a GitHub, pulsa en tu foto de perfil y selecciona **Settings**.
-2. En el menú lateral, pincha en **SSH and GPG keys**.
-3. Pulsa el botón verde **New SSH key**.
-4. Escribe un título (ej. "Mi Portátil Clase") y **pega** toda la clave pública en el campo grande de texto.
-5. Haz clic en **Add SSH key**.
+1. Ve a GitHub → tu foto de perfil → **Settings** → **SSH and GPG keys**.
+2. Pulsa **New SSH key**.
+3. Escribe un título (ej. "Portátil clase") y pega la clave pública en el campo de texto.
+4. Haz clic en **Add SSH key**.
 
 ![Captura del formulario para agregar clave SSH](capturas/github/0e_añadir_ssh.png)
 
 ![Captura del menú de SSH indicando que la clave se ha guardado](capturas/github/0f_añadida_sh.png)
 
-**Qué estás viendo en la captura**
+**Qué estás viendo en las capturas:** la primera muestra el formulario para pegar la clave; la segunda confirma que la clave ha quedado vinculada a tu cuenta.
 
-- **Primera imagen:** El formulario en proceso en la web de GitHub para pegar la llave SSH copiada anteriormente desde la terminal.
-- **Segunda imagen:** La confirmación en el menú `SSH and GPG keys` de que la clave ha quedado vinculada y es reconocida por tu cuenta para dejarte acceder en remoto.
-
-Con este proceso completado, la próxima vez que clones un proyecto, no deberás fijarte en el botón HTTPS verde, sino utilizar la ruta **SSH** (que acostumbra a empezar con `git@github.com:...`). Desde entonces, cualquier envío a remoto (`push` o `pull`) fluirá sin pedírtelo todo el rato.
+A partir de ahora, cuando clones un proyecto usa la URL **SSH** (empieza por `git@github.com:...`) en lugar de HTTPS. Cualquier `push` o `pull` funcionará sin pedirte credenciales.
 
 ---
 
 ## 🚀 Paso a Paso: Subiendo tu proyecto a la nube
 
-Imagina que has estado trabajando en tu proyecto final localmente con `git init`, `git add` y `git commit`. Ahora ha llegado el momento de respaldarlo y subirlo a GitHub. Vamos a ver todo el ciclo vital.
+Imagina que has estado trabajando en local con `git init`, `git add` y `git commit`. Ahora quieres subirlo a GitHub.
 
-### 1. Creando el espacio en GitHub
+### 1. Creando el repositorio en GitHub
 
-Lo primero es entrar en la página web de tu cuenta de GitHub y pulsar el botón **New** para crear un nuevo repositorio. Debes darle un nombre, una descripción y dejarlo como Público o Privado. 
+Entra en tu cuenta de GitHub y pulsa el botón **New** para crear un nuevo repositorio. Dale un nombre y decide si será público o privado.
 
-Al crearlo, si ya tienes un repositorio local listo, **no** crees archivos `README`, `.gitignore` ni licencias auto-generadas desde la interfaz web; quieres que GitHub te dé un repositorio completamente vacío para llenarlo con tu trabajo del ordenador.
+Si ya tienes un repositorio local listo, **no marques** las opciones de añadir `README`, `.gitignore` ni licencia desde la web — necesitas que GitHub te dé un repositorio completamente vacío.
 
 ![Captura crear un nuevo repositorio en GitHub](capturas/github/1_crear_repo.png)
 
-**Qué estás viendo en la captura**
+**Qué estás viendo en la captura:** el formulario "Create a new repository" con el nombre `mi_proyecto`. Las opciones de README y .gitignore se han dejado desmarcadas para obtener un repositorio vacío.
 
-- El formulario "Create a new repository" rellenado con el nombre `mi_proyecto`.
-- Las opciones para añadir `.gitignore` o `README` se han dejado desmarcadas a propósito para obtener un repositorio 100% puro y vacío.
+### 2. Enlazando el local con el remoto (`git remote add`)
 
-### 2. Enlazando el local con el remoto (`git remote`)
+Una vez creado el repositorio vacío, GitHub te mostrará las instrucciones de subida. El comando que conecta tu repositorio local con el remoto es `git remote add`.
 
-Una vez creado tu repositorio vacío, GitHub te mostrará las instrucciones de subida en una caja verde en el centro de tu pantalla. Para conectar tu repositorio local con ese "cajón remoto" emplearemos el comando `git remote add`. El alias que se suele utilizar para el servidor principal es siempre `origin`.
+El alias **`origin`** es simplemente un apodo que le damos a la URL del servidor remoto — podría llamarse de cualquier manera, pero por convención siempre se llama `origin`. Así no tienes que escribir la URL completa cada vez.
 
-Si te fijas, arriba de las instrucciones hay tres pequeños pestañas para elegir cómo vas a conectarte: **HTTPS**, **SSH** y **GitHub CLI**. Según cuál elijas tú o tu empresa en la vida real, el protocolo de transmisión a añadir cambia:
+Dependiendo del protocolo que hayas configurado:
 
-**Opción A: Por HTTPS (La más común al principio)**
-Es la dirección web clásica. Si no configuras nada especial, Git te pedirá por fuerza el Token PAT (visto antes) cada vez que subas código, salvo que tu sistema operativo tenga el *Git Credential Manager* activado (lo habitual en Windows o si usas VSCode), lo cual hará que conecte automáticamente con cuentas web guardadas o te salte un pop-up en el navegador.
+<div class="tabs-colored" markdown>
 
-```bash
-git remote add origin https://github.com/tu-usuario/tu-repositorio.git
-```
+=== "HTTPS"
+    ```bash
+    git remote add origin https://github.com/tu-usuario/tu-repositorio.git
+    ```
+    Git te pedirá el Token PAT la primera vez que subas código (salvo que tu sistema tenga el *Git Credential Manager* activado, lo habitual en Windows).
 
-**Opción B: Por SSH (La más recomendada y profesional)**
-Usa en exclusiva las llaves criptográficas generadas por comandos `ssh-keygen` que has alojado en tu carpeta oculta `.ssh`. Este método es 100% invisible, seguro y transparente (nunca depende de gestores de credenciales externos de terceros ni abre navegadores molestos).
+=== "SSH"
+    ```bash
+    git remote add origin git@github.com:tu-usuario/tu-repositorio.git
+    ```
+    Si has configurado las claves SSH, no te pedirá ninguna credencial.
 
-```bash
-git remote add origin git@github.com:tu-usuario/tu-repositorio.git
-```
+</div>
 
-!!! info "¿Qué ocurre si he elegido HTTPS y no me ha pedido contraseña al subir?"
-    *(Caso de uso habitual en Windows).* Si has usado `HTTPS` en este paso, pero al ejecutar `git push` más adelante el sistema ni siquiera se ha inmutado ni te ha pedido la contraseña por terminal... ¡Es por culpa del gestor de credenciales de tu Sistema Operativo!
-
-    En algún momento del pasado has iniciado sesión con el navegador al autorizar a *Visual Studio Code* o al usar *Git for Windows*, por lo que tu ordenador se ha quedado el Token guardado en su almacén secreto de contraseñas. Esto es comodísimo, pero si ese almacén falla o migras a otro ordenador, el método HTTPS te dejará colgado en medio de la terminal rogándote el **Token de Acceso Personal (PAT)**, y por ello es que la comunidad de desarrollo estandariza crear y configurar las llaves **SSH** siempre.
-
-Independientemente del protocolo escogido que hayas enlazado, puedes comprobar que se han instalado correctamente los parámetros ejecutando:
+Para comprobar que el enlace se ha creado correctamente:
 
 ```bash
 git remote -v
 ```
 
-Este último comando te confirmará dónde intentarán enviar (`push`) o recoger (`fetch`) los datos tus comandos remotos de Git.
-
 ![Captura de la terminal mostrando el origin enlazado](capturas/github/2_enlazar_remoto.png)
 
-**Qué estás viendo en la captura**
+**Qué estás viendo en la captura:** el comando `git remote add origin` (que no produce salida visible) y a continuación `git remote -v`, que confirma que `origin` apunta a la URL correcta tanto para `push` como para `fetch`.
 
-- El comando `git remote add origin ...` que no produce salida, pero engancha silenciosamente tu base de datos local a la dirección web que se ve (en este caso indicando la ruta `https://`).
-- El comando `git remote -v` sirviendo de comprobación, donde Git enumera que el destino y origen de nombre "origin" para cualquier operación de subida (push) o descarga (fetch) están conectados.
+### 3. El primer push (`git push`)
 
-### 3. El primer empuje de código (`git push`)
-
-En este instante tu PC y GitHub están enlazados por cable, pero los datos siguen sin viajar. Debemos dar la orden explícita para subir tus etiquetas, ramas y commits usando `git push`. La primera vez añadiremos la opción `-u` para memorizar adónde se dirigen las actualizaciones de la rama principal por defecto en el futuro.
+Tu PC y GitHub están enlazados, pero los datos todavía no han viajado. La primera vez añade `-u` (`--set-upstream`) para vincular tu rama local con la rama remota: a partir de ahí, Git sabe adónde ir cuando ejecutas `git push` o `git pull` a secas, sin tener que escribir `origin main` cada vez.
 
 ```bash
 git push -u origin main
 ```
 
-Con ese mandato, todo tu contenido de la rama `main` volará por internet hasta situarse en la base de datos de GitHub.
+!!! info "¿Por qué me pide (o no me pide) contraseña?"
+    - **Si pide usuario y contraseña:** pega el **Token PAT** como contraseña. Tu contraseña de GitHub no funcionará.
+    - **Si no pide nada:** o tienes SSH configurado, o el *Git Credential Manager* de Windows ha guardado tus credenciales de una sesión anterior.
 
-!!! info "¿Por qué me pide (o NO me pide) contraseña?"
-    Al ejecutar `git push`, te enfrentas al guardia de seguridad de GitHub que necesita verificar quién eres para dejarte alterar el servidor remoto.
-    
-    1. **Si pide Usuario y Contraseña:** En la terminal te aparecerá un prompt estricto preguntándote por tu *Username* y luego tu *Password*. **NO pongas tu contraseña general de GitHub.** Debes pegar el **Token (PAT)** largo y extraño que creaste en los pasos iniciales. Con el Token PAT introducido (que se escribirá invisible en la terminal, pero está ahí), el servidor aceptará la subida.
-    2. **Si NO pide nada (como en la captura inferior):** Puede ocurrir frecuentemente que Windows (con *Git Credential Manager*), macOS (*Keychain*) o la CLI de GitHub hayan memorizado y encadenado tu inicio de sesión a través del navegador la vez que usaste VSCode, guardando ya una credencial web. Otra razón es si en el paso anterior usaste la ruta `git@github.com...` de **SSH**, la cual verifica directamente el criptograma de tu sistema operativo con GitHub tras bambalinas, logrando un proceso transparente e instantáneo sin prompts.
-    
+!!! warning "Conflicto al hacer push"
+    Si Git te avisa de que el remoto tiene cambios que tú no tienes en local, **no uses `git push --force`** salvo que estés seguro de lo que haces. `--force` sobreescribe el historial del servidor y puede borrar el trabajo de tus compañeros. La solución habitual es hacer primero `git pull` para integrar los cambios remotos, y luego volver a hacer `push`.
+
+    La única situación en que `--force` es aceptable es en una rama propia que nadie más usa.
+
 ![Captura del terminal con ls y subida git push exitosa](capturas/github/3_primer_push.png)
 
-**Qué estás viendo en la captura**
+**Qué estás viendo en la captura:** primero un `ls` para ver el contenido local antes del envío, y luego `git push -u origin main` con las estadísticas de éxito (`Writing objects: 100%`) y el aviso de que la rama remota queda enlazada.
 
-- Primero se ha ejecutado un comando `ls` a propósito para poder observar qué contenido habita actualmente en nuestro proyecto local (`primer_doc.txt`) antes de hacer el envío, de forma que sirva de comparativa en la captura siguiente.
-- Abajo, la orden `git push -u origin main` ha empaquetado y mandado a volar a GitHub a lo largo de Internet el archivo completo local.
-- Se muestran estadísticas finales ratificando el éxito como un `Writing objects: 100% (3/3)` y un aviso de seguimiento: la nueva y lejana rama en `origin` rastreará tus cambios a partir de ahora.
+### 4. Visualizando el resultado
 
-### 4. Visualizando el resultado web
-
-Si ahora te vas a la pestaña del navegador de tu repositorio (donde antes mostraba las instrucciones iniciales) y refrescas la página, verás listados ahí todos tus ficheros exactamente con los nombres e historial que figuraban en local.
+Actualiza la página del repositorio en el navegador. Verás tus archivos con el historial y los mensajes de commit exactos que tenías en local.
 
 ![Captura de la web de GitHub mostrando los archivos subidos](capturas/github/4_repo_lleno.png)
 
-**Qué estás viendo en la captura**
-
-- Al actualizar el navegador, las pantallas de ayuda se han ido, dejando sitio al entorno web de repositorios de GitHub.
-- Mágicamente se pueden divisar tus archivos locales ahí (como nuestro documentado `primer_doc.txt` visualizado antes en el `ls`), junto con el historial de mensajes exacto y el tiempo transcurrido desde que hiciste localmente cada confirmación o commit. ¡Tu proyecto ya vive en la nube!
+**Qué estás viendo en la captura:** el repositorio en GitHub mostrando los archivos locales (`primer_doc.txt`) junto al mensaje y la fecha de cada commit.
 
 ---
 
-## 🔄 Descargando y sincronizando nuestro código
-
-Hemos visto cómo subir todo, pero ¿qué ocurre si te mudas de ordenador o hay modificaciones aportadas desde otro lugar? 
+## 🔄 Descargando y sincronizando el código
 
 ### Clonar un repositorio desde cero (`git clone`)
 
-Imagina que llegas a los ordenadores de clase y allí no tienes nada del proyecto. Necesitas una copia 100% igual y vinculada a la de GitHub. En lugar de hacer `git init`, el proceso empieza entrando a la página web de tu repositorio en GitHub, buscando el botón verde desplegable **"<> Code"** y copiando el enlace exacto del proyecto (que de nuevo te dará la opción de copiar en versión **HTTPS** o **SSH**).
-
-![Captura mostrando el botón verde Code para copiar la URL de clonación](capturas/github/5a_obtener_enlace_clonar.png)
-
-**Qué estás viendo en la captura**
-
-- La página principal del repositorio en GitHub.
-- Hemos hecho clic en el botón verde **"<> Code"** que despliega el menú donde se encuentra el enlace de clonación.
-- Se observa la URL (en la pestaña HTTPS por defecto, aunque podrías seleccionar SSH) y el botón de las dos hojas superpuestas para copiarlo directamente al portapapeles.
-
-Con el enlace en el portapapeles, abre una terminal en una carpeta vacía (asegúrate de que no haya ningún repositorio de Git ahí ya) y ejecuta `git clone` pegando la URL:
+Llegas a un ordenador donde no tienes nada del proyecto. En lugar de `git init`, usas `git clone` con la URL del repositorio:
 
 ```bash
 git clone https://github.com/tu-usuario/tu-repositorio.git
-# ¡O recuerda utilizar la ruta de SSH si la tienes configurada!
+# O con SSH si lo tienes configurado:
+git clone git@github.com:tu-usuario/tu-repositorio.git
 ```
 
-Este comando:
+Para obtener la URL, entra en el repositorio de GitHub y haz clic en el botón verde **"<> Code"**.
 
-1. Crea una carpeta idéntica al repo.
-2. Descarga los históricos, la carpeta oculta `.git` y el código real al estado más reciente.
-3. Se vincula al remoto (`git remote add origin` automático!).
+![Captura mostrando el botón verde Code para copiar la URL de clonación](capturas/github/5a_obtener_enlace_clonar.png)
+
+**Qué estás viendo en la captura:** el menú desplegable del botón "Code" con la URL de clonación en HTTPS y el botón para copiarla al portapapeles.
+
+`git clone` hace tres cosas de golpe:
+
+1. Crea una carpeta con el nombre del repositorio.
+2. Descarga todos los commits, ramas y archivos.
+3. Configura `origin` apuntando al remoto automáticamente.
 
 ![Captura realizando git clone del repositorio y listando su contenido](capturas/github/5_clone.png)
 
-**Qué estás viendo en la captura**
+**Qué estás viendo en la captura:** `git clone` descargando el repositorio, y después `cd mi_proyecto` + `ls` confirmando que los archivos ya están en local.
 
-- El comando `git clone` seguido de la URL (en este caso, HTTPS) que copiamos en el paso anterior. 
-- Git nos informa de que está clonando en un nuevo directorio llamado `mi_proyecto` y de que está recibiendo y resolviendo todos los objetos correctamente.
-- A continuación usamos el comando `cd mi_proyecto` para entrar a esa nueva carpeta generada, y con un `ls` confirmamos que el contenido del repositorio (el archivo `primer_doc.txt` y demás) ya se encuentra descargado ahí dentro.
+### Comprobar si hay cambios sin descargarlos (`git fetch`)
 
-### Comprobar si hay cambios (`git fetch`)
-
-Antes de descargar nuevos archivos "a ciegas", los desarrolladores a menudo utilizan un comando intermedio: `git fetch`.
+`git fetch` se conecta al remoto y trae información sobre los cambios disponibles, pero **no modifica tus archivos locales**. Te permite ver qué hay nuevo antes de decidir si integrarlo.
 
 ```bash
 git fetch
 ```
 
-Lo que ha hecho este comando es conectarse a GitHub y traerse (descargar a un área oculta) un mapa actualizado del estado del repositorio remoto, pero **sin modificar ni tocar tu código local en absoluto**. Esto te permite observar si hay nuevas ramas de compañeros o commits lejanos, dándote la libertad de revisarlos primero.
-
 ### Descargar e integrar actualizaciones (`git pull`)
 
-Imaginemos ahora que ya tienes tu entorno clonado, pero esta mañana has modificado el código vía web en GitHub u otro compañero ha subido funcionalidades a la rama `main`. Para recibir estas alteraciones reales en tu PC y aplicarlas a tus archivos empleas el comando recíproco al `push`, que es `git pull`.
+`git pull` es la combinación de `git fetch` + merge automático: descarga los cambios del remoto y los aplica en tu rama actual.
 
 ```bash
 git pull
 ```
 
-El proceso es un "descarga e integra (mergea)": Git buscará (`fetch`) automáticamente qué ocurre de nuevo en la rama lejana, y directamente unificará su trayecto en tu rama local, haciéndote un fast-forward cuando sea posible.
+La diferencia entre los dos comandos en un vistazo:
+
+| | `git fetch` | `git pull` |
+|---|---|---|
+| Conecta al remoto | ✓ | ✓ |
+| Descarga cambios | ✓ | ✓ |
+| Modifica tus archivos | ✗ | ✓ |
+| Cuándo usarlo | Cuando quieres revisar antes de integrar | Cuando quieres actualizar directamente |
 
 ![Captura actualizando el repositorio local con un git pull](capturas/github/6_pull.png)
 
-**Qué estás viendo en la captura**
+**Qué estás viendo en la captura:** `git pull` integrando un cambio hecho desde la web de GitHub. La salida muestra el fast-forward y las estadísticas del archivo modificado (`1 insertion(+)`).
 
-- La ejecución del comando `git pull` en la terminal.
-- *(Nota: Para que este comando hiciese algo, previamente en este ejemplo habíamos añadido una pequeña modificación o línea nueva al archivo `primer_doc.txt` desde otro lugar, como por ejemplo desde la interfaz web de GitHub).*
-- Al hacer `git pull`, tu Git local se conecta al remoto, comprueba que hay novedades, y procede a aplicarlas realizando un **"Fast-forward"**: avanza tu rama local de golpe hasta la misma posición que tiene en la nube.
-- En las estadísticas finales te muestra el archivo que ha sido alterado (`primer_doc.txt`) y que ha recibido una línea extra de código (`1 insertion(+)`).
+!!! warning "¿Y si `git pull` genera un conflicto?"
+    Si tú has modificado un archivo en local y mientras tanto alguien (o tú mismo desde la web) ha modificado el mismo archivo en el remoto, `git pull` no puede fusionarlos automáticamente y para con un error de conflicto.
+
+    El proceso para resolverlo es el mismo que viste en la sección de ramas: abre el archivo, edita las marcas `<<<<<<<` / `=======` / `>>>>>>>`, guarda, haz `git add` del archivo resuelto y cierra con `git commit`.
 
 ---
 
-## 🌳 Las Ramas en el repositorio remoto
+## 🌳 Las ramas en el repositorio remoto
 
-Hasta ahora hemos trabajado enviando nuestro código únicamente a la rama principal (`main`). Sin embargo, ¡todo el poder de las ramas y mundos paralelos que hemos aprendido en la teoría anterior también se aplica a GitHub!
+Todo lo que aprendiste sobre ramas funciona igual en el remoto. Cuando creas una rama local y haces commits en ella, esos cambios solo existen en tu ordenador hasta que los subes explícitamente.
 
-Cuando has creado una nueva funcionalidad en local aislando tu código (usando `git checkout -b nueva-funcionalidad`), has realizado modificaciones y guardado todas ellas en una nueva foto o punto de control usando tus habituales comandos **`git add .`** y **`git commit -m "..."`**, todo avance de esta rama solo existe de forma privada en tu disco duro. 
-
-Si quieres que tus compañeros de equipo la vean en la nube de GitHub, o simplemente quieres hacerle una copia de seguridad en internet, deberás empujarla al remoto de la misma manera que hacías en la sección anterior, usando:
+Para publicar una rama en GitHub:
 
 ```bash
-git push -u origin nueva-funcionalidad
+git switch -c nueva-funcionalidad   # crea la rama y cambia a ella
+# ... trabajas, haces commits ...
+git push -u origin nueva-funcionalidad  # la primera vez
+git push                                # las siguientes veces
 ```
-
-*(El sufijo `-u` es vital la primera vez para vincular la ruta, desde ese momento en adelante bastará con que teclees `git push` a secas cuando estés parado sobre esa rama).*
 
 ![Captura mostrando el proceso de creación y subida de una rama en la terminal](capturas/github/7a_subir_rama_terminal.png)
 
-**Qué estás viendo en la captura**
+**Qué estás viendo en la captura:** creación de la rama con `git switch -c`, commits locales, y finalmente `git push -u origin nueva-funcionalidad` con el aviso `[new branch]` confirmando que ha llegado al servidor.
 
-- La terminal en la que creamos la nueva rama y cambiamos a ella mediante `git checkout -b nueva-funcionalidad`.
-- La creación de contenido en la nueva rama y su consolidación local con los comandos rutinarios (un `touch` de ejemplo, un `git add .` y su `git commit -m "rama"`).
-- El comando `git push -u origin nueva-funcionalidad`, el cual vincula por primera vez tu rama local al entorno remoto y envía todo el historial de esta nueva línea de tiempo a GitHub, como atestiguan las estadísticas del servidor al avisar de `[new branch]`.
-
-Al entrar en la página web de tu repositorio en GitHub, notarás que arriba a la izquierda del código fuente hay un botón desplegable que dice **"main"**. Si haces clic ahí, verás un listado de **todas las ramas** que tú o tu equipo habéis ido subiendo. Puedes pulsar sobre ellas para navegar en la web a través de sus archivos, ver el historial exacto de commits que componen esa rama o incluso empezar a integrar (*mergear*) tus aportaciones mediante las llamadas **Pull Requests**.
+En la web de GitHub, el selector de ramas (arriba a la izquierda del código) mostrará todas las ramas subidas. Puedes navegar por ellas para ver su historial o iniciar una Pull Request.
 
 ![Captura mostrando el selector de ramas en GitHub con una nueva rama disponible](capturas/github/7b_rama_github.png)
 
-**Qué estás viendo en la captura**
-
-- La interfaz web del repositorio en GitHub confirmando que la rama enviada desde la terminal ha llegado sana y salva a la nube.
-- Al pulsar en el selector que por defecto dice la rama principal en la que estás (`main`), se nos muestra el submenú de *Branches*, donde ahora también aparece tu `nueva-funcionalidad`. Puedes hacer clic para explorar el código base exacto en el estado que se encuentra en esa rama concreta sin alterar las demás.
+**Qué estás viendo en la captura:** el selector de ramas de GitHub mostrando `main` y `nueva-funcionalidad` disponibles.
 
 ### Borrar ramas en remoto
 
-Si la rama ha cumplido su función, su código ya está integrado en `main` y ya la has borrado en local (`git branch -d nueva-funcionalidad`), es una buena práctica de higiene borrarla también del servidor remoto de GitHub para no acumular basura espacial. 
+Una vez que la rama está fusionada en `main` y la has borrado en local, es buena práctica borrarla también del servidor:
 
-Tienes dos formas de hacerlo:
-- **Desde la web de GitHub**: Yendo a la lista de ramas (*View all branches*) y pulsando el icono de la papelera al lado de la rama.
-- **Desde la terminal**: Ejecutando un comando push especial que indica a GitHub explícitamente que proceda a su destrucción.
 ```bash
 git push origin --delete nueva-funcionalidad
 ```
 
+También puedes hacerlo desde la web de GitHub en la sección *Branches* → icono de papelera.
+
 ---
 
-## 📋 Resumen del flujo de trabajo habitual 
+## 📬 Pull Requests: proponer cambios para revisión
 
-Una dinámica clásica de trabajo unificado durante una jornada real será la siguiente:
+Una **Pull Request** (PR) es una petición que abres en GitHub para que alguien revise tu rama antes de fusionarla en `main`. Es el mecanismo central del trabajo colaborativo: en lugar de fusionar directamente, propones los cambios y el equipo los discute, comenta y aprueba antes de integrarlos.
 
-1. **Mantenerse al día (pull)**: Antes de tocar código, baja lo más reciente para evitar conflictos.
+El flujo habitual con PRs es:
+
+1. Subes tu rama al remoto con `git push -u origin mi-rama`.
+2. En GitHub aparece un aviso automático con el botón **"Compare & pull request"**. Haz clic ahí.
+3. Escribe un título y una descripción explicando qué has cambiado y por qué.
+4. Tu compañero (o tú mismo en proyectos personales) revisa los cambios en la pestaña **"Files changed"**, donde se ven las líneas añadidas en verde y las borradas en rojo.
+5. Si todo está bien, se pulsa **"Merge pull request"** y los cambios pasan a `main`.
+6. La rama puede borrarse automáticamente después del merge.
+
+```mermaid
+flowchart LR
+    A[git push -u origin mi-rama] --> B[Abrir PR en GitHub]
+    B --> C[Revisión del equipo]
+    C --> D{¿Aprobado?}
+    D -->|Sí| E[Merge a main]
+    D -->|No| F[Hacer cambios y push]
+    F --> C
+```
+
+!!! tip "Recuerda"
+    Las PRs no son solo para equipos grandes. Usarlas en proyectos propios te da historial de decisiones, revisión antes de integrar y una forma ordenada de trabajar por funcionalidades.
+
+---
+
+## 📋 Flujo de trabajo habitual
+
+Este es el ciclo típico de un día de trabajo:
+
+```mermaid
+flowchart TD
+    A[git pull] --> B[git switch -c mi-rama]
+    B --> C[Trabajar y hacer commits]
+    C --> D[git push -u origin mi-rama]
+    D --> E[Abrir Pull Request en GitHub]
+    E --> F[Revisión y merge a main]
+    F --> A
+```
+
+1. **Actualizarte** antes de empezar:
    ```bash
    git pull
    ```
-2. **Crear una rama nueva** para el cambio o ticket en el que trabajarás (aislando tu progreso de `main`):
+2. **Crear una rama** para el cambio que vas a hacer:
    ```bash
-   git checkout -b <nueva-rama>
+   git switch -c mi-rama
    ```
-3. Trabajar en el desarrollo, hacer tu `git add` y finalmente guardar consolidando una foto (commits frecuentes y claritos!):
+3. **Trabajar y commitear** con frecuencia:
    ```bash
-   git commit -m "Añadida pantalla de login"
+   git add .
+   git commit -m "Añade pantalla de login"
    ```
-4. **Publicar tu rama** en el remoto, para servir de respaldo a prueba de bombas y mostrar la aportación (aún la `main` sigue limpia):
+4. **Publicar la rama** en GitHub:
    ```bash
-   git push -u origin <nueva-rama> 
-   # o simplemente git push después de la primera subida
+   git push -u origin mi-rama
    ```
-5. Cuando aprueban y testean la corrección, la envías integrándola (`merge`) en la línea base (`main`) con tu propio código o enviando petitorios (pull requests) en el visor web.
-
-¡El ciclo de desarrollo colaborativo de software ha comenzado!
+5. **Abrir una Pull Request** en GitHub y esperar revisión antes de fusionar en `main`.
 
 ---
 
 ## 💻 Integración de Git y GitHub en IntelliJ IDEA
 
-¡No todo pasa por la temida pantalla negra de la terminal! Hasta ahora hemos aprendido la manera más purista e independiente de operar. Sin embargo, en tu día a día como programador Java probablemente utilizarás un IDE potente como **IntelliJ IDEA**, que incorpora sus propios botones visuales y menús de Git preconfigurados para facilitarte drásticamente la vida.
+IntelliJ IDEA incorpora soporte nativo para Git y GitHub, lo que permite hacer la mayoría de operaciones desde la interfaz sin usar la terminal.
 
 ### Enlazando tu cuenta
 
-Para que IntelliJ funcione como intermediario sin errores, es aconsejable identificarse primero dentro del propio programa:
-
-1. Abre los ajustes (File -> Settings o Edit -> Preferences).
-2. Ve al menú **Version Control -> GitHub**.
-3. Pulsa el botón `+` para añadir cuenta y puedes usar *"Log in via GitHub..."* (que abrirá una pestaña de autorización en tu navegador web) o introduciendo el Token PAT.
+1. Abre **File → Settings** (o **Edit → Preferences** en Mac).
+2. Ve a **Version Control → GitHub**.
+3. Pulsa `+` → **Log in via GitHub** (abre el navegador para autorizar) o introduce tu Token PAT.
 
 ![Captura mostrando la cuenta de GitHub vinculada en IntelliJ IDEA](capturas/github/8a_intellij_cuenta.png)
 
-**Qué estás viendo en la captura**
+**Qué estás viendo en la captura:** la pantalla de ajustes con la cuenta de GitHub ya vinculada al IDE.
 
-- La ventana de Ajustes (Settings) de IntelliJ IDEA, dentro del submenú **Version Control -> GitHub**.
-- Cómo hemos añadido y autorizado satisfactoriamente nuestra cuenta, logrando que el propio IDE pueda interactuar con nuestros repositorios remotos sin preguntarnos por contraseñas en cada momento prestado.
+### El menú Git
 
-### El menú superior "Git" y control de versiones
+Con un proyecto abierto que tenga `git init`, verás el menú **Git** en la barra superior. Desde ahí tienes acceso a las operaciones principales:
 
-Una vez que tengas un proyecto abierto —y siempre que le hayas declarado un `git init` o directamente lo hayas importado usando la opción `Get from VCS` al iniciar IntelliJ—, verás que en la barra de menús de arriba (junto a *File, Edit, View, Navigate*, etc.) ha aparecido un nuevo menú llamado **Git**.
-
-Desde ese menú superior desplegable tienes acceso directo y centralizado a todas las operaciones fundamentales que hemos ido viendo por terminal, literalmente a golpe de clic sin tener que teclear ningún mandato, entre las más destacadas:
-
-A) **Git -> Commit** (o haciendo clic en su panel lateral respectivo): Te abre un entorno espectacular en el que es facilísimo marcar directamente las casillas de los archivos modificados (haciendo en secreto la labor del `git add`) y escribir en la caja inferio el mensaje para realizar el `git commit`. Además, al hacer clic sobre un archivo te colorea en verde y rojo las líneas exactas de código que has añadido o borrado sirviendo de `git diff` visual.
+**A) Commit** — Abre un panel donde puedes marcar los archivos a añadir al staging y escribir el mensaje del commit. A la derecha se muestra el diff visual con las líneas añadidas y borradas.
 
 ![Captura del panel lateral de Commit de IntelliJ IDEA](capturas/github/8b_intellij_commit.png)
 
-**Qué estás viendo en la captura**
+**Qué estás viendo en la captura:** el panel de Commit con los archivos seleccionados para el staging, el campo del mensaje y el visor de diferencias a la derecha.
 
-- A la izquierda, el menú especial de la pestaña de **Commit**: vemos seleccionados qué archivos van directos a guardarse (haciendo en secreto un `git add`).
-- Abajo de este menú, la cómoda caja de texto donde se ha rellenado en color claro el mensaje de este commit (haciendo de `git commit -m "..."`).
-- En el panel derecho de la ventana del IDE se puede contemplar un completísimo visor de diferencias (`git diff`) que pone cara a cara la versión anterior y la versión recién modificada destacando sus adiciones sin tener que adivinarlas en consola.
-
-B) **Git -> Push**: Equivale directamente a ejecutar `git push`. Al pulsarlo (o si aprietas `Ctrl+Shift+K`), se te abrirá un diálogo genial que lista los commits locales exactos y hacia qué rama de `origin` los estás mandando a la nube, confirmándolo antes de proceder y darle ok.
+**B) Push** (`Ctrl+Shift+K`) — Muestra los commits pendientes de subir y hacia qué rama de `origin` van. Confirma antes de enviar.
 
 ![Captura mostrando el diálogo emergente para hacer Push](capturas/github/8c_intellij_push.png)
 
-**Qué estás viendo en la captura**
+**Qué estás viendo en la captura:** el diálogo de Push indicando la rama origen, la rama destino en `origin` y los commits que van a enviarse.
 
-- IntelliJ ha bloqueado la pantalla advirtiéndonos de lo que vamos a empujar al remoto.
-- Se indica claramente el sentido: vamos a hacer push desde la rama `main` local hacia la rama `main` en `origin` (GitHub).
-- En el lateral izquierdo puedes comprobar el o los commits empaquetados dispuestos a viajar por la red, previniendo así un envío accidental.
+**C) Pull / Fetch** — Descarga e integra los cambios del remoto en tu rama actual.
 
-C) **Git -> Pull** (o *Fetch*): Te abre una sencilla ventana para descargar y actualizar el código de tu ordenador absorbiendo los cambios que hayan puesto en GitHub tus compañeros, haciendo las veces del `git pull`.
+### Gestión de ramas en IntelliJ
 
-#### Controlando los mundos paralelos: Las ramas en IntelliJ
-
-Por último, el control de las **ramas** en el IDE lo tienes de forma muy cómoda e integrada desde el propio menú superior (**Git -> Branches...**).
-
-Al pulsar en esta opción, se abre un panel precioso centralizado listando un bloque con tus ramas **Local** (las tuyas) y las **Remote** (las que tienes compartidas por tu equipo en el servidor). Desde este panel puedes crear ramas nuevas de la nada seleccionando `New Branch`, traerte las que estén subidas por tus amigos a tu ordenador, o saltar a otra diferente (`Checkout`) de forma completamente visual. 
+Desde **Git → Branches** puedes ver todas las ramas locales y remotas, crear una nueva rama (`New Branch`, equivale a `git switch -c`), y cambiar entre ellas.
 
 ![Captura mostrando el potente selector de ramas de IntelliJ](capturas/github/8d_intellij_ramas.png)
 
-**Qué estás viendo en la captura**
+**Qué estás viendo en la captura:** el panel de ramas con las secciones Local y Remote, y el botón `+ New Branch` para crear una rama directamente desde el IDE.
 
-- El widget del menú de control de ramas de IntelliJ IDEA.
-- En primera posición la acción principal estelar `+ New Branch` que ejecuta instantáneamente un `git checkout -b` pidiéndote un nombre.
-- El listado clarísimo agrupado por orígenes: Tus ramas residentes en el ordenador y en qué estado están (**Local**), seguido del repositorio externo principal de tu equipo (**Remote / origin**) y qué hay guardado ahí para descargar.
-
-El uso del IDE ahorra una cantidad dramática de tiempo en el día a día y previene los temidos despistes que ocurren por olvidar introducir o vigilar bien el área temporal (Stage) en consola. Las terminales (para control maestro) y las UI visuales (para trabajar con eficiencia) son herramientas complementarias. ¡Aprovéchalas a tu favor en el ciclo del desarrollo profesional!
+La terminal y el IDE son complementarios: la terminal da control total; el IDE acelera las operaciones del día a día.
 
 ---
 
 ## ✅ Ideas clave (muy resumidas)
 
-??? tip "Abrir resumen"
-    - `git remote add origin <url>` vincula tu repositorio local con uno remoto en GitHub.
-    - `git remote -v` comprueba a qué direcciones remotas está apuntando tu proyecto.
-    - `git push -u origin <rama>` sube por primera vez tu rama local a internet para hacerle copia de seguridad y las vincula para el futuro.
-    - `git push` manda tus confirmaciones guardadas (commits) hacia la nube en tu rama actual.
-    - `git clone <url>` descarga en una carpeta nueva un repositorio entero que ya existía en GitHub.
-    - `git fetch` se asoma al remoto y descarga el listado de novedades en la sombra, sin tocar tu código local.
-    - `git pull` trae de internet los cambios de tus compañeros y los mezcla automáticamente (fast-forward o merge) en tu directorio de trabajo.
-    - `git push origin --delete <rama>` elimina para siempre una rama que estaba subida en el repositorio remoto.
+!!! tip "Resumen"
+    - `git remote add origin <url>` — vincula tu repositorio local con el remoto. `origin` es el alias que le damos a la URL.
+    - `git remote -v` — comprueba a qué dirección remota apunta tu proyecto.
+    - `git push -u origin <rama>` — sube la rama por primera vez y la vincula para futuros pushes.
+    - `git push` — sube los commits de la rama actual al remoto.
+    - `git clone <url>` — descarga un repositorio completo en una carpeta nueva.
+    - `git fetch` — descarga el estado del remoto sin modificar tus archivos locales.
+    - `git pull` — descarga y aplica los cambios del remoto en tu rama actual.
+    - `git push origin --delete <rama>` — borra una rama del repositorio remoto.
+    - Una **Pull Request** es una propuesta de fusión que el equipo revisa antes de integrar en `main`.

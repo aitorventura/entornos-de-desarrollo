@@ -1,183 +1,231 @@
-﻿# 🌿 6. Ramas en Git
+# 🌿 6. Ramas en Git
 
 ![Ramas](diapositivas/ramas.pdf){ type=application/pdf style="width:100%;min-height:80vh" }
 
 !!!info "Descarga de diapositivas"
     [Descarga las diapositivas](diapositivas/ramas.pdf){target="_blank" rel="noopener"}
 
-Las **ramas** (branches) son una de las características más potentes de Git. Permiten divergir de la línea principal de desarrollo para trabajar en **nuevas funcionalidades**, **arreglar errores** o **realizar experimentos** sin afectar al código estable.
+Las **ramas** son una de las características más útiles de Git. Permiten trabajar en una nueva funcionalidad, arreglar un error o hacer un experimento sin tocar el código que ya funciona. Cuando terminas, decides si integras ese trabajo o lo descartas.
+
+Sin ramas, cualquier cambio a medias quedaría mezclado con el código estable. Con ramas, tienes tu propio espacio de trabajo aislado.
 
 ---
 
 ## 🌳 ¿Qué es una rama?
 
-Una rama es, en esencia, un puntero móvil a uno de los commits. La rama por defecto en Git suele llamarse `main` (o antiguamente `master`). 
+Piensa en el historial de commits como una línea de tiempo. Una rama es simplemente una **etiqueta que apunta a un commit concreto** y que avanza automáticamente cada vez que haces un nuevo commit estando en ella.
 
-Cuando creas una rama, simplemente creas un nuevo puntero para que puedas moverte independientemente.
+La rama por defecto se llama `main` (o `master` en repositorios más antiguos). Cuando creas una rama nueva, Git pone otra etiqueta en el mismo sitio donde estás tú en ese momento. A partir de ahí, cada rama puede avanzar de forma independiente.
 
-![Esquema de ramas](https://git-scm.com/images/about/branches.png)
+```mermaid
+gitGraph
+   commit id: "Commit A"
+   commit id: "Commit B"
+   branch experimento
+   checkout experimento
+   commit id: "Cambio experimental"
+   checkout main
+   commit id: "Commit C (main sigue)"
+```
+
+Lo que ves arriba: `main` y `experimento` parten del mismo punto (Commit B) y cada una avanza por su lado sin pisarse.
+
+---
+
+## 🔖 ¿Qué es HEAD?
+
+`HEAD` es un puntero especial que indica **en qué rama (y commit) estás trabajando ahora mismo**. Lo verás constantemente en la salida de `git log`, `git status` y `git lga`.
+
+!!! info "Idea clave"
+    `HEAD -> main` significa: *"Estoy en la rama main, y el commit actual es este."*  
+    Cuando cambias de rama con `git switch`, HEAD se mueve contigo.
 
 ---
 
 ## 🛠️ Comandos básicos
 
-### 1. Ver ramas
-Para ver qué ramas tienes en tu repositorio y en cuál estás situado (marcada con un `*`):
+### Ver ramas
+
+Para ver qué ramas tienes y en cuál estás (marcada con `*`):
 
 ```bash
 git branch
 ```
 
-### 2. Crear una rama
-Para crear una nueva rama (pero **sin** cambiar a ella):
+### Crear una rama
+
+Crea una nueva etiqueta en el commit actual, pero **no te mueves** a ella:
 
 ```bash
 git branch nombre-de-la-rama
 ```
 
-### 3. Cambiar de rama
-Para moverte a una rama existente y empezar a trabajar en ella:
+### Cambiar de rama
+
+Para moverte a una rama existente:
 
 ```bash
-git checkout nombre-de-la-rama
-# O con la sintaxis más moderna:
-git switch nombre-de-la-rama
+git switch nombre-de-la-rama      # sintaxis moderna (recomendada)
+git checkout nombre-de-la-rama    # sintaxis clásica, también funciona
 ```
 
-También puedes crear y cambiar en un solo paso:
+!!! tip "¿Por qué existe git switch?"
+    `git checkout` hacía demasiadas cosas distintas: cambiar de rama, recuperar archivos, moverse a un commit suelto… Era confuso. Git 2.23 introdujo `git switch` (solo para ramas) y `git restore` (solo para archivos) para separar responsabilidades. Ambas sintaxis funcionan, pero `switch` es más clara.
+
+Para crear una rama y moverte a ella en un solo paso:
 
 ```bash
-git checkout -b nueva-rama
+git switch -c nueva-rama        # moderno
+git checkout -b nueva-rama      # clásico
 ```
 
-### 4. Borrar una rama
-Una vez que has terminado con una rama y la has fusionado, puedes borrarla:
+### Borrar una rama
+
+Cuando has terminado con una rama y ya has fusionado su trabajo:
 
 ```bash
 git branch -d nombre-de-la-rama
 ```
 
+!!! warning "git branch -d vs -D"
+    Con `-d` (minúscula), Git **se niega a borrar** la rama si detecta que tiene commits que no están en ninguna otra rama — te está protegiendo de perder trabajo.  
+    Con `-D` (mayúscula), borra sin preguntar aunque haya commits sin fusionar. Úsala solo cuando estás seguro de que quieres descartar ese trabajo.
+
+### Tabla resumen
+
+| Comando | Qué hace | Cuándo usarlo |
+|---|---|---|
+| `git branch` | Lista ramas | Para ver en cuál estás |
+| `git branch <nombre>` | Crea rama | Antes de empezar algo nuevo |
+| `git switch <nombre>` | Cambia de rama | Para moverte a otro contexto |
+| `git switch -c <nombre>` | Crea y cambia | Atajo para los dos pasos anteriores |
+| `git branch -d <nombre>` | Borra rama (seguro) | Tras fusionar |
+| `git branch -D <nombre>` | Borra rama (forzado) | Para descartar trabajo intencionalmente |
+
 ---
 
 ## 👁️ Visualizando el historial (Alias `git lga`)
 
-Para entender realmente qué está pasando con las ramas, es vital ver el "grafo" de commits. Git tiene un comando muy útil para esto, pero es largo de escribir:
+Para entender qué está pasando con las ramas, es vital ver el grafo de commits. El comando completo es largo:
 
 ```bash
 git log --graph --oneline --all --decorate
 ```
 
-Por eso, es muy común crear un **alias** (un atajo) llamado `lga` (Log Graph All). Ejecuta esto una sola vez en tu terminal:
+Lo más práctico es crear un **alias** llamado `lga`. Ejecútalo una sola vez:
 
 ```bash
 git config --global alias.lga "log --graph --oneline --all --decorate"
 ```
 
-A partir de ahora, solo tendrás que escribir `git lga` para ver un mapa colorido de tus ramas.
+A partir de ahí, `git lga` te muestra un mapa visual de todas las ramas en cualquier repositorio.
 
 ---
 
-## 🚀 Historia de una Rama: El ciclo completo
+## 🚀 Historia de una rama: el ciclo completo
 
-Para entender cómo encajan todas las piezas, vamos a seguir una historia completa. Imagina que estás trabajando en una web y quieres cambiar el **color del fondo**, pero no quieres romper lo que ya funciona.
-
-Sigue esta historia paso a paso.
+Para ver cómo encaja todo, vamos a seguir un ejemplo paso a paso. Estás desarrollando una web y quieres experimentar con el color de fondo sin romper lo que ya funciona.
 
 ### 1. El punto de partida
-Estás en la rama `main`. Todo funciona bien. Verificas dónde estás con `git status` y ves el historial actual con nuestro alias `git lga`.
+
+Estás en `main`. Todo funciona. Compruebas dónde estás con `git status` y ves el historial con `git lga`.
 
 ![Captura de `git status` mostrando "On branch main" y `git lga` mostrando el último commit](capturas/ramas/1_status_inicial.png)
 
 **Qué estás viendo en la captura**
 
-- Estás en la rama `main` (`On branch main`).
-- El historial (`git lga`) muestra el flujo de los commits actuales y `HEAD -> main` indica que te encuentras en ella.
+- Estás en `main` (`On branch main`).
+- `HEAD -> main` en el log indica que es donde estás ahora mismo.
 
-### 2. Creando el universo paralelo (`git branch`)
-Decides crear una rama para tus experimentos. La llamaremos `experimento-fondo`.
-Al ejecutar este comando, Git crea una nueva etiqueta apuntando exactamente al mismo commit donde estás ahora.
+### 2. Creando la rama
+
+Creas una rama para el experimento. Git pone una nueva etiqueta en el commit actual.
 
 ```bash
 git branch experimento-fondo
 ```
 
-Si miras ahora el historial, verás que ambas ramas (`main` y `experimento-fondo`) están en el mismo sitio. El asterisco `*` o el color diferente te indica que **aún sigues en main**.
+Si miras el historial ahora, `main` y `experimento-fondo` apuntan al mismo commit. El asterisco (o el color) te recuerda que **todavía estás en main**.
 
 ![Captura de `git lga` mostrando ambas ramas en el mismo commit y el HEAD apuntando a main](capturas/ramas/2_crear_rama.png)
 
 **Qué estás viendo en la captura**
 
-- Al ejecutar `git lga`, ves que ahora la etiqueta `experimento-fondo` se ha añadido junto a `main`.
-- Ambas apuntan al mismo commit, pero `HEAD -> main` indica que **todavía sigues** en la rama principal.
+- Ambas etiquetas (`main` y `experimento-fondo`) están en el mismo punto.
+- `HEAD -> main` confirma que aún no te has movido.
 
-### 3. Viajando a la nueva rama (`git checkout`)
-De momento solo la has creada, pero sigues en `main`. Tienes que "mudarte" a la nueva rama para que tus cambios no afecten a la principal.
+### 3. Moviéndote a la nueva rama
+
+Ahora sí te mudas:
 
 ```bash
-git checkout experimento-fondo
+git switch experimento-fondo
 ```
 
-Git te confirmará el cambio con un mensaje "Switched to branch...".
+Git te confirma el cambio con `Switched to branch 'experimento-fondo'`.
 
 ![Captura del mensaje de cambio de rama y un `git status` confirmando que estás en la nueva rama](capturas/ramas/3_cambio_rama.png)
 
 **Qué estás viendo en la captura**
 
-- Git te confirma el movimiento con `Switched to branch 'experimento-fondo'`.
-- El comando `git status` certifica que has cambiado de rama mostrando `On branch experimento-fondo`.
+- El mensaje `Switched to branch 'experimento-fondo'`.
+- `git status` muestra `On branch experimento-fondo`.
 
-### 4. Trabajando seguro (Commit)
-Ahora estás en tu zona segura. Modificas el archivo `estilos.css` para poner el fondo rojo. Guardas los cambios y haces un commit.
+### 4. Trabajando en la rama
+
+Ahora cualquier commit que hagas afectará solo a esta rama. Modificas `estilos.css` y haces commit:
 
 ```bash
 git add estilos.css
 git commit -m "Fondo cambiado a rojo"
 ```
 
-En este momento clave, tu rama `experimento-fondo` ha avanzado un paso y tiene un commit nuevo. Sin embargo, `main` se ha quedado "congelada" en el commit anterior.
+En este momento, `experimento-fondo` ha avanzado un commit. `main` no se ha movido.
 
 ![Captura de `git lga` mostrando claramente que experimento-fondo está UN paso por delante de main](capturas/ramas/4_rama_avanzada.png)
 
 **Qué estás viendo en la captura**
 
-- Al utilizar `git lga`, la rama `experimento-fondo` (donde ahora está tu `HEAD`) aparece un nivel por encima.
-- Tiene el nuevo commit que acabas de realizar, mientras que la etiqueta de `main` se ha quedado en el commit anterior sin verse alterada.
+- `experimento-fondo` (donde está tu `HEAD`) aparece un nivel por delante.
+- `main` se ha quedado en el commit anterior, intacta.
 
-### 5. Volviendo a la realidad
-El experimento ha sido un éxito. Quieres llevártelo a la web real. Pero no puedes fusionar *desde* la rama experimental, tienes que ir al destino. Volvemos a `main`.
+### 5. Volviendo a main
+
+El experimento ha ido bien. Para fusionarlo, primero tienes que volver al destino:
 
 ```bash
-git checkout main
+git switch main
 ```
 
-¡Magia! Si abres ahora el archivo `estilos.css`, verás que el fondo rojo ha desaparecido. Ha vuelto a ser como era antes. No te asustes, tus cambios están seguros en la otra rama.
+Si abres `estilos.css`, el fondo rojo ha desaparecido. No te asustes: tus cambios están seguros en `experimento-fondo`, Git simplemente ha restaurado los archivos al estado de `main`.
 
 ![Captura mostrando el comando checkout y quizás el contenido del archivo original](capturas/ramas/5_vuelta_main.png)
 
 **Qué estás viendo en la captura**
 
-- Usando de nuevo `git checkout` o `git switch`, regresas satisfactoriamente a `main`.
-- Si revisaras el código de tus archivos, los verías exactamente igual que antes del experimento; la rama principal está intacta.
+- Has vuelto a `main`.
+- El código de los archivos está exactamente como antes del experimento.
 
-### 6. La Fusión (`git merge`)
-Estando ya en `main` (el destino), ordenamos a Git que traiga los cambios de la otra rama.
+### 6. La fusión (`git merge`)
+
+Estando en `main`, traes los cambios de la otra rama:
 
 ```bash
 git merge experimento-fondo
 ```
 
-Como `main` no se había movido (nadie más ha trabajado en ella), Git hace un **Fast-Forward** (avance rápido). Simplemente coge la etiqueta `main` y la mueve hacia adelante hasta alcanzar a `experimento-fondo`.
+Como `main` no ha avanzado mientras trabajabas, Git hace un **Fast-forward**: simplemente mueve la etiqueta `main` hasta donde está `experimento-fondo`. No crea ningún commit extra.
 
 ![Captura del mensaje "Fast-forward" y un `git lga` final mostrando ambas ramas juntas al final del camino](capturas/ramas/6_merge_exito.png)
 
 **Qué estás viendo en la captura**
 
-- Al fusionar (`git merge`), Git usa la estrategia de **Fast-forward** al no haber commits competitivos en `main`.
-- Se listan los cambios incorporados a los archivos resultantes de esta acción.
-- Finalmente, con `git lga` observarás que `main` y `experimento-fondo` vuelven a señalar el mismo y último commit.
+- Git usa la estrategia **Fast-forward** porque no ha habido commits en `main` mientras tanto.
+- Con `git lga` verás que `main` y `experimento-fondo` apuntan al mismo commit.
 
-### 7. Limpieza (`git branch -d`)
-Ya no necesitamos la rama `experimento-fondo`. Su trabajo ha terminado y su código ya es parte de `main`. La borramos para mantener el repositorio ordenado.
+### 7. Limpieza
+
+La rama ha cumplido su función. Su trabajo ya está en `main`. La borras:
 
 ```bash
 git branch -d experimento-fondo
@@ -187,192 +235,217 @@ git branch -d experimento-fondo
 
 **Qué estás viendo en la captura**
 
-- Git indica que ha eliminado exitosamente la rama local con `Deleted branch experimento-fondo...`.
-- Al realizar `git lga`, el árbol está totalmente limpio, con un solo flujo final en `main` que ya contiene todo tu trabajo integrado.
+- `Deleted branch experimento-fondo...` confirma el borrado.
+- `git lga` muestra un solo flujo limpio en `main`.
 
 ---
 
 ## 🔗 Fusiones (Merges)
 
-Una vez has completado el trabajo en una rama, querrás incorporar los cambios a la rama principal. Esto se hace con el comando `merge`.
+Cuando has terminado de trabajar en una rama, llega el momento de incorporar esos cambios a `main`. Eso es una fusión: le dices a Git "trae lo que hay en esta rama y mézclalo con lo que tengo aquí".
 
-1. Primero, sitúate en la rama destino (normalmente `main`):
-   ```bash
-   git checkout main
-   ```
-2. Ejecuta la fusión:
-   ```bash
-   git merge mi-nueva-funcionalidad
-   ```
+El comando siempre es el mismo — primero te sitúas en la rama destino, luego fusionas:
 
-Existen principalmente dos tipos de fusión:
+```bash
+git switch main
+git merge nombre-de-la-rama
+```
 
-### Fast-forward
-Ocurre cuando la rama principal no ha avanzado desde que creaste tu rama. Git simplemente "mueve el puntero" hacia adelante. Es lineal y limpio.
+Lo que cambia es cómo Git resuelve la fusión por dentro. Dependiendo de lo que haya ocurrido mientras trabajabas, Git puede encontrarse en dos situaciones muy distintas.
 
-**👉 Este es el caso que hemos visto en la "Historia de una Rama" anterior.**
+<div class="tabs-colored" markdown>
 
-### Recursive (o 3-way merge)
-Ocurre cuando la rama principal **sí** ha avanzado (tiene nuevos commits) mientras tú trabajabas en tu rama.
+=== "Fast-forward — historial lineal"
 
-**Ejemplo Práctico Detallado:**
+    Ocurre cuando `main` **no ha avanzado** desde que creaste tu rama. Git simplemente mueve el puntero hacia adelante. El historial queda lineal y limpio, como si hubieras trabajado directamente en `main`.
 
-1. Tú creas la rama `funcionalidad-X` y haces un commit (ej. añades un botón).
-2. Mientras tanto, tu compañero sube un cambio a `main` (ej. cambia el logo).
-3. Ahora `main` y `funcionalidad-X` han divergido. Tienen historias diferentes.
-4. Te sitúas en `main` e intentas fusionar:
-   ```bash
-   git merge funcionalidad-X
-   ```
-5. Git se da cuenta de que no puede hacer Fast-Forward. Automáticamente:
+    ```mermaid
+    gitGraph
+       commit id: "A"
+       commit id: "B"
+       branch feature
+       checkout feature
+       commit id: "C"
+       commit id: "D"
+       checkout main
+       merge feature
+    ```
 
-      - Coge el último commit de `main`.
-      - Coge el último commit de `funcionalidad-X`.
-      - Busca el ancestro común de ambos.
-      - Crea un **nuevo commit** (Merge Commit) que une los tres puntos.
+    Es el caso más sencillo. No hace falta hacer nada especial: `git merge <rama>` lo detecta solo y no crea ningún commit extra.
 
-   ![Captura de `git lga` ANTES del merge, mostrando las ramas bifurcadas en forma de Y](capturas/ramas/8a_antes_merge.png)
+=== "3-way merge — commit de unión"
 
-   **Qué estás viendo en la captura**
+    Ocurre cuando `main` **sí ha avanzado** mientras trabajabas en tu rama. Las dos líneas han divergido y Git no puede simplemente mover un puntero. Tiene que crear un **commit de merge** que une ambas historias.
 
-   - El historial (`git lga`) antes de fusionar muestra cómo la rama `main` y la rama `funcionalidad-X` se han separado.
+    ```mermaid
+    gitGraph
+       commit id: "A"
+       commit id: "B"
+       branch feature
+       checkout feature
+       commit id: "C (feature)"
+       checkout main
+       commit id: "D (main)"
+       merge feature id: "Merge commit"
+    ```
 
-   - Cada rama tiene al menos un commit propio que no está en la otra, formando visualmente un camino divergente en forma de "Y".
+    Git busca el ancestro común de ambas ramas (punto B), compara los cambios de cada lado y los une. Si no hay líneas en conflicto, lo hace automáticamente y crea el merge commit.
 
-6\. Como es un "Merge Commit", Git necesita un mensaje. Automáticamente **abrirá tu editor de terminal por defecto** (suele ser Vim o Nano) para que confirmes el mensaje de merge sugerido: `Merge branch 'funcionalidad-X'`.
+</div>
 
-   ![Captura del editor de commit por defecto de Git en la terminal](capturas/ramas/8c_mensaje_commit.png)
+### El merge commit y el editor
 
-   **Qué estás viendo en la captura**
+Cuando Git necesita crear un merge commit (caso 3-way), **abre tu editor de terminal** para que confirmes el mensaje. Suele ser Vim o Nano.
 
-   - Un editor de texto pidiéndote confirmar o modificar el mensaje automático del "Merge Commit".
-   - Las líneas que empiezan por `#` son comentarios que Git ignorará.
+![Captura del editor de commit por defecto de Git en la terminal](capturas/ramas/8c_mensaje_commit.png)
 
-!!! question "¿Cómo salgo de aquí?"
-    - **Si es Vim (lo más común):** Escribe `:wq` (es decir, pulsas la tecla `Esc` por si acaso, luego los dos puntos `:`, la `w` de *write*, la `q` de *quit*) y pulsas `Enter`.
-    - **Si es Nano:** Pulsa `Ctrl + O` para guardar, `Enter` para confirmar, y `Ctrl + X` para salir.
+**Qué estás viendo en la captura**
 
-7\. Una vez cerrado el editor, Git completará la fusión satisfactoriamente.
+- Un editor de texto pidiéndote confirmar o modificar el mensaje del merge commit.
+- Las líneas con `#` son comentarios que Git ignorará.
 
-   ![Captura de `git lga` DESPUÉS del merge, mostrando el bucle cerrado](capturas/ramas/8b_despues_merge.png)
+!!! question "¿Cómo salgo del editor?"
+    - **Vim (lo más habitual):** pulsa `Esc`, luego escribe `:wq` y pulsa `Enter`.
+    - **Nano:** `Ctrl + O` para guardar, `Enter` para confirmar, `Ctrl + X` para salir.
 
-   **Qué estás viendo en la captura**
+Antes y después del merge con ramas divergidas:
 
-   - Git ha creado un nuevo "Merge Commit" para unir ambas historias porque no podía hacer *Fast-forward*.
-   - El árbol visual de `git lga` muestra cómo el camino de `funcionalidad-X` se une de nuevo al tronco principal `main`, cerrando el bucle del desarrollo de la funcionalidad.
+![Captura de `git lga` ANTES del merge, mostrando las ramas bifurcadas en forma de Y](capturas/ramas/8a_antes_merge.png)
+
+**Qué estás viendo en la captura**
+
+- El historial antes de fusionar: `main` y `funcionalidad-X` se han separado. Cada una tiene commits que la otra no tiene.
+
+![Captura de `git lga` DESPUÉS del merge, mostrando el bucle cerrado](capturas/ramas/8b_despues_merge.png)
+
+**Qué estás viendo en la captura**
+
+- El nuevo merge commit une las dos líneas. El grafo muestra el bucle cerrado: los dos caminos vuelven a converger en `main`.
 
 ---
 
 ## ⚔️ Conflictos
 
-A veces, Git no puede fusionar automáticamente porque **se han modificado las mismas líneas** de un archivo en ambas ramas de forma diferente. Esto es un **conflicto**.
+Un conflicto ocurre cuando Git intenta fusionar dos ramas y encuentra que **las mismas líneas de un mismo archivo han sido modificadas de forma diferente en cada una**. Git no sabe cuál de las dos versiones quedarse, así que para y te pide que decidas tú.
 
-Cuando ocurre:
+!!! warning "Cuándo ocurre un conflicto"
+    Si tú has cambiado la línea 5 de `estilos.css` en tu rama, y tu compañero también ha cambiado la línea 5 de `estilos.css` en `main`, Git no puede elegir por ti. Tendrás que resolver el conflicto a mano.  
+    Si cada uno ha tocado **líneas distintas**, Git las combina sin problema y no hay conflicto.
 
-1. Git detiene la operación y te avisa.
-2. Debes abrir los archivos en conflicto. Verás marcas como:
-   ```text
-   <<<<<<< HEAD
-   Cambios en mi rama actual (main)
-   =======
-   Cambios en la rama que viene (nueva-rama)
-   >>>>>>> nueva-rama
-   ```
-3. Edita el archivo para dejar la versión final deseada y borra las marcas (`<<<`, `===`, `>>>`).
-4. Añade el archivo al área de preparación: `git add archivo.txt`.
-5. Finaliza la fusión con un commit: `git commit`.
+Cuando ocurre un conflicto, Git detiene el merge y marca los archivos afectados. El proceso para resolverlo es siempre el mismo:
 
-**Ejemplo Práctico de Conflicto:**
+1. Git detiene la operación y te avisa del conflicto.
+2. Abres el archivo. Dentro verás marcas como estas:
 
-!!! warning "Aviso Importante"
-    En estas capturas nos centraremos exclusivamente en el proceso de resolución de conflictos. Algunos pasos o comandos básicos (como `git branch`, `git checkout` o `git status`) ya se han detallado en apartados anteriores y podrían omitirse visualmente aquí para ir directos al grano.
+    ```text
+    <<<<<<< HEAD
+    Cambios en tu rama actual (main)
+    =======
+    Cambios en la rama que entra (nueva-rama)
+    >>>>>>> nueva-rama
+    ```
 
-1. En `main`, creamos un archivo `titulo.txt` que contiene la línea: `Hola Mundo` y hacemos commit.
+3. Editas el archivo: borras las marcas (`<<<`, `===`, `>>>`) y dejas solo la versión final que quieres.
+4. Añades el archivo resuelto al staging: `git add archivo.txt`
+5. Cierras el merge con un commit: `git commit`
+
+**Ejemplo paso a paso:**
+
+!!! warning "Sobre las capturas siguientes"
+    Nos centramos en el proceso de resolución. Algunos comandos básicos (como `git branch` o `git status`) se omiten visualmente para ir al grano.
+
+1. En `main`, creas `titulo.txt` con el texto `Hola Mundo` y haces commit.
 
     ![Captura creando el fichero titulo](capturas/ramas/9a_creacion_titulo.png)
 
     **Qué estás viendo en la captura**
+    - La creación del archivo y el primer commit en `main`.
 
-    - La creación inicial del archivo y el primer commit en la rama `main`.
-
-2. Creamos una rama `cambio-titulo` y cambiamos esa línea por: `Hola Universo`. Hacemos commit.
+2. Creas la rama `cambio-titulo`, cambias la línea a `Hola Universo` y haces commit.
 
     ![Captura modificando a hola universo en la nueva rama](capturas/ramas/9b_modicando_titulo_rama.png)
 
     **Qué estás viendo en la captura**
+    - La modificación y su commit en la nueva rama.
 
-    - La modificación del archivo y su posterior commit en la nueva rama.
-   
-    !!! note "Nota"
-        Aunque en la imagen no se muestre explícitamente el comando de cambio (`git checkout / switch`), podemos saber que estamos allí porque la terminal suele indicarlo entre paréntesis `(cambio-titulo)`. 
+    !!! tip "Recuerda"
+        Aunque la captura no muestre el comando de cambio de rama, la terminal suele indicar en qué rama estás entre paréntesis: `(cambio-titulo)`. Puedes usar cualquier editor para modificar el archivo — no es obligatorio usar `vi`.
 
-    !!! info "Nota sobre editores"
-        En la captura se ve que se ha usado `vi titulo.txt`. Recuerda que **`vi` (o `vim`) es un editor de texto integrado en la propia terminal**. Sin embargo, **puedes usar cualquier otro editor de texto** (como Visual Studio Code o incluso el Bloc de Notas) para modificar el archivo; no es obligatorio hacerlo por consola.
-
-3. Volvemos a `main` y cambiamos la **misma línea** por: `Hola Planeta`. Hacemos commit.
+3. Vuelves a `main` y cambias **la misma línea** a `Hola Planeta`. Haces commit.
 
     ![Captura cambiando la línea en main a hola planeta y realizando git lga](capturas/ramas/9c_cambio_main_y_lga.png)
 
     **Qué estás viendo en la captura**
+    - El cambio en `main` y un `git lga` que muestra que las dos ramas han avanzado por separado tocando el mismo archivo.
 
-    - El cambio del archivo en la rama principal y un `git lga` que muestra que ambas ramas han avanzado por separado, modificando el mismo archivo.
+4. Intentas fusionar:
 
-4. Intentamos fusionar:
     ```bash
     git merge cambio-titulo
     ```
 
-5. **¡BOOM!** Git lanza un error de "Merge conflict".
+5. Git lanza el error de conflicto.
 
     ![Captura de la terminal mostrando el error CONFLICT](capturas/ramas/9d_error_merge.png)
 
     **Qué estás viendo en la captura**
+    - Git detecta que la misma línea ha sido modificada de forma distinta en ambas ramas y detiene la fusión.
 
-    - Al intentar ejecutar `git merge cambio-titulo`, Git detiene el proceso de fusión al detectar que las mismas líneas se han modificado de manera distinta en ambas historias.
-
-6. Si abres el archivo en tu editor, verás las marcas del conflicto.
+6. Abres el archivo en tu editor y ves las marcas del conflicto.
 
     ![Captura del editor de código mostrando las marcas de colores del conflicto](capturas/ramas/9e_editor_fix_merge.png)
 
     **Qué estás viendo en la captura**
+    - `<<<<<<< HEAD` marca los cambios de `main`. `>>>>>>> cambio-titulo` marca los cambios entrantes. La línea `=======` los separa.
 
-    - El editor resalta los cambios actuales de `main` (`<<<<<<< HEAD`) frente a los cambios entrantes de `cambio-titulo` (`>>>>>>> cambio-titulo`).
-
-7. **Solución**: Editas el archivo, borras las marcas `<<<`, `===`, `>>>` y dejas solo la versión final deseada o una mezcla de ambas (ej. `Hola planeta!`).
+7. Editas el archivo, eliminas las marcas y dejas solo la versión final (por ejemplo, `Hola Planeta!`).
 
     ![Captura del editor con el conflicto solucionado](capturas/ramas/9f_editor_solved.png)
 
     **Qué estás viendo en la captura**
+    - El archivo limpio, sin marcas de Git. Solo la versión que has decidido conservar.
 
-    - El archivo limpio, con el código tal y como queremos que quede definitivamente. Ya no hay rastro de las marcas de Git.
+8. Resuelves el conflicto y cierras el merge:
 
-8. Guardas el archivo y lo añades al *staging area* para resolver el conflicto, seguido de un commit para cerrar la fusión.
     ```bash
     git add titulo.txt
-    git commit -m "Solucionando el conflicto"
+    git commit -m "Resuelve conflicto en titulo.txt"
     ```
 
     ![Captura solucionando el conflicto con add y commit en la terminal](capturas/ramas/9g_conflicto_solucionado.png)
 
     **Qué estás viendo en la captura**
+    - La confirmación de que el archivo ha entrado al staging y el merge commit ha quedado registrado.
 
-    - La confirmación en la terminal de que hemos resuelto el conflicto añadiendo el archivo al índice de Git y consolidando el "Merge Commit".
-
-9. El historial vuelve a unirse tras resolver la colisión.
+9. El historial vuelve a unirse.
 
     ![Captura de git lga tras solucionar el conflicto](capturas/ramas/9h_lga.png)
 
     **Qué estás viendo en la captura**
+    - `git lga` muestra el merge commit uniendo las dos líneas. El proceso ha terminado correctamente.
 
-    - El comando `git lga` ilustra la esperada unión ("Merge Commit") de las ramas `cambio-titulo` y `main`, pero esta vez originada por la resolución manual de un conflicto.
-
-10. Resultado final:
+10. Resultado final del archivo:
 
     ![Captura mostrando el archivo titulo.txt finalizado](capturas/ramas/9i_final.png)
 
     **Qué estás viendo en la captura**
+    - El contenido definitivo del archivo, tal como lo has decidido tú al resolver el conflicto.
 
-    - El contenido del archivo al volver a la terminal comprueba la correcta resolución del conflicto con el resultado deseado.
+---
+
+## 🖥️ Ramas desde IntelliJ
+
+No es obligatorio usar la terminal para todo. IntelliJ tiene integración completa con Git y puedes gestionar ramas desde la interfaz gráfica.
+
+!!! tip "Gestión de ramas en IntelliJ"
+    En la **barra inferior** de IntelliJ verás el nombre de la rama actual. Haz clic en él para:
+
+    - Ver todas las ramas locales y remotas.
+    - Crear una rama nueva (`New Branch`).
+    - Cambiar de rama con un clic (`Checkout`).
+    - Fusionar o hacer rebase desde el menú contextual.
+
+    Los comandos que hace IntelliJ por debajo son exactamente los mismos que has practicado en terminal. Entenderlos te ayuda a saber qué está pasando cuando algo falla en la GUI.
 
 ---
 
@@ -383,14 +456,16 @@ Cuando ocurre:
 
 ---
 
-## ✅ Ideas clave (muy resumidas)
+## ✅ Ideas clave
 
 ??? tip "Abrir resumen"
-    - `git branch <nombre>` crea una nueva rama.
-    - `git branch` lista las ramas locales y te dice en cuál estás (`*`).
-    - `git checkout <nombre>` (o `git switch <nombre>`) te mueve a otra rama.
-    - `git checkout -b <nombre>` (o `git switch -c <nombre>`) crea una rama e inmediatamente te mueve a ella.
-    - `git merge <rama>` fusiona los cambios de la `<rama>` indicada hacia la rama en la que estás actualmente situado.
-    - `git branch -d <nombre>` borra una rama (siempre que sus cambios ya estén a salvo integrados).
-    - `git log --oneline --graph --all` muestra el árbol visual y resumido de todas las diferentes ramas.
-
+    - `git branch <nombre>` crea una nueva rama (sin moverte a ella).
+    - `git switch <nombre>` (o `git checkout <nombre>`) te mueve a otra rama.
+    - `git switch -c <nombre>` crea la rama y te mueve en un solo paso.
+    - `HEAD` apunta siempre a la rama y commit donde estás trabajando ahora.
+    - `git merge <rama>` trae los cambios de esa rama a la rama donde estás.
+    - **Fast-forward**: `main` no ha avanzado → Git mueve el puntero. Historial lineal.
+    - **Merge commit**: ambas ramas han avanzado → Git crea un commit de unión.
+    - Los conflictos ocurren cuando dos ramas han tocado las mismas líneas del mismo archivo.
+    - `git branch -d <nombre>` borra si ya está fusionada; `-D` borra sin comprobación.
+    - `git lga` (alias de `git log --graph --oneline --all --decorate`) muestra el grafo de ramas.

@@ -1,153 +1,322 @@
-# 🧩 Actividad 4.6: Remotos — Trabajando con GitHub
+# Actividad 4.6: Ramas en Git — Trabajo paralelo y fusiones
 
-!!! info "Créditos"
-    Actividad basada en el ejercicio original del curso de Joan Puigcerver:  
-    [Exercici — Remots (curs-git)](https://joapuiib.github.io/curs-git/apunts/03_remots/exercici/)
+!!! warning "Descarga la plantilla"
+    📄 [Plantilla 4.6 — Ramas en Git: trabajo paralelo y fusiones](Actividad_4_6_Plantilla.docx){target="_blank" rel="noopener"}
 
-!!! warning "Antes de empezar"
-    Es recomendable que **leas la actividad entera** de principio a fin, y te asegures de revisar el apartado **📤 Entregable** al final del documento. Así sabrás exactamente qué debes registrar o capturar antes de ponerte a ejecutar comandos.
+## Qué vas a practicar
 
----
+En esta actividad crearás un repositorio desde cero y lo desarrollarás usando ramas. El objetivo es entender cómo Git organiza el trabajo paralelo y qué pasa cuando dos líneas de desarrollo se unen.
 
-## 🧠 Qué vas a practicar 
+Aspectos que cubre la actividad:
 
-En esta actividad pondremos en práctica todo lo aprendido sobre remotos y GitHub. Ya no solo trabajarás en tu ordenador, sino que conectarás tu trabajo con la nube y simularás el trabajo colaborativo clonando tu propio repositorio.
-
-Practicarás:
-
-- Crear repositorios remotos en GitHub y enlazarlos con tu código local.
-- Sincronizar repositorios locales y remotos (`push`, `pull`, `fetch`).
-- Clonar un repositorio remoto existente en otra carpeta.
-- Incorporar cambios mediante fusiones directas y con ramas divergentes.
-- Trabajar con ramas tanto en el entorno local como en el remoto.
+- Configurar el alias `git lga` y leer el grafo de ramas.
+- Crear ramas con `git branch` y moverte con `git switch`.
+- Entender dónde apunta `HEAD` en cada momento.
+- Crear una rama y cambiarte en un solo paso con `git switch -c`.
+- Hacer una fusión Fast-forward.
+- Hacer una fusión 3-way merge cuando las dos ramas han avanzado.
+- Resolver un conflicto a mano.
+- Borrar ramas con `-d` y `-D`.
 
 ---
 
-## 🧰 Requisitos previos
+## Requisitos previos
 
-- **Cuenta de GitHub**: Necesitas tener creada tu cuenta en [GitHub](https://github.com/) y haber configurado tu acceso (mediante Token PAT o llave SSH, como aprendimos en la teoría).
-- **Alias Gráfico**: Sigue utilizando tu alias `git lga` para ver el historial gráficamente.
+Configura el alias que usarás durante toda la actividad:
 
----
+```bash
+git config --global alias.lga "log --graph --oneline --all --decorate"
+```
 
-## 🧪 Ejercicio (pasos)
+Comprueba que Git tiene tu nombre y correo:
 
-!!! warning "Importante: Tu herramienta principal"
-    Comprueba el estado del repositorio con `git status` y `git lga` después de cada orden fundamental para entender por dónde transitan tus archivos y tus ramas.
-
----
-
-### Parte 1: Creación y Enlace
-
-1. **En GitHub**: Crea un repositorio remoto completamente vacío llamado `bloc3_exercici`. No añadas ningún archivo inicial (ni README, ni LICENSE, ni .gitignore).
-
-2. **En tu ordenador**:
-
-      - Crea un directorio nuevo llamado `bloc3_exercici` en tu carpeta de trabajo.
-      - Inicializa un repositorio de Git en ese directorio (`git init`).
-      - Crea un archivo `llibres.txt` y añade tres libros que te gusten.
-      - Haz un **primer commit**.
-      - Asegúrate de que tu rama principal se llama `main` (`git branch -m master main`).
-
-3. **Enlazando mundos**:
-
-      - Configura el repositorio local para añadir el remoto de GitHub llamándolo `origin`.
-      - Publica la rama `main` al repositorio remoto.
-      - *Comprueba en la web de GitHub que el archivo `llibres.txt` ha subido correctamente.*
+```bash
+git config --global user.name "Tu Nombre"
+git config --global user.email "tuemail@ejemplo.com"
+```
 
 ---
 
-### Parte 2: Clonación y Preparación
+## Norma de la actividad
 
-Vamos a simular ser "otra persona" o estar en "otro ordenador" clonando el proyecto en una carpeta paralela.
-
-1. Clona el repositorio remoto que acabas de subir en una nueva carpeta independiente llamada `bloc3_exercici_clone`.
-2. Comprueba que dentro de `bloc3_exercici_clone` existe el archivo `llibres.txt`.
-3. *Simulación de usuario*: Configura este repositorio clonado para que los commits parezcan hechos por otra persona. Ejecuta dentro de él:
-   ```bash
-   git config user.name "Brian"
-   git config user.email "brian.cohen@edu.gva.es"
-   ```
-
-!!! note "A partir de este punto"
-    Trabajaremos alternando entre las dos carpetas: el repositorio local original (`bloc3_exercici`) y el clonado (`bloc3_exercici_clone`). Te recomendamos abrir dos terminales a la vez para no hacerte un lío.
+!!! warning "Obligatorio en cada paso"
+    Antes de ejecutar cualquier comando que cambie el repositorio, escribe **qué esperas que pase** y dónde crees que quedará HEAD. Es lo que se valorará.
 
 ---
 
-### Parte 3: Publicación de cambios
+## Preparación
 
-Desde el repositorio **clonado** (`bloc3_exercici_clone`):
+Crea una carpeta `actividad4_6` fuera de OneDrive / iCloud / Google Drive e inicializa el repositorio:
 
-   - Crea/modifica el archivo `pelicules.txt` añadiendo la película *La vida de Brian*.
-   - Realiza un **commit**.
-   - Publica (haz `push` de) la rama `main` al repositorio remoto.
-   - Comprueba en la web de GitHub que el archivo `pelicules.txt` ha subido correctamente y que el autor es "Brian".
-
----
-
-### Parte 4: Incorporación con fusión directa
-
-Desde el repositorio **original** (`bloc3_exercici`):
-
-   - Asómate a ver qué hay de nuevo sin alterar tu código usando `git fetch`.
-   - Observa el historial de cambios.
-   - Incorpora los cambios de la rama `origin/main` a tu rama `main` local (esto es, un `git pull` rápido).
+```bash
+git init
+git status
+```
 
 ---
 
-### Parte 5: Fusión de ramas divergentes
+## Parte A — Historial inicial
 
-Vamos a crear historias alternativas.
+### Paso 1 — Construir el historial base
 
-1. Desde el repositorio **original** (`bloc3_exercici`):
+Crea `tareas.txt` con tres líneas de contenido (elige tú cuáles). Haz tres commits seguidos:
 
-      - Añade una película a `pelicules.txt`.
-      - Realiza un **commit**.
-      - Publica (`push`) la rama `main` al remoto.
+- Commit 1: el archivo con las tres tareas iniciales.
+- Commit 2: añade dos tareas más al final.
+- Commit 3: crea `notas.txt` con tres líneas de texto libre y haz commit de ese archivo.
 
-2. Desde el repositorio **clonado** (`bloc3_exercici_clone`):
+Después de cada commit ejecuta `git lga` y fíjate en dónde se mueve la etiqueta `main` y el puntero `HEAD`.
 
-      - Añade la película *Monty Python and the Holy Grail* a `pelicules.txt`.
-      - Realiza un **commit**.
-      - **Intenta publicar** (`push`) la rama `main` al remoto. *(Git te dirá que no puedes, piensa y comprende por qué).*
-      - Descarga e incorpora los últimos cambios de GitHub (`git pull`).
-      - Esto generará un conflicto porque ambas partes modificasteis el mismo archivo a la vez. **Resuélvelo** (quedándote con ambas películas, por ejemplo), consolida el commit de *merge* resultante y ahora sí, publica (`push`) tu rama `main` reparada al remoto.
-      - Comprueba que la rama `main` del remoto ha sido actualizada y contiene los cambios actualizados tras el conflicto.
+**Predice antes del tercer commit**: ¿cambiarán de sitio las etiquetas de los commits anteriores?
 
----
+```bash
+git log --oneline
+git lga
+```
 
-### Parte 6: Ramas y Remotos
+**Preguntas a responder**:
 
-Cómo gestionar ramas fuera de `main` en GitHub.
-
-Desde el repositorio **original** (`bloc3_exercici`):
-
-   - Pon tu `main` al día bajándolo todo (`git pull`).
-   - Crea una nueva rama local llamada `musica` y muévete a ella.
-   - Añade una canción a `musica.txt` y realiza un **commit**.
-   - Publica esta nueva rama íntegra en el remoto (`git push -u origin musica`).
-   - Comprueba en la interfaz de GitHub que ahora existen dos ramas allí (`main` y `musica`).
-   - Fija la rama saltando a `main`, fusiona (`merge`) la rama `musica` hacia tu `main`.
-   - Publica este `main` definitivo al remoto (`push`).
-   - En plan limpieza de fin de proyecto, elimina la rama local `musica` y elimina también la rama remota `musica`.
-   - Comprueba que la rama remota `musica` ha sido eliminada entrando en la web de GitHuby consultando las ramas del repositorio remoto.
+1. ¿Cuántos commits hay en el historial? ¿En qué orden aparecen?
+2. ¿Dónde apunta HEAD después del tercer commit?
 
 ---
 
-## 📤 Entregable
+## Parte B — Ramas y HEAD
 
-!!! danger "Atención: Autoría de las capturas"
-    En todas las capturas de pantalla debe apreciarse claramente que **eres el autor** (tu cuenta de usuario visible en la web de GitHub, rutas de las carpetas locales, nombre de tu equipo en la terminal, etc.).  
-    **En caso de detectar copias, la calificación de la actividad será de un 0 automático.**
+### Paso 2 — Crear y explorar ramas
 
-Sube un único archivo **PDF** documentando gráficamente lo ocurrido a lo largo del ejercicio:
+**Predice**: si ejecutas `git branch ideas`, ¿dónde quedará HEAD?
 
-1. **Capturas de la web de GitHub** que demuestren que la conexión entre tus entornos y la nube ha funcionado:
-    - Que el archivo `llibres.txt` se subió a tu repo remoto (Parte 1).
-    - Que el archivo `pelicules.txt` se subió correctamente y el autor de ese commit figura explícitamente como "Brian" (Parte 3).
-    - Que la rama `main` del remoto contiene una historia integrada con los cambios de ambas partes tras arreglar el conflicto (Parte 5).
-    - Que la rama `musica` **existió** en algún momento en GitHub (captura donde se vean las ramas `main` y `musica` disponibles simultáneamente en el desplegable de opciones web) (Mitad de la Parte 6).
-    - Que la rama `musica` figura **eliminada** del servidor al final del ejercicio (Final de la Parte 6).
-2. **Explica brevemente con tus palabras** cómo solucionaste tú el punto de conflicto de la Parte 5.
-3. Asegúrate de incluir **una captura final de consola** donde se vea que has conmutado y trabajado bajo los dos directorios (`bloc3_exercici` y `bloc3_exercici_clone`).
-4. Una **breve reflexión personal (5-10 líneas)** sobre la potencia de Git cuando se sincroniza con plataformas como GitHub. ¿Cómo te ayuda esto como programador a la hora de tener un porfolio, de proteger tu código ante desastres locales o colaborar simultáneamente con otros desarrolladores en remoto?
+```bash
+git branch ideas
+git lga
+git branch
+```
+
+**Pregunta**: ¿apuntan `main` e `ideas` al mismo commit o a distintos? ¿Por qué?
+
+Ahora muévete a `ideas`:
+
+**Predice**: después de `git switch ideas`, ¿qué mostrará `HEAD` en `git lga`?
+
+```bash
+git switch ideas
+git lga
+```
+
+**Pregunta**: ¿ha cambiado el historial de commits al cambiar de rama? Explica qué diferencia hay entre `HEAD -> ideas` y `HEAD -> main`.
+
+### Paso 3 — Commit en la rama y volver a main
+
+Sigue en `ideas`. Añade una línea al final de `tareas.txt`:
+
+```
+Explorar proyectos de otros compañeros
+```
+
+**Predice**: ¿cómo quedará el grafo después de este commit? ¿Se moverá `main`?
+
+```bash
+git add tareas.txt
+git commit -m "Añade idea de exploración"
+git lga
+```
+
+Vuelve a `main` y abre `tareas.txt`:
+
+```bash
+git switch main
+cat tareas.txt
+```
+
+**Pregunta**: ¿por qué `tareas.txt` no tiene la línea que acabas de escribir? Explícalo con tus palabras.
+
+---
+
+## Parte C — Fusión Fast-forward
+
+### Paso 4 — Fusionar y limpiar
+
+Estás en `main`. La rama `ideas` tiene un commit que `main` no tiene, pero `main` no ha avanzado.
+
+**Predice**: ¿qué tipo de fusión hará Git? ¿Creará un commit nuevo?
+
+```bash
+git merge ideas
+git lga
+```
+
+**Preguntas a responder**:
+
+1. ¿Qué mensaje ha mostrado Git? ¿Ha creado un commit nuevo o ha movido el puntero?
+2. ¿Por qué se llama Fast-forward?
+
+Borra la rama fusionada:
+
+**Predice**: ¿funcionará `-d` o dará error?
+
+```bash
+git branch -d ideas
+git lga
+```
+
+---
+
+## Parte D — Ramas divergentes (3-way merge)
+
+### Paso 5 — Trabajar en paralelo
+
+Crea la rama `mejoras` y muévete en un solo paso:
+
+```bash
+git switch -c mejoras
+```
+
+**Pregunta**: ¿qué hace `git switch -c` que no hace `git switch` sin `-c`?
+
+Añade una línea al final de `notas.txt` (por ejemplo: `Nota desde la rama mejoras`) y haz commit:
+
+```bash
+git add notas.txt
+git commit -m "Añade nota desde mejoras"
+```
+
+Vuelve a `main` y también haz un commit ahí — añade una línea distinta al final de `tareas.txt`:
+
+```bash
+git switch main
+# edita tareas.txt → añade: Tarea añadida desde main
+git add tareas.txt
+git commit -m "Añade tarea desde main"
+git lga
+```
+
+**Pregunta**: ¿cómo se ve en el grafo que las dos ramas han divergido?
+
+### Paso 6 — 3-way merge
+
+**Predice**: ¿creará Git un commit de fusión? ¿Por qué sí o por qué no?
+
+```bash
+git merge mejoras
+# Vim: Esc :wq Enter  |  Nano: Ctrl+O Enter Ctrl+X
+git lga
+```
+
+**Preguntas a responder**:
+
+1. ¿En qué se diferencia visualmente este grafo del del Paso 4?
+2. ¿Por qué ha sido necesario un merge commit aquí pero no antes?
+
+---
+
+## Parte E — Conflictos
+
+### Paso 7 — Provocar y resolver un conflicto
+
+Crea la rama `version-a` y cambia la **primera línea** de `tareas.txt` a: `Estudiar con detenimiento los apuntes de Git`
+
+```bash
+git switch -c version-a
+# edita tareas.txt → cambia la primera línea
+git add tareas.txt
+git commit -m "Reescribe primera tarea en version-a"
+```
+
+Vuelve a `main` y cambia **esa misma primera línea** a algo diferente: `Repasar los apuntes de Git antes del examen`
+
+```bash
+git switch main
+# edita tareas.txt → cambia la primera línea a algo distinto
+git add tareas.txt
+git commit -m "Reescribe primera tarea en main"
+```
+
+**Predice**: ¿qué va a pasar al intentar fusionar?
+
+```bash
+git merge version-a
+git status
+```
+
+Abre `tareas.txt`. Verás las marcas del conflicto:
+
+```
+<<<<<<< HEAD
+Repasar los apuntes de Git antes del examen
+=======
+Estudiar con detenimiento los apuntes de Git
+>>>>>>> version-a
+```
+
+Decide qué versión conservar (o escribe una que combine ambas), borra las marcas y cierra el merge:
+
+```bash
+git add tareas.txt
+git commit -m "Resuelve conflicto en tareas.txt"
+git lga
+```
+
+**Preguntas a responder**:
+
+1. ¿Qué significan las tres marcas del conflicto?
+2. ¿Qué versión has conservado y por qué?
+
+---
+
+## Parte F — Borrar ramas: -d vs -D
+
+### Paso 8 — La diferencia entre -d y -D
+
+Crea la rama `experimento`, haz un commit en ella y vuelve a `main` sin fusionarla:
+
+```bash
+git switch -c experimento
+echo "Experimento descartado" >> notas.txt
+git add notas.txt
+git commit -m "Cambio experimental"
+git switch main
+```
+
+**Predice**: ¿funcionará `git branch -d experimento`?
+
+```bash
+git branch -d experimento
+```
+
+Git da error. Copia ese mensaje en tu entrega.
+
+**Pregunta**: ¿por qué Git se niega a borrar la rama? ¿Qué pasa con los commits si usas `-D`?
+
+```bash
+git branch -D experimento
+git lga
+```
+
+### Paso 9 — Tabla de decisión
+
+Rellena esta tabla sin ejecutar nada:
+
+| Situación | Comando que usarías | Por qué |
+|---|---|---|
+| Crear una rama y moverte en un solo paso | | |
+| Borrar una rama ya fusionada | | |
+| Borrar una rama con trabajo sin fusionar | | |
+| Ver el grafo de todas las ramas | | |
+| Fusionar cuando main y tu rama han avanzado | | |
+
+---
+
+## Entregable
+
+Entrega un PDF con, para cada paso:
+
+1. **Predicción escrita** antes de ejecutar el comando.
+2. **Captura de pantalla** del resultado en terminal.
+3. **Comparación**: ¿ha pasado lo que esperabas? Si no, ¿por qué?
+4. **Respuestas** a las preguntas del paso.
+
+!!! warning "Lo que NO se valorará"
+    - Capturas sin predicción previa.
+    - Respuestas copiadas de los apuntes sin aplicarlas al resultado concreto obtenido.
+    - La tabla del Paso 9 sin justificación en la columna "Por qué".

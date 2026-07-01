@@ -1,30 +1,30 @@
-# 🧼 Actividad 4.2: Refactorización y documentación básica de código 
+# 🧼 Actividad 4.2: Refactorización de código
+
+!!! warning "Descarga la plantilla"
+    📄 [Plantilla 4.2 — Refactorización de código](Actividad_4_2_Plantilla.docx){target="_blank" rel="noopener"}
 
 !!! info "Objetivo"
-    Mejorar la **estructura y calidad** del código sin cambiar su funcionamiento, trabajando:
+    Aplicar técnicas de refactorización sobre código real y demostrar que las entiendes:
 
-    - **Refactorización**: limpiar, ordenar y reducir duplicación.  
-    - **Documentación básica**: añadir comentarios **breves y útiles** para que el código se entienda mejor.  
-
----
-
-## 🔹 Contexto
-
-El código limpio y bien estructurado es más fácil de **leer**, **mantener** y **ampliar**.  
-La refactorización te permite mejorar el diseño interno del código **sin alterar su comportamiento**.  
-Además, una documentación básica (comentarios claros y puntuales) facilita que otras personas entiendan rápido:
-
-- qué hace cada parte importante,
-- por qué se ha tomado una decisión,
-- y cómo modificarlo sin romperlo.
+    - El programa hace exactamente lo **mismo** antes y después (misma salida).
+    - Puedes nombrar qué patrón has aplicado y **por qué** ese y no otro.
+    - Tu explicación deja claro que has razonado tú, no que has copiado una solución.
 
 ---
 
-## 🧠 Ejemplo resuelto (refactorización paso a paso)
+## Contexto
 
-El siguiente ejemplo muestra cómo refactorizar un programa sencillo sin cambiar su funcionamiento.
+Cuando un programa funciona, la tentación es no tocarlo. Pero el código que no se limpia se vuelve difícil de leer, de cambiar y de reutilizar — sobre todo cuando lo tiene que tocar otra persona (o tú mismo, seis meses después).
 
-### 🧱 Versión inicial
+Refactorizar no es reescribir: es mejorar la estructura interna **sin alterar el resultado**. Los dos códigos de esta actividad tienen problemas evidentes. Tu trabajo es detectarlos, nombrarlos y resolverlos.
+
+---
+
+## Ejemplo resuelto
+
+El siguiente ejemplo muestra el proceso completo: detectar el problema, elegir el patrón y aplicarlo.
+
+### Versión inicial
 
 ```java
 public class OrderCalculator {
@@ -35,7 +35,7 @@ public class OrderCalculator {
         double totalPrice = 0;
 
         if (isPremiumMember) {
-            totalPrice = pricePerUnit * quantity * 0.9;
+            totalPrice = pricePerUnit * quantity * 0.9;  // ← ¿qué es 0.9?
         } else {
             totalPrice = pricePerUnit * quantity;
         }
@@ -45,33 +45,25 @@ public class OrderCalculator {
 }
 ```
 
----
+### Versión refactorizada
 
-### ✅ Versión refactorizada (resultado final)
-
-Refactors aplicados:
-
-- **Extract Method** (separamos el cálculo en un método).
-- **Extract Constant** (quitamos valores “mágicos”).
-- **Rename** (nombres más claros).
-- Pequeños ajustes para simplificar el cálculo.
+Patrones aplicados: **Extract Method** + **Extract Constant** + **Rename**.
 
 ```java
 public class OrderCalculator {
 
-    // Constantes con significado (evitan valores mágicos)
-    private static final double PREMIUM_DISCOUNT_FACTOR = 0.90;
+    private static final double PREMIUM_DISCOUNT_FACTOR = 0.90; // Extract Constant: nombre explícito
 
     public static void main(String[] args) {
-        double unitPrice = 50;
-        int units = 5;
-        boolean isPremium = true;
+        double unitPrice = 50;          // Rename: era pricePerUnit
+        int units = 5;                  // Rename: era quantity
+        boolean isPremium = true;       // Rename: era isPremiumMember
 
-        double totalPrice = calculateTotalPrice(unitPrice, units, isPremium);
+        double totalPrice = calculateTotalPrice(unitPrice, units, isPremium); // Extract Method
         System.out.println("Total a pagar: $" + totalPrice);
     }
 
-    // Método pequeño y reutilizable: calcula el total con/sin descuento
+    // Extract Method: la lógica de cálculo queda separada y reutilizable
     private static double calculateTotalPrice(double unitPrice, int units, boolean isPremium) {
         double total = unitPrice * units;
         if (isPremium) {
@@ -82,94 +74,49 @@ public class OrderCalculator {
 }
 ```
 
-!!! tip "Qué mejora este cambio"
-    - El `main` queda más limpio: solo prepara datos y llama a un método.
-    - El cálculo está en un método reutilizable y fácil de probar.
-    - La constante hace que el descuento sea explícito y fácil de cambiar.
-
-
----
-
-## 🧩 Qué tienes que hacer
-
-Para **cada código** (Código 1 y Código 2):
-
-### 1) Refactorización
-- Analiza el código y detecta problemas típicos:
-  
-    - repetición de bloques,
-    - nombres poco claros,
-    - métodos demasiado largos,
-    - constantes “mágicas” (por ejemplo, `0.5` o `30` sin explicación),
-    - lógica mezclada (cálculos + salida por pantalla en el mismo sitio).
-
-- Refactoriza **sin cambiar la funcionalidad** (misma salida o resultado lógico).
-
-### 2) Explicación del proceso
-- Describe los pasos que has seguido durante la refactorización.
-- Justifica los cambios: por qué es mejor ahora (legibilidad, reutilización, mantenimiento).
-
-### 3) Javadoc en los métodos extraídos
-
-Después de refactorizar, añade **Javadoc** a los métodos públicos que hayas creado con Extract Method:
-
-- una frase que explique **qué hace** el método,
-- `@param` para cada parámetro (si los tiene),
-- `@return` si devuelve un valor,
-- `@throws` si puede lanzar una excepción.
-
-!!! tip “Regla práctica”
-    Documenta lo que el método **promete**: qué recibe, qué devuelve y en qué condiciones falla. No comentes lo que ya dice el nombre del método.
+!!! tip "Qué ha cambiado y por qué"
+    - `main` solo prepara datos y llama a un método — más fácil de leer.
+    - El cálculo está en un método separado — se puede probar y reutilizar.
+    - `PREMIUM_DISCOUNT_FACTOR` explica qué representa el `0.9` — sin constante, no se entiende.
 
 ---
 
-## ✅ Entregable
+## Instrucciones
 
-Debes entregar un **informe en PDF** donde, para cada código, incluyas:
+Para cada código (Código 1 y Código 2) sigue estos pasos **en orden**:
 
-1. **Cambios realizados**
-   
-    - Lista de refactors aplicados (por ejemplo: *Extract Method*, *Rename*, *Extract Constant*, reducir duplicación…).
+### Paso 1 — Predice antes de tocar nada
 
-2. **Código final refactorizado**
+Lee el código entero una vez sin modificar nada y responde por escrito:
 
-    - Pegado completo y con Javadoc en los métodos públicos extraídos.
+- ¿Qué problema principal tiene este código?
+- ¿Qué patrón de refactorización crees que se podría aplicar? ¿Por qué ese?
+- ¿Cuántos métodos nuevos crees que vas a necesitar crear?
 
-3. **Explicación**
+Anota tus respuestas **antes** de empezar a refactorizar. Luego compararás.
 
-    - 8–15 líneas explicando qué has hecho y por qué.
+### Paso 2 — Refactoriza
 
----
+Aplica los patrones necesarios en IntelliJ. Usa las herramientas del IDE siempre que puedas (clic derecho → Refactor).
 
-## 🧾 Sugerencia de estructura para tu informe
+!!! warning "Regla fundamental"
+    La salida del programa debe ser **idéntica** antes y después. Ejecuta ambas versiones y compara.
 
-??? tip "Abrir plantilla"
-    ### Código X
-    **Problemas detectados**
+### Paso 3 — Clasifica y explica
 
-    - ...
-    - ...
+Para **cada cambio** que hayas hecho:
 
-    **Cambios realizados**
+- Indica qué patrón has aplicado (*Rename*, *Extract Method*, *Extract Constant*, *DRY*…).
+- Explica en 1–2 líneas **por qué** ese patrón y qué problema resuelve.
 
-    - ...
-    - ...
-
-    **Código final (refactorizado + Javadoc en métodos públicos)**
-
-    ```java
-    // tu código aquí
-    ```
-
-    **Explicación**
-
-    - ...
+!!! note "Importante"
+    No basta con listar los cambios. Se valora que expliques el razonamiento: "he usado Extract Method porque el bloque de cálculo se repetía 5 veces y así puedo cambiarlo en un solo sitio".
 
 ---
 
-## 🧩 Código 1: TriangleCalculator
+## Código 1: TriangleCalculator
 
-**Objetivo del programa:** calcular el área de varios triángulos.
+**Qué hace:** calcula el área de cinco triángulos.
 
 ```java
 public class TriangleCalculator {
@@ -207,11 +154,25 @@ public class TriangleCalculator {
 }
 ```
 
+### Antes de empezar — predice
+
+Responde **sin tocar el código todavía**:
+
+1. ¿Cuántas veces se repite exactamente el mismo bloque de código? ¿Qué cambia entre cada repetición?
+2. Si mañana el cliente pide que la fórmula cambie (por ejemplo, que el área lleve dos decimales fijos), ¿cuántos sitios tendrías que modificar en la versión actual?
+3. ¿Qué patrón de refactorización resuelve este problema? Anota tu respuesta antes de continuar.
+
+### Preguntas tras refactorizar
+
+1. ¿Ha coincidido tu predicción con lo que has acabado haciendo? Si no ha coincidido, ¿en qué has fallado el razonamiento?
+2. El `0.5` de la fórmula es una constante mágica. ¿Has extraído una constante con nombre para él? Si no lo has hecho, ¿por qué has decidido dejarlo así?
+3. ¿Qué pasaría si añades un sexto triángulo a tu versión refactorizada? ¿Cuántas líneas tienes que escribir? Compara con la versión original.
+
 ---
 
-## 🧩 Código 2: WeatherAnalyzer
+## Código 2: WeatherAnalyzer
 
-**Objetivo del programa:** analizar temperaturas (máxima, mínima, promedio y días > 30ºC) por semanas.
+**Qué hace:** analiza temperaturas de tres semanas: máxima, mínima, promedio y días por encima de 30 °C.
 
 ```java
 public class WeatherAnalyzer {
@@ -308,3 +269,26 @@ public class WeatherAnalyzer {
 }
 ```
 
+### Antes de empezar — predice
+
+Responde **sin tocar el código todavía**:
+
+1. ¿Cuántos métodos distintos crees que puedes extraer de este código? Nómbralos.
+2. El umbral `30` aparece varias veces. ¿Qué patrón resuelve ese problema? ¿Por qué es un problema tenerlo repetido?
+3. El código solo analiza dos semanas aunque hay datos de tres. ¿Dónde lo has notado? ¿Qué tendría que cambiar para que funcione con cualquier número de semanas?
+
+### Preguntas tras refactorizar
+
+1. ¿Ha coincidido el número de métodos que predijiste con los que has creado al final? Si no ha coincidido, explica por qué.
+2. ¿Has usado `30` como constante con nombre o lo has dejado como número directo? Justifica tu decisión.
+3. ¿Qué pasaría si el cliente pide que el umbral de "día caluroso" cambie a 28 °C? ¿Cuántos sitios tendrías que tocar en tu versión refactorizada? ¿Y en la original?
+4. Tras refactorizar, ¿podrías añadir fácilmente el análisis de la semana 3 sin duplicar nada? ¿Cómo?
+
+---
+
+## Entregable
+
+Rellena la plantilla y entrégala en **PDF**.
+
+!!! warning "Lo que no vale"
+    Listar cambios sin explicar por qué. "He usado Extract Method" sin decir qué problema resuelve y por qué ese patrón y no otro no suma puntos.
