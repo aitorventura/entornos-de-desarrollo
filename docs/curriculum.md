@@ -1,7 +1,7 @@
 # Currículo: Módulo 0487 — Entornos de Desarrollo
 
 **Equivalencia ECTS:** 6  
-**Duración:** 50 horas
+**Duración:** 100 horas
 
 ---
 

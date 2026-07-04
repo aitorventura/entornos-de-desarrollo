@@ -1,7 +1,7 @@
 # Actividad 4.7: Tu portafolio en GitHub
 
 !!! warning "Descarga la plantilla"
-    📄 [Plantilla 4.7 — Tu portafolio en GitHub](Actividad_4_7_Plantilla.docx){target="_blank" rel="noopener"}
+    📄 [Plantilla 4.7 — Tu portafolio en GitHub](plantillas/Actividad_4_7_Plantilla.docx){target="_blank" rel="noopener"}
 
 ## Qué vas a practicar
 

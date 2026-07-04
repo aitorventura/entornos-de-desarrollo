@@ -2,11 +2,16 @@
 
 # 5. Diagrama de estados
 
+![Diagrama de estados](diapositivas/estados.pdf){ type=application/pdf style="width:100%;min-height:80vh" }
+
+!!!info "Descarga de diapositivas"
+    [Descarga las diapositivas](diapositivas/estados.pdf){target="_blank" rel="noopener"}
+
 ---
 
 ## ¿Para qué sirve?
 
-Un diagrama de estados muestra los **distintos estados por los que puede pasar un objeto** a lo largo de su vida y qué eventos provocan el cambio de un estado a otro.
+Un diagrama de estados muestra los **distintos estados por los que puede pasar un objeto** a lo largo de su vida y qué eventos provocan el cambio de un estado a otro. Piensa en tu móvil: bloqueado, desbloqueado, en llamada, apagado... cada uno es una situación estable en la que el aparato se comporta distinto, y algo concreto (pulsar un botón, quedarse sin batería) lo hace saltar de una a otra.
 
 Es útil cuando un objeto tiene un comportamiento que varía según en qué situación se encuentre. Por ejemplo, un pedido no se comporta igual si está "pendiente" que si está "enviado" o "cancelado".
 
@@ -34,6 +39,15 @@ Flecha que une dos estados. Indica el **cambio de estado**. Se etiqueta con:
 - Una **acción** opcional tras la barra: `/ cobrar()`
 
 Formato: `evento [condición] / acción`
+
+Un ejemplo con las tres partes, en la puerta de un garaje comunitario:
+
+```mermaid
+stateDiagram-v2
+    Cerrada --> Abierta : pasarTarjeta() [tarjeta valida] / registrarAcceso()
+```
+
+Léelo así: cuando alguien **pasa la tarjeta** (evento), y **solo si la tarjeta es válida** (condición de guarda), la puerta pasa de Cerrada a Abierta y por el camino **se registra el acceso** (acción). Si la tarjeta no es válida, la condición es falsa y la puerta se queda como está: no hay transición.
 
 ??? note "Para saber más — no entra en examen ni actividades"
 
@@ -78,30 +92,52 @@ Círculo con borde grueso. Marca el fin del ciclo de vida del objeto.
 
 ## Ejemplo: pedido en una tienda online
 
-```
-● → [Pendiente] → pagar() → [Pagado] → enviar() → [Enviado] → entregar() → [Entregado] → ⊙
-         ↓                     ↓
-      cancelar()            cancelar()
-         ↓                     ↓
-    [Cancelado] ←────────────────
+Un pedido pasa por distintas situaciones desde que se crea hasta que llega (o se anula). Fíjate en que los nombres de los estados son adjetivos o participios, no acciones:
+
+```mermaid
+stateDiagram-v2
+    [*] --> Pendiente
+    Pendiente --> Pagado : pagar()
+    Pagado --> Enviado : enviar()
+    Enviado --> Entregado : entregar()
+    Entregado --> [*]
+    Pendiente --> Cancelado : cancelar()
+    Pagado --> Cancelado : cancelar()
+    Cancelado --> [*]
 ```
 
 Estados posibles de un pedido:
+
 - **Pendiente**: el pedido existe pero aún no se ha pagado
 - **Pagado**: se ha confirmado el pago
 - **Enviado**: el paquete está en camino
 - **Entregado**: el cliente ha recibido el pedido
-- **Cancelado**: el pedido se ha anulado (desde pendiente o pagado)
+- **Cancelado**: el pedido se ha anulado (fíjate: solo se puede cancelar desde Pendiente o Pagado; una vez enviado, ya no)
 
 ---
 
 ## Ejemplo: semáforo
 
-```
-● → [Rojo] → temporizador() → [Verde] → temporizador() → [Ámbar] → temporizador() → [Rojo]
+El semáforo solo tiene tres estados y siempre sigue el mismo ciclo. No hay condiciones de guarda: lo único que dispara cada transición es el temporizador. Tampoco hay estado final, porque su ciclo no termina nunca:
+
+```mermaid
+stateDiagram-v2
+    [*] --> Rojo
+    Rojo --> Verde : temporizador()
+    Verde --> Ambar : temporizador()
+    Ambar --> Rojo : temporizador()
 ```
 
-El semáforo solo tiene tres estados y siempre sigue el mismo ciclo. No hay condiciones de guarda: la única cosa que dispara la transición es el temporizador.
+---
+
+## Dibujarlo en DIA
+
+Los elementos son casi los mismos que en el diagrama de actividades, así que ya conoces los iconos:
+
+!!! tip "En DIA — elementos del diagrama de estados"
+    - **Estado inicial y final**: el mismo círculo que en actividades; para el final, doble clic → **"Es final" → Sí**.
+    - **Estado**: el rectángulo redondeado (el mismo elemento que la actividad); escribe dentro el nombre del estado.
+    - **Transición**: la flecha de transición de la paleta UML. Haz **doble clic sobre ella** para escribir el disparador (evento), la guarda (condición) y la acción; DIA los compone con el formato `evento [condición] / acción`.
 
 ---
 

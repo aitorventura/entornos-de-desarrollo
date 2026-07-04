@@ -11,9 +11,12 @@
 
 ## ¿Para qué sirve?
 
+!!! info "Idea clave"
+    El diagrama de casos de uso es el **contrato visual** entre el cliente y el equipo de desarrollo: qué podrá hacer cada tipo de usuario con el sistema. Nada de cómo funciona por dentro.
+
 El diagrama de casos de uso describe **qué debe hacer un sistema desde el punto de vista de quien lo va a utilizar**. No explica cómo lo hace por dentro, solo qué funcionalidades ofrece.
 
-Se construye junto con el cliente o el usuario en las primeras reuniones, para acordar qué debe hacer el sistema antes de empezar a programar.
+Se construye junto con el cliente o el usuario en las primeras reuniones, para acordar qué debe hacer el sistema antes de empezar a programar. Por eso su notación es deliberadamente simple —muñecos, elipses y líneas—: tiene que entenderla alguien que no ha programado nunca.
 
 !!! example "Ejemplo"
     Una máquina de café tiene tres actores posibles (cliente, técnico de mantenimiento, proveedor) y casos de uso como "Seleccionar bebida", "Rellenar depósito" o "Cobrar".
@@ -48,9 +51,16 @@ Se representa con una **elipse** con el nombre dentro.
       <figcaption>Icono de caso de uso (elipse) en la paleta UML de DIA</figcaption>
     </figure>
 
-### Asociación
+### Asociación (relación de comunicación)
 
-La interacción entre un actor y un caso de uso se representa con una **línea recta** que los une. No lleva flecha.
+La interacción entre un actor y un caso de uso se representa con una **línea recta** que los une. A esta línea se le llama **relación de comunicación**, porque indica que el actor "se comunica" con esa funcionalidad del sistema. No lleva flecha.
+
+### Escenario
+
+Cada camino concreto que puede seguir un caso de uso al ejecutarse es un **escenario**. Todo caso de uso tiene un **escenario principal** (el camino donde todo va bien) y puede tener **escenarios alternativos** (el usuario se equivoca de contraseña, no hay stock, el pago falla...). El diagrama muestra el caso de uso como una sola elipse; los escenarios se detallan en la descripción narrativa que lo acompaña.
+
+!!! example "Ejemplo"
+    Caso de uso "Retirar dinero" de un cajero. Escenario principal: el cliente introduce el PIN correcto, elige importe, hay saldo y recibe el dinero. Escenarios alternativos: PIN incorrecto tres veces (se retiene la tarjeta), saldo insuficiente (se muestra un aviso).
 
 ### Sistema
 
@@ -77,6 +87,22 @@ El software que se va a desarrollar. Se dibuja como un **rectángulo** que conti
   ![Diagrama con generalización de actores: Usuario y Administrador](img/casos-generalizacion-actor.png)
   <figcaption>Generalización entre actores: Administrador hereda los casos de uso de Usuario y añade los suyos propios.</figcaption>
 </figure>
+
+---
+
+## De la descripción al diagrama
+
+En las actividades partirás de un enunciado en lenguaje natural, como en el tema 5. La técnica para convertirlo en diagrama tiene tres pasos:
+
+| En el texto busca... | Se convierte en... |
+|---|---|
+| Roles o perfiles que usan el sistema ("el secretario", "cualquier persona que...") | Un **actor** (por el papel, no por el nombre propio) |
+| Verbos que el usuario consigue del sistema ("generar recibos", "consultar el estado") | Un **caso de uso** |
+| "Para X primero hay que Y", "siempre requiere..." | Un **«include»** |
+| "Opcionalmente", "solo si...", "en algunos casos" | Un **«extend»** |
+
+!!! warning "Cuidado"
+    No todo verbo del enunciado es un caso de uso. "Conectar con la base de datos" o "validar el token" son pasos internos que el usuario no ve: si los pones, el diagrama deja de ser un contrato con el cliente y se convierte en diseño técnico.
 
 ---
 
@@ -121,6 +147,14 @@ Se representa igual que include pero con `«extend»`, y la flecha apunta al cas
       <figcaption>Propiedades de la relación «extend» en DIA: estereotipo "extends"</figcaption>
     </figure>
 
+!!! tip "La regla de las flechas (cae en examen)"
+    Las dos relaciones se dibujan igual (línea discontinua con flecha), pero la flecha apunta a sitios distintos:
+
+    - `«include»` apunta al caso **incluido** (el "trozo" reutilizado): *Realizar pedido* ──▶ *Iniciar sesión*.
+    - `«extend»` apunta al caso **base** (el que se amplía): *Aplicar cupón* ──▶ *Pagar pedido*.
+
+    Truco para recordarlo: la flecha siempre sale del caso que "manda ejecutar" hacia el que completa la historia. En include manda el grande; en extend, el opcional se ofrece al grande.
+
 ### Generalización
 
 Un caso de uso hijo hereda el comportamiento del padre pero puede modificarlo. Funciona igual que la herencia en clases.
@@ -149,8 +183,9 @@ Un caso de uso hijo hereda el comportamiento del padre pero puede modificarlo. F
 
 ## Resumen de relaciones
 
-| Relación | Cuándo usarla |
-|---|---|
-| `«include»` | El caso incluido **siempre** se ejecuta |
-| `«extend»` | El caso extendido se ejecuta **solo a veces** (condición) |
-| Generalización | Varios casos comparten comportamiento base |
+| Relación | Cómo se dibuja | Cuándo usarla |
+|---|---|---|
+| Relación de comunicación | Línea continua sin flecha | Une un actor con un caso de uso que puede iniciar |
+| `«include»` | Línea discontinua con flecha al caso **incluido** | El caso incluido **siempre** se ejecuta |
+| `«extend»` | Línea discontinua con flecha al caso **base** | El caso extendido se ejecuta **solo a veces** (condición) |
+| Generalización | Flecha de triángulo hueco al padre | Varios casos (o actores) comparten comportamiento base |

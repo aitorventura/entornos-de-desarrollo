@@ -1,39 +1,53 @@
-# Actividad 6.1: Gestión de fincas e inmuebles
+# Actividad 6.1: ¿Qué diagrama toca?
 
-## Objetivo
+!!! warning "Descarga la plantilla"
+    📄 [Plantilla 6.1 — ¿Qué diagrama toca?](plantillas/Actividad_6_1_Plantilla.docx){target="_blank" rel="noopener"}
 
-Que el alumno sea capaz de identificar actores y casos de uso a partir de una descripción real de un sistema, y de representar las relaciones entre ellos usando include, extend y generalización cuando corresponda.
+## Qué vas a practicar
+
+Antes de dibujar ningún diagrama, hay que saber elegirlo. En un proyecto real nadie te dice "haz un diagrama de estados": te describen un problema y tú decides qué diagrama lo comunica mejor. Eso es exactamente lo que vas a hacer aquí.
+
+---
 
 ## Enunciado
 
-Crea el diagrama de casos de uso de una aplicación de gestión de fincas e inmuebles con el siguiente funcionamiento:
+Para cada una de las ocho situaciones, indica en la tabla de la plantilla:
 
-La empresa gestora actúa como propietaria. Los inmuebles pueden ser pisos, locales o edificios (que a su vez contienen pisos y locales). La aplicación debe permitir:
+1. **Qué diagrama de comportamiento usarías** (casos de uso, secuencia, comunicación, actividad o estados).
+2. Una **justificación de una o dos frases**: qué pregunta responde ese diagrama que los demás no responden igual de bien.
+3. En cuatro de ellas se te pide además el **descarte**: por qué NO usarías el diagrama "hermano" que parece igual de válido.
 
-- Dar de alta, modificar, dar de baja y consultar inmuebles y sus pisos/locales.
-- Cualquier persona con nómina, aval bancario o contrato puede alquilar un inmueble disponible. Para cualquier operación sobre un inquilino es necesaria su identificación previa.
-- Dar de alta, modificar, dar de baja y consultar inquilinos.
-- El secretario puede generar recibos mensuales para cada piso o local, duplicar recibos del mes anterior e inicializar conceptos. Los recibos tienen conceptos obligatorios y opcionales.
-- El secretario gestiona movimientos bancarios (gastos e ingresos) asociados a los inmuebles y genera informes para la declaración de la renta.
-- La aplicación proporciona listados: inquilinos ordenados por fechas, recibos pendientes, etc.
+### Las situaciones
 
-**Los actores del sistema son: propietario, inquilino y secretario.**
+1. El cliente de una app de reparto quiere ver, antes de aprobar el presupuesto, **qué podrá hacer cada tipo de usuario** (repartidor, cliente, administrador) con la aplicación. *(Descarta también: ¿por qué no un diagrama de actividad?)*
+2. Un compañero no entiende **en qué orden se llaman los objetos** `Carrito`, `Pago` y `Stock` cuando el usuario pulsa "Comprar". *(Descarta también: ¿por qué no un diagrama de comunicación?)*
+3. Hay que documentar **el ciclo de vida de una incidencia** en un sistema de soporte: abierta, asignada, en curso, resuelta, cerrada, reabierta. *(Descarta también: ¿por qué no un diagrama de actividad?)*
+4. El equipo quiere ver de un vistazo **qué objetos están conectados entre sí** y cuántos mensajes cruzan cada conexión, para detectar si una clase habla con demasiadas.
+5. Hay que explicar al departamento de administración **el proceso completo de matrícula** de un alumno, con sus decisiones ("¿tiene pendientes?") y sus pasos en paralelo (generar carné y enviar bienvenida a la vez). *(Descarta también: ¿por qué no un diagrama de estados?)*
+6. Un desarrollador nuevo pregunta **qué hace el sistema cuando el banco tarda en responder**: quién espera, quién sigue, y qué mensaje llega primero.
+7. El profesor os pide modelar **cómo cambia un semáforo inteligente**: en verde, en ámbar, en rojo, y en parpadeo nocturno a partir de las 22:00.
+8. La dirección del centro quiere un esquema que un **usuario sin perfil técnico** pueda entender para validar los requisitos de la nueva app de reserva de aulas.
 
-## Lo que debes entregar
+---
 
-- Un diagrama de casos de uso para cada actor (o uno único con todos si lo prefieres).
-- Respuestas a las preguntas de profundización.
+## Pregunta final
 
-## Preguntas de profundización
+**Pregunta 1.** Las situaciones 2 y 4 podrían resolverse con los dos diagramas de interacción. Explica con tus palabras qué información se ve mejor en cada uno y por qué UML mantiene los dos si "contienen lo mismo".
 
-1. ¿Cuántos actores distintos has identificado? ¿Alguno de ellos comparte casos de uso con otro?
-2. El enunciado dice que para cualquier operación sobre un inquilino es necesaria la identificación. ¿Qué relación UML usarías para modelar esto: `«include»` o `«extend»`? Justifica.
-3. Generar el recibo del mes actual y duplicar el del mes anterior son dos operaciones distintas. ¿Tienen algo en común que justifique alguna relación entre ellas?
-4. ¿Hay algún caso de uso que solo se ejecute bajo cierta condición? Identifícalo y explica qué relación usarías.
+---
 
-## Criterios de evaluación
+## 📤 Entregable
 
-- Los actores están correctamente identificados y diferenciados.
-- Los casos de uso son verbos o frases verbales (no sustantivos).
-- Las relaciones `«include»` y `«extend»` están bien aplicadas y justificadas.
-- El rectángulo del sistema contiene solo los casos de uso, no los actores.
+Rellena la plantilla y entrégala en **PDF**:
+
+1. La tabla con las ocho situaciones resueltas y justificadas (con los cuatro descartes).
+2. La respuesta a la pregunta 1.
+
+!!! warning "Corrección oral"
+    El profesor puede cambiar un matiz de cualquier situación ("¿y si además importara el tiempo exacto de cada paso?") y pedirte que razones si tu elección cambia. Si no puedes justificarla, la actividad no se supera.
+
+## ✅ Criterios de corrección
+
+- El diagrama elegido es adecuado a lo que se quiere comunicar en cada situación.
+- Las justificaciones hablan de qué responde el diagrama, no repiten su definición de memoria.
+- Los descartes explican la diferencia real entre los dos diagramas confundibles.

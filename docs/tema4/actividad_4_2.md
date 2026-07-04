@@ -1,7 +1,7 @@
 # 🧼 Actividad 4.2: Refactorización de código
 
 !!! warning "Descarga la plantilla"
-    📄 [Plantilla 4.2 — Refactorización de código](Actividad_4_2_Plantilla.docx){target="_blank" rel="noopener"}
+    📄 [Plantilla 4.2 — Refactorización de código](plantillas/Actividad_4_2_Plantilla.docx){target="_blank" rel="noopener"}
 
 !!! info "Objetivo"
     Aplicar técnicas de refactorización sobre código real y demostrar que las entiendes:

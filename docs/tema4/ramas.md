@@ -130,7 +130,7 @@ Para ver cómo encaja todo, vamos a seguir un ejemplo paso a paso. Estás desarr
 
 Estás en `main`. Todo funciona. Compruebas dónde estás con `git status` y ves el historial con `git lga`.
 
-![Captura de `git status` mostrando "On branch main" y `git lga` mostrando el último commit](capturas/ramas/1_status_inicial.png)
+![Captura de `git status` mostrando "On branch main" y `git lga` mostrando el último commit](img/ramas/1_status_inicial.png)
 
 **Qué estás viendo en la captura**
 
@@ -147,7 +147,7 @@ git branch experimento-fondo
 
 Si miras el historial ahora, `main` y `experimento-fondo` apuntan al mismo commit. El asterisco (o el color) te recuerda que **todavía estás en main**.
 
-![Captura de `git lga` mostrando ambas ramas en el mismo commit y el HEAD apuntando a main](capturas/ramas/2_crear_rama.png)
+![Captura de `git lga` mostrando ambas ramas en el mismo commit y el HEAD apuntando a main](img/ramas/2_crear_rama.png)
 
 **Qué estás viendo en la captura**
 
@@ -164,7 +164,7 @@ git switch experimento-fondo
 
 Git te confirma el cambio con `Switched to branch 'experimento-fondo'`.
 
-![Captura del mensaje de cambio de rama y un `git status` confirmando que estás en la nueva rama](capturas/ramas/3_cambio_rama.png)
+![Captura del mensaje de cambio de rama y un `git status` confirmando que estás en la nueva rama](img/ramas/3_cambio_rama.png)
 
 **Qué estás viendo en la captura**
 
@@ -182,7 +182,7 @@ git commit -m "Fondo cambiado a rojo"
 
 En este momento, `experimento-fondo` ha avanzado un commit. `main` no se ha movido.
 
-![Captura de `git lga` mostrando claramente que experimento-fondo está UN paso por delante de main](capturas/ramas/4_rama_avanzada.png)
+![Captura de `git lga` mostrando claramente que experimento-fondo está UN paso por delante de main](img/ramas/4_rama_avanzada.png)
 
 **Qué estás viendo en la captura**
 
@@ -199,7 +199,7 @@ git switch main
 
 Si abres `estilos.css`, el fondo rojo ha desaparecido. No te asustes: tus cambios están seguros en `experimento-fondo`, Git simplemente ha restaurado los archivos al estado de `main`.
 
-![Captura mostrando el comando checkout y quizás el contenido del archivo original](capturas/ramas/5_vuelta_main.png)
+![Captura mostrando el comando checkout y quizás el contenido del archivo original](img/ramas/5_vuelta_main.png)
 
 **Qué estás viendo en la captura**
 
@@ -216,7 +216,7 @@ git merge experimento-fondo
 
 Como `main` no ha avanzado mientras trabajabas, Git hace un **Fast-forward**: simplemente mueve la etiqueta `main` hasta donde está `experimento-fondo`. No crea ningún commit extra.
 
-![Captura del mensaje "Fast-forward" y un `git lga` final mostrando ambas ramas juntas al final del camino](capturas/ramas/6_merge_exito.png)
+![Captura del mensaje "Fast-forward" y un `git lga` final mostrando ambas ramas juntas al final del camino](img/ramas/6_merge_exito.png)
 
 **Qué estás viendo en la captura**
 
@@ -231,7 +231,7 @@ La rama ha cumplido su función. Su trabajo ya está en `main`. La borras:
 git branch -d experimento-fondo
 ```
 
-![Captura del comando de borrado y un `git lga` mostrando que solo queda main](capturas/ramas/7_borrar_rama.png)
+![Captura del comando de borrado y un `git lga` mostrando que solo queda main](img/ramas/7_borrar_rama.png)
 
 **Qué estás viendo en la captura**
 
@@ -297,7 +297,7 @@ Lo que cambia es cómo Git resuelve la fusión por dentro. Dependiendo de lo que
 
 Cuando Git necesita crear un merge commit (caso 3-way), **abre tu editor de terminal** para que confirmes el mensaje. Suele ser Vim o Nano.
 
-![Captura del editor de commit por defecto de Git en la terminal](capturas/ramas/8c_mensaje_commit.png)
+![Captura del editor de commit por defecto de Git en la terminal](img/ramas/8c_mensaje_commit.png)
 
 **Qué estás viendo en la captura**
 
@@ -310,13 +310,13 @@ Cuando Git necesita crear un merge commit (caso 3-way), **abre tu editor de term
 
 Antes y después del merge con ramas divergidas:
 
-![Captura de `git lga` ANTES del merge, mostrando las ramas bifurcadas en forma de Y](capturas/ramas/8a_antes_merge.png)
+![Captura de `git lga` ANTES del merge, mostrando las ramas bifurcadas en forma de Y](img/ramas/8a_antes_merge.png)
 
 **Qué estás viendo en la captura**
 
 - El historial antes de fusionar: `main` y `funcionalidad-X` se han separado. Cada una tiene commits que la otra no tiene.
 
-![Captura de `git lga` DESPUÉS del merge, mostrando el bucle cerrado](capturas/ramas/8b_despues_merge.png)
+![Captura de `git lga` DESPUÉS del merge, mostrando el bucle cerrado](img/ramas/8b_despues_merge.png)
 
 **Qué estás viendo en la captura**
 
@@ -356,14 +356,14 @@ Cuando ocurre un conflicto, Git detiene el merge y marca los archivos afectados.
 
 1. En `main`, creas `titulo.txt` con el texto `Hola Mundo` y haces commit.
 
-    ![Captura creando el fichero titulo](capturas/ramas/9a_creacion_titulo.png)
+    ![Captura creando el fichero titulo](img/ramas/9a_creacion_titulo.png)
 
     **Qué estás viendo en la captura**
     - La creación del archivo y el primer commit en `main`.
 
 2. Creas la rama `cambio-titulo`, cambias la línea a `Hola Universo` y haces commit.
 
-    ![Captura modificando a hola universo en la nueva rama](capturas/ramas/9b_modicando_titulo_rama.png)
+    ![Captura modificando a hola universo en la nueva rama](img/ramas/9b_modicando_titulo_rama.png)
 
     **Qué estás viendo en la captura**
     - La modificación y su commit en la nueva rama.
@@ -373,7 +373,7 @@ Cuando ocurre un conflicto, Git detiene el merge y marca los archivos afectados.
 
 3. Vuelves a `main` y cambias **la misma línea** a `Hola Planeta`. Haces commit.
 
-    ![Captura cambiando la línea en main a hola planeta y realizando git lga](capturas/ramas/9c_cambio_main_y_lga.png)
+    ![Captura cambiando la línea en main a hola planeta y realizando git lga](img/ramas/9c_cambio_main_y_lga.png)
 
     **Qué estás viendo en la captura**
     - El cambio en `main` y un `git lga` que muestra que las dos ramas han avanzado por separado tocando el mismo archivo.
@@ -386,21 +386,21 @@ Cuando ocurre un conflicto, Git detiene el merge y marca los archivos afectados.
 
 5. Git lanza el error de conflicto.
 
-    ![Captura de la terminal mostrando el error CONFLICT](capturas/ramas/9d_error_merge.png)
+    ![Captura de la terminal mostrando el error CONFLICT](img/ramas/9d_error_merge.png)
 
     **Qué estás viendo en la captura**
     - Git detecta que la misma línea ha sido modificada de forma distinta en ambas ramas y detiene la fusión.
 
 6. Abres el archivo en tu editor y ves las marcas del conflicto.
 
-    ![Captura del editor de código mostrando las marcas de colores del conflicto](capturas/ramas/9e_editor_fix_merge.png)
+    ![Captura del editor de código mostrando las marcas de colores del conflicto](img/ramas/9e_editor_fix_merge.png)
 
     **Qué estás viendo en la captura**
     - `<<<<<<< HEAD` marca los cambios de `main`. `>>>>>>> cambio-titulo` marca los cambios entrantes. La línea `=======` los separa.
 
 7. Editas el archivo, eliminas las marcas y dejas solo la versión final (por ejemplo, `Hola Planeta!`).
 
-    ![Captura del editor con el conflicto solucionado](capturas/ramas/9f_editor_solved.png)
+    ![Captura del editor con el conflicto solucionado](img/ramas/9f_editor_solved.png)
 
     **Qué estás viendo en la captura**
     - El archivo limpio, sin marcas de Git. Solo la versión que has decidido conservar.
@@ -412,21 +412,21 @@ Cuando ocurre un conflicto, Git detiene el merge y marca los archivos afectados.
     git commit -m "Resuelve conflicto en titulo.txt"
     ```
 
-    ![Captura solucionando el conflicto con add y commit en la terminal](capturas/ramas/9g_conflicto_solucionado.png)
+    ![Captura solucionando el conflicto con add y commit en la terminal](img/ramas/9g_conflicto_solucionado.png)
 
     **Qué estás viendo en la captura**
     - La confirmación de que el archivo ha entrado al staging y el merge commit ha quedado registrado.
 
 9. El historial vuelve a unirse.
 
-    ![Captura de git lga tras solucionar el conflicto](capturas/ramas/9h_lga.png)
+    ![Captura de git lga tras solucionar el conflicto](img/ramas/9h_lga.png)
 
     **Qué estás viendo en la captura**
     - `git lga` muestra el merge commit uniendo las dos líneas. El proceso ha terminado correctamente.
 
 10. Resultado final del archivo:
 
-    ![Captura mostrando el archivo titulo.txt finalizado](capturas/ramas/9i_final.png)
+    ![Captura mostrando el archivo titulo.txt finalizado](img/ramas/9i_final.png)
 
     **Qué estás viendo en la captura**
     - El contenido definitivo del archivo, tal como lo has decidido tú al resolver el conflicto.

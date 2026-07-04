@@ -54,11 +54,11 @@ Antes de crear repositorios remotos o colaborar en proyectos, necesitas una cuen
 5. GitHub te enviará un código numérico al correo. Introdúcelo en la pantalla de confirmación.
 6. Ya tienes acceso a tu panel de control (*dashboard*) desde donde puedes crear y explorar repositorios.
 
-![Captura de la página de registro o portada de GitHub](capturas/github/0_registro_github.png)
+![Captura de la página de registro o portada de GitHub](img/github/0_registro_github.png)
 
 **Qué estás viendo en la captura:** la página inicial de GitHub donde se introduce el nombre de usuario, contraseña y correo para crear una cuenta nueva.
 
-![Captura de la página principal (dashboard) de GitHub con la sesión iniciada](capturas/github/0b_dashboard_github.png)
+![Captura de la página principal (dashboard) de GitHub con la sesión iniciada](img/github/0b_dashboard_github.png)
 
 **Qué estás viendo en la captura:** el panel de control de GitHub una vez iniciada sesión. A la izquierda verás el listado de repositorios (vacío si acabas de registrarte) y el botón verde "New" para crear uno nuevo.
 
@@ -82,7 +82,7 @@ Para subir código o modificar proyectos privados, GitHub necesita verificar tu 
 3. Ve a **Personal access tokens** → **Tokens (classic)**.
 4. Pulsa **Generate new token** → **Generate new token (classic)**.
 
-![Captura mostrando el formulario de creación de un token PAT en GitHub](capturas/github/0c_crear_token.png)
+![Captura mostrando el formulario de creación de un token PAT en GitHub](img/github/0c_crear_token.png)
 
 **Qué estás viendo en la captura:** el formulario para configurar un nuevo token clásico. Se ha asignado un nombre descriptivo y se ha marcado la casilla **`repo`** para dar permisos de lectura y escritura sobre repositorios.
 
@@ -93,7 +93,7 @@ Para subir código o modificar proyectos privados, GitHub necesita verificar tu 
 !!! warning "Cópialo ahora"
     Esta es la **única vez** que GitHub te lo muestra. Si cierras la pestaña sin copiarlo, tendrás que generar uno nuevo.
 
-![Captura mostrando el cuadro verde de éxito y el token generado](capturas/github/0d_token_generado.png)
+![Captura mostrando el cuadro verde de éxito y el token generado](img/github/0d_token_generado.png)
 
 **Qué estás viendo en la captura:** el mensaje de éxito y el token generado (parte censurada por seguridad). Copia el tuyo completo usando el icono de copiar.
 
@@ -115,7 +115,7 @@ ssh-keygen -t ed25519 -C "tu_correo@ejemplo.com"
 
 La terminal te preguntará dónde guardar la clave y si quieres añadir una contraseña (*passphrase*). Puedes pulsar `Enter` varias veces para aceptar los valores por defecto.
 
-![Captura de la terminal generando una clave SSH](capturas/github/0e1_generar_ssh.png)
+![Captura de la terminal generando una clave SSH](img/github/0e1_generar_ssh.png)
 
 **Qué estás viendo en la captura:** Git Bash ejecutando el comando. Las preguntas de ruta y passphrase se han respondido pulsando Intro. El dibujo ASCII al final confirma que la clave se ha generado correctamente en la carpeta `.ssh` de tu ordenador.
 
@@ -134,7 +134,7 @@ pbcopy < ~/.ssh/id_ed25519.pub
 cat ~/.ssh/id_ed25519.pub
 ```
 
-![Captura de la terminal mostrando el archivo publico de la llave SSH](capturas/github/0e2_copiar_ssh.png)
+![Captura de la terminal mostrando el archivo publico de la llave SSH](img/github/0e2_copiar_ssh.png)
 
 **Qué estás viendo en la captura:** el contenido de la clave pública mostrado con `cat`. Siempre empieza por `ssh-ed25519`.
 
@@ -145,9 +145,9 @@ cat ~/.ssh/id_ed25519.pub
 3. Escribe un título (ej. "Portátil clase") y pega la clave pública en el campo de texto.
 4. Haz clic en **Add SSH key**.
 
-![Captura del formulario para agregar clave SSH](capturas/github/0e_añadir_ssh.png)
+![Captura del formulario para agregar clave SSH](img/github/0e_añadir_ssh.png)
 
-![Captura del menú de SSH indicando que la clave se ha guardado](capturas/github/0f_añadida_sh.png)
+![Captura del menú de SSH indicando que la clave se ha guardado](img/github/0f_añadida_sh.png)
 
 **Qué estás viendo en las capturas:** la primera muestra el formulario para pegar la clave; la segunda confirma que la clave ha quedado vinculada a tu cuenta.
 
@@ -165,7 +165,7 @@ Entra en tu cuenta de GitHub y pulsa el botón **New** para crear un nuevo repos
 
 Si ya tienes un repositorio local listo, **no marques** las opciones de añadir `README`, `.gitignore` ni licencia desde la web — necesitas que GitHub te dé un repositorio completamente vacío.
 
-![Captura crear un nuevo repositorio en GitHub](capturas/github/1_crear_repo.png)
+![Captura crear un nuevo repositorio en GitHub](img/github/1_crear_repo.png)
 
 **Qué estás viendo en la captura:** el formulario "Create a new repository" con el nombre `mi_proyecto`. Las opciones de README y .gitignore se han dejado desmarcadas para obtener un repositorio vacío.
 
@@ -199,7 +199,7 @@ Para comprobar que el enlace se ha creado correctamente:
 git remote -v
 ```
 
-![Captura de la terminal mostrando el origin enlazado](capturas/github/2_enlazar_remoto.png)
+![Captura de la terminal mostrando el origin enlazado](img/github/2_enlazar_remoto.png)
 
 **Qué estás viendo en la captura:** el comando `git remote add origin` (que no produce salida visible) y a continuación `git remote -v`, que confirma que `origin` apunta a la URL correcta tanto para `push` como para `fetch`.
 
@@ -220,7 +220,7 @@ git push -u origin main
 
     La única situación en que `--force` es aceptable es en una rama propia que nadie más usa.
 
-![Captura del terminal con ls y subida git push exitosa](capturas/github/3_primer_push.png)
+![Captura del terminal con ls y subida git push exitosa](img/github/3_primer_push.png)
 
 **Qué estás viendo en la captura:** primero un `ls` para ver el contenido local antes del envío, y luego `git push -u origin main` con las estadísticas de éxito (`Writing objects: 100%`) y el aviso de que la rama remota queda enlazada.
 
@@ -228,7 +228,7 @@ git push -u origin main
 
 Actualiza la página del repositorio en el navegador. Verás tus archivos con el historial y los mensajes de commit exactos que tenías en local.
 
-![Captura de la web de GitHub mostrando los archivos subidos](capturas/github/4_repo_lleno.png)
+![Captura de la web de GitHub mostrando los archivos subidos](img/github/4_repo_lleno.png)
 
 **Qué estás viendo en la captura:** el repositorio en GitHub mostrando los archivos locales (`primer_doc.txt`) junto al mensaje y la fecha de cada commit.
 
@@ -248,7 +248,7 @@ git clone git@github.com:tu-usuario/tu-repositorio.git
 
 Para obtener la URL, entra en el repositorio de GitHub y haz clic en el botón verde **"<> Code"**.
 
-![Captura mostrando el botón verde Code para copiar la URL de clonación](capturas/github/5a_obtener_enlace_clonar.png)
+![Captura mostrando el botón verde Code para copiar la URL de clonación](img/github/5a_obtener_enlace_clonar.png)
 
 **Qué estás viendo en la captura:** el menú desplegable del botón "Code" con la URL de clonación en HTTPS y el botón para copiarla al portapapeles.
 
@@ -258,7 +258,7 @@ Para obtener la URL, entra en el repositorio de GitHub y haz clic en el botón v
 2. Descarga todos los commits, ramas y archivos.
 3. Configura `origin` apuntando al remoto automáticamente.
 
-![Captura realizando git clone del repositorio y listando su contenido](capturas/github/5_clone.png)
+![Captura realizando git clone del repositorio y listando su contenido](img/github/5_clone.png)
 
 **Qué estás viendo en la captura:** `git clone` descargando el repositorio, y después `cd mi_proyecto` + `ls` confirmando que los archivos ya están en local.
 
@@ -287,7 +287,7 @@ La diferencia entre los dos comandos en un vistazo:
 | Modifica tus archivos | ✗ | ✓ |
 | Cuándo usarlo | Cuando quieres revisar antes de integrar | Cuando quieres actualizar directamente |
 
-![Captura actualizando el repositorio local con un git pull](capturas/github/6_pull.png)
+![Captura actualizando el repositorio local con un git pull](img/github/6_pull.png)
 
 **Qué estás viendo en la captura:** `git pull` integrando un cambio hecho desde la web de GitHub. La salida muestra el fast-forward y las estadísticas del archivo modificado (`1 insertion(+)`).
 
@@ -311,13 +311,13 @@ git push -u origin nueva-funcionalidad  # la primera vez
 git push                                # las siguientes veces
 ```
 
-![Captura mostrando el proceso de creación y subida de una rama en la terminal](capturas/github/7a_subir_rama_terminal.png)
+![Captura mostrando el proceso de creación y subida de una rama en la terminal](img/github/7a_subir_rama_terminal.png)
 
 **Qué estás viendo en la captura:** creación de la rama con `git switch -c`, commits locales, y finalmente `git push -u origin nueva-funcionalidad` con el aviso `[new branch]` confirmando que ha llegado al servidor.
 
 En la web de GitHub, el selector de ramas (arriba a la izquierda del código) mostrará todas las ramas subidas. Puedes navegar por ellas para ver su historial o iniciar una Pull Request.
 
-![Captura mostrando el selector de ramas en GitHub con una nueva rama disponible](capturas/github/7b_rama_github.png)
+![Captura mostrando el selector de ramas en GitHub con una nueva rama disponible](img/github/7b_rama_github.png)
 
 **Qué estás viendo en la captura:** el selector de ramas de GitHub mostrando `main` y `nueva-funcionalidad` disponibles.
 
@@ -406,7 +406,7 @@ IntelliJ IDEA incorpora soporte nativo para Git y GitHub, lo que permite hacer l
 2. Ve a **Version Control → GitHub**.
 3. Pulsa `+` → **Log in via GitHub** (abre el navegador para autorizar) o introduce tu Token PAT.
 
-![Captura mostrando la cuenta de GitHub vinculada en IntelliJ IDEA](capturas/github/8a_intellij_cuenta.png)
+![Captura mostrando la cuenta de GitHub vinculada en IntelliJ IDEA](img/github/8a_intellij_cuenta.png)
 
 **Qué estás viendo en la captura:** la pantalla de ajustes con la cuenta de GitHub ya vinculada al IDE.
 
@@ -416,13 +416,13 @@ Con un proyecto abierto que tenga `git init`, verás el menú **Git** en la barr
 
 **A) Commit** — Abre un panel donde puedes marcar los archivos a añadir al staging y escribir el mensaje del commit. A la derecha se muestra el diff visual con las líneas añadidas y borradas.
 
-![Captura del panel lateral de Commit de IntelliJ IDEA](capturas/github/8b_intellij_commit.png)
+![Captura del panel lateral de Commit de IntelliJ IDEA](img/github/8b_intellij_commit.png)
 
 **Qué estás viendo en la captura:** el panel de Commit con los archivos seleccionados para el staging, el campo del mensaje y el visor de diferencias a la derecha.
 
 **B) Push** (`Ctrl+Shift+K`) — Muestra los commits pendientes de subir y hacia qué rama de `origin` van. Confirma antes de enviar.
 
-![Captura mostrando el diálogo emergente para hacer Push](capturas/github/8c_intellij_push.png)
+![Captura mostrando el diálogo emergente para hacer Push](img/github/8c_intellij_push.png)
 
 **Qué estás viendo en la captura:** el diálogo de Push indicando la rama origen, la rama destino en `origin` y los commits que van a enviarse.
 
@@ -432,7 +432,7 @@ Con un proyecto abierto que tenga `git init`, verás el menú **Git** en la barr
 
 Desde **Git → Branches** puedes ver todas las ramas locales y remotas, crear una nueva rama (`New Branch`, equivale a `git switch -c`), y cambiar entre ellas.
 
-![Captura mostrando el potente selector de ramas de IntelliJ](capturas/github/8d_intellij_ramas.png)
+![Captura mostrando el potente selector de ramas de IntelliJ](img/github/8d_intellij_ramas.png)
 
 **Qué estás viendo en la captura:** el panel de ramas con las secciones Local y Remote, y el botón `+ New Branch` para crear una rama directamente desde el IDE.
 

@@ -1,7 +1,7 @@
 # Actividad 4.1: Optimización básica en Java
 
 !!! warning "Descarga la plantilla"
-    📄 [Plantilla 4.1 — Optimización básica en Java](Actividad_4_1_Plantilla.docx){target="_blank" rel="noopener"}
+    📄 [Plantilla 4.1 — Optimización básica en Java](plantillas/Actividad_4_1_Plantilla.docx){target="_blank" rel="noopener"}
 
 !!! info "Objetivo"
     Aplicar mejoras sencillas de rendimiento y demostrar que las entiendes:

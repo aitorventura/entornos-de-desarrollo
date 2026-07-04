@@ -1,7 +1,7 @@
 # Actividad 4.5: Git local — construir historial y saber volver atrás
 
 !!! warning "Descarga la plantilla"
-    📄 [Plantilla 4.5 — Git local: construir historial y saber volver atrás](Actividad_4_5_Plantilla.docx){target="_blank" rel="noopener"}
+    📄 [Plantilla 4.5 — Git local: construir historial y saber volver atrás](plantillas/Actividad_4_5_Plantilla.docx){target="_blank" rel="noopener"}
 
 ## Qué vas a practicar
 

@@ -11,7 +11,10 @@
 
 ## ¿Para qué sirve?
 
-Un diagrama de actividad describe el **flujo de un proceso o algoritmo** paso a paso. Es similar a un diagrama de flujo, pero con notación UML.
+!!! info "Idea clave"
+    Es el diagrama de flujo de toda la vida, con uniforme UML: un proceso de principio a fin, con sus decisiones, sus bucles y sus tareas en paralelo.
+
+Un diagrama de actividad describe el **flujo de un proceso o algoritmo** paso a paso. Si ya has hecho diagramas de flujo en Programación, este te resultará familiar: cambia la notación, no la idea.
 
 Se usa principalmente para modelar:
 
@@ -19,6 +22,19 @@ Se usa principalmente para modelar:
 - **Lógica de algoritmos**: los pasos de un método complejo
 - **Flujos de casos de uso**: cómo se desarrolla un caso de uso en detalle
 - **Comportamiento de métodos**: cuando la lógica es difícil de entender solo con el código
+
+Uno pequeño para empezar — sacar dinero de un cajero — con decisión, bucle y dos finales distintos:
+
+```mermaid
+flowchart TD
+    inicio((" ")) --> a(Introducir PIN)
+    a --> d{"¿PIN correcto?"}
+    d -- "[no, quedan intentos]" --> a
+    d -- "[no, 3 fallos]" --> r(Retener tarjeta) --> fin1(((" ")))
+    d -- "[sí]" --> b(Elegir importe) --> c(Entregar dinero) --> fin2(((" ")))
+```
+
+Fíjate en que las condiciones van entre corchetes en las flechas de salida del rombo, y en que un camino puede volver atrás (el bucle del PIN) o terminar en un final propio. Ahora sí, pieza a pieza.
 
 ---
 
@@ -46,7 +62,7 @@ Rectángulo con esquinas redondeadas. Representa una **tarea o acción** concret
 
 ### Decisión
 
-Rombo. Indica un **punto de bifurcación** donde el flujo toma un camino u otro según una condición. Las condiciones se escriben entre corchetes en cada flecha de salida: `[sí]`, `[no]`, `[stock > 0]`.
+Rombo. Indica un **punto de bifurcación** donde el flujo toma un camino u otro según una condición. Cada condición se escribe entre corchetes en su flecha de salida —`[sí]`, `[no]`, `[stock > 0]`— y se llama **condición de guarda**: "guarda" el camino y solo deja pasar el flujo si es verdadera. Volverás a ver este término en el diagrama de estados.
 
 !!! tip "En DIA — icono de decisión"
     <figure markdown="span">
@@ -113,9 +129,22 @@ Círculo con borde grueso (círculo dentro de otro). Indica la **finalización d
 
 ---
 
-## Ejemplo: máquina de café
+## Ejemplo leído paso a paso: máquina de café
+
+Este diagrama reúne todos los elementos del apartado. Antes de mirar la explicación, intenta seguirlo tú con el dedo desde el círculo negro:
 
 <figure markdown="span">
   ![Diagrama de actividad de una máquina de café con decisiones, fork/join y condiciones de guarda](img/actividad-cafe-completo.png)
-  <figcaption>Diagrama de actividad de una máquina de café: muestra decisión (qué bebida), concurrencia (ramas paralelas para cada tipo) y la barra de sincronización antes de entregar el resultado.</figcaption>
+  <figcaption>Diagrama de actividad de una máquina de café: decisión con guardas, concurrencia y barras de sincronización.</figcaption>
 </figure>
+
+Lectura del flujo:
+
+1. Tras el inicio, el usuario **elige bebida** e **introduce monedas**: dos actividades en secuencia normal.
+2. La primera **barra de sincronización** abre tres ramas que ocurren **a la vez**: se visualiza el mensaje "Sirviendo café", se prepara la bebida y se devuelve el cambio.
+3. La rama central pasa por una **ramificación** (rombo) con tres condiciones de guarda: `[café]`, `[capuchino]` o `[cortado]` deciden cuál de las tres actividades de servir se ejecuta. Solo una de ellas, porque las guardas son excluyentes.
+4. Un segundo rombo **reagrupa** los tres caminos en uno.
+5. La segunda barra de sincronización es el **join**: espera a que las tres ramas paralelas (mensaje, bebida y cambio) hayan terminado. Solo entonces se muestra "Recoja su café" y el flujo llega al nodo final.
+
+!!! tip "Recuerda"
+    Rombo y barra se parecen pero no se mezclan: el rombo elige **un** camino entre varios (con guardas); la barra los ejecuta **todos** a la vez (sin guardas). Si te descubres poniendo condiciones en una barra de sincronización, en realidad querías un rombo.

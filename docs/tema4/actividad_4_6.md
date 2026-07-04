@@ -1,7 +1,7 @@
 # Actividad 4.6: Ramas en Git — Trabajo paralelo y fusiones
 
 !!! warning "Descarga la plantilla"
-    📄 [Plantilla 4.6 — Ramas en Git: trabajo paralelo y fusiones](Actividad_4_6_Plantilla.docx){target="_blank" rel="noopener"}
+    📄 [Plantilla 4.6 — Ramas en Git: trabajo paralelo y fusiones](plantillas/Actividad_4_6_Plantilla.docx){target="_blank" rel="noopener"}
 
 ## Qué vas a practicar
 

@@ -1,7 +1,7 @@
 # 📝 Actividad 4.4: Análisis estático con IntelliJ y SonarQube for IDE
 
 !!! warning "Descarga la plantilla"
-    📄 [Plantilla 4.4 — Análisis estático](Actividad_4_4_Plantilla.docx){target="_blank" rel="noopener"}
+    📄 [Plantilla 4.4 — Análisis estático](plantillas/Actividad_4_4_Plantilla.docx){target="_blank" rel="noopener"}
 
 !!! info "Objetivo"
     Usar las herramientas de análisis estático del IDE de forma crítica, no solo ejecutarlas:

@@ -242,7 +242,7 @@ Surefire (el plugin de Maven que ejecuta los tests) genera un informe XML en `ta
 
 En la pestaña **Actions** del repositorio verás el workflow aparecer en segundos tras el push.
 
-![Vista general del panel Actions tras el primer push](capturas/actions/panel-actions-primer-run.png)
+![Vista general del panel Actions tras el primer push](img/actions/panel-actions-primer-run.png)
 
 ---
 
@@ -258,15 +258,15 @@ Una vez que el workflow se ha ejecutado, toda la información está disponible e
 
 Cada fila corresponde a un push o una PR, e indica el nombre del commit que lo disparó y el tiempo transcurrido.
 
-![Lista de runs en el panel Actions — se ven runs verdes y uno rojo](capturas/actions/panel-actions-lista-runs.png)
+![Lista de runs en el panel Actions — se ven runs verdes y uno rojo](img/actions/panel-actions-lista-runs.png)
 
 **Vista de un run** — al hacer clic en una ejecución concreta, ves todos los jobs. En nuestro proyecto hay un solo job llamado `build`, que agrupa todos los steps.
 
-![Detalle de un run: el job build con sus steps y duración](capturas/actions/panel-actions-run-detalle.png)
+![Detalle de un run: el job build con sus steps y duración](img/actions/panel-actions-run-detalle.png)
 
 **Vista de un job** — al hacer clic en el job, se despliegan los steps. Cada step muestra su log completo: los comandos ejecutados y su salida. El step **"Ejecutar los tests"** muestra la salida de Maven con el resultado de los cinco tests de la `Calculadora`.
 
-![Step "Ejecutar los tests" expandido — log de Maven con Tests run: 5, Failures: 0](capturas/actions/panel-actions-step-log.png)
+![Step "Ejecutar los tests" expandido — log de Maven con Tests run: 5, Failures: 0](img/actions/panel-actions-step-log.png)
 
 ```
 [INFO] Running com.ejemplo.CalculadoraTest
@@ -289,7 +289,7 @@ Los fallos de un workflow tienen dos orígenes distintos, y conviene distinguirl
 
     El workflow funciona correctamente, pero los tests detectan un bug. Por ejemplo: si en `Calculadora.java` se cambia `sumar` para que devuelva `a - b` en lugar de `a + b`, el test `sumarDosPositivos` fallará.
 
-    ![Step fallido con el error de JUnit: expected <5> but was <-1>](capturas/actions/panel-actions-step-error.png)
+    ![Step fallido con el error de JUnit: expected <5> but was <-1>](img/actions/panel-actions-step-error.png)
 
     ```
     [ERROR] com.ejemplo.CalculadoraTest.sumarDosPositivos
@@ -373,7 +373,7 @@ GitHub ofrece los **Secrets**: variables cifradas que se almacenan en la configu
 3. Dale un nombre en mayúsculas (convenio): `MAVEN_PASSWORD`, `DEPLOY_TOKEN`...
 4. Pega el valor. A partir de ese momento GitHub lo cifra y nadie puede leerlo, ni tú.
 
-![Página de Secrets en Settings — muestra el botón New repository secret](capturas/actions/secrets-settings.png)
+![Página de Secrets en Settings — muestra el botón New repository secret](img/actions/secrets-settings.png)
 
 ### Usar un secret en un workflow
 

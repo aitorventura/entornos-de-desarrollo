@@ -1,5 +1,8 @@
 # Actividad 4.8: Contribuir al portafolio de un compañero
 
+!!! warning "Descarga la plantilla"
+    📄 [Plantilla 4.8 — Contribuir al portafolio de un compañero](plantillas/Actividad_4_8_Plantilla.docx){target="_blank" rel="noopener"}
+
 !!! warning "Antes de empezar"
     Lee la actividad entera antes de ejecutar nada. Al final encontrarás el apartado **📤 Entregable** con todo lo que tienes que documentar en cada paso.
 
@@ -15,6 +18,7 @@ En esta actividad trabajaréis en parejas. Cada miembro tendrá dos roles: **con
 
 - Repositorio `mi_portfolio` de la actividad 4.7 publicado en GitHub y con contenido en el `README.md`.
 - El repositorio debe ser **público** para que tu compañero pueda hacer el fork.
+- Las **Issues** deben estar activadas en tu repositorio: en GitHub, entra a **Settings → General → Features** y marca la casilla **Issues**. Sin esto, tu compañero no podrá abrir el Issue de la Parte D en tu `mi_portfolio`.
 - Compañero asignado por el profesor.
 
 ---

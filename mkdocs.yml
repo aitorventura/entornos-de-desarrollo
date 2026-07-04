@@ -84,30 +84,33 @@ nav:
       - Actividad 4.9: tema4/actividad_4_9.md
   - Tema 5:
       - Tema 5 - Introducción: tema5/index.md
-      - Conceptos básicos de la POO: tema5/poo-basicos.md
-      - Objetos e instanciación: tema5/objetos.md
-      - Relaciones en diagramas de clases: tema5/relaciones.md
-      - Notación de los diagramas de clases: tema5/notacion.md
-      - Herramientas para la elaboración de diagramas: tema5/herramientas.md
-      - Generación automática de código: tema5/generacion-codigo.md
-      - Ingeniería inversa: tema5/ingenieria-inversa.md
+      - UML, herramientas y conceptos básicos de la POO: tema5/conceptos-basicos.md
       - Actividad 5.1: tema5/actividad_5_1.md
+      - Relaciones en diagramas de clases: tema5/relaciones.md
       - Actividad 5.2: tema5/actividad_5_2.md
       - Actividad 5.3: tema5/actividad_5_3.md
+      - Notación y especificaciones: tema5/notacion-y-especificaciones.md
       - Actividad 5.4: tema5/actividad_5_4.md
+      - Actividad 5.5: tema5/actividad_5_5.md
+      - Actividad 5.6: tema5/actividad_5_6.md
+      - Actividad 5.7: tema5/actividad_5_7.md
+      - Generación de código e ingeniería inversa: tema5/generacion-y-ingenieria-inversa.md
+      - Actividad 5.8: tema5/actividad_5_8.md
   - Tema 6:
       - Tema 6 - Introducción: tema6/index.md
       - Tipos de diagramas de comportamiento: tema6/tipos.md
-      - Diagrama de casos de uso: tema6/casos-uso.md
-      - Diagramas de interacción: tema6/interaccion.md
-      - Diagrama de secuencia: tema6/secuencia.md
-      - Diagrama de comunicación: tema6/comunicacion.md
-      - Diagrama de actividades: tema6/actividades.md
-      - Diagrama de estados: tema6/estados.md
       - Actividad 6.1: tema6/actividad_6_1.md
+      - Diagrama de casos de uso: tema6/casos-uso.md
       - Actividad 6.2: tema6/actividad_6_2.md
       - Actividad 6.3: tema6/actividad_6_3.md
+      - Diagramas de interacción (secuencia y comunicación): tema6/interaccion.md
       - Actividad 6.4: tema6/actividad_6_4.md
+      - Actividad 6.5: tema6/actividad_6_5.md
+      - Actividad 6.6: tema6/actividad_6_6.md
+      - Diagrama de actividades: tema6/actividades.md
+      - Actividad 6.7: tema6/actividad_6_7.md
+      - Diagrama de estados: tema6/estados.md
+      - Actividad 6.8: tema6/actividad_6_8.md
 
 
 

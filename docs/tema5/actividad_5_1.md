@@ -1,47 +1,121 @@
-# 📝 Actividad 5.1: Primer diagrama de clases
+# Actividad 5.1: Clases y objetos en UML
 
-En esta actividad pondremos en práctica los conceptos básicos aprendidos a lo largo del Tema 5 diseñando un programa orientado a objetos mediante notación UML para la **Gestión de una Clínica Veterinaria**.
+!!! warning "Descarga la plantilla"
+    📄 [Plantilla 5.1 — Clases y objetos en UML](plantillas/Actividad_5_1_Plantilla.docx){target="_blank" rel="noopener"}
 
-## 🎯 Objetivo
+## Qué vas a practicar
 
-El propósito de la tarea es que logres interpretar un texto o pliego de especificaciones en lenguaje natural, e idealizarlo como un diseño de arquitectura estructural de un diagrama de clases lógico.
+Antes de dibujar diagramas con muchas clases conectadas, hay que dominar la pieza básica: la caja de una clase con sus atributos, sus operaciones y su visibilidad. En esta actividad vas a traducir en las dos direcciones (código Java → UML y UML → código) y a modelar una clase de tu propia cosecha.
 
----
+## Herramienta
 
-## 📖 Enunciado
-
-Trabajas en una consultora informática y un cliente os ha contratado para crear el sistema de una clínica veterinaria. A continuación, el analista te ha facilitado los detalles que debes modelar:
-
-1. **La Clínica**: La clínica consta de un `Nombre` y un número de `Telefono` general (ambos textos), y por supuesto de una lista con todos sus `Cliente`. A su vez, la clínica contiene los `Box` (habitaciones de atención). Si se llegase a desmantelar la clínica por completo, las habitaciones también desaparecerían **(Composición)**.
-2. **Cliente**: Las personas físicas que visitan la clínica se identifican como `Cliente`. De ellos se necesita guardar su `DNI`, `Nombre` e `Email`. Además de esto, un cliente puede ser dueño de **cero a muchas** `Mascota`, mientras que la mascota está atada a **un único** cliente **(Asociación)**.
-3. **Mascota**: El sistema guarda unas entidades básicas para todas las mascotas (`Nombre`, `Fecha de nacimiento` en texto y `Peso` en decimal). El programa cuenta con dos clases derivadas de ella (la Mascota es su padre): los **`Perro`**, que almacenan su campo de `Raza`; y los **`Gato`**, de los que interesa un booleano para conocer si actúan de forma `Agresivo` **(Herencia)**. 
-4. **Historial y Consultas**: Cada `Mascota` tiene exactamente un archivo físico en el mostrador del `Historial Médico` (compuesto de su `NumeroExpediente`). El cliente llama y agenda las `Consulta`, de las que se necesita obligatoriamente registrar su `Fecha` (texto), `Motivo` y el importe `Precio`. 
+Usa **DIA** para dibujar las clases. Exporta cada diagrama como imagen (`.png`) para pegarla en la plantilla.
 
 ---
 
-## 🛠️ Herramientas a utilizar
+## Parte A — De Java a UML
 
-Usa la herramienta que más te acomode:
-- Aplicaciones web dedicadas (Draw.io o Lucidchart).
-- Entornos "texto a diagramas" (Mermaid de Markdown o PlantUML).
-- Diseñador visual offline integrado o descargable (StarUML), .
+Aquí tienes una clase Java completa:
 
-*(Si todo falla, en el mundo real también puedes garabatear el borrador en un folio y tirar una foto al finalizar, pero animamos el empleo de las herramientas de la industria).*
+```java
+public class EntradaConcierto {
+
+    private static int entradasVendidas = 0;
+    public static final double PRECIO_BASE = 25.0;
+
+    private String codigo;
+    private String comprador;
+    protected boolean validada;
+
+    public EntradaConcierto(String codigo, String comprador) {
+        this.codigo = codigo;
+        this.comprador = comprador;
+        this.validada = false;
+        entradasVendidas++;
+    }
+
+    public boolean validar() {
+        validada = true;
+        return validada;
+    }
+
+    private double calcularRecargo(double porcentaje) {
+        return PRECIO_BASE * porcentaje / 100;
+    }
+
+    public static int getEntradasVendidas() {
+        return entradasVendidas;
+    }
+}
+```
+
+**Paso 1.** Dibuja en DIA la caja UML equivalente a esta clase, con todos sus atributos y operaciones, respetando visibilidades, tipos, parámetros y valores de retorno.
+
+!!! warning "Predicción antes de dibujar"
+    Antes de abrir DIA, responde por escrito: ¿cuántos elementos de esta clase irán **subrayados** en el diagrama? ¿Qué símbolo de visibilidad llevará `validada`? ¿El constructor aparece en la caja de atributos o en la de operaciones?
+
+**Pregunta A.1.** ¿Qué elementos has subrayado y por qué? ¿Ha coincidido con tu predicción?
+
+**Pregunta A.2.** `calcularRecargo` es privado y `validar` es público. Explica con esta clase concreta (no con una definición de memoria) qué puede hacer otra clase con cada uno de los dos métodos.
 
 ---
+
+## Parte B — De UML a Java
+
+Esta caja UML representa una clase de un sistema de reservas:
+
+```
+                 Reserva
+ ─────────────────────────────────────────
+  - localizador : String
+  - numPersonas : int
+  - confirmada : boolean = false
+ ─────────────────────────────────────────
+  + Reserva(localizador : String, numPersonas : int)
+  + confirmar() : void
+  + getLocalizador() : String
+  # calcularCoste(precioPorPersona : double) : double
+```
+
+**Paso 2.** Escribe la clase Java equivalente (solo cabeceras y atributos; los cuerpos de los métodos pueden quedar con un comentario `// TODO`).
+
+**Pregunta B.1.** El atributo `confirmada` tiene un valor por defecto en el diagrama. ¿Cómo lo has trasladado al código Java?
+
+**Pregunta B.2.** ¿Qué diferencia práctica hay entre el `#` de `calcularCoste` y el `-` de `localizador`? ¿Quién podrá llamar a `calcularCoste`?
+
+---
+
+## Parte C — Tu propia clase
+
+**Paso 3.** Elige un objeto real de tu día a día que uses esta semana (tu bicicleta, tu cuenta de una app concreta, tu taquilla, la cafetera de tu casa...). No vale ninguno de los ejemplos de los apuntes ni de esta actividad.
+
+Modélalo en DIA como una clase UML con:
+
+- Al menos **4 atributos** con tipo y visibilidad razonada.
+- Al menos **3 operaciones**, una de ellas con parámetros y valor de retorno.
+- Al menos **1 miembro estático** que tenga sentido (piensa qué dato compartirían *todas* las instancias).
+
+**Pregunta C.1.** Explica en 3-4 frases por qué has elegido esa visibilidad para cada atributo y qué representa exactamente tu miembro estático.
+
+**Pregunta C.2.** Escribe dos **objetos** (instancias) concretos de tu clase con valores reales, y señala qué comparten y qué no.
+
+---
+
+## 📤 Entregable
+
+Rellena la plantilla y entrégala en **PDF**:
+
+1. Captura del diagrama de la Parte A hecho en DIA.
+2. Predicción escrita **antes** de dibujar y respuestas A.1 y A.2.
+3. Código Java de la Parte B y respuestas B.1 y B.2.
+4. Captura del diagrama de tu clase (Parte C) y respuestas C.1 y C.2.
+
+!!! warning "Corrección oral"
+    El profesor puede pedirte que expliques cualquier decisión: por qué un elemento va subrayado, por qué una visibilidad y no otra, o cómo se traduce un elemento concreto a Java. Si no puedes explicarlo, la actividad no se supera.
 
 ## ✅ Criterios de corrección
 
-Para evaluar o validar que tu diseño reúne las especificaciones:
-- Todas las clases y entidades listadas en el texto aparecen como bloques.
-- Se ha respetado un encapsulamiento conveniente (se valorará los símbolos + y - en los atributos según el patrón estándar de datos ocultos frente a acciones públicas).
-- Hay herencia generalizada visible entre los grupos de animales correctos.
-- Se divisa la flecha que indica agregación, e incluso un rombo relleno para la Clínica y sus estancias (Box).
-- Las líneas que conectan a Clientes y Mascotas tienen números detallando la multiplicidad.
-
----
-
-## 🚀 Entrega
-
-Cuando lo tengas listo, exporta tu lienzo a una **imagen** (formato `.png` o `.jpg`) o un documento `PDF`. En el caso de valerte de Mermaid o texto, haz entrega tanto del texto original `.md` o `.txt` junto con un pantallazo del código renderizado gráficamente.
-Sube el archivo final a la propia plataforma del curso virtual en su apartado correcto antes del cierre de calificación.
+- Los diagramas respetan la notación UML: visibilidades, tipos, subrayado de estáticos, formato `nombre : tipo`.
+- La traducción UML ⇄ Java es coherente en ambas direcciones.
+- La clase de la Parte C es personal y las decisiones están justificadas con argumentos propios.
+- Las respuestas razonan sobre los ejemplos concretos, no repiten definiciones de los apuntes.

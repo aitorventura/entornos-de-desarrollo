@@ -21,11 +21,20 @@
 
 1. [Tipos de diagramas de comportamiento y campo de aplicación](tipos.md)
 2. [Diagrama de casos de uso: actores, escenarios y comunicación](casos-uso.md)
-3. [Diagramas de interacción](interaccion.md)
-4. [Diagrama de secuencia](secuencia.md)
-5. [Diagrama de comunicación](comunicacion.md)
-6. [Diagrama de actividades](actividades.md)
-7. [Diagrama de estados](estados.md)
+3. [Diagramas de interacción: secuencia y comunicación](interaccion.md)
+4. [Diagrama de actividades](actividades.md)
+5. [Diagrama de estados](estados.md)
+
+**Actividades:**
+
+- [Actividad 6.1 — ¿Qué diagrama toca?](actividad_6_1.md)
+- [Actividad 6.2 — Leer un diagrama de casos de uso](actividad_6_2.md)
+- [Actividad 6.3 — Gestión de fincas e inmuebles](actividad_6_3.md)
+- [Actividad 6.4 — Caza de errores en un diagrama de secuencia](actividad_6_4.md)
+- [Actividad 6.5 — Diagramas de secuencia](actividad_6_5.md)
+- [Actividad 6.6 — Diagramas de comunicación](actividad_6_6.md)
+- [Actividad 6.7 — Diagramas de actividad: leer y construir](actividad_6_7.md)
+- [Actividad 6.8 — Diagramas de estados: leer y plantear](actividad_6_8.md)
 
 ---
 

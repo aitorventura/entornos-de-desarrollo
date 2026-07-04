@@ -1,33 +1,53 @@
-# Actividad 5.4: Gestión de biblioteca
+# Actividad 5.4: Series de televisión
 
-## Objetivo
+!!! warning "Descarga la plantilla"
+    📄 [Plantilla 5.4 — Series de televisión](plantillas/Actividad_5_4_Plantilla.docx){target="_blank" rel="noopener"}
 
-Que el alumno sea capaz de distinguir entre composición y agregación en un caso real y de modelar correctamente operaciones en las clases.
+## Qué vas a practicar
+
+Primer diagrama completo a partir de una especificación: identificar clases, atributos, relaciones y multiplicidades a partir de una descripción en lenguaje natural, y representarlo todo correctamente en UML. Aplica la técnica de [la teoría](notacion-y-especificaciones.md): sustantivos → clases, datos → atributos, "está compuesto de" → relación.
 
 ## Enunciado
 
-Una biblioteca quiere digitalizar su sistema de gestión de préstamos.
+El sistema que se debe desarrollar tiene como objetivo gestionar una plataforma de series de televisión, proporcionando información detallada sobre las series, temporadas, capítulos, actores y fans que interactúan con ellas.
 
-- La **biblioteca** tiene un nombre y una dirección. Su catálogo contiene una lista de libros, pero los libros no dependen exclusivamente de ella (pueden trasladarse entre sucursales).
-- Cada **libro** tiene un ISBN, un título, un autor y un indicador de si está disponible. Los libros están formados por **páginas** (mínimo 40). Cada página tiene un número y el contenido del texto. Las páginas son parte integral del libro.
-- Los **usuarios** tienen DNI, nombre completo y teléfono. Un usuario solo puede tener un libro prestado a la vez.
-- El sistema debe permitir: verificar disponibilidad, buscar por ISBN, obtener información de un libro, agregar un libro y ver el historial de préstamos de un usuario.
+El sistema debe permitir registrar varias **series** de televisión, las cuales tienen un título, un género y un número de temporadas asociadas. Cada serie puede contener varias **temporadas**, cada una con un número y una fecha de estreno. A su vez, cada temporada se divide en varios **capítulos**, las unidades básicas de contenido: cada uno tiene una duración, un título y una fecha de estreno.
 
-## Lo que debes entregar
+Los **actores** son una parte fundamental del sistema. Un actor puede participar en diferentes series, interpretando un personaje en particular. Los actores son independientes de las series: una serie puede existir sin tener actores asociados, y un actor puede estar involucrado en diversas producciones. De cada actor se registra el nombre y la fecha de nacimiento.
 
-- El diagrama de clases en DIA.
-- Respuestas a las preguntas de profundización.
+Por otro lado, los **fans** son usuarios registrados que siguen las series. Se almacena su DNI, nombre y fecha de nacimiento. Un fan puede seguir varias series al mismo tiempo, y puede dejar de seguir alguna si ya no le interesa. Una serie puede ser seguida por muchos fans.
+
+La información debe gestionarse de manera que, si se elimina una serie o una temporada, todos los elementos que la componen se eliminen también.
+
+## Herramienta
+
+Dibuja el diagrama en **DIA** y exporta el resultado como imagen o PDF.
+
+---
 
 ## Preguntas de profundización
 
-1. La biblioteca tiene libros, pero los libros pueden existir fuera de ella. ¿Qué relación usas: composición o agregación? ¿Y entre libro y páginas? Justifica cada decisión.
-2. El enunciado menciona varias operaciones del sistema (buscar por ISBN, verificar disponibilidad…). ¿En qué clase las colocas? ¿Por qué?
-3. Para representar que un usuario solo puede tener un libro prestado a la vez, ¿qué multiplicidad pones en la relación? ¿Y en el otro extremo?
-4. ¿Hace falta una clase `Prestamo` o con la relación entre `Usuario` y `Libro` es suficiente? Argumenta tu decisión.
+1. ¿Qué tipo de relación has usado entre `Serie` y `Temporada`? ¿Y entre `Temporada` y `Capitulo`? Justifica con la frase del enunciado que lo indica.
+2. ¿Qué relación tiene `Actor` con `Serie`? ¿Por qué no es composición ni agregación... o sí es una de las dos? Argumenta.
+3. Si un fan puede seguir varias series y una serie puede tener varios fans, ¿qué multiplicidad corresponde a cada extremo? ¿Haría falta una clase asociativa en algún caso? Razona tu respuesta.
+4. ¿Has añadido roles a las relaciones? Escribe qué nombre de atributo tendría cada extremo si esto se tradujera a Java.
 
-## Criterios de evaluación
+---
 
-- La distinción composición/agregación está bien aplicada y justificada.
-- Las operaciones están en la clase correcta con la firma adecuada.
-- Las multiplicidades reflejan las restricciones del enunciado.
-- Los atributos tienen tipo de dato y visibilidad.
+## 📤 Entregable
+
+Rellena la plantilla y entrégala en **PDF**:
+
+1. Captura del diagrama completo hecho en DIA.
+2. Respuestas a las cuatro preguntas de profundización.
+
+!!! warning "Corrección oral"
+    El profesor puede pedirte que expliques cualquier relación, multiplicidad o atributo de tu diagrama. Si no puedes justificarlo con el enunciado en la mano, la actividad no se supera.
+
+## ✅ Criterios de corrección
+
+- Las clases tienen los atributos correctos con su tipo de dato y una visibilidad adecuada.
+- Las relaciones son del tipo correcto y los rombos están en el lado del "todo".
+- Las multiplicidades reflejan lo que dice el enunciado.
+- Los roles siguen la convención de Java (minúscula, plural si corresponde).
+- Ningún atributo repite información que ya aporta una relación.

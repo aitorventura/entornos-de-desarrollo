@@ -17,13 +17,21 @@
 
 ## 📘 Índice de contenidos
 
-1. [Conceptos básicos de la POO: clases, atributos y métodos](poo-basicos.md)
-2. [Objetos e instanciación](objetos.md)
-3. [Relaciones en diagramas de clases](relaciones.md)
-4. [Notación de los diagramas de clases](notacion.md)
-5. [Herramientas para la elaboración de diagramas](herramientas.md)
-6. [Generación automática de código](generacion-codigo.md)
-7. [Ingeniería inversa: de código a diagrama](ingenieria-inversa.md)
+1. [UML, herramientas y conceptos básicos de la POO](conceptos-basicos.md)
+2. [Relaciones en diagramas de clases](relaciones.md)
+3. [Notación y especificaciones: de un enunciado a un diagrama](notacion-y-especificaciones.md)
+4. [Generación de código e ingeniería inversa](generacion-y-ingenieria-inversa.md)
+
+**Actividades:**
+
+- [Actividad 5.1 — Clases y objetos en UML](actividad_5_1.md)
+- [Actividad 5.2 — ¿Qué relación es?](actividad_5_2.md)
+- [Actividad 5.3 — Caza de errores](actividad_5_3.md)
+- [Actividad 5.4 — Series de televisión](actividad_5_4.md)
+- [Actividad 5.5 — Gestión de biblioteca](actividad_5_5.md)
+- [Actividad 5.6 — Plataforma de videojuegos](actividad_5_6.md)
+- [Actividad 5.7 — Clínica veterinaria](actividad_5_7.md)
+- [Actividad 5.8 — Del diagrama al código y vuelta](actividad_5_8.md)
 
 ---
 

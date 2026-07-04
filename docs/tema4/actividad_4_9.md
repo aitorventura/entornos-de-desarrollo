@@ -1,7 +1,7 @@
 # Actividad 4.9: Pipeline de CI para un proyecto Java real
 
 !!! warning "Descarga la plantilla"
-    📄 [Plantilla 4.9 — Pipeline de CI para un proyecto Java real](Actividad_4_9_Plantilla.docx){target="_blank" rel="noopener"}
+    📄 [Plantilla 4.9 — Pipeline de CI para un proyecto Java real](plantillas/Actividad_4_9_Plantilla.docx){target="_blank" rel="noopener"}
 
 !!! warning "Antes de empezar"
     Lee la actividad entera antes de ejecutar nada. Al final encontrarás el apartado **📤 Entregable** con todo lo que tienes que documentar en cada paso.

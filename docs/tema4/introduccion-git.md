@@ -372,7 +372,7 @@ cd ~/Documents/pruebas_git
 git init
 ```
 
-![](capturas/intro/git-init.png)
+![](img/intro/git-init.png)
 
 **Qué estás viendo en la captura**
 
@@ -406,7 +406,7 @@ La idea no es memorizar, sino **entender** qué hace cada comando y qué deberí
 git status
 ```
 
-![](capturas/intro/git-status.png)
+![](img/intro/git-status.png)
 
 **Qué estás viendo en la captura**
 
@@ -434,7 +434,7 @@ git status
 git diff
 ```
 
-![](capturas/intro/git-diff.png)
+![](img/intro/git-diff.png)
 
 **Qué estás viendo en la captura**
 
@@ -458,7 +458,7 @@ Ejemplo (lo típico en tu caso):
 git add adios.txt hola.txt
 ```
 
-![](capturas/intro/git-add.png)
+![](img/intro/git-add.png)
 
 **Qué estás viendo en la captura (después del add)**
 
@@ -484,7 +484,7 @@ git add adios.txt hola.txt
 git commit -m "Añado los archivos hola y adios"
 ```
 
-![](capturas/intro/git-commit.png)
+![](img/intro/git-commit.png)
 
 **Qué estás viendo en la captura**
 
@@ -510,7 +510,7 @@ Para ver los commits que has hecho:
 git log
 ```
 
-![](capturas/intro/git-log.png)
+![](img/intro/git-log.png)
 
 **Qué estás viendo en la captura**
 
@@ -525,7 +525,7 @@ La versión más usada en el día a día es con `--oneline`, que muestra una sol
 git log --oneline
 ```
 
-![Salida de git log --oneline con los commits del repositorio de ejemplo](capturas/intro/git-log-oneline.png)
+![Salida de git log --oneline con los commits del repositorio de ejemplo](img/intro/git-log-oneline.png)
 
 !!! tip "El hash abreviado"
     Los 7 caracteres del inicio de cada línea (`1cd8f5a`, `448751c`…) son los que usarás después en comandos como `git show` o `git revert`.
@@ -543,7 +543,7 @@ Si modificas `hola.txt` y no quieres esos cambios:
 git restore hola.txt
 ```
 
-![](capturas/intro/git-restore.png)
+![](img/intro/git-restore.png)
 
 **Qué estás viendo en la captura**
 
@@ -563,7 +563,7 @@ git restore hola.txt
 
 Esto sirve cuando has hecho `git add` por error (lo metiste en staging), pero aún no has hecho commit.
 
-![](capturas/intro/git-restore-staged.png)
+![](img/intro/git-restore-staged.png)
 
 **Qué estás viendo en la captura**
 
@@ -615,7 +615,7 @@ Antes de hacer cualquier cosa, necesitas saber **qué commits tienes y cuáles s
 git log --oneline
 ```
 
-![Salida de git log --oneline mostrando los commits con sus hashes y mensajes](capturas/intro/git-log-oneline.png)
+![Salida de git log --oneline mostrando los commits con sus hashes y mensajes](img/intro/git-log-oneline.png)
 
 Esos 7 caracteres al inicio de cada línea (`1cd8f5a`, `448751c`…) son el **hash abreviado** — el identificador único de cada commit. Los vas a necesitar para todos los comandos que siguen.
 
@@ -632,7 +632,7 @@ Antes de deshacer nada, conviene ver exactamente qué hizo ese commit:
 git show 58fbc71
 ```
 
-![Salida de git show con el hash, autor, fecha y el diff del commit](capturas/intro/git-show.png)
+![Salida de git show con el hash, autor, fecha y el diff del commit](img/intro/git-show.png)
 
 Las líneas con `+` son lo que ese commit añadió. Las líneas con `-` son lo que eliminó. Mientras solo ejecutas `git show`, **no cambias nada** en el proyecto.
 
@@ -646,7 +646,7 @@ Esto es útil cuando **un archivo concreto** ha empeorado y quieres recuperarlo 
 git restore --source=58fbc71 llibres.txt
 ```
 
-![Ejecución de git restore --source y comprobación del contenido recuperado con cat](capturas/intro/git-restore-source.png)
+![Ejecución de git restore --source y comprobación del contenido recuperado con cat](img/intro/git-restore-source.png)
 
 El archivo queda exactamente como estaba en el commit `58fbc71`. Aparece como **modified** en `git status` — los cambios están en tu carpeta de trabajo, pero el historial no ha cambiado. Puedes revisarlo y hacer un `git commit` si quieres guardar esa recuperación.
 
@@ -663,7 +663,7 @@ El archivo queda exactamente como estaba en el commit `58fbc71`. Aparece como **
 git revert 1cd8f5a
 ```
 
-![git revert crea un nuevo commit de reversión, y el log muestra cuatro commits](capturas/intro/git-revert.png)
+![git revert crea un nuevo commit de reversión, y el log muestra cuatro commits](img/intro/git-revert.png)
 
 Git genera el mensaje del commit de reversión automáticamente. El historial queda así — el commit original sigue ahí, pero neutralizado:
 
@@ -686,7 +686,7 @@ gitGraph
 
 **Situación de partida** — los tres ejemplos usan un repo con estos 3 commits:
 
-![Situación de partida: git log --oneline con 3 commits — Corregeix majúscules, Afegeix el quart llibre, Primer commit](capturas/intro/git-reset-comun.png)
+![Situación de partida: git log --oneline con 3 commits — Corregeix majúscules, Afegeix el quart llibre, Primer commit](img/intro/git-reset-comun.png)
 
 El commit más reciente ("Corregeix majuscules del titol") es el que va a desaparecer con el reset. Lo que cambia entre variantes es **adónde van sus cambios**.
 
@@ -704,7 +704,7 @@ El commit más reciente ("Corregeix majuscules del titol") es el que va a desapa
     git commit -m "mensaje correcto"
     ```
 
-    ![git reset --soft: el log pasa a 2 commits y git status short muestra M dos espacios llibres.txt](capturas/intro/git-reset-soft.png)
+    ![git reset --soft: el log pasa a 2 commits y git status short muestra M dos espacios llibres.txt](img/intro/git-reset-soft.png)
 
     `git status --short` muestra `M  llibres.txt` — la M está en la zona de **staging**. No hace falta `git add`.
 
@@ -721,7 +721,7 @@ El commit más reciente ("Corregeix majuscules del titol") es el que va a desapa
     git commit -m "mensaje"
     ```
 
-    ![git reset mixed: Git avisa Unstaged changes after reset, el log pasa a 2 commits y git status muestra M con espacio delante](capturas/intro/git-reset-mixed.png)
+    ![git reset mixed: Git avisa Unstaged changes after reset, el log pasa a 2 commits y git status muestra M con espacio delante](img/intro/git-reset-mixed.png)
 
     Git avisa: `Unstaged changes after reset`. `git status --short` muestra ` M llibres.txt` — la M está en la zona de **trabajo** (fuera de staging). Necesitas `git add` antes de poder hacer commit.
 
@@ -733,7 +733,7 @@ El commit más reciente ("Corregeix majuscules del titol") es el que va a desapa
     git reset --hard HEAD~1
     ```
 
-    ![git reset hard: HEAD is now at el commit anterior, log muestra 2 commits, cat muestra el archivo sin la corrección de mayúsculas](capturas/intro/git-reset-hard.png)
+    ![git reset hard: HEAD is now at el commit anterior, log muestra 2 commits, cat muestra el archivo sin la corrección de mayúsculas](img/intro/git-reset-hard.png)
 
     Git confirma con `HEAD is now at ...`. El log pasa a 2 commits. `cat llibres.txt` muestra el archivo **sin la corrección de mayúsculas** — ese cambio ha desaparecido para siempre.
 

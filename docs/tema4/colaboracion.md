@@ -22,11 +22,11 @@ A partir de ahí puedes clonar tu copia, crear ramas, modificar lo que quieras y
 !!! tip "¿Fork o clone directo?"
     Clona directamente si ya eres colaborador del repositorio y tienes permisos de escritura. Haz un fork cuando quieras contribuir a un proyecto ajeno donde no tienes permisos: tu fork actúa como puerta de entrada para proponer cambios mediante Pull Request.
 
-![Botón Fork en GitHub](../capturas/colaboracion/menu_fork.png)
+![Botón Fork en GitHub](img/colaboracion/menu_fork.png)
 
 **Qué estás viendo en la captura:** el botón Fork en la esquina superior derecha de un repositorio ajeno.
 
-![Crear Fork](../capturas/colaboracion/fork.png)
+![Crear Fork](img/colaboracion/fork.png)
 
 **Qué estás viendo en la captura:** la pantalla de creación del fork, donde se elige bajo qué cuenta o organización se crea la copia.
 
@@ -75,23 +75,23 @@ Si la PR es dentro del mismo repositorio (sin fork), base y head son el mismo re
 
 Además de los selectores, escribe un **título claro** y una **descripción** que explique qué problema resuelve el cambio y cómo funciona. Eso facilita la revisión y queda como documentación permanente del proyecto.
 
-![Aviso de nueva rama para PR](../capturas/colaboracion/nueva_rama_peticion_pr.png)
+![Aviso de nueva rama para PR](img/colaboracion/nueva_rama_peticion_pr.png)
 
 **Qué estás viendo en la captura:** el aviso que aparece en el repositorio justo después de hacer push de una rama nueva, con el botón para crear la PR directamente.
 
-![Crear Pull Request](../capturas/colaboracion/pr.png)
+![Crear Pull Request](img/colaboracion/pr.png)
 
 **Qué estás viendo en la captura:** el formulario de apertura de la Pull Request con los selectores de rama y el campo de descripción.
 
-![Pull Request abierta](../capturas/colaboracion/pr_hecha.png)
+![Pull Request abierta](img/colaboracion/pr_hecha.png)
 
 **Qué estás viendo en la captura:** la PR ya abierta, donde el equipo puede revisar el código línea a línea, comentar y aprobar los cambios.
 
-![Confirmar Merge](../capturas/colaboracion/confirm-merge.png)
+![Confirmar Merge](img/colaboracion/confirm-merge.png)
 
 **Qué estás viendo en la captura:** el botón Merge pull request que activa el administrador una vez el equipo ha dado el visto bueno.
 
-![Pull Request Fusionada](../capturas/colaboracion/pr-merged.png)
+![Pull Request Fusionada](img/colaboracion/pr-merged.png)
 
 **Qué estás viendo en la captura:** la PR en estado "Merged" (etiqueta morada), confirmando que los cambios han pasado a la rama principal.
 

@@ -1,7 +1,7 @@
 # 📝 Actividad 4.3: Documentar con Javadoc y generar HTML
 
 !!! warning "Descarga la plantilla"
-    📄 [Plantilla 4.3 — Documentar con Javadoc](Actividad_4_3_Plantilla.docx){target="_blank" rel="noopener"}
+    📄 [Plantilla 4.3 — Documentar con Javadoc](plantillas/Actividad_4_3_Plantilla.docx){target="_blank" rel="noopener"}
 
 !!! info "Objetivo"
     Practicar el ciclo completo de documentación en Java:
