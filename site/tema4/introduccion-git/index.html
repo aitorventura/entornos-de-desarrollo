@@ -3635,7 +3635,7 @@ Para que no se abra un editor raro, puedes fijar uno. Con VS Code:</p>
 <h3 id="paso-2-inicializa-git">✅ Paso 2) Inicializa Git<a class="headerlink" href="#paso-2-inicializa-git" title="Permanent link">¶</a></h3>
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a>git<span class="w"> </span>init
 </code></pre></div></td></tr></table></div>
-<p><img alt="" src="../capturas/intro/git-init.png"></p>
+<p><img alt="" src="../img/intro/git-init.png"></p>
 <p><strong>Qué estás viendo en la captura</strong></p>
 <ul>
 <li>Git confirma que ha creado un repositorio vacío en la carpeta <code>.git/</code>.</li>
@@ -3667,7 +3667,7 @@ Para que no se abra un editor raro, puedes fijar uno. Con VS Code:</p>
 <p><code>git status</code> te dice <strong>en qué situación está tu repo</strong> y <strong>en qué estado están tus archivos</strong>.</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a>git<span class="w"> </span>status
 </code></pre></div></td></tr></table></div>
-<p><img alt="" src="../capturas/intro/git-status.png"></p>
+<p><img alt="" src="../img/intro/git-status.png"></p>
 <p><strong>Qué estás viendo en la captura</strong></p>
 <ul>
 <li>Se ejecuta <code>ls</code> y aparecen 3 archivos: <code>adios.txt</code>, <code>hasta-luego.txt</code>, <code>hola.txt</code>.</li>
@@ -3690,7 +3690,7 @@ Para que no se abra un editor raro, puedes fijar uno. Con VS Code:</p>
 <p><code>git diff</code> muestra cambios <strong>línea a línea</strong> respecto al último commit (o respecto al staging, según el caso).</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a>git<span class="w"> </span>diff
 </code></pre></div></td></tr></table></div>
-<p><img alt="" src="../capturas/intro/git-diff.png"></p>
+<p><img alt="" src="../img/intro/git-diff.png"></p>
 <p><strong>Qué estás viendo en la captura</strong></p>
 <ul>
 <li>Git te enseña el archivo que cambió: <code>hola.txt</code>.</li>
@@ -3714,7 +3714,7 @@ Para que no se abra un editor raro, puedes fijar uno. Con VS Code:</p>
 <p>Ejemplo (lo típico en tu caso):
 </p><div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a>git<span class="w"> </span>add<span class="w"> </span>adios.txt<span class="w"> </span>hola.txt
 </code></pre></div></td></tr></table></div>
-<p><img alt="" src="../capturas/intro/git-add.png"></p>
+<p><img alt="" src="../img/intro/git-add.png"></p>
 <p><strong>Qué estás viendo en la captura (después del add)</strong></p>
 <ul>
 <li>
@@ -3741,7 +3741,7 @@ Al principio, es mejor añadir <strong>archivo a archivo</strong> para no llevar
 <p><code>git commit</code> guarda en el historial <strong>lo que esté en staging</strong>.</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Añado los archivos hola y adios"</span>
 </code></pre></div></td></tr></table></div>
-<p><img alt="" src="../capturas/intro/git-commit.png"></p>
+<p><img alt="" src="../img/intro/git-commit.png"></p>
 <p><strong>Qué estás viendo en la captura</strong></p>
 <ul>
 <li>
@@ -3767,7 +3767,7 @@ Al principio, es mejor añadir <strong>archivo a archivo</strong> para no llevar
 <p>Para ver los commits que has hecho:</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a>git<span class="w"> </span>log
 </code></pre></div></td></tr></table></div>
-<p><img alt="" src="../capturas/intro/git-log.png"></p>
+<p><img alt="" src="../img/intro/git-log.png"></p>
 <p><strong>Qué estás viendo en la captura</strong></p>
 <ul>
 <li>Los commits aparecen en orden, el más reciente arriba.</li>
@@ -3777,7 +3777,7 @@ Al principio, es mejor añadir <strong>archivo a archivo</strong> para no llevar
 <p>La versión más usada en el día a día es con <code>--oneline</code>, que muestra una sola línea por commit:</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a>git<span class="w"> </span>log<span class="w"> </span>--oneline
 </code></pre></div></td></tr></table></div>
-<p><img alt="Salida de git log --oneline con los commits del repositorio de ejemplo" src="../capturas/intro/git-log-oneline.png"></p>
+<p><img alt="Salida de git log --oneline con los commits del repositorio de ejemplo" src="../img/intro/git-log-oneline.png"></p>
 <div class="admonition tip">
 <p class="admonition-title">El hash abreviado</p>
 <p>Los 7 caracteres del inicio de cada línea (<code>1cd8f5a</code>, <code>448751c</code>…) son los que usarás después en comandos como <code>git show</code> o <code>git revert</code>.</p>
@@ -3788,7 +3788,7 @@ Al principio, es mejor añadir <strong>archivo a archivo</strong> para no llevar
 <p>Si modificas <code>hola.txt</code> y no quieres esos cambios:</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a>git<span class="w"> </span>restore<span class="w"> </span>hola.txt
 </code></pre></div></td></tr></table></div>
-<p><img alt="" src="../capturas/intro/git-restore.png"></p>
+<p><img alt="" src="../img/intro/git-restore.png"></p>
 <p><strong>Qué estás viendo en la captura</strong></p>
 <p>1) Primero se ejecuta <code>git diff</code> y se ven varias líneas nuevas (<code>+...</code>) en <code>hola.txt</code>.</p>
 <p>2) Luego se ejecuta <code>git restore hola.txt</code>.</p>
@@ -3801,7 +3801,7 @@ Si esos cambios te importan, guarda antes (commit) o copia el archivo.</p>
 <hr>
 <h3 id="b-quitar-un-archivo-del-staging-sin-borrar-sus-cambios-git-restore-staged">B) Quitar un archivo del staging (sin borrar sus cambios): <code>git restore --staged</code><a class="headerlink" href="#b-quitar-un-archivo-del-staging-sin-borrar-sus-cambios-git-restore-staged" title="Permanent link">¶</a></h3>
 <p>Esto sirve cuando has hecho <code>git add</code> por error (lo metiste en staging), pero aún no has hecho commit.</p>
-<p><img alt="" src="../capturas/intro/git-restore-staged.png"></p>
+<p><img alt="" src="../img/intro/git-restore-staged.png"></p>
 <p><strong>Qué estás viendo en la captura</strong></p>
 <p>1) <code>git add hasta-luego.txt</code> → lo mete en staging.  </p>
 <p>2) <code>git status</code> muestra:</p>
@@ -3840,7 +3840,7 @@ Si esos cambios te importan, guarda antes (commit) o copia el archivo.</p>
 <p>Antes de hacer cualquier cosa, necesitas saber <strong>qué commits tienes y cuáles son sus hashes</strong>:</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a>git<span class="w"> </span>log<span class="w"> </span>--oneline
 </code></pre></div></td></tr></table></div>
-<p><img alt="Salida de git log --oneline mostrando los commits con sus hashes y mensajes" src="../capturas/intro/git-log-oneline.png"></p>
+<p><img alt="Salida de git log --oneline mostrando los commits con sus hashes y mensajes" src="../img/intro/git-log-oneline.png"></p>
 <p>Esos 7 caracteres al inicio de cada línea (<code>1cd8f5a</code>, <code>448751c</code>…) son el <strong>hash abreviado</strong> — el identificador único de cada commit. Los vas a necesitar para todos los comandos que siguen.</p>
 <div class="admonition info">
 <p class="admonition-title">¿Qué es HEAD?</p>
@@ -3851,14 +3851,14 @@ Si esos cambios te importan, guarda antes (commit) o copia el archivo.</p>
 <p>Antes de deshacer nada, conviene ver exactamente qué hizo ese commit:</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a>git<span class="w"> </span>show<span class="w"> </span>58fbc71
 </code></pre></div></td></tr></table></div>
-<p><img alt="Salida de git show con el hash, autor, fecha y el diff del commit" src="../capturas/intro/git-show.png"></p>
+<p><img alt="Salida de git show con el hash, autor, fecha y el diff del commit" src="../img/intro/git-show.png"></p>
 <p>Las líneas con <code>+</code> son lo que ese commit añadió. Las líneas con <code>-</code> son lo que eliminó. Mientras solo ejecutas <code>git show</code>, <strong>no cambias nada</strong> en el proyecto.</p>
 <hr>
 <h3 id="opcion-a-recuperar-un-archivo-a-como-estaba-antes">Opción A — Recuperar un archivo a como estaba antes<a class="headerlink" href="#opcion-a-recuperar-un-archivo-a-como-estaba-antes" title="Permanent link">¶</a></h3>
 <p>Esto es útil cuando <strong>un archivo concreto</strong> ha empeorado y quieres recuperarlo a una versión anterior, sin tocar el resto del proyecto.</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1"></a>git<span class="w"> </span>restore<span class="w"> </span>--source<span class="o">=</span>58fbc71<span class="w"> </span>llibres.txt
 </code></pre></div></td></tr></table></div>
-<p><img alt="Ejecución de git restore --source y comprobación del contenido recuperado con cat" src="../capturas/intro/git-restore-source.png"></p>
+<p><img alt="Ejecución de git restore --source y comprobación del contenido recuperado con cat" src="../img/intro/git-restore-source.png"></p>
 <p>El archivo queda exactamente como estaba en el commit <code>58fbc71</code>. Aparece como <strong>modified</strong> en <code>git status</code> — los cambios están en tu carpeta de trabajo, pero el historial no ha cambiado. Puedes revisarlo y hacer un <code>git commit</code> si quieres guardar esa recuperación.</p>
 <div class="admonition warning">
 <p class="admonition-title">Esto no deshace el commit</p>
@@ -3869,7 +3869,7 @@ Si esos cambios te importan, guarda antes (commit) o copia el archivo.</p>
 <p><code>git revert</code> <strong>crea un commit nuevo</strong> que deshace exactamente los cambios de un commit anterior. Es la opción más segura: no borra nada del historial, solo añade un paso nuevo que revierte lo que se hizo.</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1"></a>git<span class="w"> </span>revert<span class="w"> </span>1cd8f5a
 </code></pre></div></td></tr></table></div>
-<p><img alt="git revert crea un nuevo commit de reversión, y el log muestra cuatro commits" src="../capturas/intro/git-revert.png"></p>
+<p><img alt="git revert crea un nuevo commit de reversión, y el log muestra cuatro commits" src="../img/intro/git-revert.png"></p>
 <p>Git genera el mensaje del commit de reversión automáticamente. El historial queda así — el commit original sigue ahí, pero neutralizado:</p>
 <pre class="mermaid"><code>gitGraph
    commit id: "Primer commit"
@@ -3884,7 +3884,7 @@ Si esos cambios te importan, guarda antes (commit) o copia el archivo.</p>
 <h3 id="opcion-c-mover-el-repo-a-un-commit-anterior-git-reset">Opción C — Mover el repo a un commit anterior (<code>git reset</code>)<a class="headerlink" href="#opcion-c-mover-el-repo-a-un-commit-anterior-git-reset" title="Permanent link">¶</a></h3>
 <p><code>git reset</code> mueve <code>HEAD</code> hacia atrás en el historial. Es más potente que <code>revert</code> porque <strong>borra commits</strong> — como si nunca hubieran existido. Solo se recomienda cuando el repo es estrictamente local y no lo ha visto nadie más.</p>
 <p><strong>Situación de partida</strong> — los tres ejemplos usan un repo con estos 3 commits:</p>
-<p><img alt="Situación de partida: git log --oneline con 3 commits — Corregeix majúscules, Afegeix el quart llibre, Primer commit" src="../capturas/intro/git-reset-comun.png"></p>
+<p><img alt="Situación de partida: git log --oneline con 3 commits — Corregeix majúscules, Afegeix el quart llibre, Primer commit" src="../img/intro/git-reset-comun.png"></p>
 <p>El commit más reciente ("Corregeix majuscules del titol") es el que va a desaparecer con el reset. Lo que cambia entre variantes es <strong>adónde van sus cambios</strong>.</p>
 <div class="tabs-colored">
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">--soft — cambios en staging</label><label for="__tabbed_1_2">--mixed — cambios en el escritorio</label><label for="__tabbed_1_3">--hard — cambios borrados</label></div>
@@ -3898,7 +3898,7 @@ Si esos cambios te importan, guarda antes (commit) o copia el archivo.</p>
 <a id="__codelineno-26-2" name="__codelineno-26-2"></a><span class="c1"># A continuación puedes hacer directamente:</span>
 <a id="__codelineno-26-3" name="__codelineno-26-3"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"mensaje correcto"</span>
 </code></pre></div></td></tr></table></div>
-<p><img alt="git reset --soft: el log pasa a 2 commits y git status short muestra M dos espacios llibres.txt" src="../capturas/intro/git-reset-soft.png"></p>
+<p><img alt="git reset --soft: el log pasa a 2 commits y git status short muestra M dos espacios llibres.txt" src="../img/intro/git-reset-soft.png"></p>
 <p><code>git status --short</code> muestra <code>M  llibres.txt</code> — la M está en la zona de <strong>staging</strong>. No hace falta <code>git add</code>.</p>
 </div>
 <div class="tabbed-block">
@@ -3912,14 +3912,14 @@ Si esos cambios te importan, guarda antes (commit) o copia el archivo.</p>
 <a id="__codelineno-27-3" name="__codelineno-27-3"></a>git<span class="w"> </span>add<span class="w"> </span>llibres.txt
 <a id="__codelineno-27-4" name="__codelineno-27-4"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"mensaje"</span>
 </code></pre></div></td></tr></table></div>
-<p><img alt="git reset mixed: Git avisa Unstaged changes after reset, el log pasa a 2 commits y git status muestra M con espacio delante" src="../capturas/intro/git-reset-mixed.png"></p>
+<p><img alt="git reset mixed: Git avisa Unstaged changes after reset, el log pasa a 2 commits y git status muestra M con espacio delante" src="../img/intro/git-reset-mixed.png"></p>
 <p>Git avisa: <code>Unstaged changes after reset</code>. <code>git status --short</code> muestra <code>M llibres.txt</code> — la M está en la zona de <strong>trabajo</strong> (fuera de staging). Necesitas <code>git add</code> antes de poder hacer commit.</p>
 </div>
 <div class="tabbed-block">
 <p>El commit desaparece <strong>y los cambios se borran definitivamente</strong>. El proyecto vuelve exactamente al estado del commit anterior.</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-28-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1"></a>git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>HEAD~1
 </code></pre></div></td></tr></table></div>
-<p><img alt="git reset hard: HEAD is now at el commit anterior, log muestra 2 commits, cat muestra el archivo sin la corrección de mayúsculas" src="../capturas/intro/git-reset-hard.png"></p>
+<p><img alt="git reset hard: HEAD is now at el commit anterior, log muestra 2 commits, cat muestra el archivo sin la corrección de mayúsculas" src="../img/intro/git-reset-hard.png"></p>
 <p>Git confirma con <code>HEAD is now at ...</code>. El log pasa a 2 commits. <code>cat llibres.txt</code> muestra el archivo <strong>sin la corrección de mayúsculas</strong> — ese cambio ha desaparecido para siempre.</p>
 <div class="admonition danger">
 <p class="admonition-title">Sin vuelta atrás</p>

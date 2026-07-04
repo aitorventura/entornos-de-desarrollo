@@ -2989,7 +2989,7 @@ Con <code>-D</code> (mayúscula), borra sin preguntar aunque haya commits sin fu
 <p>Para ver cómo encaja todo, vamos a seguir un ejemplo paso a paso. Estás desarrollando una web y quieres experimentar con el color de fondo sin romper lo que ya funciona.</p>
 <h3 id="1-el-punto-de-partida">1. El punto de partida<a class="headerlink" href="#1-el-punto-de-partida" title="Permanent link">¶</a></h3>
 <p>Estás en <code>main</code>. Todo funciona. Compruebas dónde estás con <code>git status</code> y ves el historial con <code>git lga</code>.</p>
-<p><img alt='Captura de git status mostrando "On branch main" y git lga mostrando el último commit' src="../capturas/ramas/1_status_inicial.png"></p>
+<p><img alt='Captura de git status mostrando "On branch main" y git lga mostrando el último commit' src="../img/ramas/1_status_inicial.png"></p>
 <p><strong>Qué estás viendo en la captura</strong></p>
 <ul>
 <li>Estás en <code>main</code> (<code>On branch main</code>).</li>
@@ -3000,7 +3000,7 @@ Con <code>-D</code> (mayúscula), borra sin preguntar aunque haya commits sin fu
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>git<span class="w"> </span>branch<span class="w"> </span>experimento-fondo
 </code></pre></div></td></tr></table></div>
 <p>Si miras el historial ahora, <code>main</code> y <code>experimento-fondo</code> apuntan al mismo commit. El asterisco (o el color) te recuerda que <strong>todavía estás en main</strong>.</p>
-<p><img alt="Captura de git lga mostrando ambas ramas en el mismo commit y el HEAD apuntando a main" src="../capturas/ramas/2_crear_rama.png"></p>
+<p><img alt="Captura de git lga mostrando ambas ramas en el mismo commit y el HEAD apuntando a main" src="../img/ramas/2_crear_rama.png"></p>
 <p><strong>Qué estás viendo en la captura</strong></p>
 <ul>
 <li>Ambas etiquetas (<code>main</code> y <code>experimento-fondo</code>) están en el mismo punto.</li>
@@ -3011,7 +3011,7 @@ Con <code>-D</code> (mayúscula), borra sin preguntar aunque haya commits sin fu
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a>git<span class="w"> </span>switch<span class="w"> </span>experimento-fondo
 </code></pre></div></td></tr></table></div>
 <p>Git te confirma el cambio con <code>Switched to branch 'experimento-fondo'</code>.</p>
-<p><img alt="Captura del mensaje de cambio de rama y un git status confirmando que estás en la nueva rama" src="../capturas/ramas/3_cambio_rama.png"></p>
+<p><img alt="Captura del mensaje de cambio de rama y un git status confirmando que estás en la nueva rama" src="../img/ramas/3_cambio_rama.png"></p>
 <p><strong>Qué estás viendo en la captura</strong></p>
 <ul>
 <li>El mensaje <code>Switched to branch 'experimento-fondo'</code>.</li>
@@ -3024,7 +3024,7 @@ Con <code>-D</code> (mayúscula), borra sin preguntar aunque haya commits sin fu
 <a id="__codelineno-9-2" name="__codelineno-9-2"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Fondo cambiado a rojo"</span>
 </code></pre></div></td></tr></table></div>
 <p>En este momento, <code>experimento-fondo</code> ha avanzado un commit. <code>main</code> no se ha movido.</p>
-<p><img alt="Captura de git lga mostrando claramente que experimento-fondo está UN paso por delante de main" src="../capturas/ramas/4_rama_avanzada.png"></p>
+<p><img alt="Captura de git lga mostrando claramente que experimento-fondo está UN paso por delante de main" src="../img/ramas/4_rama_avanzada.png"></p>
 <p><strong>Qué estás viendo en la captura</strong></p>
 <ul>
 <li><code>experimento-fondo</code> (donde está tu <code>HEAD</code>) aparece un nivel por delante.</li>
@@ -3035,7 +3035,7 @@ Con <code>-D</code> (mayúscula), borra sin preguntar aunque haya commits sin fu
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a>git<span class="w"> </span>switch<span class="w"> </span>main
 </code></pre></div></td></tr></table></div>
 <p>Si abres <code>estilos.css</code>, el fondo rojo ha desaparecido. No te asustes: tus cambios están seguros en <code>experimento-fondo</code>, Git simplemente ha restaurado los archivos al estado de <code>main</code>.</p>
-<p><img alt="Captura mostrando el comando checkout y quizás el contenido del archivo original" src="../capturas/ramas/5_vuelta_main.png"></p>
+<p><img alt="Captura mostrando el comando checkout y quizás el contenido del archivo original" src="../img/ramas/5_vuelta_main.png"></p>
 <p><strong>Qué estás viendo en la captura</strong></p>
 <ul>
 <li>Has vuelto a <code>main</code>.</li>
@@ -3046,7 +3046,7 @@ Con <code>-D</code> (mayúscula), borra sin preguntar aunque haya commits sin fu
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>git<span class="w"> </span>merge<span class="w"> </span>experimento-fondo
 </code></pre></div></td></tr></table></div>
 <p>Como <code>main</code> no ha avanzado mientras trabajabas, Git hace un <strong>Fast-forward</strong>: simplemente mueve la etiqueta <code>main</code> hasta donde está <code>experimento-fondo</code>. No crea ningún commit extra.</p>
-<p><img alt='Captura del mensaje "Fast-forward" y un git lga final mostrando ambas ramas juntas al final del camino' src="../capturas/ramas/6_merge_exito.png"></p>
+<p><img alt='Captura del mensaje "Fast-forward" y un git lga final mostrando ambas ramas juntas al final del camino' src="../img/ramas/6_merge_exito.png"></p>
 <p><strong>Qué estás viendo en la captura</strong></p>
 <ul>
 <li>Git usa la estrategia <strong>Fast-forward</strong> porque no ha habido commits en <code>main</code> mientras tanto.</li>
@@ -3056,7 +3056,7 @@ Con <code>-D</code> (mayúscula), borra sin preguntar aunque haya commits sin fu
 <p>La rama ha cumplido su función. Su trabajo ya está en <code>main</code>. La borras:</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a>git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>experimento-fondo
 </code></pre></div></td></tr></table></div>
-<p><img alt="Captura del comando de borrado y un git lga mostrando que solo queda main" src="../capturas/ramas/7_borrar_rama.png"></p>
+<p><img alt="Captura del comando de borrado y un git lga mostrando que solo queda main" src="../img/ramas/7_borrar_rama.png"></p>
 <p><strong>Qué estás viendo en la captura</strong></p>
 <ul>
 <li><code>Deleted branch experimento-fondo...</code> confirma el borrado.</li>
@@ -3105,7 +3105,7 @@ Con <code>-D</code> (mayúscula), borra sin preguntar aunque haya commits sin fu
 </div>
 <h3 id="el-merge-commit-y-el-editor">El merge commit y el editor<a class="headerlink" href="#el-merge-commit-y-el-editor" title="Permanent link">¶</a></h3>
 <p>Cuando Git necesita crear un merge commit (caso 3-way), <strong>abre tu editor de terminal</strong> para que confirmes el mensaje. Suele ser Vim o Nano.</p>
-<p><img alt="Captura del editor de commit por defecto de Git en la terminal" src="../capturas/ramas/8c_mensaje_commit.png"></p>
+<p><img alt="Captura del editor de commit por defecto de Git en la terminal" src="../img/ramas/8c_mensaje_commit.png"></p>
 <p><strong>Qué estás viendo en la captura</strong></p>
 <ul>
 <li>Un editor de texto pidiéndote confirmar o modificar el mensaje del merge commit.</li>
@@ -3119,12 +3119,12 @@ Con <code>-D</code> (mayúscula), borra sin preguntar aunque haya commits sin fu
 </ul>
 </div>
 <p>Antes y después del merge con ramas divergidas:</p>
-<p><img alt="Captura de git lga ANTES del merge, mostrando las ramas bifurcadas en forma de Y" src="../capturas/ramas/8a_antes_merge.png"></p>
+<p><img alt="Captura de git lga ANTES del merge, mostrando las ramas bifurcadas en forma de Y" src="../img/ramas/8a_antes_merge.png"></p>
 <p><strong>Qué estás viendo en la captura</strong></p>
 <ul>
 <li>El historial antes de fusionar: <code>main</code> y <code>funcionalidad-X</code> se han separado. Cada una tiene commits que la otra no tiene.</li>
 </ul>
-<p><img alt="Captura de git lga DESPUÉS del merge, mostrando el bucle cerrado" src="../capturas/ramas/8b_despues_merge.png"></p>
+<p><img alt="Captura de git lga DESPUÉS del merge, mostrando el bucle cerrado" src="../img/ramas/8b_despues_merge.png"></p>
 <p><strong>Qué estás viendo en la captura</strong></p>
 <ul>
 <li>El nuevo merge commit une las dos líneas. El grafo muestra el bucle cerrado: los dos caminos vuelven a converger en <code>main</code>.</li>
@@ -3167,13 +3167,13 @@ Si cada uno ha tocado <strong>líneas distintas</strong>, Git las combina sin pr
 <ol>
 <li>
 <p>En <code>main</code>, creas <code>titulo.txt</code> con el texto <code>Hola Mundo</code> y haces commit.</p>
-<p><img alt="Captura creando el fichero titulo" src="../capturas/ramas/9a_creacion_titulo.png"></p>
+<p><img alt="Captura creando el fichero titulo" src="../img/ramas/9a_creacion_titulo.png"></p>
 <p><strong>Qué estás viendo en la captura</strong>
 - La creación del archivo y el primer commit en <code>main</code>.</p>
 </li>
 <li>
 <p>Creas la rama <code>cambio-titulo</code>, cambias la línea a <code>Hola Universo</code> y haces commit.</p>
-<p><img alt="Captura modificando a hola universo en la nueva rama" src="../capturas/ramas/9b_modicando_titulo_rama.png"></p>
+<p><img alt="Captura modificando a hola universo en la nueva rama" src="../img/ramas/9b_modicando_titulo_rama.png"></p>
 <p><strong>Qué estás viendo en la captura</strong>
 - La modificación y su commit en la nueva rama.</p>
 <div class="admonition tip">
@@ -3183,7 +3183,7 @@ Si cada uno ha tocado <strong>líneas distintas</strong>, Git las combina sin pr
 </li>
 <li>
 <p>Vuelves a <code>main</code> y cambias <strong>la misma línea</strong> a <code>Hola Planeta</code>. Haces commit.</p>
-<p><img alt="Captura cambiando la línea en main a hola planeta y realizando git lga" src="../capturas/ramas/9c_cambio_main_y_lga.png"></p>
+<p><img alt="Captura cambiando la línea en main a hola planeta y realizando git lga" src="../img/ramas/9c_cambio_main_y_lga.png"></p>
 <p><strong>Qué estás viendo en la captura</strong>
 - El cambio en <code>main</code> y un <code>git lga</code> que muestra que las dos ramas han avanzado por separado tocando el mismo archivo.</p>
 </li>
@@ -3194,19 +3194,19 @@ Si cada uno ha tocado <strong>líneas distintas</strong>, Git las combina sin pr
 </li>
 <li>
 <p>Git lanza el error de conflicto.</p>
-<p><img alt="Captura de la terminal mostrando el error CONFLICT" src="../capturas/ramas/9d_error_merge.png"></p>
+<p><img alt="Captura de la terminal mostrando el error CONFLICT" src="../img/ramas/9d_error_merge.png"></p>
 <p><strong>Qué estás viendo en la captura</strong>
 - Git detecta que la misma línea ha sido modificada de forma distinta en ambas ramas y detiene la fusión.</p>
 </li>
 <li>
 <p>Abres el archivo en tu editor y ves las marcas del conflicto.</p>
-<p><img alt="Captura del editor de código mostrando las marcas de colores del conflicto" src="../capturas/ramas/9e_editor_fix_merge.png"></p>
+<p><img alt="Captura del editor de código mostrando las marcas de colores del conflicto" src="../img/ramas/9e_editor_fix_merge.png"></p>
 <p><strong>Qué estás viendo en la captura</strong>
 - <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code> marca los cambios de <code>main</code>. <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; cambio-titulo</code> marca los cambios entrantes. La línea <code>=======</code> los separa.</p>
 </li>
 <li>
 <p>Editas el archivo, eliminas las marcas y dejas solo la versión final (por ejemplo, <code>Hola Planeta!</code>).</p>
-<p><img alt="Captura del editor con el conflicto solucionado" src="../capturas/ramas/9f_editor_solved.png"></p>
+<p><img alt="Captura del editor con el conflicto solucionado" src="../img/ramas/9f_editor_solved.png"></p>
 <p><strong>Qué estás viendo en la captura</strong>
 - El archivo limpio, sin marcas de Git. Solo la versión que has decidido conservar.</p>
 </li>
@@ -3216,19 +3216,19 @@ Si cada uno ha tocado <strong>líneas distintas</strong>, Git las combina sin pr
 <span class="normal"><a href="#__codelineno-16-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a>git<span class="w"> </span>add<span class="w"> </span>titulo.txt
 <a id="__codelineno-16-2" name="__codelineno-16-2"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Resuelve conflicto en titulo.txt"</span>
 </code></pre></div></td></tr></table></div>
-<p><img alt="Captura solucionando el conflicto con add y commit en la terminal" src="../capturas/ramas/9g_conflicto_solucionado.png"></p>
+<p><img alt="Captura solucionando el conflicto con add y commit en la terminal" src="../img/ramas/9g_conflicto_solucionado.png"></p>
 <p><strong>Qué estás viendo en la captura</strong>
 - La confirmación de que el archivo ha entrado al staging y el merge commit ha quedado registrado.</p>
 </li>
 <li>
 <p>El historial vuelve a unirse.</p>
-<p><img alt="Captura de git lga tras solucionar el conflicto" src="../capturas/ramas/9h_lga.png"></p>
+<p><img alt="Captura de git lga tras solucionar el conflicto" src="../img/ramas/9h_lga.png"></p>
 <p><strong>Qué estás viendo en la captura</strong>
 - <code>git lga</code> muestra el merge commit uniendo las dos líneas. El proceso ha terminado correctamente.</p>
 </li>
 <li>
 <p>Resultado final del archivo:</p>
-<p><img alt="Captura mostrando el archivo titulo.txt finalizado" src="../capturas/ramas/9i_final.png"></p>
+<p><img alt="Captura mostrando el archivo titulo.txt finalizado" src="../img/ramas/9i_final.png"></p>
 <p><strong>Qué estás viendo en la captura</strong>
 - El contenido definitivo del archivo, tal como lo has decidido tú al resolver el conflicto.</p>
 </li>

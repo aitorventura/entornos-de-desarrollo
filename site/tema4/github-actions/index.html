@@ -3063,7 +3063,7 @@
 <p>Si el paso 3 o el 4 fallan, GitHub bloquea el merge de la PR hasta que se corrija.</p>
 </div>
 <p>En la pestaña <strong>Actions</strong> del repositorio verás el workflow aparecer en segundos tras el push.</p>
-<p><img alt="Vista general del panel Actions tras el primer push" src="../capturas/actions/panel-actions-primer-run.png"></p>
+<p><img alt="Vista general del panel Actions tras el primer push" src="../img/actions/panel-actions-primer-run.png"></p>
 <hr>
 <h2 id="95-el-panel-actions-de-github">9.5 El panel Actions de GitHub<a class="headerlink" href="#95-el-panel-actions-de-github" title="Permanent link">¶</a></h2>
 <p>Una vez que el workflow se ha ejecutado, toda la información está disponible en la pestaña <strong>Actions</strong> del repositorio.</p>
@@ -3074,11 +3074,11 @@
 <li>❌ <strong>Rojo</strong> — algún step ha fallado.</li>
 </ul>
 <p>Cada fila corresponde a un push o una PR, e indica el nombre del commit que lo disparó y el tiempo transcurrido.</p>
-<p><img alt="Lista de runs en el panel Actions — se ven runs verdes y uno rojo" src="../capturas/actions/panel-actions-lista-runs.png"></p>
+<p><img alt="Lista de runs en el panel Actions — se ven runs verdes y uno rojo" src="../img/actions/panel-actions-lista-runs.png"></p>
 <p><strong>Vista de un run</strong> — al hacer clic en una ejecución concreta, ves todos los jobs. En nuestro proyecto hay un solo job llamado <code>build</code>, que agrupa todos los steps.</p>
-<p><img alt="Detalle de un run: el job build con sus steps y duración" src="../capturas/actions/panel-actions-run-detalle.png"></p>
+<p><img alt="Detalle de un run: el job build con sus steps y duración" src="../img/actions/panel-actions-run-detalle.png"></p>
 <p><strong>Vista de un job</strong> — al hacer clic en el job, se despliegan los steps. Cada step muestra su log completo: los comandos ejecutados y su salida. El step <strong>"Ejecutar los tests"</strong> muestra la salida de Maven con el resultado de los cinco tests de la <code>Calculadora</code>.</p>
-<p><img alt='Step "Ejecutar los tests" expandido — log de Maven con Tests run: 5, Failures: 0' src="../capturas/actions/panel-actions-step-log.png"></p>
+<p><img alt='Step "Ejecutar los tests" expandido — log de Maven con Tests run: 5, Failures: 0' src="../img/actions/panel-actions-step-log.png"></p>
 <div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
 <span class="normal"><a href="#__codelineno-4-2">2</a></span>
 <span class="normal"><a href="#__codelineno-4-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>[INFO] Running com.ejemplo.CalculadoraTest
@@ -3097,7 +3097,7 @@
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>El workflow funciona correctamente, pero los tests detectan un bug. Por ejemplo: si en <code>Calculadora.java</code> se cambia <code>sumar</code> para que devuelva <code>a - b</code> en lugar de <code>a + b</code>, el test <code>sumarDosPositivos</code> fallará.</p>
-<p><img alt="Step fallido con el error de JUnit: expected &lt;5&gt; but was &lt;-1&gt;" src="../capturas/actions/panel-actions-step-error.png"></p>
+<p><img alt="Step fallido con el error de JUnit: expected &lt;5&gt; but was &lt;-1&gt;" src="../img/actions/panel-actions-step-error.png"></p>
 <div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
 <span class="normal"><a href="#__codelineno-5-2">2</a></span>
 <span class="normal"><a href="#__codelineno-5-3">3</a></span>
@@ -3195,7 +3195,7 @@
 <li>Dale un nombre en mayúsculas (convenio): <code>MAVEN_PASSWORD</code>, <code>DEPLOY_TOKEN</code>...</li>
 <li>Pega el valor. A partir de ese momento GitHub lo cifra y nadie puede leerlo, ni tú.</li>
 </ol>
-<p><img alt="Página de Secrets en Settings — muestra el botón New repository secret" src="../capturas/actions/secrets-settings.png"></p>
+<p><img alt="Página de Secrets en Settings — muestra el botón New repository secret" src="../img/actions/secrets-settings.png"></p>
 <h3 id="usar-un-secret-en-un-workflow">Usar un secret en un workflow<a class="headerlink" href="#usar-un-secret-en-un-workflow" title="Permanent link">¶</a></h3>
 <div class="language-yaml highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">YAML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
 <span class="normal"><a href="#__codelineno-9-2">2</a></span>

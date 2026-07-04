@@ -3007,9 +3007,9 @@
 <li>GitHub te enviará un código numérico al correo. Introdúcelo en la pantalla de confirmación.</li>
 <li>Ya tienes acceso a tu panel de control (<em>dashboard</em>) desde donde puedes crear y explorar repositorios.</li>
 </ol>
-<p><img alt="Captura de la página de registro o portada de GitHub" src="../capturas/github/0_registro_github.png"></p>
+<p><img alt="Captura de la página de registro o portada de GitHub" src="../img/github/0_registro_github.png"></p>
 <p><strong>Qué estás viendo en la captura:</strong> la página inicial de GitHub donde se introduce el nombre de usuario, contraseña y correo para crear una cuenta nueva.</p>
-<p><img alt="Captura de la página principal (dashboard) de GitHub con la sesión iniciada" src="../capturas/github/0b_dashboard_github.png"></p>
+<p><img alt="Captura de la página principal (dashboard) de GitHub con la sesión iniciada" src="../img/github/0b_dashboard_github.png"></p>
 <p><strong>Qué estás viendo en la captura:</strong> el panel de control de GitHub una vez iniciada sesión. A la izquierda verás el listado de repositorios (vacío si acabas de registrarte) y el botón verde "New" para crear uno nuevo.</p>
 <hr>
 <h2 id="autenticacion-y-conexion-en-github">🔐 Autenticación y Conexión en GitHub<a class="headerlink" href="#autenticacion-y-conexion-en-github" title="Permanent link">¶</a></h2>
@@ -3030,7 +3030,7 @@
 <li>Ve a <strong>Personal access tokens</strong> → <strong>Tokens (classic)</strong>.</li>
 <li>Pulsa <strong>Generate new token</strong> → <strong>Generate new token (classic)</strong>.</li>
 </ol>
-<p><img alt="Captura mostrando el formulario de creación de un token PAT en GitHub" src="../capturas/github/0c_crear_token.png"></p>
+<p><img alt="Captura mostrando el formulario de creación de un token PAT en GitHub" src="../img/github/0c_crear_token.png"></p>
 <p><strong>Qué estás viendo en la captura:</strong> el formulario para configurar un nuevo token clásico. Se ha asignado un nombre descriptivo y se ha marcado la casilla <strong><code>repo</code></strong> para dar permisos de lectura y escritura sobre repositorios.</p>
 <ol>
 <li>
@@ -3044,7 +3044,7 @@
 <p class="admonition-title">Cópialo ahora</p>
 <p>Esta es la <strong>única vez</strong> que GitHub te lo muestra. Si cierras la pestaña sin copiarlo, tendrás que generar uno nuevo.</p>
 </div>
-<p><img alt="Captura mostrando el cuadro verde de éxito y el token generado" src="../capturas/github/0d_token_generado.png"></p>
+<p><img alt="Captura mostrando el cuadro verde de éxito y el token generado" src="../img/github/0d_token_generado.png"></p>
 <p><strong>Qué estás viendo en la captura:</strong> el mensaje de éxito y el token generado (parte censurada por seguridad). Copia el tuyo completo usando el icono de copiar.</p>
 <p>Cuando Git te pida contraseña al hacer <code>git push</code>, pega este token en lugar de tu contraseña de GitHub.</p>
 <hr>
@@ -3055,7 +3055,7 @@
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-C<span class="w"> </span><span class="s2">"tu_correo@ejemplo.com"</span>
 </code></pre></div></td></tr></table></div>
 <p>La terminal te preguntará dónde guardar la clave y si quieres añadir una contraseña (<em>passphrase</em>). Puedes pulsar <code>Enter</code> varias veces para aceptar los valores por defecto.</p>
-<p><img alt="Captura de la terminal generando una clave SSH" src="../capturas/github/0e1_generar_ssh.png"></p>
+<p><img alt="Captura de la terminal generando una clave SSH" src="../img/github/0e1_generar_ssh.png"></p>
 <p><strong>Qué estás viendo en la captura:</strong> Git Bash ejecutando el comando. Las preguntas de ruta y passphrase se han respondido pulsando Intro. El dibujo ASCII al final confirma que la clave se ha generado correctamente en la carpeta <code>.ssh</code> de tu ordenador.</p>
 <h4 id="2-copiar-la-clave-publica">2. Copiar la clave pública<a class="headerlink" href="#2-copiar-la-clave-publica" title="Permanent link">¶</a></h4>
 <p>El proceso ha generado dos archivos: la clave <strong>privada</strong> (nunca la compartas) y la clave <strong>pública</strong> (la que le damos a GitHub). Copia la pública así:</p>
@@ -3075,7 +3075,7 @@
 <a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="c1"># O muéstrala en pantalla y cópiala manualmente:</span>
 <a id="__codelineno-1-8" name="__codelineno-1-8"></a>cat<span class="w"> </span>~/.ssh/id_ed25519.pub
 </code></pre></div></td></tr></table></div>
-<p><img alt="Captura de la terminal mostrando el archivo publico de la llave SSH" src="../capturas/github/0e2_copiar_ssh.png"></p>
+<p><img alt="Captura de la terminal mostrando el archivo publico de la llave SSH" src="../img/github/0e2_copiar_ssh.png"></p>
 <p><strong>Qué estás viendo en la captura:</strong> el contenido de la clave pública mostrado con <code>cat</code>. Siempre empieza por <code>ssh-ed25519</code>.</p>
 <h4 id="3-anadir-la-clave-a-github">3. Añadir la clave a GitHub<a class="headerlink" href="#3-anadir-la-clave-a-github" title="Permanent link">¶</a></h4>
 <ol>
@@ -3084,8 +3084,8 @@
 <li>Escribe un título (ej. "Portátil clase") y pega la clave pública en el campo de texto.</li>
 <li>Haz clic en <strong>Add SSH key</strong>.</li>
 </ol>
-<p><img alt="Captura del formulario para agregar clave SSH" src="../capturas/github/0e_a%C3%B1adir_ssh.png"></p>
-<p><img alt="Captura del menú de SSH indicando que la clave se ha guardado" src="../capturas/github/0f_a%C3%B1adida_sh.png"></p>
+<p><img alt="Captura del formulario para agregar clave SSH" src="../img/github/0e_a%C3%B1adir_ssh.png"></p>
+<p><img alt="Captura del menú de SSH indicando que la clave se ha guardado" src="../img/github/0f_a%C3%B1adida_sh.png"></p>
 <p><strong>Qué estás viendo en las capturas:</strong> la primera muestra el formulario para pegar la clave; la segunda confirma que la clave ha quedado vinculada a tu cuenta.</p>
 <p>A partir de ahora, cuando clones un proyecto usa la URL <strong>SSH</strong> (empieza por <code>git@github.com:...</code>) en lugar de HTTPS. Cualquier <code>push</code> o <code>pull</code> funcionará sin pedirte credenciales.</p>
 <hr>
@@ -3094,7 +3094,7 @@
 <h3 id="1-creando-el-repositorio-en-github">1. Creando el repositorio en GitHub<a class="headerlink" href="#1-creando-el-repositorio-en-github" title="Permanent link">¶</a></h3>
 <p>Entra en tu cuenta de GitHub y pulsa el botón <strong>New</strong> para crear un nuevo repositorio. Dale un nombre y decide si será público o privado.</p>
 <p>Si ya tienes un repositorio local listo, <strong>no marques</strong> las opciones de añadir <code>README</code>, <code>.gitignore</code> ni licencia desde la web — necesitas que GitHub te dé un repositorio completamente vacío.</p>
-<p><img alt="Captura crear un nuevo repositorio en GitHub" src="../capturas/github/1_crear_repo.png"></p>
+<p><img alt="Captura crear un nuevo repositorio en GitHub" src="../img/github/1_crear_repo.png"></p>
 <p><strong>Qué estás viendo en la captura:</strong> el formulario "Create a new repository" con el nombre <code>mi_proyecto</code>. Las opciones de README y .gitignore se han dejado desmarcadas para obtener un repositorio vacío.</p>
 <h3 id="2-enlazando-el-local-con-el-remoto-git-remote-add">2. Enlazando el local con el remoto (<code>git remote add</code>)<a class="headerlink" href="#2-enlazando-el-local-con-el-remoto-git-remote-add" title="Permanent link">¶</a></h3>
 <p>Una vez creado el repositorio vacío, GitHub te mostrará las instrucciones de subida. El comando que conecta tu repositorio local con el remoto es <code>git remote add</code>.</p>
@@ -3119,7 +3119,7 @@ Si has configurado las claves SSH, no te pedirá ninguna credencial.
 <p>Para comprobar que el enlace se ha creado correctamente:</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>git<span class="w"> </span>remote<span class="w"> </span>-v
 </code></pre></div></td></tr></table></div>
-<p><img alt="Captura de la terminal mostrando el origin enlazado" src="../capturas/github/2_enlazar_remoto.png"></p>
+<p><img alt="Captura de la terminal mostrando el origin enlazado" src="../img/github/2_enlazar_remoto.png"></p>
 <p><strong>Qué estás viendo en la captura:</strong> el comando <code>git remote add origin</code> (que no produce salida visible) y a continuación <code>git remote -v</code>, que confirma que <code>origin</code> apunta a la URL correcta tanto para <code>push</code> como para <code>fetch</code>.</p>
 <h3 id="3-el-primer-push-git-push">3. El primer push (<code>git push</code>)<a class="headerlink" href="#3-el-primer-push-git-push" title="Permanent link">¶</a></h3>
 <p>Tu PC y GitHub están enlazados, pero los datos todavía no han viajado. La primera vez añade <code>-u</code> (<code>--set-upstream</code>) para vincular tu rama local con la rama remota: a partir de ahí, Git sabe adónde ir cuando ejecutas <code>git push</code> o <code>git pull</code> a secas, sin tener que escribir <code>origin main</code> cada vez.</p>
@@ -3137,11 +3137,11 @@ Si has configurado las claves SSH, no te pedirá ninguna credencial.
 <p>Si Git te avisa de que el remoto tiene cambios que tú no tienes en local, <strong>no uses <code>git push --force</code></strong> salvo que estés seguro de lo que haces. <code>--force</code> sobreescribe el historial del servidor y puede borrar el trabajo de tus compañeros. La solución habitual es hacer primero <code>git pull</code> para integrar los cambios remotos, y luego volver a hacer <code>push</code>.</p>
 <p>La única situación en que <code>--force</code> es aceptable es en una rama propia que nadie más usa.</p>
 </div>
-<p><img alt="Captura del terminal con ls y subida git push exitosa" src="../capturas/github/3_primer_push.png"></p>
+<p><img alt="Captura del terminal con ls y subida git push exitosa" src="../img/github/3_primer_push.png"></p>
 <p><strong>Qué estás viendo en la captura:</strong> primero un <code>ls</code> para ver el contenido local antes del envío, y luego <code>git push -u origin main</code> con las estadísticas de éxito (<code>Writing objects: 100%</code>) y el aviso de que la rama remota queda enlazada.</p>
 <h3 id="4-visualizando-el-resultado">4. Visualizando el resultado<a class="headerlink" href="#4-visualizando-el-resultado" title="Permanent link">¶</a></h3>
 <p>Actualiza la página del repositorio en el navegador. Verás tus archivos con el historial y los mensajes de commit exactos que tenías en local.</p>
-<p><img alt="Captura de la web de GitHub mostrando los archivos subidos" src="../capturas/github/4_repo_lleno.png"></p>
+<p><img alt="Captura de la web de GitHub mostrando los archivos subidos" src="../img/github/4_repo_lleno.png"></p>
 <p><strong>Qué estás viendo en la captura:</strong> el repositorio en GitHub mostrando los archivos locales (<code>primer_doc.txt</code>) junto al mensaje y la fecha de cada commit.</p>
 <hr>
 <h2 id="descargando-y-sincronizando-el-codigo">🔄 Descargando y sincronizando el código<a class="headerlink" href="#descargando-y-sincronizando-el-codigo" title="Permanent link">¶</a></h2>
@@ -3154,7 +3154,7 @@ Si has configurado las claves SSH, no te pedirá ninguna credencial.
 <a id="__codelineno-6-3" name="__codelineno-6-3"></a>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:tu-usuario/tu-repositorio.git
 </code></pre></div></td></tr></table></div>
 <p>Para obtener la URL, entra en el repositorio de GitHub y haz clic en el botón verde <strong>"&lt;&gt; Code"</strong>.</p>
-<p><img alt="Captura mostrando el botón verde Code para copiar la URL de clonación" src="../capturas/github/5a_obtener_enlace_clonar.png"></p>
+<p><img alt="Captura mostrando el botón verde Code para copiar la URL de clonación" src="../img/github/5a_obtener_enlace_clonar.png"></p>
 <p><strong>Qué estás viendo en la captura:</strong> el menú desplegable del botón "Code" con la URL de clonación en HTTPS y el botón para copiarla al portapapeles.</p>
 <p><code>git clone</code> hace tres cosas de golpe:</p>
 <ol>
@@ -3162,7 +3162,7 @@ Si has configurado las claves SSH, no te pedirá ninguna credencial.
 <li>Descarga todos los commits, ramas y archivos.</li>
 <li>Configura <code>origin</code> apuntando al remoto automáticamente.</li>
 </ol>
-<p><img alt="Captura realizando git clone del repositorio y listando su contenido" src="../capturas/github/5_clone.png"></p>
+<p><img alt="Captura realizando git clone del repositorio y listando su contenido" src="../img/github/5_clone.png"></p>
 <p><strong>Qué estás viendo en la captura:</strong> <code>git clone</code> descargando el repositorio, y después <code>cd mi_proyecto</code> + <code>ls</code> confirmando que los archivos ya están en local.</p>
 <h3 id="comprobar-si-hay-cambios-sin-descargarlos-git-fetch">Comprobar si hay cambios sin descargarlos (<code>git fetch</code>)<a class="headerlink" href="#comprobar-si-hay-cambios-sin-descargarlos-git-fetch" title="Permanent link">¶</a></h3>
 <p><code>git fetch</code> se conecta al remoto y trae información sobre los cambios disponibles, pero <strong>no modifica tus archivos locales</strong>. Te permite ver qué hay nuevo antes de decidir si integrarlo.</p>
@@ -3204,7 +3204,7 @@ Si has configurado las claves SSH, no te pedirá ninguna credencial.
 </tr>
 </tbody>
 </table>
-<p><img alt="Captura actualizando el repositorio local con un git pull" src="../capturas/github/6_pull.png"></p>
+<p><img alt="Captura actualizando el repositorio local con un git pull" src="../img/github/6_pull.png"></p>
 <p><strong>Qué estás viendo en la captura:</strong> <code>git pull</code> integrando un cambio hecho desde la web de GitHub. La salida muestra el fast-forward y las estadísticas del archivo modificado (<code>1 insertion(+)</code>).</p>
 <div class="admonition warning">
 <p class="admonition-title">¿Y si <code>git pull</code> genera un conflicto?</p>
@@ -3223,10 +3223,10 @@ Si has configurado las claves SSH, no te pedirá ninguna credencial.
 <a id="__codelineno-9-3" name="__codelineno-9-3"></a>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>nueva-funcionalidad<span class="w">  </span><span class="c1"># la primera vez</span>
 <a id="__codelineno-9-4" name="__codelineno-9-4"></a>git<span class="w"> </span>push<span class="w">                                </span><span class="c1"># las siguientes veces</span>
 </code></pre></div></td></tr></table></div>
-<p><img alt="Captura mostrando el proceso de creación y subida de una rama en la terminal" src="../capturas/github/7a_subir_rama_terminal.png"></p>
+<p><img alt="Captura mostrando el proceso de creación y subida de una rama en la terminal" src="../img/github/7a_subir_rama_terminal.png"></p>
 <p><strong>Qué estás viendo en la captura:</strong> creación de la rama con <code>git switch -c</code>, commits locales, y finalmente <code>git push -u origin nueva-funcionalidad</code> con el aviso <code>[new branch]</code> confirmando que ha llegado al servidor.</p>
 <p>En la web de GitHub, el selector de ramas (arriba a la izquierda del código) mostrará todas las ramas subidas. Puedes navegar por ellas para ver su historial o iniciar una Pull Request.</p>
-<p><img alt="Captura mostrando el selector de ramas en GitHub con una nueva rama disponible" src="../capturas/github/7b_rama_github.png"></p>
+<p><img alt="Captura mostrando el selector de ramas en GitHub con una nueva rama disponible" src="../img/github/7b_rama_github.png"></p>
 <p><strong>Qué estás viendo en la captura:</strong> el selector de ramas de GitHub mostrando <code>main</code> y <code>nueva-funcionalidad</code> disponibles.</p>
 <h3 id="borrar-ramas-en-remoto">Borrar ramas en remoto<a class="headerlink" href="#borrar-ramas-en-remoto" title="Permanent link">¶</a></h3>
 <p>Una vez que la rama está fusionada en <code>main</code> y la has borrado en local, es buena práctica borrarla también del servidor:</p>
@@ -3292,20 +3292,20 @@ Si has configurado las claves SSH, no te pedirá ninguna credencial.
 <li>Ve a <strong>Version Control → GitHub</strong>.</li>
 <li>Pulsa <code>+</code> → <strong>Log in via GitHub</strong> (abre el navegador para autorizar) o introduce tu Token PAT.</li>
 </ol>
-<p><img alt="Captura mostrando la cuenta de GitHub vinculada en IntelliJ IDEA" src="../capturas/github/8a_intellij_cuenta.png"></p>
+<p><img alt="Captura mostrando la cuenta de GitHub vinculada en IntelliJ IDEA" src="../img/github/8a_intellij_cuenta.png"></p>
 <p><strong>Qué estás viendo en la captura:</strong> la pantalla de ajustes con la cuenta de GitHub ya vinculada al IDE.</p>
 <h3 id="el-menu-git">El menú Git<a class="headerlink" href="#el-menu-git" title="Permanent link">¶</a></h3>
 <p>Con un proyecto abierto que tenga <code>git init</code>, verás el menú <strong>Git</strong> en la barra superior. Desde ahí tienes acceso a las operaciones principales:</p>
 <p><strong>A) Commit</strong> — Abre un panel donde puedes marcar los archivos a añadir al staging y escribir el mensaje del commit. A la derecha se muestra el diff visual con las líneas añadidas y borradas.</p>
-<p><img alt="Captura del panel lateral de Commit de IntelliJ IDEA" src="../capturas/github/8b_intellij_commit.png"></p>
+<p><img alt="Captura del panel lateral de Commit de IntelliJ IDEA" src="../img/github/8b_intellij_commit.png"></p>
 <p><strong>Qué estás viendo en la captura:</strong> el panel de Commit con los archivos seleccionados para el staging, el campo del mensaje y el visor de diferencias a la derecha.</p>
 <p><strong>B) Push</strong> (<code>Ctrl+Shift+K</code>) — Muestra los commits pendientes de subir y hacia qué rama de <code>origin</code> van. Confirma antes de enviar.</p>
-<p><img alt="Captura mostrando el diálogo emergente para hacer Push" src="../capturas/github/8c_intellij_push.png"></p>
+<p><img alt="Captura mostrando el diálogo emergente para hacer Push" src="../img/github/8c_intellij_push.png"></p>
 <p><strong>Qué estás viendo en la captura:</strong> el diálogo de Push indicando la rama origen, la rama destino en <code>origin</code> y los commits que van a enviarse.</p>
 <p><strong>C) Pull / Fetch</strong> — Descarga e integra los cambios del remoto en tu rama actual.</p>
 <h3 id="gestion-de-ramas-en-intellij">Gestión de ramas en IntelliJ<a class="headerlink" href="#gestion-de-ramas-en-intellij" title="Permanent link">¶</a></h3>
 <p>Desde <strong>Git → Branches</strong> puedes ver todas las ramas locales y remotas, crear una nueva rama (<code>New Branch</code>, equivale a <code>git switch -c</code>), y cambiar entre ellas.</p>
-<p><img alt="Captura mostrando el potente selector de ramas de IntelliJ" src="../capturas/github/8d_intellij_ramas.png"></p>
+<p><img alt="Captura mostrando el potente selector de ramas de IntelliJ" src="../img/github/8d_intellij_ramas.png"></p>
 <p><strong>Qué estás viendo en la captura:</strong> el panel de ramas con las secciones Local y Remote, y el botón <code>+ New Branch</code> para crear una rama directamente desde el IDE.</p>
 <p>La terminal y el IDE son complementarios: la terminal da control total; el IDE acelera las operaciones del día a día.</p>
 <hr>

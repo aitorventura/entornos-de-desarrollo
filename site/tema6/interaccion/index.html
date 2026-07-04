@@ -2378,6 +2378,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#34-un-mismo-diagrama-dos-vistas" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 Un mismo diagrama, dos vistas
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2758,6 +2767,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#34-un-mismo-diagrama-dos-vistas" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 Un mismo diagrama, dos vistas
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3044,19 +3062,17 @@
 <div class="admonition example">
 <p class="admonition-title">Ejemplo de numeración jerárquica</p>
 <p>Un usuario pulsa "Finalizar compra" en una web. El objeto <code>Web</code> recibe la orden y, para completarla, necesita hablar con <code>Stock</code> y con <code>Pago</code>:</p>
-<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span>
-<span class="normal"><a href="#__codelineno-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>Usuario ───── Web          1: finalizarCompra()
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>Web ───── Stock            1.1: reservarProductos()
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a>Web ───── Pago             1.2: cobrar()
-</code></pre></div></td></tr></table></div>
+<pre class="mermaid"><code>flowchart LR
+    Usuario([Usuario]) --&gt;|"1: finalizarCompra()"| Web([Web])
+    Web --&gt;|"1.1: reservarProductos()"| Stock([Stock])
+    Web --&gt;|"1.2: cobrar()"| Pago([Pago])</code></pre>
 <p><code>1.1</code> y <code>1.2</code> cuelgan del <code>1</code> porque ambas llamadas ocurren <strong>dentro</strong> de la operación <code>finalizarCompra()</code>: sin el mensaje 1 no existirían. Si después el usuario pidiera la factura, ese nuevo mensaje sería el <code>2:</code>.</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">En DIA — mensajes en comunicación</p>
 <p>Usa la misma herramienta de mensajes que en secuencia (<strong>UML - Message</strong>). Haz doble clic → elige "Llamada" u otro tipo según corresponda.</p>
 <p><figure markdown="span">
-  <img alt="Propiedades de mensaje tipo Llamada en un diagrama de comunicación en DIA" src="../img/comunicacion-cliente-pedidos.png">
+  <img alt="Propiedades de mensaje tipo Llamada en un diagrama de comunicación en DIA" src="../img/comunicacion-lavadora.png">
   <figcaption>Diagrama de comunicación en DIA: objetos conectados con canal y mensaje tipo "Llamada"</figcaption>
 </figure></p>
 </div>
@@ -3075,7 +3091,33 @@
 <br>
 <figcaption>La lavadora como diagrama de comunicación: los objetos aparecen conectados por canales y los mensajes se numeran para indicar el orden.</figcaption>
 </figure>
-<p>Para modelar un sistema, cualquiera de los dos es válido. En la práctica el de secuencia es más habitual, porque el orden cronológico suele ser lo que más interesa comunicar; el de comunicación gana cuando hay muchos objetos y lo que preocupa es la estructura de conexiones (por ejemplo, detectar que un objeto habla con demasiados).</p></div>
+<p>Para modelar un sistema, cualquiera de los dos es válido. En la práctica el de secuencia es más habitual, porque el orden cronológico suele ser lo que más interesa comunicar; el de comunicación gana cuando hay muchos objetos y lo que preocupa es la estructura de conexiones (por ejemplo, detectar que un objeto habla con demasiados).</p>
+<hr>
+<h2 id="34-un-mismo-diagrama-dos-vistas">3.4 Un mismo diagrama, dos vistas<a class="headerlink" href="#34-un-mismo-diagrama-dos-vistas" title="Permanent link">¶</a></h2>
+<p>Para terminar, compara el mismo escenario dibujado de las dos formas: el <code>finalizarCompra()</code> de más arriba, con sus tres mensajes numerados <code>1</code>, <code>1.1</code> y <code>1.2</code>.</p>
+<p><strong>Como secuencia</strong> — el tiempo avanza hacia abajo; se ve claramente que <code>Web</code> espera la respuesta de <code>Stock</code> antes de hablar con <code>Pago</code>:</p>
+<pre class="mermaid"><code>sequenceDiagram
+    actor Usuario
+    Usuario-&gt;&gt;Web: 1: finalizarCompra()
+    activate Web
+    Web-&gt;&gt;Stock: 1.1: reservarProductos()
+    activate Stock
+    Stock--&gt;&gt;Web: ok
+    deactivate Stock
+    Web-&gt;&gt;Pago: 1.2: cobrar()
+    activate Pago
+    Pago--&gt;&gt;Web: ok
+    deactivate Pago
+    deactivate Web</code></pre>
+<p><strong>Como comunicación</strong> — ya no hay eje temporal: lo que se ve son los objetos y sus canales; el orden queda solo en la numeración:</p>
+<pre class="mermaid"><code>flowchart LR
+    Usuario([Usuario]) --&gt;|"1: finalizarCompra()"| Web([Web])
+    Web --&gt;|"1.1: reservarProductos()"| Stock([Stock])
+    Web --&gt;|"1.2: cobrar()"| Pago([Pago])</code></pre>
+<div class="admonition tip">
+<p class="admonition-title">La diferencia, de un vistazo</p>
+<p>Mismos tres mensajes, misma numeración. En <strong>secuencia</strong> ves el ORDEN temporal (eje vertical) y cuánto tiempo está cada objeto activo. En <strong>comunicación</strong> ves las RELACIONES (quién está conectado con quién) y el orden se lee solo en las etiquetas <code>1</code>, <code>1.1</code>, <code>1.2</code>.</p>
+</div></div>
 
 
 
