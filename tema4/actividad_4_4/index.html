@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../introduccion-git/">
+        <link rel="prev" href="../analizadores/">
       
       
-        <link rel="next" href="../ramas/">
+        <link rel="next" href="../introduccion-git/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#actividad-44-git-local-tu-primer-historial-de-cambios" class="md-skip">
+        <a href="#actividad-44-analisis-estatico-con-intellij-y-sonarqube-for-ide" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -453,6 +453,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../tema1/actividad_1_4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 1.4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../tema1/fases/" class="md-nav__link">
         
   
@@ -476,12 +499,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tema1/actividad_1_4/" class="md-nav__link">
+      <a href="../../tema1/actividad_1_5/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Actividad 1.4
+    Actividad 1.5
     
   </span>
   
@@ -522,12 +545,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tema1/actividad_1_5/" class="md-nav__link">
+      <a href="../../tema1/actividad_1_6/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Actividad 1.5
+    Actividad 1.6
     
   </span>
   
@@ -591,12 +614,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tema1/actividad_1_6/" class="md-nav__link">
+      <a href="../../tema1/actividad_1_7/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Actividad 1.6
+    Actividad 1.7
     
   </span>
   
@@ -1280,29 +1303,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../analizadores/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Analizadores de código
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../documentacion/" class="md-nav__link">
         
   
@@ -1349,12 +1349,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../introduccion-git/" class="md-nav__link">
+      <a href="../analizadores/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Introducción a Git
+    Analizadores de código
     
   </span>
   
@@ -1422,45 +1422,87 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#que-vas-a-practicar" class="md-nav__link">
+  <a href="#codigo-a-analizar" class="md-nav__link">
     <span class="md-ellipsis">
-      🧠 Qué vas a practicar
+      Código a analizar
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#requisitos-previos" class="md-nav__link">
+  <a href="#contexto" class="md-nav__link">
     <span class="md-ellipsis">
-      🧰 Requisitos previos
+      Contexto
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#norma-de-la-actividad" class="md-nav__link">
+  <a href="#paso-1-predice-antes-de-ejecutar" class="md-nav__link">
     <span class="md-ellipsis">
-      📌 Norma de la actividad
+      Paso 1 — Predice antes de ejecutar
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#recomendacion-importante" class="md-nav__link">
+  <a href="#paso-2-analiza-con-intellij-inspect-code" class="md-nav__link">
     <span class="md-ellipsis">
-      🗂️ Recomendación importante
+      Paso 2 — Analiza con IntelliJ Inspect Code
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Paso 2 — Analiza con IntelliJ Inspect Code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#clasifica-y-decide-al-menos-4-avisos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clasifica y decide — al menos 4 avisos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paso-3-mismo-codigo-otra-herramienta" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 3 — Mismo código, otra herramienta
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#ejercicio-pasos" class="md-nav__link">
+  <a href="#paso-4-experimenta-con-la-configuracion" class="md-nav__link">
     <span class="md-ellipsis">
-      🧪 Ejercicio (pasos)
+      Paso 4 — Experimenta con la configuración
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paso-5-compara-prediccion-vs-realidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 5 — Compara predicción vs. realidad
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preguntas-de-reflexion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preguntas de reflexión
     </span>
   </a>
   
@@ -1469,7 +1511,7 @@
         <li class="md-nav__item">
   <a href="#entregable" class="md-nav__link">
     <span class="md-ellipsis">
-      📤 Entregable
+      Entregable
     </span>
   </a>
   
@@ -1491,12 +1533,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../ramas/" class="md-nav__link">
+      <a href="../introduccion-git/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Introducción a las Ramas
+    Introducción a Git
     
   </span>
   
@@ -1537,12 +1579,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../github/" class="md-nav__link">
+      <a href="../ramas/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Introducción a GitHub
+    Introducción a las Ramas
     
   </span>
   
@@ -1583,12 +1625,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../colaboracion/" class="md-nav__link">
+      <a href="../github/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Colaboración y Forks
+    Introducción a GitHub
     
   </span>
   
@@ -1612,6 +1654,809 @@
   
   <span class="md-ellipsis">
     Actividad 4.7
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../colaboracion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Colaboración y Forks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../actividad_4_8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 4.8
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../github-actions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración continua con GitHub Actions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../actividad_4_9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 4.9
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tema 5
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Tema 5
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tema 5 - Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema5/conceptos-basicos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UML, herramientas y conceptos básicos de la POO
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema5/actividad_5_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 5.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema5/relaciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Relaciones en diagramas de clases
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema5/actividad_5_2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 5.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema5/actividad_5_3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 5.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema5/notacion-y-especificaciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Notación y especificaciones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema5/actividad_5_4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 5.4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema5/actividad_5_5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 5.5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema5/actividad_5_6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 5.6
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema5/actividad_5_7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 5.7
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema5/generacion-y-ingenieria-inversa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Generación de código e ingeniería inversa
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema5/actividad_5_8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 5.8
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tema 6
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Tema 6
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tema 6 - Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema6/tipos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tipos de diagramas de comportamiento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema6/actividad_6_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 6.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema6/casos-uso/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Diagrama de casos de uso
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema6/actividad_6_2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 6.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema6/actividad_6_3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 6.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema6/interaccion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Diagramas de interacción (secuencia y comunicación)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema6/actividad_6_4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 6.4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema6/actividad_6_5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 6.5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema6/actividad_6_6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 6.6
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema6/actividades/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Diagrama de actividades
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema6/actividad_6_7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 6.7
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema6/estados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Diagrama de estados
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema6/actividad_6_8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actividad 6.8
     
   </span>
   
@@ -1656,45 +2501,87 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#que-vas-a-practicar" class="md-nav__link">
+  <a href="#codigo-a-analizar" class="md-nav__link">
     <span class="md-ellipsis">
-      🧠 Qué vas a practicar
+      Código a analizar
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#requisitos-previos" class="md-nav__link">
+  <a href="#contexto" class="md-nav__link">
     <span class="md-ellipsis">
-      🧰 Requisitos previos
+      Contexto
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#norma-de-la-actividad" class="md-nav__link">
+  <a href="#paso-1-predice-antes-de-ejecutar" class="md-nav__link">
     <span class="md-ellipsis">
-      📌 Norma de la actividad
+      Paso 1 — Predice antes de ejecutar
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#recomendacion-importante" class="md-nav__link">
+  <a href="#paso-2-analiza-con-intellij-inspect-code" class="md-nav__link">
     <span class="md-ellipsis">
-      🗂️ Recomendación importante
+      Paso 2 — Analiza con IntelliJ Inspect Code
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Paso 2 — Analiza con IntelliJ Inspect Code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#clasifica-y-decide-al-menos-4-avisos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clasifica y decide — al menos 4 avisos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paso-3-mismo-codigo-otra-herramienta" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 3 — Mismo código, otra herramienta
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#ejercicio-pasos" class="md-nav__link">
+  <a href="#paso-4-experimenta-con-la-configuracion" class="md-nav__link">
     <span class="md-ellipsis">
-      🧪 Ejercicio (pasos)
+      Paso 4 — Experimenta con la configuración
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paso-5-compara-prediccion-vs-realidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 5 — Compara predicción vs. realidad
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preguntas-de-reflexion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preguntas de reflexión
     </span>
   </a>
   
@@ -1703,7 +2590,7 @@
         <li class="md-nav__item">
   <a href="#entregable" class="md-nav__link">
     <span class="md-ellipsis">
-      📤 Entregable
+      Entregable
     </span>
   </a>
   
@@ -1725,110 +2612,324 @@
 
 
 
-<div><h1 id="actividad-44-git-local-tu-primer-historial-de-cambios">🧩 Actividad 4.4: Git local — tu primer historial de cambios<a class="headerlink" href="#actividad-44-git-local-tu-primer-historial-de-cambios" title="Permanent link">¶</a></h1>
+<div><h1 id="actividad-44-analisis-estatico-con-intellij-y-sonarqube-for-ide">📝 Actividad 4.4: Análisis estático con IntelliJ y SonarQube for IDE<a class="headerlink" href="#actividad-44-analisis-estatico-con-intellij-y-sonarqube-for-ide" title="Permanent link">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Descarga la plantilla</p>
+<p>📄 <a href="../plantillas/Actividad_4_4_Plantilla.docx" rel="noopener" target="_blank">Plantilla 4.4 — Análisis estático</a></p>
+</div>
 <div class="admonition info">
-<p class="admonition-title">Créditos</p>
-<p>Actividad basada en el ejercicio original del curso de Joan Puigcerver:<br>
-<a href="https://joapuiib.github.io/curs-git/apunts/01_introduccio/exercici/">Exercici — Introducció (curs-git)</a></p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Antes de empezar</p>
-<p>Es recomendable que <strong>leas la actividad entera</strong> de principio a fin, y te asegures de revisar el apartado <strong>📤 Entregable</strong> al final del documento. Así sabrás exactamente qué debes registrar o capturar antes de ponerte a escribir comandos en la terminal.</p>
-</div>
-<hr>
-<h2 id="que-vas-a-practicar">🧠 Qué vas a practicar<a class="headerlink" href="#que-vas-a-practicar" title="Permanent link">¶</a></h2>
-<p>En esta actividad vas a practicar Git <strong>en local</strong> para aprender a:</p>
+<p class="admonition-title">Objetivo</p>
+<p>Usar las herramientas de análisis estático del IDE de forma crítica, no solo ejecutarlas:</p>
 <ul>
-<li>crear e inicializar un repositorio,</li>
-<li>añadir archivos y hacer commits,</li>
-<li>realizar cambios y entender qué ocurre,</li>
-<li>consultar el estado del repositorio,</li>
-<li>consultar el historial de cambios,</li>
-<li>configurar lo básico (por ejemplo, ignorar archivos/carpetas).</li>
+<li>Predecir qué avisos va a encontrar el analizador <strong>antes</strong> de ejecutarlo.</li>
+<li>Interpretar y clasificar los avisos reales: tipo, causa y decisión justificada.</li>
+<li>Comparar lo que detecta IntelliJ con lo que detecta <strong>SonarQube for IDE</strong>.</li>
+<li>Explorar qué se puede configurar y por qué importa.</li>
 </ul>
-<hr>
-<h2 id="requisitos-previos">🧰 Requisitos previos<a class="headerlink" href="#requisitos-previos" title="Permanent link">¶</a></h2>
-<p>1) Tener Git instalado:</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>git<span class="w"> </span>--version
-</code></pre></div></td></tr></table></div>
-<p>2) Tener configurado tu nombre y email (solo una vez en tu ordenador):</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
-<span class="normal"><a href="#__codelineno-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">"Tu Nombre"</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">"tuemail@ejemplo.com"</span>
-</code></pre></div></td></tr></table></div>
-<hr>
-<h2 id="norma-de-la-actividad">📌 Norma de la actividad<a class="headerlink" href="#norma-de-la-actividad" title="Permanent link">¶</a></h2>
-<div class="admonition warning">
-<p class="admonition-title">Obligatorio durante TODO el ejercicio</p>
-<p>Comprueba el estado del repositorio con:</p>
-<ul>
-<li><code>git status</code></li>
-<li><code>git diff</code></li>
-</ul>
-<p><strong>después de cada paso</strong>.<br>
-El objetivo es que aprendas a interpretar los estados en los que puede estar el repositorio y los archivos.</p>
 </div>
 <hr>
-<h2 id="recomendacion-importante">🗂️ Recomendación importante<a class="headerlink" href="#recomendacion-importante" title="Permanent link">¶</a></h2>
-<p>Crea el repositorio en una carpeta <strong>independiente</strong> para evitar problemas con otros ejercicios o repos.</p>
-<div class="admonition warning">
-<p class="admonition-title">Evita carpetas sincronizadas</p>
-<p>Si usas OneDrive/Google Drive/iCloud u otros sistemas similares, es recomendable <strong>no</strong> crear el repo dentro de esas carpetas.</p>
-</div>
+<h2 id="codigo-a-analizar">Código a analizar<a class="headerlink" href="#codigo-a-analizar" title="Permanent link">¶</a></h2>
+<p>Copia estas dos clases en tu proyecto IntelliJ como <code>OrderProcessor.java</code> y <code>ReportGenerator.java</code>. <strong>No las modifiques antes de ejecutar el analizador</strong> — la idea es ver exactamente qué detecta sobre este código.</p>
+<div class="language-java highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#__codelineno-0-19">19</a></span>
+<span class="normal"><a href="#__codelineno-0-20">20</a></span>
+<span class="normal"><a href="#__codelineno-0-21">21</a></span>
+<span class="normal"><a href="#__codelineno-0-22">22</a></span>
+<span class="normal"><a href="#__codelineno-0-23">23</a></span>
+<span class="normal"><a href="#__codelineno-0-24">24</a></span>
+<span class="normal"><a href="#__codelineno-0-25">25</a></span>
+<span class="normal"><a href="#__codelineno-0-26">26</a></span>
+<span class="normal"><a href="#__codelineno-0-27">27</a></span>
+<span class="normal"><a href="#__codelineno-0-28">28</a></span>
+<span class="normal"><a href="#__codelineno-0-29">29</a></span>
+<span class="normal"><a href="#__codelineno-0-30">30</a></span>
+<span class="normal"><a href="#__codelineno-0-31">31</a></span>
+<span class="normal"><a href="#__codelineno-0-32">32</a></span>
+<span class="normal"><a href="#__codelineno-0-33">33</a></span>
+<span class="normal"><a href="#__codelineno-0-34">34</a></span>
+<span class="normal"><a href="#__codelineno-0-35">35</a></span>
+<span class="normal"><a href="#__codelineno-0-36">36</a></span>
+<span class="normal"><a href="#__codelineno-0-37">37</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1">// OrderProcessor.java</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">OrderProcessor</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">calculateTotal</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">items</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">quantities</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">items</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">            </span><span class="n">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">getPrice</span><span class="p">(</span><span class="n">items</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">quantities</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">);</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">total</span><span class="p">;</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">getPrice</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">item</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">item</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">"BOOK"</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mf">12.50</span><span class="p">;</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">item</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">"PEN"</span><span class="p">)</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mf">1.99</span><span class="p">;</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">item</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">"BAG"</span><span class="p">)</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mf">24.00</span><span class="p">;</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a>
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getStatus</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">total</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">total</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="w">            </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"PREMIUM"</span><span class="p">;</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">total</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="w">            </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"STANDARD"</span><span class="p">;</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">status</span><span class="p">;</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28"></a>
+<a id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">printSummary</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">items</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">quantities</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30"></a><span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">items</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32"></a><span class="w">            </span><span class="n">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">getPrice</span><span class="p">(</span><span class="n">items</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">quantities</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">);</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Total: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">total</span><span class="p">);</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Status: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">getStatus</span><span class="p">(</span><span class="n">total</span><span class="p">));</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<div class="language-java highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span>
+<span class="normal"><a href="#__codelineno-1-14">14</a></span>
+<span class="normal"><a href="#__codelineno-1-15">15</a></span>
+<span class="normal"><a href="#__codelineno-1-16">16</a></span>
+<span class="normal"><a href="#__codelineno-1-17">17</a></span>
+<span class="normal"><a href="#__codelineno-1-18">18</a></span>
+<span class="normal"><a href="#__codelineno-1-19">19</a></span>
+<span class="normal"><a href="#__codelineno-1-20">20</a></span>
+<span class="normal"><a href="#__codelineno-1-21">21</a></span>
+<span class="normal"><a href="#__codelineno-1-22">22</a></span>
+<span class="normal"><a href="#__codelineno-1-23">23</a></span>
+<span class="normal"><a href="#__codelineno-1-24">24</a></span>
+<span class="normal"><a href="#__codelineno-1-25">25</a></span>
+<span class="normal"><a href="#__codelineno-1-26">26</a></span>
+<span class="normal"><a href="#__codelineno-1-27">27</a></span>
+<span class="normal"><a href="#__codelineno-1-28">28</a></span>
+<span class="normal"><a href="#__codelineno-1-29">29</a></span>
+<span class="normal"><a href="#__codelineno-1-30">30</a></span>
+<span class="normal"><a href="#__codelineno-1-31">31</a></span>
+<span class="normal"><a href="#__codelineno-1-32">32</a></span>
+<span class="normal"><a href="#__codelineno-1-33">33</a></span>
+<span class="normal"><a href="#__codelineno-1-34">34</a></span>
+<span class="normal"><a href="#__codelineno-1-35">35</a></span>
+<span class="normal"><a href="#__codelineno-1-36">36</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1">// ReportGenerator.java</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ReportGenerator</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">generateReport</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">report</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">""</span><span class="p">;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">data</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">            </span><span class="n">report</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">report</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">data</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"\n"</span><span class="p">;</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">report</span><span class="p">;</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">isValid</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">input</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">input</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">input</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">input</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">""</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="w">                    </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="w">                </span><span class="p">}</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22"></a>
+<a id="__codelineno-1-23" name="__codelineno-1-23"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">processData</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">data</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25"></a><span class="w">            </span><span class="n">String</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isValid</span><span class="p">(</span><span class="n">line</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27"></a><span class="w">                </span><span class="n">String</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">generateReport</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="o">[]</span><span class="p">{</span><span class="n">line</span><span class="p">});</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28"></a><span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
+<a id="__codelineno-1-29" name="__codelineno-1-29"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-1-30" name="__codelineno-1-30"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-32" name="__codelineno-1-32"></a>
+<a id="__codelineno-1-33" name="__codelineno-1-33"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">formatDate</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">day</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">month</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">year</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-34" name="__codelineno-1-34"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">day</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"/"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">month</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"/"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">year</span><span class="p">;</span>
+<a id="__codelineno-1-35" name="__codelineno-1-35"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-36" name="__codelineno-1-36"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
 <hr>
-<h2 id="ejercicio-pasos">🧪 Ejercicio (pasos)<a class="headerlink" href="#ejercicio-pasos" title="Permanent link">¶</a></h2>
-<blockquote>
-<p>En cada paso, recuerda ejecutar <strong><code>git status</code></strong> y <strong><code>git diff</code></strong>.</p>
-</blockquote>
+<h2 id="contexto">Contexto<a class="headerlink" href="#contexto" title="Permanent link">¶</a></h2>
+<p>Estas dos clases tienen problemas intencionados de distinta naturaleza. <code>OrderProcessor</code> tiene errores que pueden causar fallos en tiempo de ejecución. <code>ReportGenerator</code> funciona pero tiene malas prácticas y código innecesariamente complicado.</p>
+<p>El objetivo no es que el analizador marque cero avisos. Es que <strong>entiendas cada uno</strong> y tomes una decisión con criterio.</p>
+<hr>
+<h2 id="paso-1-predice-antes-de-ejecutar">Paso 1 — Predice antes de ejecutar<a class="headerlink" href="#paso-1-predice-antes-de-ejecutar" title="Permanent link">¶</a></h2>
+<p>Antes de lanzar ningún analizador, lee las dos clases con atención y responde por escrito:</p>
 <ol>
-<li>Crea un directorio llamado <strong><code>bloc1_exercici</code></strong> dentro de tu carpeta de trabajo.</li>
-<li>Inicializa un repositorio de Git en ese directorio.</li>
-<li>Crea un archivo llamado <strong><code>llibres.txt</code></strong> y añade <strong>tres libros</strong> que te gusten.</li>
-<li>Haz un <strong>primer commit</strong>. Elige un <strong>mensaje significativo</strong>.</li>
-<li>Añade <strong>otro libro</strong> a <code>llibres.txt</code>.</li>
-<li>Haz un <strong>segundo commit</strong>.</li>
-<li>Crea un archivo llamado <strong><code>musica.txt</code></strong> y añade <strong>tres canciones</strong> que te gusten.</li>
-<li>Crea un archivo llamado <strong><code>pelicules.txt</code></strong> y añade <strong>tres películas</strong> que te gusten.</li>
-<li>Haz un <strong>tercer commit</strong> que <strong>solo</strong> incluya el archivo <code>musica.txt</code>.</li>
-<li>Crea un archivo llamado <strong><code>series.txt</code></strong> y añade <strong>tres series</strong> que te gusten.</li>
-<li>Haz un <strong>cuarto commit</strong> que incluya los archivos <code>pelicules.txt</code> y <code>series.txt</code>.</li>
-<li>Modifica <code>llibres.txt</code> para <strong>eliminar</strong> uno de los libros.</li>
-<li>Haz un <strong>quinto commit</strong>.</li>
-<li>Modifica <code>pelicules.txt</code> para <strong>añadir</strong> una película.</li>
-<li><strong>Sin modificar el archivo manualmente</strong>, descarta el cambio de <code>pelicules.txt</code> mediante una <strong>orden de Git</strong>.</li>
-<li>Añade un archivo llamado <strong><code>{fecha}.log</code></strong> con cualquier contenido.  <ul>
-<li><code>{fecha}</code> es la <strong>fecha actual</strong> en formato <code>YYYYMMDD</code>.</li>
+<li>Mira <code>OrderProcessor</code>: ¿ves alguna línea que pueda causar un error en tiempo de ejecución? ¿Cuál y por qué?</li>
+<li>Mira <code>ReportGenerator</code>: ¿qué malas prácticas o código innecesariamente complicado identificas antes de ejecutar el analizador?</li>
+<li>Para cada clase, escribe <strong>al menos un aviso concreto</strong> que esperas que aparezca. Sé específico: di qué línea, qué detectará y por qué es un problema.</li>
+</ol>
+<p>Guarda estas predicciones — las vas a comparar con los resultados reales en el Paso 5.</p>
+<hr>
+<h2 id="paso-2-analiza-con-intellij-inspect-code">Paso 2 — Analiza con IntelliJ Inspect Code<a class="headerlink" href="#paso-2-analiza-con-intellij-inspect-code" title="Permanent link">¶</a></h2>
+<p>En IntelliJ, ve a <strong>Code → Inspect Code</strong> (menú superior).</p>
+<p>Se abre un diálogo con dos opciones:</p>
+<ul>
+<li><strong>Inspection scope</strong>: elige <em>Whole project</em> (o el módulo concreto si el proyecto tiene varios).</li>
+<li><strong>Inspection profile</strong>: deja <em>Project Default</em> o <em>Default</em> — no cambies nada por ahora.</li>
 </ul>
-</li>
-<li>Configura el repositorio para <strong>ignorar</strong> los archivos con extensión <strong><code>.log</code></strong>.</li>
-<li>Haz un commit con esa configuración.</li>
-<li>Crea la carpeta <strong><code>tmp</code></strong> y copia todos los archivos de texto (<code>.txt</code>) dentro de esa carpeta.</li>
-<li>Configura el repositorio para <strong>ignorar</strong> la carpeta <code>tmp</code>.</li>
-<li>Haz un commit con esa configuración.</li>
-<li>Comprueba la <strong>historia de cambios</strong> del repositorio.</li>
+<p>Haz clic en <strong>OK</strong> y espera. IntelliJ analiza el código y abre el panel <strong>Inspection Results</strong> con los avisos agrupados por categorías (<em>Probable bugs</em>, <em>Code style</em>, <em>Performance</em>, etc.).</p>
+<div class="admonition tip">
+<p class="admonition-title">Cómo navegar</p>
+<p>Despliega cada categoría. Haz clic en un aviso para ir directamente a la línea. El panel muestra la descripción del problema — léela entera antes de decidir qué hacer.</p>
+</div>
+<h3 id="clasifica-y-decide-al-menos-4-avisos">Clasifica y decide — al menos 4 avisos<a class="headerlink" href="#clasifica-y-decide-al-menos-4-avisos" title="Permanent link">¶</a></h3>
+<p>Para cada aviso que encuentres, rellena la tabla de la plantilla:</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Qué poner</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tipo</strong></td>
+<td>Bug probable / Código muerto / Mala práctica / Estilo / Complejidad</td>
+</tr>
+<tr>
+<td><strong>Descripción</strong></td>
+<td>Qué dice el aviso (copia el texto del panel)</td>
+</tr>
+<tr>
+<td><strong>Archivo y línea</strong></td>
+<td>Dónde aparece</td>
+</tr>
+<tr>
+<td><strong>¿Por qué lo detecta?</strong></td>
+<td>Explica con tus palabras qué patrón ha detectado y por qué es un problema</td>
+</tr>
+<tr>
+<td><strong>Decisión</strong></td>
+<td>Corregir / Justificar que no aplica / Desactivar la regla</td>
+</tr>
+<tr>
+<td><strong>Razonamiento</strong></td>
+<td>Por qué has tomado esa decisión</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Lo que no vale</p>
+<p>Poner "lo he corregido" sin explicar por qué era un problema. O "no aplica" sin justificar. La decisión importa menos que el razonamiento detrás.</p>
+</div>
+<hr>
+<h2 id="paso-3-mismo-codigo-otra-herramienta">Paso 3 — Mismo código, otra herramienta<a class="headerlink" href="#paso-3-mismo-codigo-otra-herramienta" title="Permanent link">¶</a></h2>
+<p>Abre el mismo proyecto con <strong>SonarQube for IDE</strong> activo (el panel aparece en la parte inferior del IDE). Si no lo tienes instalado: <strong>File → Settings → Plugins → Marketplace → SonarQube for IDE</strong>.</p>
+<p>Mira los avisos que genera para los mismos archivos y responde:</p>
+<ol>
+<li>Anota <strong>al menos 2 avisos que SonarQube for IDE detecta y que IntelliJ no había señalado</strong> (o al revés). Si coinciden todos, compara la calidad de las explicaciones.</li>
+<li>¿Las explicaciones de SonarQube for IDE son más detalladas que las de IntelliJ? ¿En qué se nota?</li>
+<li>Para uno de los avisos que aparece en ambas herramientas: ¿la descripción es la misma o cada una lo explica de forma distinta?</li>
 </ol>
 <hr>
-<h2 id="entregable">📤 Entregable<a class="headerlink" href="#entregable" title="Permanent link">¶</a></h2>
-<div class="admonition danger">
-<p class="admonition-title">Atención: Autoría de las capturas</p>
-<p>En todas las capturas de pantalla debe apreciarse claramente que <strong>eres el autor</strong> (ruta de las carpetas con tu usuario, nombre de equipo en la terminal, etc.).<br>
-<strong>En caso de detectar copias, la calificación de la actividad será de un 0 automático.</strong></p>
-</div>
-<p>Entrega un <strong>PDF</strong> que incluya:</p>
+<h2 id="paso-4-experimenta-con-la-configuracion">Paso 4 — Experimenta con la configuración<a class="headerlink" href="#paso-4-experimenta-con-la-configuracion" title="Permanent link">¶</a></h2>
+<p>Los analizadores se pueden configurar. Prueba al menos <strong>dos</strong> de estas acciones y documenta qué has cambiado y qué ha pasado:</p>
 <ul>
-<li><strong>Capturas de pantalla y una explicación breve</strong> (indicando qué archivos son <em>untracked</em>, <em>modified</em> o <em>staged</em>) en los siguientes 5 momentos clave:<ol>
-<li>Después del <strong>Paso 4</strong> (tu primer commit).</li>
-<li>Después del <strong>Paso 11</strong> (revisando qué diferencias muestra <code>git diff</code> antes de hacer el commit).</li>
-<li>Durante el <strong>Paso 15</strong> (mostrando el uso del comando para descartar modificaciones sueltas y el git status limpio resultante).</li>
-<li>Después del <strong>Paso 20</strong> (mostrando cómo <code>.gitignore</code> oculta los archivos).</li>
-<li>Después del <strong>Paso 22</strong> (captura de la historia de cambios o log final del repositorio).</li>
-</ol>
-</li>
-<li>Una <strong>breve reflexión personal (5-10 líneas)</strong> al final del documento explicando qué has aprendido en esta actividad básica y en qué situaciones reales crees que te será útil poder "viajar en el tiempo" por el historial de tus propios archivos (recuperar código, entender errores pasados, etc.).</li>
+<li><strong>Cambia la severidad</strong> de una regla: en el panel <em>Inspection Results</em>, haz clic derecho sobre un aviso concreto → <em>Edit Inspection Settings</em> → cambia el nivel de una regla de Warning a Error (o viceversa). Vuelve a ejecutar con <strong>Code → Inspect Code</strong> y observa si el resultado cambia.</li>
+<li><strong>Excluye una carpeta</strong>: en <em>Settings → Editor → Inspections</em>, desactiva una regla concreta. ¿Desaparece del informe?</li>
+<li><strong>Cambia el ámbito</strong>: ejecuta Inspect Code solo sobre un archivo, luego sobre el proyecto completo. ¿Cuántos avisos más aparecen?</li>
 </ul>
-<div class="admonition tip">
-<p class="admonition-title">Consejo</p>
-<p>Si quieres que quede ordenado, usa un apartado por paso: <strong>Paso X → Captura(s) → Explicación</strong>.</p>
+<p>Para cada acción que hayas probado:</p>
+<table>
+<thead>
+<tr>
+<th>Qué has cambiado</th>
+<th>Resultado observado</th>
+<th>¿Tiene sentido en un proyecto real?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="paso-5-compara-prediccion-vs-realidad">Paso 5 — Compara predicción vs. realidad<a class="headerlink" href="#paso-5-compara-prediccion-vs-realidad" title="Permanent link">¶</a></h2>
+<p>Vuelve a las respuestas del Paso 1 y responde:</p>
+<ol>
+<li>¿Cuántos de tus avisos predichos han aparecido realmente? ¿Cuáles no han aparecido y por qué crees que no?</li>
+<li>¿Ha aparecido algún aviso que no esperabas? ¿Cuál te ha sorprendido más y por qué?</li>
+<li>¿Cuál de las dos clases ha generado más avisos? ¿Coincide con lo que esperabas antes de ejecutar el analizador?</li>
+</ol>
+<hr>
+<h2 id="preguntas-de-reflexion">Preguntas de reflexión<a class="headerlink" href="#preguntas-de-reflexion" title="Permanent link">¶</a></h2>
+<ol>
+<li>Después de ver los avisos reales: ¿un analizador estático puede sustituir a una revisión manual del código, o son complementarios? Razona con un ejemplo concreto de esta actividad.</li>
+<li>Si tuvieras que configurar el analizador para un equipo de 5 personas que acaba de empezar un proyecto, ¿qué tres reglas activarías como prioritarias y por qué? ¿Cuál desactivarías para no generar ruido innecesario?</li>
+<li>Hay un aviso que IntelliJ señala pero que en tu código concreto no es un problema real. ¿Cómo lo justificarías ante un compañero que insiste en corregirlo?</li>
+</ol>
+<hr>
+<h2 id="entregable">Entregable<a class="headerlink" href="#entregable" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Qué</th>
+<th>Cómo se evalúa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Predicciones del Paso 1 (antes de ejecutar)</td>
+<td>¿Son razonadas o son vagas? ¿Demuestran que has leído el código?</td>
+</tr>
+<tr>
+<td>Tabla de avisos clasificados (Paso 2, mín. 4)</td>
+<td>¿Entiendes qué detecta cada uno? ¿El razonamiento de la decisión es tuyo?</td>
+</tr>
+<tr>
+<td>Comparación IntelliJ vs SonarQube for IDE (Paso 3)</td>
+<td>¿Has observado diferencias reales o has puesto que "son iguales"?</td>
+</tr>
+<tr>
+<td>Experimentos de configuración (Paso 4)</td>
+<td>¿Has probado los cambios o los has descrito sin hacerlos?</td>
+</tr>
+<tr>
+<td>Comparación predicción vs. realidad (Paso 5)</td>
+<td>¿Hay reflexión honesta sobre lo que no acertaste?</td>
+</tr>
+<tr>
+<td>Respuestas a las preguntas de reflexión</td>
+<td>¿Razonas con ejemplos concretos de esta actividad?</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Corrección oral</p>
+<p>En la corrección se preguntará por cualquier aviso de la tabla: qué significa, por qué lo has corregido o no, y qué pasaría si lo ignoraras. Si no puedes explicarlo, la actividad no se supera aunque la tabla esté completa.</p>
 </div></div>
 
 
@@ -1865,7 +2966,7 @@ El objetivo es que aprendas a interpretar los estados en los que puede estar el 
       <nav class="md-footer__inner md-grid" aria-label="Pie" >
         
           
-          <a href="../introduccion-git/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Introducción a Git">
+          <a href="../analizadores/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Analizadores de código">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1875,20 +2976,20 @@ El objetivo es que aprendas a interpretar los estados en los que puede estar el 
                 Anterior
               </span>
               <div class="md-ellipsis">
-                Introducción a Git
+                Analizadores de código
               </div>
             </div>
           </a>
         
         
           
-          <a href="../ramas/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Introducción a las Ramas">
+          <a href="../introduccion-git/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Introducción a Git">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Siguiente
               </span>
               <div class="md-ellipsis">
-                Introducción a las Ramas
+                Introducción a Git
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1904,7 +3005,7 @@ El objetivo es que aprendas a interpretar los estados en los que puede estar el 
     <div class="md-footer-meta__inner md-grid">
       
 <p style="margin: 0 auto; text-align: center; font-size: 0.7rem;">
-  © 2025 Aitor Ventura — 
+  © 2026 Aitor Ventura — 
   <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">
     Licencia CC BY-NC-SA 4.0
   </a>

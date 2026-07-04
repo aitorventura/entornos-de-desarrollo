@@ -58,6 +58,23 @@
   color:#55165e!important;
 }
 
+/* Base (no activo) — pestañas 4, 5 y 6 */
+.md-typeset .tabs-colored .tabbed-set .tabbed-labels > label:nth-of-type(4),
+.md-typeset .tabs-colored .tabbed-set > label:nth-of-type(4){
+  background:#fff3cd!important;  /* amarillo claro */
+  color:#7a5800!important;
+}
+.md-typeset .tabs-colored .tabbed-set .tabbed-labels > label:nth-of-type(5),
+.md-typeset .tabs-colored .tabbed-set > label:nth-of-type(5){
+  background:#fde8e8!important;  /* rojo claro */
+  color:#8b1a1a!important;
+}
+.md-typeset .tabs-colored .tabbed-set .tabbed-labels > label:nth-of-type(6),
+.md-typeset .tabs-colored .tabbed-set > label:nth-of-type(6){
+  background:#e8f5e9!important;  /* verde claro */
+  color:#1b5e20!important;
+}
+
 /* Activo (alternate_style) */
 .md-typeset .tabs-colored .tabbed-set.tabbed-alternate > input:nth-of-type(1):checked ~ .tabbed-labels > label:nth-of-type(1){
   background:#3b82f6!important; color:#fff!important;
@@ -65,9 +82,17 @@
 .md-typeset .tabs-colored .tabbed-set.tabbed-alternate > input:nth-of-type(2):checked ~ .tabbed-labels > label:nth-of-type(2){
   background:#50C878!important; color:#fff!important;
 }
-
 .md-typeset .tabs-colored .tabbed-set.tabbed-alternate > input:nth-of-type(3):checked ~ .tabbed-labels > label:nth-of-type(3){
   background:#791f87!important; color:#fff!important;
+}
+.md-typeset .tabs-colored .tabbed-set.tabbed-alternate > input:nth-of-type(4):checked ~ .tabbed-labels > label:nth-of-type(4){
+  background:#f59e0b!important; color:#fff!important;
+}
+.md-typeset .tabs-colored .tabbed-set.tabbed-alternate > input:nth-of-type(5):checked ~ .tabbed-labels > label:nth-of-type(5){
+  background:#ef4444!important; color:#fff!important;
+}
+.md-typeset .tabs-colored .tabbed-set.tabbed-alternate > input:nth-of-type(6):checked ~ .tabbed-labels > label:nth-of-type(6){
+  background:#22c55e!important; color:#fff!important;
 }
 
 /* Activo (sin alternate_style) */
@@ -80,12 +105,31 @@
 .md-typeset .tabs-colored .tabbed-set > input:nth-of-type(3):checked + label{
   background:#791f87!important; color:#fff!important;
 }
-
-/* Borde superior del contenido activo */
-.md-typeset .tabs-colored .tabbed-set > input:checked + label + .tabbed-content,
-.md-typeset .tabs-colored .tabbed-set.tabbed-alternate > input:checked ~ .tabbed-content{
-  border-top:2px solid currentColor!important;
+.md-typeset .tabs-colored .tabbed-set > input:nth-of-type(4):checked + label{
+  background:#f59e0b!important; color:#fff!important;
 }
+.md-typeset .tabs-colored .tabbed-set > input:nth-of-type(5):checked + label{
+  background:#ef4444!important; color:#fff!important;
+}
+.md-typeset .tabs-colored .tabbed-set > input:nth-of-type(6):checked + label{
+  background:#22c55e!important; color:#fff!important;
+}
+
+/* Fondo + borde completo redondeado del panel de contenido según la pestaña activa (alternate_style) */
+.md-typeset .tabs-colored .tabbed-set.tabbed-alternate > input:nth-of-type(1):checked ~ .tabbed-content{ background:#eef4ff!important; border:1px solid #3b82f6!important; border-top:2px solid #3b82f6!important; border-radius:0 0 .5rem .5rem!important; padding:1rem 1.2rem!important; }
+.md-typeset .tabs-colored .tabbed-set.tabbed-alternate > input:nth-of-type(2):checked ~ .tabbed-content{ background:#edfff6!important; border:1px solid #50C878!important; border-top:2px solid #50C878!important; border-radius:0 0 .5rem .5rem!important; padding:1rem 1.2rem!important; }
+.md-typeset .tabs-colored .tabbed-set.tabbed-alternate > input:nth-of-type(3):checked ~ .tabbed-content{ background:#fdf4ff!important; border:1px solid #791f87!important; border-top:2px solid #791f87!important; border-radius:0 0 .5rem .5rem!important; padding:1rem 1.2rem!important; }
+.md-typeset .tabs-colored .tabbed-set.tabbed-alternate > input:nth-of-type(4):checked ~ .tabbed-content{ background:#fffbea!important; border:1px solid #f59e0b!important; border-top:2px solid #f59e0b!important; border-radius:0 0 .5rem .5rem!important; padding:1rem 1.2rem!important; }
+.md-typeset .tabs-colored .tabbed-set.tabbed-alternate > input:nth-of-type(5):checked ~ .tabbed-content{ background:#fff5f5!important; border:1px solid #ef4444!important; border-top:2px solid #ef4444!important; border-radius:0 0 .5rem .5rem!important; padding:1rem 1.2rem!important; }
+.md-typeset .tabs-colored .tabbed-set.tabbed-alternate > input:nth-of-type(6):checked ~ .tabbed-content{ background:#f0fdf4!important; border:1px solid #22c55e!important; border-top:2px solid #22c55e!important; border-radius:0 0 .5rem .5rem!important; padding:1rem 1.2rem!important; }
+
+/* Fondo + borde completo redondeado del panel de contenido según la pestaña activa (sin alternate_style) */
+.md-typeset .tabs-colored .tabbed-set > input:nth-of-type(1):checked + label + .tabbed-content{ background:#eef4ff!important; border:1px solid #3b82f6!important; border-top:2px solid #3b82f6!important; border-radius:0 0 .5rem .5rem!important; padding:1rem 1.2rem!important; }
+.md-typeset .tabs-colored .tabbed-set > input:nth-of-type(2):checked + label + .tabbed-content{ background:#edfff6!important; border:1px solid #50C878!important; border-top:2px solid #50C878!important; border-radius:0 0 .5rem .5rem!important; padding:1rem 1.2rem!important; }
+.md-typeset .tabs-colored .tabbed-set > input:nth-of-type(3):checked + label + .tabbed-content{ background:#fdf4ff!important; border:1px solid #791f87!important; border-top:2px solid #791f87!important; border-radius:0 0 .5rem .5rem!important; padding:1rem 1.2rem!important; }
+.md-typeset .tabs-colored .tabbed-set > input:nth-of-type(4):checked + label + .tabbed-content{ background:#fffbea!important; border:1px solid #f59e0b!important; border-top:2px solid #f59e0b!important; border-radius:0 0 .5rem .5rem!important; padding:1rem 1.2rem!important; }
+.md-typeset .tabs-colored .tabbed-set > input:nth-of-type(5):checked + label + .tabbed-content{ background:#fff5f5!important; border:1px solid #ef4444!important; border-top:2px solid #ef4444!important; border-radius:0 0 .5rem .5rem!important; padding:1rem 1.2rem!important; }
+.md-typeset .tabs-colored .tabbed-set > input:nth-of-type(6):checked + label + .tabbed-content{ background:#f0fdf4!important; border:1px solid #22c55e!important; border-top:2px solid #22c55e!important; border-radius:0 0 .5rem .5rem!important; padding:1rem 1.2rem!important; }
 
 /* Oculta ambos por defecto */
 .only-light, .only-dark {
@@ -126,3 +170,37 @@
     0 0 0 var(--shot-ring) var(--shot-accent),
     0 8px 20px rgba(0,0,0,.24);
 }
+
+/* ── DARK MODE — tabs-colored ──────────────────────────────────────────────
+   En modo oscuro reemplazamos los fondos claros de etiquetas y paneles
+   por versiones oscuras de los mismos colores.                            */
+
+/* Etiquetas inactivas */
+body[data-md-color-scheme="slate"] .md-typeset .tabs-colored .tabbed-set .tabbed-labels > label:nth-of-type(1),
+body[data-md-color-scheme="slate"] .md-typeset .tabs-colored .tabbed-set > label:nth-of-type(1){ background:#1e3a5f!important; color:#93c5fd!important; }
+body[data-md-color-scheme="slate"] .md-typeset .tabs-colored .tabbed-set .tabbed-labels > label:nth-of-type(2),
+body[data-md-color-scheme="slate"] .md-typeset .tabs-colored .tabbed-set > label:nth-of-type(2){ background:#14432a!important; color:#6ee7b7!important; }
+body[data-md-color-scheme="slate"] .md-typeset .tabs-colored .tabbed-set .tabbed-labels > label:nth-of-type(3),
+body[data-md-color-scheme="slate"] .md-typeset .tabs-colored .tabbed-set > label:nth-of-type(3){ background:#3b1054!important; color:#e9a8ff!important; }
+body[data-md-color-scheme="slate"] .md-typeset .tabs-colored .tabbed-set .tabbed-labels > label:nth-of-type(4),
+body[data-md-color-scheme="slate"] .md-typeset .tabs-colored .tabbed-set > label:nth-of-type(4){ background:#3d2e00!important; color:#fde68a!important; }
+body[data-md-color-scheme="slate"] .md-typeset .tabs-colored .tabbed-set .tabbed-labels > label:nth-of-type(5),
+body[data-md-color-scheme="slate"] .md-typeset .tabs-colored .tabbed-set > label:nth-of-type(5){ background:#4a1010!important; color:#fca5a5!important; }
+body[data-md-color-scheme="slate"] .md-typeset .tabs-colored .tabbed-set .tabbed-labels > label:nth-of-type(6),
+body[data-md-color-scheme="slate"] .md-typeset .tabs-colored .tabbed-set > label:nth-of-type(6){ background:#0d3320!important; color:#86efac!important; }
+
+/* Paneles de contenido activos (alternate_style) */
+body[data-md-color-scheme="slate"] .md-typeset .tabs-colored .tabbed-set.tabbed-alternate > input:nth-of-type(1):checked ~ .tabbed-content{ background:#0f1e30!important; border-color:#3b82f6!important; }
+body[data-md-color-scheme="slate"] .md-typeset .tabs-colored .tabbed-set.tabbed-alternate > input:nth-of-type(2):checked ~ .tabbed-content{ background:#0a2016!important; border-color:#50C878!important; }
+body[data-md-color-scheme="slate"] .md-typeset .tabs-colored .tabbed-set.tabbed-alternate > input:nth-of-type(3):checked ~ .tabbed-content{ background:#1e082a!important; border-color:#a855f7!important; }
+body[data-md-color-scheme="slate"] .md-typeset .tabs-colored .tabbed-set.tabbed-alternate > input:nth-of-type(4):checked ~ .tabbed-content{ background:#1e1600!important; border-color:#f59e0b!important; }
+body[data-md-color-scheme="slate"] .md-typeset .tabs-colored .tabbed-set.tabbed-alternate > input:nth-of-type(5):checked ~ .tabbed-content{ background:#200808!important; border-color:#ef4444!important; }
+body[data-md-color-scheme="slate"] .md-typeset .tabs-colored .tabbed-set.tabbed-alternate > input:nth-of-type(6):checked ~ .tabbed-content{ background:#061a0e!important; border-color:#22c55e!important; }
+
+/* Paneles de contenido activos (sin alternate_style) */
+body[data-md-color-scheme="slate"] .md-typeset .tabs-colored .tabbed-set > input:nth-of-type(1):checked + label + .tabbed-content{ background:#0f1e30!important; border-color:#3b82f6!important; }
+body[data-md-color-scheme="slate"] .md-typeset .tabs-colored .tabbed-set > input:nth-of-type(2):checked + label + .tabbed-content{ background:#0a2016!important; border-color:#50C878!important; }
+body[data-md-color-scheme="slate"] .md-typeset .tabs-colored .tabbed-set > input:nth-of-type(3):checked + label + .tabbed-content{ background:#1e082a!important; border-color:#a855f7!important; }
+body[data-md-color-scheme="slate"] .md-typeset .tabs-colored .tabbed-set > input:nth-of-type(4):checked + label + .tabbed-content{ background:#1e1600!important; border-color:#f59e0b!important; }
+body[data-md-color-scheme="slate"] .md-typeset .tabs-colored .tabbed-set > input:nth-of-type(5):checked + label + .tabbed-content{ background:#200808!important; border-color:#ef4444!important; }
+body[data-md-color-scheme="slate"] .md-typeset .tabs-colored .tabbed-set > input:nth-of-type(6):checked + label + .tabbed-content{ background:#061a0e!important; border-color:#22c55e!important; }
