@@ -5,7 +5,7 @@
 ![Diagrama de casos de uso](diapositivas/casos-uso.pdf){ type=application/pdf style="width:100%;min-height:80vh" }
 
 !!!info "Descarga de diapositivas"
-    [Descarga las diapositivas](diapositivas/casos-uso.pdf){target="_blank" rel="noopener"}
+    [Descarga las diapositivas](diapositivas/casos-uso.pptx){target="_blank" rel="noopener"}
 
 ---
 

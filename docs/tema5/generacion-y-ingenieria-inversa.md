@@ -3,7 +3,7 @@
 ![Generación de código e ingeniería inversa](diapositivas/generacion-y-ingenieria-inversa.pdf){ type=application/pdf style="width:100%;min-height:80vh" }
 
 !!!info "Descarga de diapositivas"
-    [Descarga las diapositivas](diapositivas/generacion-y-ingenieria-inversa.pdf){target="_blank" rel="noopener"}
+    [Descarga las diapositivas](diapositivas/generacion-y-ingenieria-inversa.pptx){target="_blank" rel="noopener"}
 
 ---
 

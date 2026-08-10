@@ -5,7 +5,7 @@
 ![Refactorización](diapositivas/refactorizacion.pdf){ type=application/pdf style="width:100%;min-height:80vh" }
 
 !!!info "Descarga de diapositivas"
-    [Descarga las diapositivas](diapositivas/refactorizacion.pdf){target="_blank" rel="noopener"}
+    [Descarga las diapositivas](diapositivas/refactorizacion.pptx){target="_blank" rel="noopener"}
 
 ---
 
